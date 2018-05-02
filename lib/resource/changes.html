@@ -1,0 +1,171 @@
+<HTML>
+<HEAD>
+<TITLE>Changes -- Delta beween releases</TITLE>
+<LINK REV="made" HREF="mailto:">
+</HEAD>
+
+<BODY>
+
+<A NAME="__index__"></A>
+<!-- INDEX BEGIN -->
+
+<UL>
+
+	<LI><A HREF="#name">NAME</A></LI>
+	<LI><A HREF="#releases">RELEASES</A></LI>
+	<UL>
+
+		<LI><A HREF="#020406">020406</A></LI>
+		<LI><A HREF="#020401">020401</A></LI>
+		<LI><A HREF="#020228">020228</A></LI>
+		<LI><A HREF="#011010">011010</A></LI>
+		<LI><A HREF="#011008">011008</A></LI>
+		<LI><A HREF="#010913">010913</A></LI>
+		<LI><A HREF="#010908">010908</A></LI>
+		<LI><A HREF="#010905">010905</A></LI>
+		<LI><A HREF="#010828">010828</A></LI>
+		<LI><A HREF="#010826">010826</A></LI>
+		<LI><A HREF="#010824">010824</A></LI>
+		<LI><A HREF="#010823">010823</A></LI>
+		<LI><A HREF="#010819">010819</A></LI>
+		<LI><A HREF="#010810">010810</A></LI>
+		<LI><A HREF="#010716">010716</A></LI>
+		<LI><A HREF="#010629">010629</A></LI>
+		<LI><A HREF="#010625">010625</A></LI>
+		<LI><A HREF="#010623">010623</A></LI>
+		<LI><A HREF="#010621">010621</A></LI>
+		<LI><A HREF="#way back">WAY BACK</A></LI>
+	</UL>
+
+	<LI><A HREF="#copyright">COPYRIGHT</A></LI>
+</UL>
+<!-- INDEX END -->
+
+<HR>
+<P>
+<H1><A NAME="name">NAME</A></H1>
+<P>The GUI Loft Changes -- Delta beween releases</P>
+<P>
+<HR>
+<H1><A NAME="releases">RELEASES</A></H1>
+<P>
+<H2><A NAME="020406">020406</A></H2>
+<P>Fixed newly introduced bug with reading .gld files.</P>
+<P>
+<H2><A NAME="020401">020401</A></H2>
+<P>Added class method <CODE>newScalar()</CODE> to enable you to load the 
+Window from a scalar instead of loading it from disk.</P>
+<P>Updated the Programmer's Reference, look at the SYNOPSIS for 
+an example.</P>
+<P>
+<H2><A NAME="020228">020228</A></H2>
+<P>Programmer's utility: Win32::GUI::Loft::winapp($nameWindow)</P>
+<P>Return three-value array with the ($win, $design, $app) that 
+corresponds to $nameWindow. Quick way of getting to these 
+vars.</P>
+<P>Updated Demo program FetchURL now shows how to influence the 
+build process and set e.g. a Class and change the -style. 
+The Programmer's Reference contains a section describing 
+this.</P>
+<P>
+<H2><A NAME="011010">011010</A></H2>
+<P>Beta color management: Foreground and Background property 
+for the controls: Label, Textfield, Listbox, and TreeView. 
+This is experimental, don't rely on it.</P>
+<P>Bug fix: Warning triggered when setting the property Align 
+or Valign to ``''.</P>
+<P>
+<H2><A NAME="011008">011008</A></H2>
+<P>New Window type: borderless window. Property value for the 
+Window control property DialogBox: borderless. Uses the new 
+class Win32::GUI::BorderlessWindow (in the Win32::GUI::AdHoc 
+PPM).</P>
+<P>Open file by drag-n-drop on The GUI Loft window. You will 
+need to a) run the binary; or b) rebuild your Win32::GUI 
+module for this to work. Option a) is obviously easier.</P>
+<P>Open file by command line parameter.</P>
+<P>
+<H2><A NAME="010913">010913</A></H2>
+<P>New property for the Textfield and RichEdit controls: 
+WantReturn</P>
+<P>
+<H2><A NAME="010908">010908</A></H2>
+<P>New property Design-&gt;<CODE>rhClusterWingc()</CODE></P>
+<P>
+<H2><A NAME="010905">010905</A></H2>
+<P>Added a FAQ</P>
+<P>More pictures to the User Manual</P>
+<P>New (backwards compatible) .gld format. Data::Dumper -&gt; 
+Storable.</P>
+<P>
+<H2><A NAME="010828">010828</A></H2>
+<P>Right-click Popup menu to select controls</P>
+<P>
+<H2><A NAME="010826">010826</A></H2>
+<P>Menu: Align commands</P>
+<P>Right-click Popup menu</P>
+<P>
+<H2><A NAME="010824">010824</A></H2>
+<P>Menu: Select all, Select window,</P>
+<P>Menu: Bring up, Bring down, Bring to top, Bring to bottom</P>
+<P>
+<H2><A NAME="010823">010823</A></H2>
+<P>New Control: Graphic</P>
+<P>New Control: Toolbar</P>
+<P>New options to the Window control: Maximizebox, Minimizebox, 
+Helpbox, Menubox, Controlparent, Resizable</P>
+<P>
+<H2><A NAME="010819">010819</A></H2>
+<P>Bug fixed: Esc in the Properties window closes the current 
+Design.</P>
+<P>StatusBar control: Restricted the Height property to 18 
+pixels (like it renders).</P>
+<P>Menu item: Copy Resizer code to Clipboard</P>
+<P>Manipulate controls: SHIFT snaps to horizontal/vertical 
+movement</P>
+<P>Demo program: FileDisplay</P>
+<P>
+<H2><A NAME="010810">010810</A></H2>
+<P>New control: StatusBar</P>
+<P>New control: ProgressBar</P>
+<P>Developer's Reference (in resource/dev.pod)</P>
+<P>
+<H2><A NAME="010716">010716</A></H2>
+<P>FetchURL Demo program</P>
+<P>Code SYNOPSIS</P>
+<P>
+<H2><A NAME="010629">010629</A></H2>
+<P>Basic resizer feature + docs</P>
+<P>Resizer - modifier</P>
+<P>
+<H2><A NAME="010625">010625</A></H2>
+<P>Win32::GUI Help files included (for easy reference)</P>
+<P>Win32::GUI control sensitive help files for the 
+selected control (for even easier reference)</P>
+<P>Link to the Windows SDK docs on MS site</P>
+<P>Programmer's reference update. Still not finished though</P>
+<P>``Edit | Copy name'' copies the names of selected controls to the Clipboard</P>
+<P>Visible grid</P>
+<P>Grid/snap settings</P>
+<P>Remove dependency on Data::Denter (really!)</P>
+<P>Changes file</P>
+<P>
+<H2><A NAME="010623">010623</A></H2>
+<P>PPMs - AdHoc, Loft</P>
+<P>
+<H2><A NAME="010621">010621</A></H2>
+<P>Refactor Win32::Clipboard code - move to app</P>
+<P>Remove dependency on Data::Denter</P>
+<P>
+<H2><A NAME="way back">WAY BACK</A></H2>
+<P>Lotsa stuff</P>
+<P>
+<HR>
+<H1><A NAME="copyright">COPYRIGHT</A></H1>
+<P>The GUI Loft is Copyright (c) Johan Lindström, 
+<A HREF="mailto:johanl@bahnhof.se">johanl@bahnhof.se</A></P>
+<P>The Perl Artistic license applies.</P>
+
+</BODY>
+
+</HTML>

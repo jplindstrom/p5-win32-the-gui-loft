@@ -1,0 +1,12 @@
+Changes
+Makefile.PL
+MANIFEST
+test.pl
+lib/Win32/GUI/AdHoc.pm
+lib/Win32/GUI/Resizer.pm
+lib/Win32/GUI/Modalizer.pm
+lib/Win32/GUI/TabStripGroup.pm
+lib/Win32/GUI/DragDrop.pm
+lib/Win32/GUI/ToolbarWindow.pm
+lib/Win32/GUI/BorderlessWindow.pm
+lib/Win32/GUI/Window/PosAsString.pm

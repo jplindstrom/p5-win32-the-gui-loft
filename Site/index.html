@@ -1,0 +1,120 @@
+<html>
+<head>
+<title>The GUI Loft -- a Win32::GUI designer/builder for Windows User Interface creation in Perl</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+h1 {  font-family: Georgia, "Times New Roman", Times, serif; font-size: 18pt}
+h2 {  font-family: Georgia, "Times New Roman", Times, serif; font-size: 12pt}
+p {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt}
+li {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt}
+.code {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #000000; background-color: #CCCCCC}
+.small {  font-size: 9px}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#333333" link="#0000CC" vlink="#666666">
+<h1>The GUI Loft</h1>
+<p>The GUI Loft is a powerful and easy-to-use WYSIWYG design tool (written in 
+  Perl) for designing Perl Win32::GUI Windows. </p>
+<table width="100%" border="0">
+  <tr valign="top"> 
+    <td width="50%"> 
+      <h2>Download</h2>
+      <p>The current release date is: 2002-04-06</p>
+      <ul>
+        <li><a href="Loft_source.zip">Loft_source.zip</a> [~1000K] contains the 
+          entire source tree. <i>The Perl Artistic License applies.</i><br>
+          &nbsp; </li>
+        <li><a href="Loft_binary.zip">Loft_binary.zip</a> [~2300K] is the end-user 
+          distribution, a freestanding GUI PerlApp application. <br>
+          <span class="small"><br>
+          You don't need any particular modules installed to run the designer. 
+          PPM modules are included to run the Demo program</span></li>
+      </ul>
+</td>
+    <td width="50%"> 
+      <h2>Documentation</h2>
+      <ul>
+        <li><a href="manual.html">User Manual</a><br>
+          &nbsp; </li>
+        <li><a href="reference.html">Programmer's Reference</a> (a little sketchy)<br>
+          &nbsp; </li>
+        <li><a href="faq.html">FAQ</a><br>
+          &nbsp; </li>
+        <li><a href="changes.html">Release Changes</a></li>
+      </ul>
+</td>
+  </tr>
+</table>
+<h2>Support Mailing List</h2>
+<form method=GET action="http://groups.yahoo.com/subscribe/theguiloft">
+  <p>There is a (low volume) support mailing list available (recommended). Topics 
+    include: announcements, bug reports, usage questions, feature requests, and 
+    basically anything else related to using The GUI Loft. Besides being useful 
+    to you, I need the feedback :)</p>
+  <ul>
+    <li> Archives: <a href="http://groups.yahoo.com/group/theguiloft">http://groups.yahoo.com/group/theguiloft</a><br>
+      &nbsp; </li>
+    <li>Subscribe: 
+      <input type=text name="user" value="your email address" size=20>
+      <input type="submit" name="Submit" value="Submit">
+      <br>
+      (it's easy to unsubscribe)<br>
+      &nbsp; </li>
+  </ul>
+</form>
+<h2>Sample code</h2>
+<p class="code"><br>
+  <b>#Create a window designed in The GUI Loft</b><br>
+  my $fileWindow = &quot;dialogs\\password.gld&quot;;<br>
+  my $objDesign = Win32::GUI::Loft::Design-&gt;newLoad($fileWindow) or die(&quot;Could 
+  not open window file ($fileWindow)&quot;); <br>
+  <br>
+  my $winPassword = $objDesign-&gt;buildWindow() or die(&quot;Could not build 
+  window ($fileWindow)&quot;);<br>
+  <br>
+  <i>#From now on you can use $winPassword (a Win32::GUI::Window object)<br>
+  #just as if you had created the Window with Win32::GUI code<br>
+  <br>
+  </i><font color="#000000"><a href="Password.txt">Complete Demo program code</a></font> 
+  (also included in both distributions)<br>
+  &nbsp; </p>
+<h2>Screen Shot</h2>
+<h2><img src="pic/overview.gif" width="712" height="342" alt="The GUI Loft Screen Shot"></h2>
+<h2><br>
+  Other Perl Win32 Applications</h2>
+<ul>
+  <li><b>Perl Oasis</b><br>
+    <br>
+    Perl Oasis is a code navigator; a POD/source/class browser tightly integrated 
+    with (currently) UltraEdit. It makes it easy to navigate source code, POD, 
+    modules and your files. It is a Win32::GUI application. <br>
+    <br>
+    <a href="http://www.bahnhof.se/%7Ejohanl/perl/Oasis/">http://www.bahnhof.se/~johanl/perl/Oasis/</a></li>
+</ul>
+<p><i><br>
+  <br>
+  /Johan Lindstr&ouml;m, <a href="mailto:johanl@bahnhof.se%20">johanl@bahnhof.se 
+  </a></i></p>
+
+<a target="_top" href="http://t.extreme-dm.com/?login=jplindst">
+<img name=im src="http://t1.extreme-dm.com/i.gif" height=1
+border=0 width=1 alt=""></a><script language="javascript"><!--
+an=navigator.appName;d=document;function
+pr(){d.write("<img src=\"http://t0.extreme-dm.com",
+"/0.gif?tag=jplindst&j=y&srw="+srw+"&srb="+srb+"&",
+"rs="+r+"&l="+escape(d.referrer)+"\" height=1 ",
+"width=1>");}srb="na";srw="na";//-->
+</script><script language="javascript1.2"><!--
+s=screen;srw=s.width;an!="Netscape"?
+srb=s.colorDepth:srb=s.pixelDepth;//-->
+</script><script language="javascript"><!--
+r=41;d.images?r=d.im.width:z=0;pr();//-->
+</script><noscript><img height=1 width=1 alt="" 
+src="http://t0.extreme-dm.com/0.gif?tag=jplindst&j=n"></noscript>
+
+<br>
+</body>
+</html>

@@ -1,0 +1,1013 @@
+<HTML>
+<HEAD>
+<TITLE>Manual -- How to use The GUI Loft.</TITLE>
+<LINK REV="made" HREF="mailto:">
+</HEAD>
+
+<BODY>
+
+<A NAME="__index__"></A>
+<!-- INDEX BEGIN -->
+
+<UL>
+
+	<LI><A HREF="#name">NAME</A></LI>
+	<LI><A HREF="#version">VERSION</A></LI>
+	<LI><A HREF="#introduction">INTRODUCTION</A></LI>
+	<UL>
+
+		<LI><A HREF="#what is it">What is it?</A></LI>
+		<LI><A HREF="#getting started">Getting Started</A></LI>
+		<LI><A HREF="#the support mailing list">The Support Mailing List</A></LI>
+		<LI><A HREF="#general concepts">General Concepts</A></LI>
+		<LI><A HREF="#the birth of the gui loft">The Birth of The GUI Loft</A></LI>
+	</UL>
+
+	<LI><A HREF="#windows and pallettes">WINDOWS AND PALLETTES</A></LI>
+	<UL>
+
+		<LI><A HREF="#the main window">The Main Window</A></LI>
+		<LI><A HREF="#the design window">The Design Window</A></LI>
+		<LI><A HREF="#the tools pallette">The Tools Pallette</A></LI>
+		<LI><A HREF="#the properties window">The Properties Window</A></LI>
+	</UL>
+
+	<LI><A HREF="#manipulating controls">MANIPULATING CONTROLS</A></LI>
+	<UL>
+
+		<LI><A HREF="#adding controls">Adding Controls</A></LI>
+		<LI><A HREF="#selecting controls">Selecting Controls</A></LI>
+		<LI><A HREF="#moving and resizing">Moving and Resizing</A></LI>
+		<LI><A HREF="#aligning controls">Aligning Controls</A></LI>
+		<LI><A HREF="#grid & snap settings">Grid &amp; Snap Settings</A></LI>
+		<LI><A HREF="#property shortcuts">Property Shortcuts</A></LI>
+		<LI><A HREF="#hidden and disabled controls">Hidden and Disabled Controls</A></LI>
+		<LI><A HREF="#tab order">Tab Order</A></LI>
+	</UL>
+
+	<LI><A HREF="#clusters">CLUSTERS</A></LI>
+	<UL>
+
+		<LI><A HREF="#working with clusters">Working with clusters</A></LI>
+		<LI><A HREF="#memorize">Memorize</A></LI>
+		<LI><A HREF="#clusters and the visible property">Clusters and the Visible property</A></LI>
+	</UL>
+
+	<LI><A HREF="#controls">CONTROLS</A></LI>
+	<UL>
+
+		<LI><A HREF="#window">Window</A></LI>
+		<LI><A HREF="#menu">Menu</A></LI>
+		<LI><A HREF="#imagelist">ImageList</A></LI>
+		<LI><A HREF="#button">Button</A></LI>
+		<LI><A HREF="#label">Label</A></LI>
+		<LI><A HREF="#textfield">Textfield</A></LI>
+		<LI><A HREF="#radio button">Radio button</A></LI>
+		<LI><A HREF="#listbox">Listbox</A></LI>
+		<LI><A HREF="#combobox">Combobox</A></LI>
+		<LI><A HREF="#treeview">TreeView</A></LI>
+		<LI><A HREF="#listview">ListView</A></LI>
+		<LI><A HREF="#toolbar">Toolbar</A></LI>
+		<LI><A HREF="#statusbar">StatusBar</A></LI>
+		<LI><A HREF="#progressbar">ProgressBar</A></LI>
+		<LI><A HREF="#tabstrip">TabStrip</A></LI>
+		<LI><A HREF="#timer">Timer</A></LI>
+	</UL>
+
+	<LI><A HREF="#color management">COLOR MANAGEMENT</A></LI>
+	<UL>
+
+		<LI><A HREF="#color management done right">Color Management Done Right</A></LI>
+	</UL>
+
+	<LI><A HREF="#resize management">RESIZE MANAGEMENT</A></LI>
+	<UL>
+
+		<LI><A HREF="#resize properties">Resize properties</A></LI>
+		<LI><A HREF="#thinking about resizing">Thinking about resizing</A></LI>
+		<LI><A HREF="#the resizemod property">The Resize?Mod property</A></LI>
+	</UL>
+
+	<LI><A HREF="#tips & tricks">TIPS &amp; TRICKS</A></LI>
+	<UL>
+
+		<LI><A HREF="#perl code from the design">Perl Code From the Design</A></LI>
+		<LI><A HREF="#control names are global">Control Names are Global</A></LI>
+		<LI><A HREF="#radio button groups">Radio Button Groups</A></LI>
+		<LI><A HREF="#name your controls right">Name your controls right</A></LI>
+	</UL>
+
+	<LI><A HREF="#on design">ON DESIGN</A></LI>
+	<UL>
+
+		<LI><A HREF="#make it look nice">Make it Look Nice</A></LI>
+		<LI><A HREF="#be consistent">Be Consistent</A></LI>
+		<LI><A HREF="#align things">Align Things</A></LI>
+		<LI><A HREF="#think outside the box">Think Outside the Box</A></LI>
+		<LI><A HREF="#let someone else do it">Let Someone Else Do It</A></LI>
+		<LI><A HREF="#further reading">Further Reading</A></LI>
+		<LI><A HREF="#further surfing">Further Surfing</A></LI>
+	</UL>
+
+	<LI><A HREF="#images and icons">IMAGES AND ICONS</A></LI>
+	<UL>
+
+		<LI><A HREF="#icon editors">Icon Editors</A></LI>
+		<LI><A HREF="#finding icons and bitmaps">Finding Icons and Bitmaps</A></LI>
+	</UL>
+
+	<LI><A HREF="#if you need anything">IF YOU NEED ANYTHING</A></LI>
+	<LI><A HREF="#known bugs">KNOWN BUGS</A></LI>
+	<LI><A HREF="#copyright">COPYRIGHT</A></LI>
+</UL>
+<!-- INDEX END -->
+
+<HR>
+<P>
+<H1><A NAME="name">NAME</A></H1>
+<P>GUI Loft User Manual -- How to use The GUI Loft.</P>
+<P>
+<HR>
+<H1><A NAME="version">VERSION</A></H1>
+<P>Release date: See the Changes file</P>
+<P>This is currently beta software, mostly when it comes to 
+some (unimplemented) parts the UI. Code quality and 
+stability should be good though. Please let me know of any 
+bugs or user interface quirks you find. 
+<A HREF="mailto:mailto:johanl@bahnhof.se">mailto:johanl@bahnhof.se</A></P>
+<P>
+<HR>
+<H1><A NAME="introduction">INTRODUCTION</A></H1>
+<P>
+<H2><A NAME="what is it">What is it?</A></H2>
+<img src="pic/windowdesign.gif" width="224" height="102" align="right"><P>The GUI Loft is a powerful and easy-to-use WYSIWYG editor
+(written in Perl) for designing Perl Win32::GUI windows. It
+is also a set of classes used to create the window for you
+at runtime.</P>
+<P>You design your GUI in The GUI Loft and bring it to life
+with a few lines of code, with the option of taking part in
+the build process.</P>
+<P>There is a User Manual, a Programmer's Reference, Demo code,
+and a support mailing list.</P>
+<P>
+<H2><A NAME="getting started">Getting Started</A></H2>
+<UL>
+<LI>
+Download the binary distribution (or the source, but the
+binary is probably easier) and run the program. Play around.
+<P></P>
+<LI>
+Read this User Manual, it contains actual useful information
+that you might never discover otherwise. It is also a good
+introduction to the various controls available.
+<P></P>
+<LI>
+Install the modules in the PPM directory and try the Demo
+programs.
+<P></P>
+<LI>
+Read the Programmer's Reference and start using The GUI Loft
+windows in your own programs.
+<P></P>
+<LI>
+Subscribe to the support mailing list so you get notified of 
+updates and improvements.
+<P></P></UL>
+<P>
+<H2><A NAME="the support mailing list">The Support Mailing List</A></H2>
+<P>There is a low volume support mailing list at</P>
+<P><A HREF="http://www.bahnhof.se/~johanl/perl/Loft/">http://www.bahnhof.se/~johanl/perl/Loft/</A></P>
+<P>Topics include: announcements, bug reports, usage questions,
+feature requests, and basically anything else related to
+using The GUI Loft. Subscribing is recommended. And don't be
+shy :)</P>
+<P>Archives: <A HREF="http://groups.yahoo.com/group/theguiloft">http://groups.yahoo.com/group/theguiloft</A></P>
+<form method=GET action="http://groups.yahoo.com/subscribe/theguiloft"> <input type=text name="user" value="your email address" size=20> <input type="submit" name="Submit" value="Subscribe"> <br> (it's easy to unsubscribe) </form><P>
+<H2><A NAME="general concepts">General Concepts</A></H2>
+<P>This is how The GUI Loft is supposed to work:</P>
+<P>You design your window or dialog box in The GUI Loft. You
+provide external resources--bitmap images for use on Buttons
+and other controls. You perform a final touch-up of Tab-
+order and control names to make everything perfect.</P>
+<P>Then you have the Win32::GUI::Loft::Design class dynamically
+create the window for you at runtime. Refer to the
+Programmer's Reference for details.</P>
+<P>(Advanced: If you need to tweak the options of any controls or add
+currently unsupported controls of your own, you can do that
+by supplying a subclassed ControlInspector object to the
+build process.)</P>
+<P>Then you add more UI stuff (mostly dynamic behaviour) with
+regular Win32::GUI code, and then you are done with the UI
+so you can concentrate on the application logic.</P>
+<P>
+<H2><A NAME="the birth of the gui loft">The Birth of The GUI Loft</A></H2>
+<P>Visual Basic is cool!</P>
+<P>I remember thinking that the first time I saw it. That was
+when VB was still version 1.0, just a kid. So was I actually
+:)</P>
+<P>At this time VB was in fact really, really pathetic in
+almost all regards except one--despite it's shortcomings, it
+was by far the easiest way of creating Windows applications
+with actual windows, icons and buttons and stuff. So it
+rocked.</P>
+<P>Win32::GUI is cool!</P>
+<P>I remember thinking <STRONG>that</STRONG> the first time I saw it. Cool,
+because now I can use my favourite lingo (yeah, that would
+be Perl :) and create native Windows applications.
+Tremendous amounts of cred to Aldo Calpini for creating
+the module. Loads.</P>
+<P>My second thought was, ``Is there a design tool?''. I think
+most people using Win32::GUI have asked themselves that
+question, because GUI design is a visual art, a design
+problem that requires good and mature tools as much as code
+problems do.</P>
+<P>Ok, so I didn't find one, and immediately begun thinking
+about writing my own. Hey, that's me :) But it seemed really
+complicated, and I ended up thinking that I should build on
+other people's work instead. The idea being that the design
+program is the difficult thing, so let's leave that to
+someone else. How about just using a third party designer
+program and convert the saved file to Perl code?</P>
+<P>It's a nice idea, but there are drawbacks.</P>
+<P>There are a lot of bad editors out there, parts of macro
+editors and stuff. There must be great editors out there
+too, but I really didn't find any (to my surprise),
+especially not any that were shareware or free in a useful
+way. Maybe I didn't look enough diligently.</P>
+<P>Visual Basic would do, but that's a hefty thing to buy (or
+``acquire'' :) just to get the designer capability. After all,
+if I write a program I would like many people to use it.</P>
+<P>So I ended up not doing that. And by this time I had found
+the Win32::GUI mailing list archives, and actually found a
+design tool: GUI Builder, written by David Hiltz.</P>
+<P>With GUI builder you can draw a design and have it come out
+as Perl code. Tweak it a little (e.g. by declaring the
+variables created), and you have a working piece of code
+for creating a window or dialog box.</P>
+<P>While GUI Builder gets the job done, it didn't really work
+as smoothly as I'd like, and the code didn't inspire any
+adventures of my own. I guess writing a large program
+without strict or warnings is an impressive feat in itself.
+But I'm forever grateful to David for proving that it can be
+done, using low level graphics routines to draw the controls
+in design mode. And as I understand, Aldo was very
+responsive when it came to providing the neccessary
+Win32::GUI support.</P>
+<P>So that's the situation where I started writing The Perl
+GUI Loft.</P>
+<P>A <STRONG>lot</STRONG> of time, studying, and adventures in WINUSER.H
+later, here we are :)</P>
+<P>
+<HR>
+<H1><A NAME="windows and pallettes">WINDOWS AND PALLETTES</A></H1>
+<P>
+<H2><A NAME="the main window">The Main Window</A></H2>
+<img src="pic/windowmain.gif" width="201" height="403" align="right"><P>The Main window contains a list of all controls. It's main
+purpose is to display a complete list of controls (including
+intangible controls, such as Timers), select controls that are obscured, and
+let you rearrange the control order.</P>
+<P>You can also group controls into Clusters (see below).</P>
+<P>
+<H2><A NAME="the design window">The Design Window</A></H2>
+<img src="pic/windowdesignselecting.gif" width="224" height="102"><P>The Design window allows you to manipulate the window and
+it's controls visually.</P>
+<P>Select, move and resize controls with the mouse. Or use the
+keyboard to fine tune size and position.</P>
+<P>
+<H2><A NAME="the tools pallette">The Tools Pallette</A></H2>
+<P>The Tools pallette contains all the currently available
+controls. Click to insert a new control in the middle of the
+Design window.</P>
+<P>Currently supported controls are:</P>
+<img src="pic/windowtool.gif" width="45" height="249" align="right"><UL>
+<LI>
+Window/DialogBox/ToolbarWindow
+<P></P>
+<LI>
+Button
+<P></P>
+<LI>
+Label
+<P></P>
+<LI>
+TextField
+<P></P>
+<LI>
+RadioButton
+<P></P>
+<LI>
+CheckBox
+<P></P>
+<LI>
+GroupBox
+<P></P>
+<LI>
+Listbox
+<P></P>
+<LI>
+RichEdit
+<P></P>
+<LI>
+ListView
+<P></P>
+<LI>
+ComboBox
+<P></P>
+<LI>
+TreeView
+<P></P>
+<LI>
+TabStrip
+<P></P>
+<LI>
+Timer
+<P></P>
+<LI>
+ImageList
+<P></P></UL>
+<P>
+<H2><A NAME="the properties window">The Properties Window</A></H2>
+<img src="pic/windowproperties.gif" width="209" height="366" align="right"><P>The Properties window contains the properties of the
+currently selected controls.</P>
+<P>Only properties shared by all selected controls are
+displayed, and only identical property values are displayed
+with their values (the rest say ``- ? -'' to indicate that
+they differ).</P>
+<P>If you change a property value it will affect all selected
+controls, a general principle that holds most of the time.
+If you do something, you do it to what you selected.</P>
+<P>When you select a property, you get the opportunity to edit
+it's value at the top of the screen (I tried to implement
+edit-in-place but failed due to spotty support in
+Win32::GUI).</P>
+<P><STRONG>Note</STRONG>: You need to press &lt;Return&gt; to confirm any changes
+you type.</P>
+<br clear="all">&nbsp;<P>
+<HR>
+<H1><A NAME="manipulating controls">MANIPULATING CONTROLS</A></H1>
+<P>
+<H2><A NAME="adding controls">Adding Controls</A></H2>
+<img src="pic/windowtool.gif" width="45" height="249" align="right"><P>Add controls to the window by clicking the corresponding
+button in the Tools pallette.</P>
+<P><STRONG>Note</STRONG>: Immediately after the control is added, it is a
+good idea to give the control a good (as in ``descriptive'')
+name and to change the Text property. Use the property
+shortcuts ``n'' and ``t'' to do this.</P>
+<P>Read the ``Control Names are Global'' section for a few
+survival tips regarding names.</P>
+<P>
+<H2><A NAME="selecting controls">Selecting Controls</A></H2>
+<P>Combine the following rules and you have a flexible way to
+select just the contols you want.</P>
+<UL>
+<LI>
+Click a control to select (or deselect) it.
+<P></P>
+<LI>
+Pressing the Ctrl key means ``keep current selection''.
+<P></P>
+<LI>
+Click-n-drag over controls (start outside all controls) to
+select them.
+<P></P>
+<LI>
+Pressing the Shift key means ``deselect'' when you perform a
+click-n-drag operation.
+<P></P>
+<LI>
+Right-click on a control to bring up a popup menu where you 
+can select/deselect the controls located below the mouse 
+pointer.
+<P></P></UL>
+<P>
+<H2><A NAME="moving and resizing">Moving and Resizing</A></H2>
+<UL>
+<LI><STRONG><A NAME="item_The_Mouse">The Mouse</A></STRONG><BR>
+
+Click-n-drag a control to move all selected controls.
+<P>Click-n-drag the corner dots to resize all selected controls.</P>
+<P>Press Shift when you start dragging to restrict
+movement/resize to either vertical or horizontal.</P>
+<P></P>
+<LI><STRONG><A NAME="item_The_Keyboard">The Keyboard</A></STRONG><BR>
+
+Use the arrow keys to <STRONG>move</STRONG> all selected controls.
+Press Ctrl to move faster. Press Shift to <STRONG>resize</STRONG> instead of
+moving.
+<P>Press the Del key to delete all selected controls.</P>
+<P></P></UL>
+<P>
+<H2><A NAME="aligning controls">Aligning Controls</A></H2>
+<P>Align controls with the menu options under Edit | Align, or 
+right-click in the Design window to align the selected 
+controls.</P>
+<P>Use liberally :)</P>
+<img src="pic/rightclick.gif" width="272" height="282" align="center"><P>
+<H2><A NAME="grid & snap settings">Grid &amp; Snap Settings</A></H2>
+<img src="pic/gridsettings.gif" width="201" height="167" align="right"><P>There is a supporting Grid available in the Design window.</P>
+<P>The preselected resolution is 4 by 4 pixels with Snap turned
+on. Any movements and size changes will snap to the Grid. If
+you want you can make the Grid visible as well (althoug the
+current implementation is kind of slow).</P>
+<P>The Grid settings are stored along with your window.</P>
+<P>
+<H2><A NAME="property shortcuts">Property Shortcuts</A></H2>
+<P>You edit the properties of the currently selected controls
+in the Properties window.</P>
+<P>The fastest and easiest way is to
+click the property and then press Tab to bring the focus to
+e.g. the textfield where you can change the value.</P>
+<P>Actually, for some properties there is an even faster way
+when you are using the Design window.</P>
+<UL>
+<LI>
+Press ``n'' to immediately edit the name portion of the Name
+property.
+<P></P>
+<LI>
+Press ``t'' to immediately edit the Text property.
+<P></P>
+<LI>
+Press ``b'' to immediately edit the Bitmap property.
+<P></P></UL>
+<P>
+<H2><A NAME="hidden and disabled controls">Hidden and Disabled Controls</A></H2>
+<img src="pic/windowexport.gif" width="350" height="195" align="right"><P>Hidden controls are still visible, but the text is white to
+indicate ``invisibility''.</P>
+<P>Disabled controls look mostly like they actually do on the
+resulting dialog. Text is gray to indicate that the control
+is disabled. If the control contains an image, a black cross
+is displayed on top of the control.</P>
+<P>
+<H2><A NAME="tab order">Tab Order</A></H2>
+<P>The tab order is the order in which the controls are added
+to the window. That's also the order in which the controls
+will gain focus when the user presses the Tab button.</P>
+<P>Use the up and down buttons in the main window to change tab
+order position of the selected controls.</P>
+<img src="pic/windowmaintaborder.gif" width="201" height="160"><P>Most controls should have the Tabstop property set. The
+default setting works fine for most controls, but you may
+have to change it for certain RadioButton controls or if you
+have other needs.</P>
+<P>
+<HR>
+<H1><A NAME="clusters">CLUSTERS</A></H1>
+<img src="pic/windowmaincluster.gif" width="201" height="206" align="right"><P>Controls can be grouped into clusters. There are two major
+benefits of using clusters.</P>
+<P>The first is that you can easily hide some controls
+temporarily so you can concentrate on other things. This is
+very handy e.g. in the case of TabStrips, when many controls
+occupy the same space.</P>
+<P>The second (and this is cool) is that you can associate each
+Tab in the TabStrip with a Cluster and then have The GUI
+Loft manage the Tabs for you at runtime. Refer to the
+section about the TabStrip control for information on how to
+do this.</P>
+<P>
+<H2><A NAME="working with clusters">Working with clusters</A></H2>
+<P>Let's say you have a TabStrip with a few controls in the
+first Tab. To avoid clutter, select the controls and create
+a new cluster. Then hide it by double clicking on the eye
+icon. Now is also a good time to rename the cluster to
+sometning descriptive.</P>
+<br clear="all"><img src="pic/windowmainclustercontrols.gif" width="202" height="168" align="right"><P>The hidden controls can't be seen or manipulated in the
+Design window while hidden, so you can concentrate on laying
+out the controls in the second Tab. Select those controls as
+well, and create a new cluster. Now you can easily keep
+track of which controls belong to which Tab in the TabStrip.</P>
+<P>Double click on the cluster eye icon to hide/show it. When
+you show the cluster, all controls in the cluster will
+become selected.</P>
+<P>
+<H2><A NAME="memorize">Memorize</A></H2>
+<P>You can redefine which controls belong to a cluster by
+selecting all appropriate controls and then click on the
+``Memorize'' button.</P>
+<P><STRONG>Trick</STRONG>: Start by double clicking the cluster two times to
+make the controls selected, then add or remove more controls
+by Ctrl-clicking them. When you're done, click ``Memorize''.</P>
+<P>
+<H2><A NAME="clusters and the visible property">Clusters and the Visible property</A></H2>
+<P>Controls of hidden clusters are not visible when windows get
+built, regardless of the Visible property.</P>
+<P>
+<HR>
+<H1><A NAME="controls">CONTROLS</A></H1>
+<P>Most controls are pretty straightforward, but some things
+you might need to know are non-obvious.</P>
+<P>Not all controls are 100% WYSIWYG when you combine weird
+flags. When that becomes a problem, preview often.</P>
+<P>
+<H2><A NAME="window">Window</A></H2>
+<P>Windows can be a Win32::GUI::Window, Win32::GUI::DialogBox,
+or Win32::GUI::ToolbarWindow (a Window with style
+WS_EX_TOOLWINDOW).</P>
+<P>Windows of type Window and DialogBox seem to have a minimum
+size which you can't affect by resizing them. I don't know
+if that's a Win32 thing or a Win32::GUI thing.</P>
+<P>The ToolbarWindow can be any size, but you still can't
+resize the design window. However, you can change the Width
+property in the Properties window and get a smaller
+ToolbarWindow. Preview to see the actual size.</P>
+<P>Property: Controlparent -- Allow the user to navigate among
+the child windows of the window by using the TAB key.</P>
+<P>
+<H2><A NAME="menu">Menu</A></H2>
+<P>There is no menu control in The GUI Loft beacuse I really
+don't see the need; a menu definition is by it's very nature
+a very text oriented thing and as such is more suited for
+code.</P>
+<P>So there is no menu control. However, there is support for
+previewing a window with a menu attached using the
+PreviewMenu property of a Window.</P>
+<P>Each comma separated item in PreviewMenu will be displayed
+as a menu bar item when you preview the window. No drop-down
+menu, just the actual menu bar.</P>
+<P>As an example, the PreviewMenu of The GUI Loft's own main
+window looks like this:</P>
+<PRE>
+        &amp;File, &amp;Edit, &amp;Design, &amp;Help</PRE>
+<P>When you eventually create your Window you'll have to
+provide a complete menu object of course.</P>
+<P>
+<H2><A NAME="imagelist">ImageList</A></H2>
+<P>ImageLists are intangible--they aren't visible in the Design
+window. You can still select them in the Control list in the
+Main window.</P>
+<P>The Flags property is probably best left untouched, I'm not
+too sure exactly what it does (I have read the docs, I just
+don't know what it <STRONG>means</STRONG> in practical terms :)  Anyone?)</P>
+<P>The Grow property indicates the maximum number of images in
+the ImageList, in case you would like to add more images to
+it later.</P>
+<P>The Images property is a comma separated string with file
+names that contains bitmap files (.bmp). If a bitmap fails
+to load, it will <STRONG>not</STRONG> be inserted into the ImageList (and
+the index will be screwed up).</P>
+<P><STRONG>Note</STRONG>: It is a good idea to put ImageLists near the top of
+the Tab order to make them easy to find in the Tab order
+list; that's the only place where they are visible.</P>
+<P>During build, ImageLists are always created before regular
+controls since they have to exist when other controls
+reference them.</P>
+<P>
+<H2><A NAME="button">Button</A></H2>
+<P>You can specify bitmaps. If you do that, it is a <STRONG>very</STRONG>
+good idea to save your window first, so all relative paths
+get resolved correctly.</P>
+<P><STRONG>Shortcut</STRONG>: Press ``b'' to edit the Bitmap property.</P>
+<P><STRONG>Trick</STRONG>: There is a non-obvious shortcut for selecting a
+.bmp file. If you enter a single space, the Open dialog will
+pop up.</P>
+<img src="pic/controllabel.gif" width="147" height="92" align="right"><P>
+<H2><A NAME="label">Label</A></H2>
+<P>Use a label to display images. The Bitmap shortcut &amp; trick
+work here too.</P>
+<P>Use a label to display a horizontal bar. Set the Frame
+property to ``etched''.</P>
+<P>
+<H2><A NAME="textfield">Textfield</A></H2>
+<img src="pic/controltextfield.gif" width="191" height="116" align="right"><P>The GUI Loft supports a few features not available using vanilla
+Win32::GUI, like Uppercase, Lowercase, OEMConvert, and
+Number.</P>
+<P>
+<H2><A NAME="radio button">Radio button</A></H2>
+<P>Set Groupstart: 1 and Tabstop: 1 for the first Radio Button 
+in each group. All other Radio Button controls should have 
+these properties set to 0.</P>
+<P>The only available alignment is left/right.</P>
+<P>
+<H2><A NAME="listbox">Listbox</A></H2>
+<P>Listboxes snap their height to the nearest visible line. I
+still haven't got that snap algorithm perfect, but it
+works--kind of. Preview often.</P>
+<P>There is preview support using the PreviewList property.
+Each semicolon separated item in PreviewList will be
+displayed as a line in the ListBox.</P>
+<P>
+<H2><A NAME="combobox">Combobox</A></H2>
+<P>If the Combobox has a drop-down style menu, the height of
+the Combobox decides the height of that menu when dropped
+down.</P>
+<img src="pic/controlcombobox.gif" width="474" height="137"><P>AutoHScroll -- Automatically scrolls the text in an edit
+control to the right when the user types a character at the
+end of the line. If this style is not set, only text that
+fits within the rectangular boundary is allowed.</P>
+<P>DisableNoScroll -- Shows a disabled vertical scroll bar in
+the list box when the box does not contain enough items to
+scroll. Without this style, the scroll bar is hidden when
+the list box does not contain enough items.</P>
+<P>
+<H2><A NAME="treeview">TreeView</A></H2>
+<P>You can specify the name of an ImageList control to use. If
+the ImageList control doesn't exist, it simply won't be
+used.</P>
+<P>There is preview support using the PreviewTree property.</P>
+<P>Each semicolon separated item in PreviewList is a branch in
+the tree.</P>
+<P>Each comma separated item in the branch is a node. The first
+node in the branch is at the top level, the rest are located
+below.</P>
+<P>After the node text, you can (but don't have to) specify
+which image index in the attached ImageList control to use.</P>
+<P>Example:</P>
+<PRE>
+        Visible:0, Button:1, TreeView:1, Custom:1; Invisible:0, Timer:1, ImageList:1</PRE>
+<PRE>
+        + Visible
+        |       |- Button
+        |       |- TreeView
+        |       |- Custom
+        |
+        + Invisible
+                |- Timer
+                |- ImageList</PRE>
+<P>
+<H2><A NAME="listview">ListView</A></H2>
+<P>The ListView has a <STRONG>lot</STRONG> of properties to set, so the
+control is semi-WYSIWYG. Preview often.</P>
+<UL>
+<LI>
+You can specify the name of an ImageList control to use. If
+the ImageList control doesn't exist, it simply won't be
+used.
+<P></P>
+<LI>
+You can add columns using the Columns property.
+<P>Each semicolon separated item in Columns is a new column</P>
+<P>After the column text, you can specify the columns width.</P>
+<P>Example:</P>
+<PRE>
+        First name:120; Last name:100</PRE>
+<P></P>
+<LI>
+There is preview support using the PreviewList property.
+<P>Each semicolon separated item in PreviewList is line in
+the tree.</P>
+<P>Each comma separated item in the line is a cell text.</P>
+<P>After the line, you can (but don't have to) specify which
+image index in the attached ImageList control to use.</P>
+<P>Example:</P>
+<PRE>
+        Johan, Lindström:1; Peter, Lindström:3</PRE>
+<P></P></UL>
+<P>
+<H2><A NAME="toolbar">Toolbar</A></H2>
+<UL>
+<LI>
+The Toolbar is kind of tricky to display in design mode
+(read: I'm lazy), so the control is semi-WYSIWYG. Preview
+often.
+<P>The toolbar snaps to the top or bottom of the window (the
+Valign property), and always fills the entire window width.</P>
+<P></P>
+<LI>
+You need to define each button with the Buttons property.
+<P>Each semi colon separated item in Buttons is a button in the
+image Bitmap with the size of the properties BitmapWidth x
+BitmapHeight</P>
+<P>Each button item contains four comma separated values: id,
+state, style, string.</P>
+<P><STRONG>id</STRONG>: The identifier for this button as passed to the
+ButtonClick event.</P>
+<P><STRONG>state</STRONG>: The state flag as defined in the Win32 API (Common
+controls). 4 is a normal command button.</P>
+<P><STRONG>style</STRONG>: The style flag as defined in the Win32 API (Common
+controls). 0 is a normal command button. 1 is a separator.</P>
+<P><STRONG>string</STRONG>: Not to sure what this does in Win32::GUI. It
+might be unused (please let me know if you find out).</P>
+<P>Example: 0, 4, 2, 0; 1, 4, 0, 0; 2, 4, 0, 0</P>
+<P></P></UL>
+<P>
+<H2><A NAME="statusbar">StatusBar</A></H2>
+<P>You can place the StatusBar control anywhere in a Window,
+but when displayed it will be placed at the bottom of the
+window. Just like in Win32::GUI.</P>
+<P>
+<H2><A NAME="progressbar">ProgressBar</A></H2>
+<P>The Pos property isn't WYSIWYG, so you'll always see the
+control as if Pos == 0. Preview often.</P>
+<P>
+<H2><A NAME="tabstrip">TabStrip</A></H2>
+<P>The TabStrip has a lot of properties to set, so the control
+is semi-WYSIWYG. For example, there is no WYSIWYG support
+for the Buttons property. Preview often.</P>
+<UL>
+<LI>
+Add tabs using the Tabs property. Each semicolon separated
+item in Tabs is a separate Tab.
+<P></P>
+<LI>
+Associate tabs and clusters using the Clusters property.
+Each semicolon separated item in Clusters should be the name
+of an existing cluster. The first tab in Tabs and the first
+cluster in Clusters are connected, etc.
+<P>When you build the window, The GUI Loft will attach the
+clustered controls to the correct tab and manage the
+TabStrip for you using a Win32::GUI::TabStripGroup object.</P>
+<P>For this to work seamlessly, only the initial (the leftmost
+tab) cluster should be visible when you save your Design.
+The other clusters in the TabStrip should be hidden.</P>
+<P></P>
+<LI>
+The Bottom property doesn't seem to work. On the other hand,
+the Right property seems to do what Bottom doesn't, so use
+that one.
+<P></P></UL>
+<P>
+<H2><A NAME="timer">Timer</A></H2>
+<P>Timers are intangible--they aren't visible in the Design
+window. You can still select them in the Control list in the
+Main window.</P>
+<P>During build, Timers are always created after regular
+controls so they don't start firing off events before
+everything is done (or maybe if they don't start before
+<CODE>Dialog()</CODE> is called, I don't know).</P>
+<P>
+<HR>
+<H1><A NAME="color management">COLOR MANAGEMENT</A></H1>
+<P>The color stuff is highly experimental and possibly not 
+forwards compatible (good idea: don't use it).</P>
+<P>The following controls have a Foreground and Background 
+property:</P>
+<PRE>
+        Label 
+        Textfield 
+        Listbox 
+        Treeview (also has Backcolor and Textcolor properties)</PRE>
+<P>Specify RGB colors by setting the property to a color 
+triplet, e.g. ``255 255 0'', ``127 127 127''.</P>
+<P>There is no WYSIWYG support for colors, so preview often.</P>
+<P>
+<H2><A NAME="color management done right">Color Management Done Right</A></H2>
+<P>When done right, controls change color in the Design window, 
+it is possible to use colors from the user's color scheme, 
+the Window control has color support, and there is a color 
+selection dialog.</P>
+<P>But that's in the future.</P>
+<P>
+<HR>
+<H1><A NAME="resize management">RESIZE MANAGEMENT</A></H1>
+<P>A Win32::GUI::Resizer object is used to manage the window's
+Resize event for you. In most cases, this will absolve you
+from manually coding that boring part of the GUI.</P>
+<P>If you have very special needs you may have to do this
+yourself anyway, either using the Win32::GUI::Resizer class
+or with straight Win32::GUI code.</P>
+<P>
+<H2><A NAME="resize properties">Resize properties</A></H2>
+<UL>
+<LI>
+ResizeH -- When the window width changes, change the
+(left|width) of the control.
+<P></P>
+<LI>
+ResizeHMod -- When the window width causes ResizeH to
+change, modify the change with a piece of code.
+<P></P>
+<LI>
+ResizeV -- When the window height changes, change the
+(top|height) of the control.
+<P></P>
+<LI>
+ResizeVMod -- When the window height causes ResizeV to
+change, modify the change with a piece of code.
+<P></P></UL>
+<P>
+<H2><A NAME="thinking about resizing">Thinking about resizing</A></H2>
+<UL>
+<LI>
+Let's say you have an Ok button in the bottom right corner
+of your window. You want it to stick to the corner when you
+resize the window.
+<P>``When the window Width changes, I want by button's Left to
+match that change. When the window Height grows, I want by
+button's Top to do the same.''</P>
+<P>You set ResizeH to ``left'', and ResizeV to ``top''.</P>
+<img src="pic/resizebutton.gif" width="262" height="93"><P></P>
+<LI>
+Let's say you have a Label and a Textfield at the top of the
+window. The Textfield goes all the way to the right side of
+the window, and it should stay that way when you resize the
+window.
+<P>``When the window Width grows, the Label shouldn't move,
+but the Textfield's Width should''.</P>
+<P>You set ResizeH for the Textfield to ``width''.</P>
+<P></P></UL>
+<P>
+<H2><A NAME="the resizemod property">The Resize?Mod property</A></H2>
+<P>The ResizeHMod and ResizeVMod properties are used to modify
+how much the control should move/resize when the window
+changes size. For example:</P>
+<UL>
+<LI>
+When the window Width increases, the control's Left property
+should decrease instead of increase.
+<P></P>
+<LI>
+When the window Width increases, the control's Left property
+should increase, but only half as much (maybe because there
+are two controls next to each other, and they share the
+window Width).
+<P></P></UL>
+<P>The value of the Resize?Mod property should a valid Perl
+expression, resulting the new value. $_ is set to the
+``original'' value. Examples:</P>
+<DL>
+<DT><STRONG><A NAME="item_Cut_the_resize_change_in_half">Cut the resize change in half</A></STRONG><BR>
+<DD>
+$_ / 2
+<P></P>
+<DT><STRONG><A NAME="item_Negate_the_resize_change">Negate the resize change</A></STRONG><BR>
+<DD>
+0 - $_
+<P></P></DL>
+<P>Invalid Perl code will result in an error when the window is
+being built, and the <CODE>buildWindow()</CODE> method will return undef
+(so check this return value, ok?). In The GUI Loft, the
+<EM>Test window</EM> command will give you an error message.</P>
+<P>
+<HR>
+<H1><A NAME="tips & tricks">TIPS &amp; TRICKS</A></H1>
+<P>
+<H2><A NAME="perl code from the design">Perl Code From the Design</A></H2>
+<P>Use the menu items under Edit | Copy Perl to put useful
+things in the clipboard.</P>
+<UL>
+<LI>
+Control name - The name of the selected control(s).
+<P></P>
+<LI>
+Resizer Code - The resizer code of the Design. If no
+controls have resize settings, this is ``''.
+<P>You can use this to generate as much code as possible and
+then tweak it. Useful for manually coding e.g. a Window with
+a Splitter control.</P>
+<P></P></UL>
+<P>
+<H2><A NAME="control names are global">Control Names are Global</A></H2>
+<P>Because Win32::GUI works the way it does, it is somewhat
+easy to get name clashes. This is important since event
+handlers (e.g. sub btnOk_Click) are always located in
+package main unless you fiddle around in impractical ways;
+controls names are in effect global.</P>
+<P>So it is a good idea to give controls names that are likely
+to be unique. ``btnOk'' isn't really that good, since you are
+likely to have an Ok button in many windows in your
+application.</P>
+<P>
+<H2><A NAME="radio button groups">Radio Button Groups</A></H2>
+<P>Only one Radio Button in a group can be checked at a time.</P>
+<P>You create groups by setting the Groupstart and Tabstop
+property on the first Radio Button in the group. The other
+Radio Buttons in the group should not have these properties
+set.</P>
+<P>
+<H2><A NAME="name your controls right">Name your controls right</A></H2>
+<img src="pic/windowpropertiesname.gif" width="209" height="202" align="right"><P>Don't leave the default names unless you are making a
+throwaway prototype. They'll gang up on you and you'll just
+get confused. Besides, it's lousy craftsmanship to leave
+junk in your code...</P>
+<P>Use the descriptive prefix in the default name, like ``btn''
+for Buttons, ``lbl'' for Labels, and ``chb'' for CheckBoxes.
+It'll help you recognize what kind of type of control it is,
+and you can use the same name for e.g. both the Label and
+Textfield that is used for e.g. Age (``lblAge'' and ``tfAge'').</P>
+<P>The program will help you do this when you use the ``n''
+property shortcut and only highlight the actual name portion
+of the Name property. Use it, I put it there for a reason :)</P>
+<P>
+<HR>
+<H1><A NAME="on design">ON DESIGN</A></H1>
+<P>Not that I'm an expert or anything, but here are a few
+thoughts on GUI design in general.</P>
+<P>
+<H2><A NAME="make it look nice">Make it Look Nice</A></H2>
+<P>It's about design. Visual design. User interface design.</P>
+<P>I have a saying:</P>
+<PRE>
+        The Interface IS the Application</PRE>
+<P>Well, to the user it is. The UI is <STRONG>all</STRONG> there is.</P>
+<P>An ugly user interface reflects badly on your application.
+No matter how elegant, well structured, and easy-to-maintain
+the code is, an ugly and awkward user interface will make your
+program a pain to use.</P>
+<P>So make it exciting, easy to use, well disposed and nice to
+look at. Remember, first impressions last.</P>
+<P>
+<H2><A NAME="be consistent">Be Consistent</A></H2>
+<P>
+<H2><A NAME="align things">Align Things</A></H2>
+<P>
+<H2><A NAME="think outside the box">Think Outside the Box</A></H2>
+<P>Or rather, forget the box. Forget what you see. That's the
+weakness with WYSIWYG--what you see is <STRONG>all</STRONG> you get. But
+it doesn't have to be like that.</P>
+<P>A GUI can be dynamic; you can change the layout in response
+to some user action, move things around, hide or show
+controls, change the size of the window.</P>
+<P>Don't let the design tool limit your ways. Let it make hard
+things easy (the visual layout), so you can implement the
+hard things in code (the dynamic behaviour).</P>
+<P>
+<H2><A NAME="let someone else do it">Let Someone Else Do It</A></H2>
+<P>What if you're not a great GUI designer? What if, instead,
+you're a kick ass programmer?</P>
+<P>Let someone else design the dialog boxes and do what you do
+best and have most fun doing.</P>
+<P>It's a Win32::GUI Win-win <CODE>Solution(tm)</CODE> :)</P>
+<P>
+<H2><A NAME="further reading">Further Reading</A></H2>
+<P>If you only read one book... and so forth. But this is the
+book about user interface design. Although it's about GUIs,
+if you ever, <STRONG>ever</STRONG>, wrote a program with a UI (and I know
+you did), this book is useful because it forces you out of
+geek mode long enough to realize why you wrote the program
+in the first place.</P>
+<PRE>
+        &quot;About Face: The Essentials of User Interface Design&quot;
+        Alan Cooper
+        ISBN: 1568843224
+        <A HREF="http://www.amazon.com/exec/obidos/ASIN/1568843224">http://www.amazon.com/exec/obidos/ASIN/1568843224</A></PRE>
+<P>
+<H2><A NAME="further surfing">Further Surfing</A></H2>
+<UL>
+<LI>
+Interface Hall of Shame - <A HREF="http://www.iarchitect.com/mshame.htm">http://www.iarchitect.com/mshame.htm</A>
+<P>Useful and entertaining examples of how not to do.</P>
+<P></P>
+<LI>
+Interface Hall of Fame - <A HREF="http://www.iarchitect.com/mfame.htm">http://www.iarchitect.com/mfame.htm</A>
+<P>Smaller site from the same people, here with a few good examples.</P>
+<P></P>
+<LI>
+First Principles - <A HREF="http://www.asktog.com/basics/firstPrinciples.html">http://www.asktog.com/basics/firstPrinciples.html</A>
+<P>The basics of user interface design. Very good introduction.</P>
+<P></P>
+<LI>
+A Summary of Principles for User-Interface Design - <A HREF="http://www.sylvantech.com/~talin/projects/ui_design.html">http://www.sylvantech.com/~talin/projects/ui_design.html</A>
+<P></P>
+<LI>
+Justifying Rough Sketches - <A HREF="http://www.asktog.com/columns/005roughsketches.html">http://www.asktog.com/columns/005roughsketches.html</A>
+<P>Why you should involve your end-users in the UI design (too).</P>
+<P></P>
+<LI>
+GUI Builder Tools - <A HREF="http://www.cc.gatech.edu/classes/cs6751_97_winter/Topics/gui-builder/">http://www.cc.gatech.edu/classes/cs6751_97_winter/Topics/gui-builder/</A>
+<P>About GUI designer tools and what's good and bad with using them.</P>
+<P></P></UL>
+<P>
+<HR>
+<H1><A NAME="images and icons">IMAGES AND ICONS</A></H1>
+<P>
+<H2><A NAME="icon editors">Icon Editors</A></H2>
+<P>MicroAngelo is a good icon editor (but there are loads of
+them out there). 30-day trial available at:</P>
+<PRE>
+        <A HREF="http://www.impactsoftware.com/">http://www.impactsoftware.com/</A></PRE>
+<P>I also use Photoshop and ImageReady for .bmp files, but only
+beacause I already know those programs. For icons images,
+it's pretty much overkill, although the color management is
+nice.</P>
+<P>
+<H2><A NAME="finding icons and bitmaps">Finding Icons and Bitmaps</A></H2>
+<P>Icons for all occations:</P>
+<PRE>
+        <A HREF="http://www.eldos.org/icon/icons.html">http://www.eldos.org/icon/icons.html</A></PRE>
+<P>Take some time to browse the collection to get an idea of
+what's there when you need it. Their Thumbnailer program is
+good too (30 day trial).</P>
+<P>
+<HR>
+<H1><A NAME="if you need anything">IF YOU NEED ANYTHING</A></H1>
+<P>If you need support for something, please tell me. I need to
+know what doesn't work and what doesn't work the way you
+want it.</P>
+<P>In particular, I'm interested in the more esotheric controls
+(like e.g. Rebar), which I haven't toyed with yet. So
+a working piece of code would be a good help.</P>
+<P>Johan Lindström, <A HREF="mailto:mailto:johanl@bahnhof.se">mailto:johanl@bahnhof.se</A></P>
+<P>
+<HR>
+<H1><A NAME="known bugs">KNOWN BUGS</A></H1>
+<P>The general paint routine is slow (could probably be
+optimized). The grid paint routine is even worse (could,
+no... <STRONG>should</STRONG> be optimized)</P>
+<P>The handling of properties updates when moving controls is
+slow (could be optimized)</P>
+<P>The command buttons seem to lose their bitmap sometimes... I
+don't know if this is my fault or a Win32::GUI thing, but
+rather suspect the latter... :/</P>
+<P>Keyboard handling is home grown (Accelerators doesn't work 
+yet). So if you press two keys rapidly in succession, the 
+second one may be discarded. Might be annyoing if you are 
+fast with the Ctrl-C, Ctrl-V.</P>
+<P>
+<HR>
+<H1><A NAME="copyright">COPYRIGHT</A></H1>
+<P>The GUI Loft is Copyright (c) Johan Lindström,
+<A HREF="mailto:johanl@bahnhof.se">johanl@bahnhof.se</A></P>
+<P>The Perl Artistic license applies.</P>
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,118 @@
+<HTML>
+<HEAD>
+<TITLE>FAQ -- Frequently Asked Questions</TITLE>
+<LINK REV="made" HREF="mailto:">
+</HEAD>
+
+<BODY>
+
+<A NAME="__index__"></A>
+<!-- INDEX BEGIN -->
+
+<UL>
+
+	<LI><A HREF="#name">NAME</A></LI>
+	<LI><A HREF="#trouble shooting">TROUBLE SHOOTING</A></LI>
+	<UL>
+
+		<LI><A HREF="#can't run the demo programs, what's up">Can't run the Demo programs, what's up?</A></LI>
+	</UL>
+
+	<LI><A HREF="#usage questions">USAGE QUESTIONS</A></LI>
+	<UL>
+
+		<LI><A HREF="#is it possible to have many windows in the same design">Is it possible to have many windows in the same design?</A></LI>
+		<LI><A HREF="#how do i add menus to the window">How do I add menus to the window?</A></LI>
+	</UL>
+
+	<LI><A HREF="#general questions">GENERAL QUESTIONS</A></LI>
+	<UL>
+
+		<LI><A HREF="#can the gui loft generate perl code">Can The GUI Loft generate Perl code?</A></LI>
+		<LI><A HREF="#is there a difference between the gui loft and">Is there a difference between The GUI Loft and</A></LI>
+	</UL>
+
+	<LI><A HREF="#copyright">COPYRIGHT</A></LI>
+</UL>
+<!-- INDEX END -->
+
+<HR>
+<P>
+<H1><A NAME="name">NAME</A></H1>
+<P>The GUI Loft FAQ -- Frequently Asked Questions</P>
+<P>
+<HR>
+<H1><A NAME="trouble shooting">TROUBLE SHOOTING</A></H1>
+<P>
+<H2><A NAME="can't run the demo programs, what's up">Can't run the Demo programs, what's up?</A></H2>
+<P>Win32::GUI::Loft requires the Win32::GUI module. If you see 
+something similar to this</P>
+<PRE>
+        Can't locate Win32/GUI.pm in @INC (@INC contains: C:/Perl/lib
+        C:/Perl/site/lib .) at Password.pl line 27.
+        BEGIN failed--compilation aborted at Password.pl line 27.</PRE>
+<P>then Win32::GUI isn't installed properly. Download here:</P>
+<PRE>
+        <A HREF="http://sourceforge.net/projects/perl-win32-gui">http://sourceforge.net/projects/perl-win32-gui</A></PRE>
+<P>
+<HR>
+<H1><A NAME="usage questions">USAGE QUESTIONS</A></H1>
+<P>
+<H2><A NAME="is it possible to have many windows in the same design">Is it possible to have many windows in the same design?</A></H2>
+<P>Nope. But it's not a problem.</P>
+<P>A Design ``is'' a window (or dialog, or toolwindow). So you
+just do many Designs (.gld files), one for each window.</P>
+<P>Then you create one new Win32::GUI::Loft::Design object for
+each window, load the .gld file and build the window (maybe
+with a parent window).</P>
+<P>If you want them to interact in some way (Show(), <CODE>SetFocus()</CODE>
+etc.), you do that with regular Win32::GUI code.</P>
+<P>Note that you should NOT ``reuse'' a Design object to load and
+build another .gld file. The Design object is used at
+runtime to hold information not contained in the Win32::GUI
+window, like bitmap objects, Win32::GUI::TabStripGroups
+etc..</P>
+<P>
+<H2><A NAME="how do i add menus to the window">How do I add menus to the window?</A></H2>
+<UL>
+<LI>
+See the Programmer's Reference:
+<P><A HREF="http://www.bahnhof.se/~johanl/perl/Loft/reference.html#adding%20menus">http://www.bahnhof.se/~johanl/perl/Loft/reference.html#adding%20menus</A></P>
+<P>Also, study the FileDisplay demo program (in the ./Demo directory).</P>
+<P></P>
+<LI>
+There is no support for building the menu, but there is
+preview support for menus in the Window control:
+<P><A HREF="http://www.bahnhof.se/~johanl/perl/Loft/manual.html#menu">http://www.bahnhof.se/~johanl/perl/Loft/manual.html#menu</A></P>
+<P></P></UL>
+<P>
+<HR>
+<H1><A NAME="general questions">GENERAL QUESTIONS</A></H1>
+<P>
+<H2><A NAME="can the gui loft generate perl code">Can The GUI Loft generate Perl code?</A></H2>
+<P>That was the original plan, but I finally decided against
+it. The reasons are described here:</P>
+<P><A HREF="http://www.bahnhof.se/~johanl/perl/Loft/reference.html#what%20no%20perl%20code">http://www.bahnhof.se/~johanl/perl/Loft/reference.html#what%20no%20perl%20code</A></P>
+<P>I might reconsider since it seems to be an issue.</P>
+<P>
+<H2><A NAME="is there a difference between the gui loft and win32::gui::loft">Is there a difference between The GUI Loft and
+Win32::GUI::Loft?</A></H2>
+<P>In a way, yes.</P>
+<P><STRONG>Win32::GUI::Loft</STRONG> and the other classes below that hierarchy
+is a framework for displaying (and editing) Designs. This is
+the runtime, needed to build the window in your programs.</P>
+<P><STRONG>The GUI Loft</STRONG> is the application. It's basically a GUI on top
+of Win32::GUI::Loft, used to manipulate and edit Designs
+(.gld files). The application takes care of the user
+interaction while the Win32::GUI::Loft classes does the
+actual work.</P>
+<P>
+<HR>
+<H1><A NAME="copyright">COPYRIGHT</A></H1>
+<P>The GUI Loft is Copyright (c) Johan Lindström,
+<A HREF="mailto:johanl@bahnhof.se">johanl@bahnhof.se</A></P>
+<P>The Perl Artistic license applies.</P>
+
+</BODY>
+
+</HTML>

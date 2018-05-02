@@ -1,0 +1,202 @@
+=head1 NAME
+
+The GUI Loft Changes -- Delta beween releases
+
+
+
+=head1 RELEASES
+
+=head2 020406
+
+Fixed newly introduced bug with reading .gld files.
+
+
+=head2 020401
+
+Added class method newScalar() to enable you to load the 
+Window from a scalar instead of loading it from disk.
+
+Updated the Programmer's Reference, look at the SYNOPSIS for 
+an example.
+
+
+=head2 020228
+
+Programmer's utility: Win32::GUI::Loft::winapp($nameWindow)
+
+Return three-value array with the ($win, $design, $app) that 
+corresponds to $nameWindow. Quick way of getting to these 
+vars.
+
+
+Updated Demo program FetchURL now shows how to influence the 
+build process and set e.g. a Class and change the -style. 
+The Programmer's Reference contains a section describing 
+this.
+
+
+=head2 011010
+
+Beta color management: Foreground and Background property 
+for the controls: Label, Textfield, Listbox, and TreeView. 
+This is experimental, don't rely on it.
+
+Bug fix: Warning triggered when setting the property Align 
+or Valign to "".
+
+
+=head2 011008
+
+New Window type: borderless window. Property value for the 
+Window control property DialogBox: borderless. Uses the new 
+class Win32::GUI::BorderlessWindow (in the Win32::GUI::AdHoc 
+PPM).
+
+Open file by drag-n-drop on The GUI Loft window. You will 
+need to a) run the binary; or b) rebuild your Win32::GUI 
+module for this to work. Option a) is obviously easier.
+
+Open file by command line parameter.
+
+
+=head2 010913
+
+New property for the Textfield and RichEdit controls: 
+WantReturn
+
+
+=head2 010908
+
+New property Design->rhClusterWingc()
+
+
+=head2 010905
+
+Added a FAQ
+
+More pictures to the User Manual
+
+New (backwards compatible) .gld format. Data::Dumper -> 
+Storable.
+
+
+=head2 010828
+
+Right-click Popup menu to select controls
+
+
+=head2 010826
+
+Menu: Align commands
+
+Right-click Popup menu
+
+
+=head2 010824
+
+Menu: Select all, Select window, 
+
+Menu: Bring up, Bring down, Bring to top, Bring to bottom
+
+
+
+=head2 010823
+
+New Control: Graphic
+
+New Control: Toolbar
+
+New options to the Window control: Maximizebox, Minimizebox, 
+Helpbox, Menubox, Controlparent, Resizable
+
+
+
+=head2 010819
+
+Bug fixed: Esc in the Properties window closes the current 
+Design.
+
+StatusBar control: Restricted the Height property to 18 
+pixels (like it renders).
+
+Menu item: Copy Resizer code to Clipboard
+
+Manipulate controls: SHIFT snaps to horizontal/vertical 
+movement
+
+Demo program: FileDisplay
+
+
+=head2 010810
+
+New control: StatusBar
+
+New control: ProgressBar
+
+Developer's Reference (in resource/dev.pod)
+
+
+=head2 010716
+
+FetchURL Demo program
+
+Code SYNOPSIS
+
+
+=head2 010629
+
+Basic resizer feature + docs
+
+Resizer - modifier
+
+
+=head2 010625
+
+Win32::GUI Help files included (for easy reference)
+
+Win32::GUI control sensitive help files for the 
+selected control (for even easier reference)
+
+Link to the Windows SDK docs on MS site
+
+Programmer's reference update. Still not finished though
+
+"Edit | Copy name" copies the names of selected controls to the Clipboard
+
+Visible grid
+
+Grid/snap settings
+
+Remove dependency on Data::Denter (really!)
+
+Changes file
+
+
+
+=head2 010623
+
+PPMs - AdHoc, Loft
+
+
+
+=head2 010621
+
+Refactor Win32::Clipboard code - move to app
+
+Remove dependency on Data::Denter
+
+
+=head2 WAY BACK
+
+Lotsa stuff
+
+
+
+=head1 COPYRIGHT
+
+The GUI Loft is Copyright (c) Johan Lindström, 
+johanl@bahnhof.se
+
+The Perl Artistic license applies.
+
+=cut

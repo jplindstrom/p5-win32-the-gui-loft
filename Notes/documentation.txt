@@ -1,0 +1,149 @@
+*** Uncovered docs
+
+-group
+
+
+** Window
+
+-parent 
+-exstyle
+-style
+-instance		(default: NULL)
+-data (the lpParam parameter to CreateWindowEx) (what is this?)
+
+-foreground
+-background
+
+-hscroll	?
+-vscroll	?
+
+
+Change()
+-type -- Change class
+-backgroundbrush => brush hande -- Change background brush
+
+
+** Listbox
+
+-multisel
+-sort
+
+
+
+** Treeview
+
+-lines
+-rootlines
+-buttons
+-imagelist
+-showselalways
+-checkboxes
+-hottrack
+
+
+** Menus
+
+* Shortcuts in a menu item
+
+Separate with a \t, like this:
+
+  " > &New\tCtrl+N" => "mnuFileNew",
+
+
+** Bitmap
+
+If you use a bitmap in a e.g. Button, the Bitmap object must 
+NOT go out of scope.
+
+
+** Class
+
+-name
+-color
+-visual
+-widget
+	Button
+	Listbox
+	TabStrip
+	RichEdit
+	Graphic
+	InteractiveGraphic
+	Splitter
+	SplitterH
+-style
+-icon
+-cursor
+-menu
+
+
+
+
+*** Wanted events
+
+Mouse movements (+ Enter, Leave if that's possible)
+
+Keyboard events
+
+
+** ListView
+
+DblClick
+
+Fix the NodeClick events
+
+
+
+*** Broken things
+
+** Window
+
+The minimum width of about 80 pixels, is that a Windows 
+thing or a Win32::GUI thing?
+
+
+** Label
+
+-noprefix doesn't seem to work.
+
+-fill doesn't seem to work
+
+-frame doesn't seem to work for the color values
+
+
+** Button
+
+-bitmap together with -align and -valign makes the alignment 
+and valignment weird (center becomes left e.g.)
+
+-align and valign are pretty funky to begin with
+
+
+
+** Icon/Bitmap
+
+Does anyone know if an "icon" handle is pretty much the same as a bitmap?
+
+
+** Tooltip
+
+It's not halfway implemented, right? Looking at the API it 
+seems like a lot of work. On the other hand, it is a 
+_really_ good user interface element.
+
+
+** ListView
+
+The ListView seems to lack a working default -style, so this:
+
+-style => WS_CHILD | WS_VISIBLE | 1
+
+from the samples/listview.pl is required or something. 
+Without it, the control behaves _really_ weird.
+
+
+** TabStrip
+
+-right works like -bottom should, and -bottom doesn't have any effect.
+
+Unsure about the use of ImageLists.
+

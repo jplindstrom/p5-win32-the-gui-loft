@@ -1,0 +1,52 @@
+=head1 NAME
+
+The GUI Loft Developer's Reference -- how to extend The GUI Loft
+
+
+
+=head1 COMMON PROCEDURES
+
+=head2 Adding a new control
+
+Read up on the control. Look in the samples, docs, GUI.pm 
+and GUI.xs.
+
+Add the control to the resource/tools.gld
+
+Add a new event handler to TGL/WindowTool.pm
+
+Add "use" etc. to PPM\Loft\lib\Win32\GUI\Loft\Design.pm
+
+Copy an appropriate (similar) control from 
+PPM\Loft\lib\Win32\GUI\Loft\Control and modify it.
+
+Add the file name to PPM\Loft\MANIFEST, run "perl 
+Makefile.PL" again.
+
+First decide which properties to use, then modify enough 
+(not the paint routine) to get the code running. Add a 
+control and preview the window to see it in place.
+
+Now you're ready to modify the paint method.
+
+Add a section in the User Manual file resource/manual.pod
+
+
+
+=head1 COMMON BUGS
+
+=head2 The design window flickers when I add a certain type of contol
+
+You have made a syntax error or is calling a nonexistant 
+method or somesuch. The error is trapped in an eval, causing 
+the update to take too long time. Spellcheck your last edit.
+
+
+=head1 COPYRIGHT
+
+Win32::GUI::Loft is Copyright (c) Johan Lindström,
+johanl@bahnhof.se
+
+The Perl Artistic license applies.
+
+=cut

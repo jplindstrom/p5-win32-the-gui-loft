@@ -1,0 +1,318 @@
+$VAR1 = bless( {
+  'rhIcon' => {},
+  'rhImageList' => {},
+  'raCluster' => [],
+  'snapX' => 4,
+  'rhWingcTabStripGroup' => {},
+  'fileName' => 'C:\\Dokument\\Projekt\\Dev\\Loft\\lib\\resource\\cluster.gld',
+  'mnuMenu' => undef,
+  'snapY' => 4,
+  'rhBitmap' => {},
+  'buildControlNameBase' => '',
+  'pathBase' => 'C:\\Dokument\\Projekt\\Dev\\Loft\\lib\\resource\\',
+  'isDirty' => 0,
+  'objControlWindow' => bless( {
+    'objContainer' => undef,
+    'designIsSelected' => 0,
+    'rhControlProperty' => {
+      'MinHeight' => bless( {
+        'value' => '93'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Text' => bless( {
+        'value' => 'Cluster properties'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Width' => bless( {
+        'value' => 245
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Top' => bless( {
+        'value' => 273
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'MaxHeight' => bless( {
+        'value' => '93'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Name' => bless( {
+        'isMultiValue' => 0,
+        'value' => 'winClusterProp',
+        'isBoolean' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'MinWidth' => bless( {
+        'value' => '245'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'PreviewMenu' => bless( {
+        'isMultiValue' => 0,
+        'value' => '',
+        'isBoolean' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Height' => bless( {
+        'value' => '93'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Topmost' => bless( {
+        'value' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'WindowIcon' => bless( {
+        'value' => ''
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'DialogBox' => bless( {
+        'isMultiValue' => 1,
+        'value' => 'window',
+        'isBoolean' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'MaxWidth' => bless( {
+        'value' => '245'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Left' => bless( {
+        'value' => 374
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'DialogUI' => bless( {
+        'value' => 1
+      }, 'Win32::GUI::Loft::ControlProperty' )
+    },
+    'designIsVisible' => 1
+  }, 'Win32::GUI::Loft::Control::Window' ),
+  'raControl' => [
+    bless( {
+      'objContainer' => {},
+      'designIsSelected' => 0,
+      'offsetTextLeft' => 0,
+      'offsetTextRight' => 0,
+      'rhControlProperty' => {
+        'Notify' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Width' => bless( {
+          'value' => '35'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Name' => bless( {
+          'value' => 'lblClusterName'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Tabstop' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Left' => bless( {
+          'value' => '8'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Visible' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Text' => bless( {
+          'value' => '&Name'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Wrap' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Top' => bless( {
+          'value' => '12'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Bitmap' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Frame' => bless( {
+          'value' => 'none'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Height' => bless( {
+          'value' => '15'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Truncate' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Align' => bless( {
+          'value' => 'left'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Enable' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Noprefix' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Sunken' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' )
+      },
+      'designIsVisible' => 1,
+      'offsetTextTop' => 0
+    }, 'Win32::GUI::Loft::Control::Label' ),
+    bless( {
+      'objContainer' => {},
+      'designIsSelected' => 0,
+      'rhControlProperty' => {
+        'ScrollAutoH' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Password' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Valign' => bless( {
+          'value' => 'top'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Width' => bless( {
+          'value' => '188'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Case' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Number' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ScrollH' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Name' => bless( {
+          'value' => 'tfClusterName'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Tabstop' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Left' => bless( {
+          'value' => '44'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Visible' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ScrollAutoV' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Text' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Top' => bless( {
+          'value' => '8'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ScrollV' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Keepselection' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Height' => bless( {
+          'value' => '21'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Align' => bless( {
+          'value' => 'left'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'OEMConvert' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Enable' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Readonly' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Multiline' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' )
+      },
+      'designIsVisible' => 1
+    }, 'Win32::GUI::Loft::Control::Textfield' ),
+    bless( {
+      'objContainer' => {},
+      'designIsSelected' => 0,
+      'rhControlProperty' => {
+        'Cancel' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Text' => bless( {
+          'value' => '&Ok'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Tabstop' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Height' => bless( {
+          'value' => 21
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Valign' => bless( {
+          'value' => undef
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Align' => bless( {
+          'value' => undef
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Width' => bless( {
+          'value' => 60
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Top' => bless( {
+          'value' => '40'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Left' => bless( {
+          'value' => '104'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Bitmap' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Visible' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Default' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Enable' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Ok' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Name' => bless( {
+          'value' => 'btnClusterOk'
+        }, 'Win32::GUI::Loft::ControlProperty' )
+      },
+      'designIsVisible' => 1
+    }, 'Win32::GUI::Loft::Control::Button' ),
+    bless( {
+      'objContainer' => {},
+      'designIsSelected' => 0,
+      'rhControlProperty' => {
+        'Cancel' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Text' => bless( {
+          'value' => '&Cancel'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Tabstop' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Height' => bless( {
+          'value' => 21
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Valign' => bless( {
+          'value' => undef
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Align' => bless( {
+          'value' => undef
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Width' => bless( {
+          'value' => 60
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Top' => bless( {
+          'value' => '40'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Left' => bless( {
+          'value' => '172'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Bitmap' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Visible' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Default' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Enable' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Ok' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Name' => bless( {
+          'value' => 'btnClusterCancel'
+        }, 'Win32::GUI::Loft::ControlProperty' )
+      },
+      'designIsVisible' => 1
+    }, 'Win32::GUI::Loft::Control::Button' )
+  ],
+  'isPreview' => 0,
+  'buildWindowName' => ''
+}, 'Win32::GUI::Loft::Design' );
+$VAR1->{'raControl'}[0]{'objContainer'} = $VAR1->{'objControlWindow'};
+$VAR1->{'raControl'}[1]{'objContainer'} = $VAR1->{'objControlWindow'};
+$VAR1->{'raControl'}[2]{'objContainer'} = $VAR1->{'objControlWindow'};
+$VAR1->{'raControl'}[3]{'objContainer'} = $VAR1->{'objControlWindow'};

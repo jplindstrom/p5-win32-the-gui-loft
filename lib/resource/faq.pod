@@ -1,0 +1,105 @@
+=head1 NAME
+
+The GUI Loft FAQ -- Frequently Asked Questions
+
+
+=head1 TROUBLE SHOOTING
+
+=head2 Can't run the Demo programs, what's up?
+
+Win32::GUI::Loft requires the Win32::GUI module. If you see 
+something similar to this
+
+	Can't locate Win32/GUI.pm in @INC (@INC contains: C:/Perl/lib
+	C:/Perl/site/lib .) at Password.pl line 27.
+	BEGIN failed--compilation aborted at Password.pl line 27.
+
+then Win32::GUI isn't installed properly. Download here:
+
+	http://sourceforge.net/projects/perl-win32-gui
+
+
+
+=head1 USAGE QUESTIONS
+
+=head2 Is it possible to have many windows in the same design?
+
+Nope. But it's not a problem.
+
+A Design "is" a window (or dialog, or toolwindow). So you
+just do many Designs (.gld files), one for each window.
+
+Then you create one new Win32::GUI::Loft::Design object for
+each window, load the .gld file and build the window (maybe
+with a parent window).
+
+If you want them to interact in some way (Show(), SetFocus()
+etc.), you do that with regular Win32::GUI code.
+
+Note that you should NOT "reuse" a Design object to load and
+build another .gld file. The Design object is used at
+runtime to hold information not contained in the Win32::GUI
+window, like bitmap objects, Win32::GUI::TabStripGroups
+etc..
+
+
+=head2 How do I add menus to the window?
+
+=over 4
+
+=item *
+
+See the Programmer's Reference:
+
+http://www.bahnhof.se/~johanl/perl/Loft/reference.html#adding%20menus
+
+Also, study the FileDisplay demo program (in the ./Demo directory).
+
+
+=item *
+
+There is no support for building the menu, but there is
+preview support for menus in the Window control:
+
+http://www.bahnhof.se/~johanl/perl/Loft/manual.html#menu
+
+=back
+
+
+=head1 GENERAL QUESTIONS
+
+=head2 Can The GUI Loft generate Perl code?
+
+That was the original plan, but I finally decided against
+it. The reasons are described here:
+
+http://www.bahnhof.se/~johanl/perl/Loft/reference.html#what%20no%20perl%20code
+
+I might reconsider since it seems to be an issue.
+
+
+=head2 Is there a difference between The GUI Loft and
+Win32::GUI::Loft?
+
+In a way, yes.
+
+B<Win32::GUI::Loft> and the other classes below that hierarchy
+is a framework for displaying (and editing) Designs. This is
+the runtime, needed to build the window in your programs.
+
+B<The GUI Loft> is the application. It's basically a GUI on top
+of Win32::GUI::Loft, used to manipulate and edit Designs
+(.gld files). The application takes care of the user
+interaction while the Win32::GUI::Loft classes does the
+actual work.
+
+
+
+=head1 COPYRIGHT
+
+The GUI Loft is Copyright (c) Johan Lindström,
+johanl@bahnhof.se
+
+The Perl Artistic license applies.
+
+=cut

@@ -1,0 +1,262 @@
+$VAR1 = bless( {
+  'snapX' => 4,
+  'rhBitmap' => {},
+  'snapY' => 4,
+  'fileName' => 'C:\\Dokument\\Projekt\\Dev\\Loft\\lib\\resource\\prop.gld',
+  'pathBase' => 'C:\\Dokument\\Projekt\\Dev\\Loft\\lib\\resource\\',
+  'isDirty' => 0,
+  'objControlWindow' => bless( {
+    'objContainer' => undef,
+    'designIsSelected' => 0,
+    'rhControlProperty' => {
+      'MinHeight' => bless( {
+        'nameOption' => '-minheight',
+        'value' => undef,
+        'nameProperty' => '',
+        'raValue' => [],
+        'name' => 'MinHeight'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Text' => bless( {
+        'nameOption' => '-text',
+        'value' => 'winWindow1',
+        'nameProperty' => 'Text',
+        'raValue' => [],
+        'name' => 'Text'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Width' => bless( {
+        'nameOption' => '-width',
+        'isMultiValue' => 0,
+        'value' => '24',
+        'nameProperty' => 'Width',
+        'isBoolean' => 0,
+        'raValue' => [],
+        'name' => 'Width'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Top' => bless( {
+        'nameOption' => '-top',
+        'value' => 100,
+        'nameProperty' => 'Top',
+        'raValue' => [],
+        'name' => 'Top'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'MaxHeight' => bless( {
+        'nameOption' => '-maxheight',
+        'value' => undef,
+        'nameProperty' => '',
+        'raValue' => [],
+        'name' => 'MaxHeight'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Name' => bless( {
+        'nameOption' => '-name',
+        'value' => 'winWindow1',
+        'nameProperty' => '',
+        'raValue' => [],
+        'name' => 'Name'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'MinWidth' => bless( {
+        'nameOption' => '-minwidth',
+        'value' => undef,
+        'nameProperty' => '',
+        'raValue' => [],
+        'name' => 'MinWidth'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Height' => bless( {
+        'nameOption' => '-height',
+        'value' => 193,
+        'nameProperty' => 'Height',
+        'raValue' => [],
+        'name' => 'Height'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Topmost' => bless( {
+        'nameOption' => '-topmost',
+        'value' => 0,
+        'nameProperty' => '',
+        'raValue' => [
+          0,
+          1
+        ],
+        'name' => 'Topmost'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'DialogBox' => bless( {
+        'nameOption' => '',
+        'value' => 0,
+        'nameProperty' => '',
+        'isBoolean' => 1,
+        'raValue' => [
+          0,
+          1
+        ],
+        'name' => 'DialogBox'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'MaxWidth' => bless( {
+        'nameOption' => '-maxwidth',
+        'value' => undef,
+        'nameProperty' => '',
+        'raValue' => [],
+        'name' => 'MaxWidth'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Left' => bless( {
+        'nameOption' => '-left',
+        'value' => 250,
+        'nameProperty' => 'Left',
+        'raValue' => [],
+        'name' => 'Left'
+      }, 'Win32::GUI::Loft::ControlProperty' )
+    },
+    'designIsEnabled' => 1,
+    'designIsVisible' => 1,
+    'designTabOrder' => 0
+  }, 'Win32::GUI::Loft::Control::Window' ),
+  'raControl' => [
+    bless( {
+      'objContainer' => {},
+      'designIsSelected' => '1',
+      'rhControlProperty' => {
+        'Cancel' => bless( {
+          'nameOption' => '-cancel',
+          'value' => 0,
+          'nameProperty' => '',
+          'isBoolean' => 1,
+          'raValue' => [
+            0,
+            1
+          ],
+          'name' => 'Cancel'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Text' => bless( {
+          'nameOption' => '-text',
+          'isMultiValue' => 0,
+          'value' => 'btnButton1',
+          'nameProperty' => 'Text',
+          'isBoolean' => 0,
+          'raValue' => [],
+          'name' => 'Text'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Valign' => bless( {
+          'nameOption' => '-valign',
+          'isMultiValue' => 1,
+          'value' => undef,
+          'nameProperty' => '',
+          'isBoolean' => 0,
+          'raValue' => [
+            '',
+            'top',
+            'center',
+            'bottom'
+          ],
+          'name' => 'Valign'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Width' => bless( {
+          'nameOption' => '-width',
+          'isMultiValue' => 0,
+          'value' => '20',
+          'nameProperty' => 'Width',
+          'isBoolean' => 0,
+          'raValue' => [],
+          'name' => 'Width'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Top' => bless( {
+          'nameOption' => '-top',
+          'isMultiValue' => 0,
+          'value' => '0',
+          'nameProperty' => 'Top',
+          'isBoolean' => 0,
+          'raValue' => [],
+          'name' => 'Top'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Bitmap' => bless( {
+          'nameOption' => '',
+          'isMultiValue' => 0,
+          'value' => 'resource\\icon\\listbox.bmp',
+          'nameProperty' => '',
+          'isBoolean' => 0,
+          'raValue' => [],
+          'name' => 'Bitmap'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Name' => bless( {
+          'nameOption' => '-name',
+          'isMultiValue' => 0,
+          'value' => 'btnListbox',
+          'nameProperty' => '',
+          'isBoolean' => 0,
+          'raValue' => [],
+          'name' => 'Name'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Height' => bless( {
+          'nameOption' => '-height',
+          'isMultiValue' => 0,
+          'value' => '20',
+          'nameProperty' => 'Height',
+          'isBoolean' => 0,
+          'raValue' => [],
+          'name' => 'Height'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Tabstop' => bless( {
+          'nameOption' => '-tabstop',
+          'value' => 1,
+          'nameProperty' => '',
+          'isBoolean' => 1,
+          'raValue' => [
+            0,
+            1
+          ],
+          'name' => 'Tabstop'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Left' => bless( {
+          'nameOption' => '-left',
+          'value' => '0',
+          'nameProperty' => 'Left',
+          'raValue' => [],
+          'name' => 'Left'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Align' => bless( {
+          'nameOption' => '-align',
+          'value' => undef,
+          'nameProperty' => '',
+          'raValue' => [
+            '',
+            'left',
+            'center',
+            'right'
+          ],
+          'name' => 'Align'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Visible' => bless( {
+          'nameOption' => '-visible',
+          'value' => 1,
+          'nameProperty' => 'IsVisible',
+          'isBoolean' => 1,
+          'raValue' => [
+            0,
+            1
+          ],
+          'name' => 'Visible'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Default' => bless( {
+          'nameOption' => '-default',
+          'value' => 0,
+          'nameProperty' => '',
+          'raValue' => [
+            0,
+            1
+          ],
+          'name' => 'Default'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Ok' => bless( {
+          'nameOption' => '-ok',
+          'value' => 0,
+          'nameProperty' => '',
+          'raValue' => [
+            0,
+            1
+          ],
+          'name' => 'Ok'
+        }, 'Win32::GUI::Loft::ControlProperty' )
+      },
+      'designIsEnabled' => 1,
+      'designIsVisible' => 1,
+      'designTabOrder' => 0
+    }, 'Win32::GUI::Loft::Control::Button' )
+  ]
+}, 'Win32::GUI::Loft::Design' );
+$VAR1->{'raControl'}[0]{'objContainer'} = $VAR1->{'objControlWindow'};

@@ -1,0 +1,168 @@
+*** Todo
+
+
+Hyperlink
+store all window positions
+color management
+mru in File menu
+generate perl (think it through)
+undo
+undo - multiple (on everything)
+icons on buttons and labels
+paste - unique name
+new controls should be on screen (if small window)
+validate property values
+more controls - updown, animation, rebar
+font, color, backcolor
+confirm save unchanged design on exit
+register icon for .gld
+(custom -style and -exstyle (with named constants?))
+button - paint deafult, ok properties
+listbox - scroll bars
+optimize paint design window
+optimize properties update
+imagelist open dialog
+resize & move from middle (Ctrl)
+copy names of selected controls to clipboard (various formats... something)
+optimize grid display
+Prog docs - Menus
+check out accelerators
+context (control) sensitive Loft help (menu + "?" in the Prop window)
+docking windows?
+bug: moving window (eh... ?)
+misfeature: Controls can only belong to one Cluster at a time
+
+
+
+
+*** Done (obsolete, moved to resource/changes.pod)
+
+** 010624
+
+help files
+control sensitive help files
+user manual update
+programmers reference update
+cluster rename - modal
+menu edit | copy name
+visible grid
+grid/snap settings
+
+
+** 010623
+
+ppm - AdHoc, Loft
+
+
+** 010621
+
+refactor clipboard code - move to app
+
+remove dependency on data::denter
+
+
+** 010620
+
+tabstripgroup
+
+
+** 010617
+
+tabstrip
+design - events window
+cluster
+
+
+** 010614
+
+combobox
+
+
+** 010612
+
+window icon
+rethink class structure, runtime vs app
+treeview
+listbox - preview
+listview
+
+
+** 010611
+
+icons
+
+
+** 010610
+intangible controls
+imagelist
+listbox snap (almost)
+timer
+example/demo with a very simple Perl app
+store built windows in unified global var
+
+
+** 010609
+
+main window menu shortcuts
+cut, copy, paste - keyboard shortcuts, menu
+custom control, created by the user at build time.
+build with a visitor object that can change behaviour
+build with a visitor object that can add it's own Custom controls
+info in properties window
+
+
+** 010607
+toolbar window
+Design | Close all test windows
+adjusted size for dialog and toolbar
+shortcut for opening bitmaps
+implement toolbox window using Loft
+implement main window using Loft
+menu preview text
+adjusted size for menu
+real grey color on buttons
+setWindowState for main window
+enabled
+minimize file size
+make sure controls get default values when they are loaded with older format
+shortcut - n => edit Name, t => edit Text, b => Bitmap, 
+
+
+** 010606
+bitmap
+button - bitmap
+label - bitmap
+selected markers visible always
+keyboard handling (move, resize, delete)
+bitmap open dialog
+correct click/select (shift, control)
+bitmap - real
+cut, copy, paste
+
+
+** 010605
+control window, up/down
+groupbox
+label
+checkbox
+richedit
+textfield extended features
+listbox
+treeview (untested)
+
+
+** 010604
+checkbox
+create controls, methods
+WS_GROUP
+
+
+** 010603
+Visible
+Text alignment
+Custom value entry for properties
+
+
+** 010602
+Resize
+

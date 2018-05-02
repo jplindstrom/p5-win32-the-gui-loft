@@ -1,0 +1,530 @@
+<html><!-- #BeginTemplate "/Templates/tglGeneral.dwt" -->
+<head>
+<!-- #BeginEditable "doctitle" --> 
+<title>Programmer's Reference - Documentation - The GUI Loft</title>
+<!-- #EndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="../tgl.css" type="text/css">
+</head>
+
+<body bgcolor="#99CCCC" text="#000000">
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="91">&nbsp;</td>
+    <td colspan="2">
+      <table width="509" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="left" valign="bottom">
+            <table border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td bgcolor="#000000"><img src="../pic/sp.gif" width="1" height="1"></td>
+                <td class="menuText">&nbsp;&nbsp;&nbsp;<!-- #BeginEditable "sectionTitle" -->documentation<!-- #EndEditable -->&nbsp;&nbsp;&nbsp;</td>
+                <td bgcolor="#000000"><img src="../pic/sp.gif" width="1" height="1"></td>
+              </tr>
+            </table>
+            
+          </td>
+          <td valign="bottom" align="right"><a href="../index.html"><img src="../pic/the_gui_loft_a.gif" width="214" height="29" border="0"></a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td width="91" align="left" valign="top"> 
+      <table width="91" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="1" height="1" bgcolor="#000000"><img src="../pic/sp.gif" width="1" height="1"></td>
+          <td height="1" bgcolor="#000000"><img src="../pic/sp.gif" width="1" height="1"></td>
+        </tr>
+        <tr>
+          <td width="1" bgcolor="#000000"><img src="../pic/sp.gif" width="1" height="1"></td>
+          <td><!-- #BeginEditable "sectionImage" --><img src="../pic/im01.gif" width="90" height="29"><!-- #EndEditable --></td>
+        </tr>
+        <tr>
+          <td width="1" height="1" bgcolor="#000000"><img src="../pic/sp.gif" width="1" height="1"></td>
+          <td height="1" bgcolor="#000000"><img src="../pic/sp.gif" width="1" height="1"></td>
+        </tr>
+      </table>
+    </td>
+    <td width="501" bgcolor="#FFFFFF" align="left" valign="top">
+      <table width="100%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000000">
+        <tr>
+          <td>
+            <table width="500" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+              <tr> 
+                <td align="right" valign="top" colspan="3">
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#000000"><img src="../pic/sp.gif" width="1" height="1"></td>
+                      <td class="menuLink">&nbsp;&nbsp;&nbsp;<a href="../download.html">download</a>&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#000000"><img src="../pic/sp.gif" width="1" height="1"></td>
+                      <td class="menuLink">&nbsp;&nbsp;&nbsp;<a href="index.html">documentation</a>&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#000000"><img src="../pic/sp.gif" width="1" height="1"></td>
+                      <td class="menuLink">&nbsp;&nbsp;&nbsp;<a href="../list/index.html">mailing 
+                        list</a>&nbsp;&nbsp;&nbsp;</td>
+                      <td class="menuLink" bgcolor="#000000"><img src="../pic/sp.gif" width="1" height="1"></td>
+                      <td class="menuLink">&nbsp;&nbsp;&nbsp;<a href="../Templates/links.html">links</a>&nbsp;&nbsp;&nbsp;</td>
+                      <td align="right" valign="top"><img src="../pic/the_gui_loft_b.gif" width="29" height="10"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td width="50">&nbsp;</td>
+                <td width="430">&nbsp;<br>
+                  <!-- #BeginEditable "pageContents" --> 
+                  <ul>
+                    <li><a href="#name">NAME</a></li>
+                    <li><a href="#introduction">INTRODUCTION</a></li>
+                    <ul>
+                      <li><a href="#what is it">What is it?</a></li>
+                    </ul>
+                    <li><a href="#synopsis">SYNOPSIS</a></li>
+                    <ul>
+                      <li><a href="#building a window you designed in the gui loft">Building 
+                        a window you designed in The GUI Loft</a></li>
+                      <li><a href="#event handlers">Event handlers</a></li>
+                      <li><a href="#window controls">Window controls</a></li>
+                    </ul>
+                    <li><a href="#installation">INSTALLATION</a></li>
+                    <ul>
+                      <li><a href="#the win32::gui::loft runtime">The Win32::GUI::Loft 
+                        Runtime</a></li>
+                      <li><a href="#the gui loft application">The GUI Loft Application</a></li>
+                    </ul>
+                    <li><a href="#demos">DEMOS</a></li>
+                    <ul>
+                      <li><a href="#password">Password</a></li>
+                      <li><a href="#fetchurl">FetchURL</a></li>
+                      <li><a href="#filedisplay">FileDisplay</a></li>
+                      <li><a href="#the gui loft">The GUI Loft</a></li>
+                    </ul>
+                    <li><a href="#building loft windows">BUILDING LOFT WINDOWS</a></li>
+                    <ul>
+                      <li><a href="#the demo programs">The Demo programs</a></li>
+                      <li><a href="#building the window">Building the Window</a></li>
+                      <li><a href="#the name of the window">The -name of the Window</a></li>
+                      <li><a href="#adding menus">Adding Menus</a></li>
+                      <li><a href="#other loft::design methods">Other Loft::Design 
+                        Methods</a></li>
+                    </ul>
+                    <li><a href="#win32::gui + loft windows">WIN32::GUI + LOFT 
+                      WINDOWS</a></li>
+                    <ul>
+                      <li><a href="#the %window hash">The %window hash</a></li>
+                      <li><a href="#the %design hash">The %design hash</a></li>
+                      <li><a href="#clustered controls">Clustered controls</a></li>
+                    </ul>
+                    <li><a href="#customizing the build process">CUSTOMIZING THE 
+                      BUILD PROCESS</a></li>
+                    <ul>
+                      <li><a href="#custom controls">Custom controls</a></li>
+                      <li><a href="#inspecting and changing options">Inspecting 
+                        and changing options</a></li>
+                    </ul>
+                    <li><a href="#distribution">DISTRIBUTION</a></li>
+                    <ul>
+                      <li><a href="#the runtime">The Runtime</a></li>
+                      <li><a href="#using perlapp et al">Using PerlApp et al</a></li>
+                    </ul>
+                    <li><a href="#on gui coding">ON GUI CODING</a></li>
+                    <ul>
+                      <li><a href="#what no perl code">What? No Perl Code?</a></li>
+                      <li><a href="#use window state">Use Window State</a></li>
+                      <li><a href="#gui vs. application">GUI vs. Application</a></li>
+                      <li><a href="#debug events with carp">Debug Events With 
+                        Carp</a></li>
+                      <li><a href="#knowing win32::gui">Knowing Win32::GUI</a></li>
+                      <li><a href="#the internals of win32::gui">The Internals 
+                        of Win32::GUI</a></li>
+                    </ul>
+                    <li><a href="#resources and downloads">RESOURCES AND DOWNLOADS</a></li>
+                    <li><a href="#copyright">COPYRIGHT</a></li>
+                  </ul>
+                  <!-- INDEX END -->
+                  <hr>
+                  <p> 
+                  <h1><a name="name">NAME</a></h1>
+                  <p>Win32::GUI::Loft Programmer's Reference -- how to incorporate 
+                    The GUI Loft windows into your Perl programs (not utterly 
+                    complete :)</p>
+                  <p> 
+                  <hr>
+                  <h1><a name="introduction">INTRODUCTION</a></h1>
+                  <p> 
+                  <h2><a name="what is it">What is it?</a></h2>
+                  <p>Win32::GUI::Loft is the Runtime part of The GUI Loft.</p>
+                  <p>The most important class is Win32::GUI::Loft::Design, which 
+                    is used to build the designed windows at runtime. A few important 
+                    methods are discussed below.</p>
+                  <p> 
+                  <hr>
+                  <h1><a name="synopsis">SYNOPSIS</a></h1>
+                  <p> 
+                  <h2><a name="building a window you designed in the gui loft">Building 
+                    a window you designed in The GUI Loft</a></h2>
+                  <pre class="code">
+use strict; 
+use Win32::GUI;
+use Win32;
+use Win32::GUI::Loft::Design; 
+
+
+my $fileWindow = &quot;fetch.gld&quot;; #You created this using The GUI Loft
+my $objDesign = Win32::GUI::Loft::Design-&gt;newLoad($fileWindow)                    
+        or die(&quot;Could not open window file ($fileWindow)&quot;); 
+
+my $win = $objDesign-&gt;buildWindow() 
+        or die(&quot;Could not build window ($fileWindow)&quot;); 
+
+$win-&gt;Show(); 
+Win32::GUI::Dialog();
+</pre>
+                  <h2><a name="event handlers">Event handlers</a></h2>
+                  <pre class="code">
+
+#The Name property of the loaded window is &quot;winFetch&quot;
+sub ::winFetch_Terminate {
+    return(-1);
+}
+ 
+</pre>
+                  <p> 
+                  <h2><a name="window controls">Window controls</a></h2>
+                  <pre class="code">
+
+#The -name of the button is &quot;btnFetch&quot;
+sub ::btnFetch_Click {
+    #The Name property of the loaded window is &quot;winFetch&quot;
+    defined(my $win = $Win32::GUI::Loft::window{winFetch}) or return(1);
+
+    #There is another control (a Textfield) in the Design called &quot;tfURL&quot;
+    my $url = $win-&gt;tfURL-&gt;Text();
+
+return(1);
+}
+ </pre>
+                  <p> 
+                  <hr>
+                  <h1><a name="installation">INSTALLATION</a></h1>
+                  <p> 
+                  <h2><a name="the win32::gui::loft runtime">The Win32::GUI::Loft 
+                    Runtime</a></h2>
+                  <p>Install the PPM packages found in the ``PPM'' directory. 
+                    <strong>Run install.bat</strong>.</p>
+                  <p>The Runtime module is used in your programs to create the 
+                    windows. You'll need to install the Runtime before you try 
+                    the Demo programs.</p>
+                  <p><strong>Note</strong>: You will need to run install.bat each 
+                    time you download a new release! install.bat will remove, 
+                    then reinstall the new modules.</p>
+                  <p>Also, make sure the following modules are present:</p>
+                  <pre>
+        Win32
+        Win32::GUI</pre>
+                  <p> 
+                  <h2><a name="the gui loft application">The GUI Loft Application</a></h2>
+                  <p>There is a binary and a source distribution.</p>
+                  <p>The binary is totally freestanding. Just run the program, 
+                    and it should work.</p>
+                  <p>The source relies on the Runtime, so install the PPMs first. 
+                    The source is also dependent on the modules found in the Modules 
+                    dir. Install them, then run the Perl file ``lib/tgl.pl''</p>
+                  <p> 
+                  <hr>
+                  <h1><a name="demos">DEMOS</a></h1>
+                  <p>The Demo programs are located in the Demo directory. After 
+                    you have installed the Runtime PPMs, just run the Perl scripts 
+                    to see them in action.</p>
+                  <p>The code is commented to point out interesting and important 
+                    things, so a code walkabout could be educational.</p>
+                  <p> 
+                  <h2><a name="password">Password</a></h2>
+                  <p>A simple demo of the Win32::GUI::Loft::Design class.</p>
+                  <img src="../pic/windowdesign.gif" width="224" height="102"> 
+                  <p>To demonstrate the timer, I chose to implement one very good 
+                    user interface detail in some versions of the e-mail program 
+                    Eudora; when Caps-lock is active, Eudora will warn the user 
+                    that the password probably will get screwed up. The demo warns 
+                    regardless of the Caps-lock state.</p>
+                  <p>Things to learn from:</p>
+                  <ul>
+                    <li> How to create the window 
+                      <p></p>
+                    <li> How to access the window from event handlers 
+                      <p></p>
+                    <li> Password-style textfield 
+                      <p></p>
+                    <li> Button with bitmap image 
+                      <p></p>
+                    <li> Timer used to blink text (yeah, I know... :) 
+                      <p></p>
+                  </ul>
+                  <p> 
+                  <h2><a name="fetchurl">FetchURL</a></h2>
+                  <p>Enter a URL and Fetch will do a GET and display the HTTP 
+                    headers and the raw HTML.</p>
+                  <p>This is a great example of a quick GUI wrapper around a simple 
+                    Perl program. A colleague asked if I knew how to see the HTTP 
+                    response of a GET request.</p>
+                  <p>-``Sure, that's a few lines of Perl''</p>
+                  <p>Whining. -``Isn't there a Windows program to do that already?''</p>
+                  <p>Well, fifteen minutes later, there was. And I spent most 
+                    of that time trying to find the HTTP::Response method returning 
+                    the HTTP headers (headers_as_string).</p>
+                  <p>Things to learn from:</p>
+                  <ul>
+                    <li> Keep the .gld file opened in The GUI Loft while you browse 
+                      the code. You'll need to check control names and stuff. 
+                      <p></p>
+                    <li> Look at how the Resize properties are set. 
+                      <p></p>
+                    <li> Look at how the TabStrip is done using Clusters. 
+                      <p></p>
+                    <li> In the btnFetch_Click event handler, take note of how 
+                      to access the Win32::GUI Window object and the contained 
+                      controls, e.g. $win-&gt;tfURL-&gt;<code>Text()</code> 
+                      <p></p>
+                  </ul>
+                  <p> 
+                  <h2><a name="filedisplay">FileDisplay</a></h2>
+                  <p>Simple program to display files in a RichEdit control.</p>
+                  <p>Things to learn from:</p>
+                  <ul>
+                    <li> How to attach a menu to your window during the build. 
+                      <p></p>
+                    <li> How to manually code the resizer stuff when there is 
+                      a Splitter control involved. 
+                      <p></p>
+                    <li> How to separate the actual GUI code from your application 
+                      code as much as possible. 
+                      <p></p>
+                  </ul>
+                  <p> 
+                  <h2><a name="the gui loft">The GUI Loft</a></h2>
+                  <p>For real world examples, look in the Loft\resource directory. 
+                    Here you can find the windows and dialogs used in The GUI 
+                    Loft.</p>
+                  <p>If you decide to experiment or change anyhing, it might be 
+                    a sligthly clever idea to make a backup copy first. But you 
+                    already knew that... ;)</p>
+                  <p> 
+                  <hr>
+                  <h1><a name="building loft windows">BUILDING LOFT WINDOWS</a></h1>
+                  <p> 
+                  <h2><a name="the demo programs">The Demo programs</a></h2>
+                  <p>Until this section gets a little more complete, the best 
+                    way to learn is to check out the code in the Demo programs.</p>
+                  <p>It's not overly complicated, and the demos are nicely commented.</p>
+                  <p> 
+                  <h2><a name="building the window">Building the Window</a></h2>
+                  <p> 
+                  <h2><a name="the name of the window">The -name of the Window</a></h2>
+                  <p>The Name property, and how to change it</p>
+                  <p> 
+                  <h2><a name="adding menus">Adding Menus</a></h2>
+                  <p>Adding a menu to your window is really simple.</p>
+                  <p>Create the menu the usual way, create the Design object, 
+                    then set the mnuMenu property before you actually build the 
+                    window. An example from the FileDisplay demo program:</p>
+                  <pre class="code">
+
+my $fileWindow = &quot;filedisplay.gld&quot;;
+my $objDesign = Win32::GUI::Loft::Design-&gt;newLoad($fileWindow);
+
+$objDesign-&gt;mnuMenu( Win32::GUI::MakeMenu(
+        &quot;&amp;File&quot;                                         =&gt; &quot;mnuFile&quot;,
+        &quot; &gt; E&amp;xit&quot;                                      =&gt; &quot;mnuFileExit&quot;,
+        ) );
+
+my $win = $objDesign-&gt;buildWindow();
+ </pre>
+                  <p>[Note: This example doesn't contain error checking. The demo 
+                    program does.]</p>
+                  <p> 
+                  <h2><a name="other loft::design methods">Other Loft::Design 
+                    Methods</a></h2>
+                  <p> 
+                  <hr>
+                  <h1><a name="win32::gui + loft windows">WIN32::GUI + LOFT WINDOWS</a></h1>
+                  <p>This section contains advice on how to do Win32::GUI coding 
+                    with the windows you designed in The GUI Loft.</p>
+                  <p> 
+                  <h2><a name="the %window hash">The %window hash</a></h2>
+                  <p> 
+                  <h2><a name="the %design hash">The %design hash</a></h2>
+                  <p> 
+                  <h2><a name="clustered controls">Clustered controls</a></h2>
+                  <p>There is a method rhClusterWingc() on your Design objects 
+                    you can use to access the clusters and their controls.</p>
+                  <p>$deisgn-&gt;rhClusterWingc() is a hash ref with (key = Cluster 
+                    name, value = array ref (with Win32::GUI controls)).</p>
+                  <pre class="code">
+
+#Let's say your created window is called winTest
+defined(my $win = $Win32::GUI::Loft::window{winTest}) or return(1);
+my $design = $Win32::GUI::Loft::design{winTest};
+
+
+#Here are the clusters
+print join(&quot;, &quot;, keys %{$design-&gt;rhClusterWingc()}) . &quot;\n\n&quot;;
+
+
+#Display all clustered controls
+print Dumper($design-&gt;rhClusterWingc());
+
+ </pre>
+                  <p> 
+                  <hr>
+                  <h1><a name="customizing the build process">CUSTOMIZING THE 
+                    BUILD PROCESS</a></h1>
+                  <p> 
+                  <h2><a name="custom controls">Custom controls</a></h2>
+                  <p> 
+                  <h2><a name="inspecting and changing options">Inspecting and 
+                    changing options</a></h2>
+                  <p> 
+                  <hr>
+                  <h1><a name="distribution">DISTRIBUTION</a></h1>
+                  <p>When you create applications using Win32::GUI::Loft, you 
+                    need to supply the modules somehow along with the Perl program.</p>
+                  <p> 
+                  <h2><a name="the runtime">The Runtime</a></h2>
+                  <p>Include the PPM files in your distribution script, or point 
+                    to The GUI Loft web site.</p>
+                  <p> 
+                  <h2><a name="using perlapp et al">Using PerlApp et al</a></h2>
+                  <p>The GUI Loft binary is a PerlApp application, and so any 
+                    program you write using Win32::GUI::Loft should work equally 
+                    well in that regard.</p>
+                  <p>This is actually a really handy little program, since it 
+                    totally eliminates the deployment problem.</p>
+                  <p>I haven't tried using Perl2Exe and other similar programs, 
+                    so please report how that works if you give it a try.</p>
+                  <p> 
+                  <hr>
+                  <h1><a name="on gui coding">ON GUI CODING</a></h1>
+                  <p> 
+                  <h2><a name="what no perl code">What? No Perl Code?</a></h2>
+                  <p>Originally, I planned to have The GUI Loft generate Perl 
+                    code to build the window in addition to have a runtime module 
+                    create it. I have since abandoned that idea.</p>
+                  <p>Why? There are certainly advantages with producing code:</p>
+                  <ul>
+                    <li> Programmers new to The GUI Loft will feel better when 
+                      they can see that ``yes, this is my Perl code''. It's tangible, 
+                      and nothing is hidden in a weird class they didn't write 
+                      themselves. 
+                      <p></p>
+                    <li> People can learn from it. Create things in WYSIWYG mode, 
+                      export as Perl and see exactly how this or that was done. 
+                      Using Win32::GUI should ideally mean that the programmer 
+                      is exposed to Win32::GUI code and familiar with how it works. 
+                      <p></p>
+                    <li> Code can be tweaked to produce 100% what's desired. If 
+                      it's possible within the realms of Win32::GUI and Win32::API, 
+                      it can be done no matter what. 
+                      <p></p>
+                    <li> Clever programmers can easily add controls not yet supported 
+                      by The GUI Loft. 
+                      <p></p>
+                  </ul>
+                  <p>However, there are a few disadvantages with exported code 
+                    that need mentioning:</p>
+                  <ul>
+                    <li> Generated code is ``one way''. If you're gonna modify 
+                      it, which is kind of the point, parsing it is bound to be 
+                      fragile and random at best. Not something I would like to 
+                      rely on anyway. 
+                      <p></p>
+                    <li> Generated code is static, running code is dynamic. Say 
+                      you tweaked your code to perfection and then needed to change 
+                      the layout in The GUI Loft? Regenerate the code and retweak? 
+                      Argghhhh!!! What a maintenance nightmare! 
+                      <p>With The GUI Loft you <strong>can</strong> provide code 
+                        to tweak the controls during the build. You can also incorporate 
+                        Custom controls in your Design and later on generate them 
+                        with code, giving you the best of both worlds.</p>
+                      <p></p>
+                    <li> Maybe a minor point: the generated code is unlikely to 
+                      comply with your coding standards. 
+                      <p></p>
+                    <li> As I started to implement more and more features of The 
+                      GUI Loft I came to the realisation that any Perl code I 
+                      would generate to produce the same result would inevitably 
+                      require a lot of runtime modules (at <strong>least</strong> 
+                      Win32::GUI::Loft::Design) to work in order to avoid duplicate 
+                      code; The GUI Loft (or rather the class Win32::GUI::Loft::Design) 
+                      had become an extension of Win32::GUI. 
+                      <p>My vague future plans emphasize this even more, but let 
+                        me give them some more thought before I elaborate.</p>
+                      <p></p>
+                  </ul>
+                  <p> 
+                  <h2><a name="use window state">Use Window State</a></h2>
+                  <p> 
+                  <h2><a name="gui vs. application">GUI vs. Application</a></h2>
+                  <p>Separate the specifics of your current GUI implementation 
+                    from your application as much as possible.</p>
+                  <p> 
+                  <h2><a name="debug events with carp">Debug Events With Carp</a></h2>
+                  <p> 
+                  <h2><a name="knowing win32::gui">Knowing Win32::GUI</a></h2>
+                  <p>The GUI Loft will shield you from code. That's good and bad.</p>
+                  <p>It's good because you don't need to know everything about 
+                    a subject to be able to use it, the same way you e.g. don't 
+                    need to understand the finer points of the POP3 protocol to 
+                    use Mail::POP3Client. That's reuse of code and knowledge. 
+                    That's what will bring productivity gains.</p>
+                  <p>But it's also bad, because The GUI Loft can only take you 
+                    so far before you run into things that aren't implemented, 
+                    or that fall outside the scope of the program. Then you have 
+                    to do the difficult things yourself anyway (only with a solid 
+                    base and a nice framework). But you still have to do the work.</p>
+                  <p>So, study Win32::GUI code and learn how things are done. 
+                    Use the help files under the Help menu. If you are going to 
+                    use Win32::GUI then you'll have to know how it works. There 
+                    is no way around that. And when the capabilities of Win32::GUI 
+                    ends, you'll have to look at the Win32 API and Aldo's Win32::API 
+                    module. Get used to it.</p>
+                  <p> 
+                  <h2><a name="the internals of win32::gui">The Internals of Win32::GUI</a></h2>
+                  <p>If you're serious about Win32::GUI, I recommend a brief tour 
+                    of GUI.xs and GUI.pm.</p>
+                  <p>You'll get a better view of what's in there, and a few hints 
+                    of what you need to look for in the Win32 docs. Armed with 
+                    that, it's possible to do quite a lot of things that aren't 
+                    fully supported by Win32::GUI (or just plain undocumented 
+                    :)</p>
+                  <p> 
+                  <hr>
+                  <h1><a name="resources and downloads">RESOURCES AND DOWNLOADS</a></h1>
+                  <p>The docs - [ship them with a nice ToC]</p>
+                  <p>The sample apps</p>
+                  <p>Win32 SDK - donwload and online link</p>
+                  <p>WINUSER.H ? Copyright on that one? :(</p>
+                  <p>Other bookmarks</p>
+                  <p>The mailing list + archive</p>
+                  <p>Erick Bourgeois ``cookbook'' site</p>
+                  <p> 
+                  <hr>
+                  <h1><a name="copyright">COPYRIGHT</a></h1>
+                  <p>Win32::GUI::Loft is Copyright (c) Johan Lindström, <a href="mailto:johanl@bahnhof.se">johanl@bahnhof.se</a></p>
+                  <p>The Perl Artistic license applies.</p>
+                  <p>&nbsp;</p>
+                  <!-- #EndEditable --> 
+                  <p>&nbsp;</p>
+                </td>
+                <td width="20">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+    <td width="9">&nbsp;</td>
+  </tr>
+</table>
+</body>
+<!-- #EndTemplate --></html>

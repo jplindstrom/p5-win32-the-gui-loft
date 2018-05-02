@@ -1,0 +1,547 @@
+<HTML>
+<HEAD>
+<TITLE>Reference -- how to
+incorporate The GUI Loft windows into your Perl programs</TITLE>
+<LINK REV="made" HREF="mailto:">
+</HEAD>
+
+<BODY>
+
+<A NAME="__index__"></A>
+<!-- INDEX BEGIN -->
+
+<UL>
+
+	<LI><A HREF="#name">NAME</A></LI>
+	<LI><A HREF="#introduction">INTRODUCTION</A></LI>
+	<UL>
+
+		<LI><A HREF="#what is it">What is it?</A></LI>
+	</UL>
+
+	<LI><A HREF="#synopsis">SYNOPSIS</A></LI>
+	<UL>
+
+		<LI><A HREF="#building a window you designed in the gui loft">Building a window you designed in The GUI Loft</A></LI>
+		<LI><A HREF="#loading the file yourself">Loading the file yourself</A></LI>
+		<LI><A HREF="#event handlers">Event handlers</A></LI>
+		<LI><A HREF="#window controls">Window controls</A></LI>
+	</UL>
+
+	<LI><A HREF="#installation">INSTALLATION</A></LI>
+	<UL>
+
+		<LI><A HREF="#the win32::gui::loft runtime">The Win32::GUI::Loft Runtime</A></LI>
+		<LI><A HREF="#the gui loft application">The GUI Loft Application</A></LI>
+	</UL>
+
+	<LI><A HREF="#demos">DEMOS</A></LI>
+	<UL>
+
+		<LI><A HREF="#password">Password</A></LI>
+		<LI><A HREF="#fetchurl">FetchURL</A></LI>
+		<LI><A HREF="#filedisplay">FileDisplay</A></LI>
+		<LI><A HREF="#the gui loft">The GUI Loft</A></LI>
+	</UL>
+
+	<LI><A HREF="#building loft windows">BUILDING LOFT WINDOWS</A></LI>
+	<UL>
+
+		<LI><A HREF="#the demo programs">The Demo programs</A></LI>
+		<LI><A HREF="#building the window">Building the Window</A></LI>
+		<LI><A HREF="#the name of the window">The -name of the Window</A></LI>
+		<LI><A HREF="#adding menus">Adding Menus</A></LI>
+		<LI><A HREF="#other loft::design methods">Other Loft::Design Methods</A></LI>
+	</UL>
+
+	<LI><A HREF="#win32::gui + loft windows">WIN32::GUI + LOFT WINDOWS</A></LI>
+	<UL>
+
+		<LI><A HREF="#the %window hash">The %window hash</A></LI>
+		<LI><A HREF="#the %design hash">The %design hash</A></LI>
+		<LI><A HREF="#clustered controls">Clustered controls</A></LI>
+	</UL>
+
+	<LI><A HREF="#customizing the build process">CUSTOMIZING THE BUILD PROCESS</A></LI>
+	<UL>
+
+		<LI><A HREF="#custom controls">Custom controls</A></LI>
+		<LI><A HREF="#inspecting and changing options">Inspecting and changing options</A></LI>
+	</UL>
+
+	<LI><A HREF="#distribution">DISTRIBUTION</A></LI>
+	<UL>
+
+		<LI><A HREF="#the runtime">The Runtime</A></LI>
+		<LI><A HREF="#using perlapp et al">Using PerlApp et al</A></LI>
+	</UL>
+
+	<LI><A HREF="#on gui coding">ON GUI CODING</A></LI>
+	<UL>
+
+		<LI><A HREF="#what no perl code">What? No Perl Code?</A></LI>
+		<LI><A HREF="#use window state">Use Window State</A></LI>
+		<LI><A HREF="#gui vs. application">GUI vs. Application</A></LI>
+		<LI><A HREF="#debug events with carp">Debug Events With Carp</A></LI>
+		<LI><A HREF="#knowing win32::gui">Knowing Win32::GUI</A></LI>
+		<LI><A HREF="#the internals of win32::gui">The Internals of Win32::GUI</A></LI>
+	</UL>
+
+	<LI><A HREF="#resources and downloads">RESOURCES AND DOWNLOADS</A></LI>
+	<LI><A HREF="#copyright">COPYRIGHT</A></LI>
+</UL>
+<!-- INDEX END -->
+
+<HR>
+<P>
+<H1><A NAME="name">NAME</A></H1>
+<P>Win32::GUI::Loft Programmer's Reference -- how to
+incorporate The GUI Loft windows into your Perl programs
+(not utterly complete :)</P>
+<P>
+<HR>
+<H1><A NAME="introduction">INTRODUCTION</A></H1>
+<P>
+<H2><A NAME="what is it">What is it?</A></H2>
+<P>Win32::GUI::Loft is the Runtime part of The GUI Loft.</P>
+<P>The most important class is Win32::GUI::Loft::Design, which
+is used to build the designed windows at runtime. A few
+important methods are discussed below.</P>
+<P>
+<HR>
+<H1><A NAME="synopsis">SYNOPSIS</A></H1>
+<P>
+<H2><A NAME="building a window you designed in the gui loft">Building a window you designed in The GUI Loft</A></H2>
+<PRE>
+        use strict;</PRE>
+<PRE>
+        use Win32::GUI;
+        use Win32;
+        use Win32::GUI::Loft::Design;</PRE>
+<PRE>
+        my $fileWindow = &quot;fetch.gld&quot;;           #You created this using The GUI Loft
+        my $objDesign = Win32::GUI::Loft::Design-&gt;newLoad($fileWindow) or
+                        die(&quot;Could not open window file ($fileWindow)&quot;);</PRE>
+<PRE>
+        my $win = $objDesign-&gt;buildWindow() or die(&quot;Could not build window ($fileWindow)&quot;);</PRE>
+<PRE>
+        $win-&gt;Show();</PRE>
+<PRE>
+        Win32::GUI::Dialog();</PRE>
+<P>
+<H2><A NAME="loading the file yourself">Loading the file yourself</A></H2>
+<P>This line</P>
+<PRE>
+        my $objDesign = Win32::GUI::Loft::Design-&gt;newLoad($fileWindow) or
+                        die(&quot;Could not open window file ($fileWindow)&quot;);</PRE>
+<P>loads the Window from file. You can load the file yourself
+and build the window like this:</P>
+<PRE>
+        my $fhIn;
+        open($fhIn, &quot;&lt;$fileWindow&quot;) or die(&quot;Could not open file ($fileWindow)\n&quot;);
+        binmode($fhIn);         #Note! It's a storable image
+        local $/;
+        my $code = &lt;$fhIn&gt;;
+        close($fhIn) or die();</PRE>
+<PRE>
+        my $objDesign = Win32::GUI::Loft::Design-&gt;newScalar($code) or
+                        die(&quot;Could not build window file ($fileWindow)\n&quot;);</PRE>
+<P>This may be used if you e.g. get the window definition (the 
+contents of the $code variable in this example) from 
+something other than a file; e.g. a database or a file 
+handle. Remember to use <CODE>binmode()</CODE> if you read the file 
+yourself.</P>
+<P>
+<H2><A NAME="event handlers">Event handlers</A></H2>
+<PRE>
+        #The Name property of the loaded window is &quot;winFetch&quot;
+        sub ::winFetch_Terminate {</PRE>
+<PRE>
+                return(-1);
+                }</PRE>
+<P>
+<H2><A NAME="window controls">Window controls</A></H2>
+<PRE>
+        #The -name of the button is &quot;btnFetch&quot;
+        sub ::btnFetch_Click {
+                #The Name property of the loaded window is &quot;winFetch&quot;
+                defined(my $win = $Win32::GUI::Loft::window{winFetch}) or return(1);</PRE>
+<PRE>
+                #There is another control (a Textfield) in the Design called &quot;tfURL&quot;
+                my $url = $win-&gt;tfURL-&gt;Text();</PRE>
+<PRE>
+                return(1);
+                }</PRE>
+<P>
+<HR>
+<H1><A NAME="installation">INSTALLATION</A></H1>
+<P>
+<H2><A NAME="the win32::gui::loft runtime">The Win32::GUI::Loft Runtime</A></H2>
+<P>Install the PPM packages found in the ``PPM'' directory. <STRONG>Run
+install.bat</STRONG>.</P>
+<P>The Runtime module is used in your programs to create the
+windows. You'll need to install the Runtime before you try
+the Demo programs.</P>
+<P><STRONG>Note</STRONG>: You will need to run install.bat each time you
+download a new release! install.bat will remove, then
+reinstall the new modules.</P>
+<P>Also, make sure the following modules are present:</P>
+<PRE>
+        Win32
+        Win32::GUI</PRE>
+<P>
+<H2><A NAME="the gui loft application">The GUI Loft Application</A></H2>
+<P>There is a binary and a source distribution.</P>
+<P>The binary is totally freestanding. Just run the program,
+and it should work.</P>
+<P>The source relies on the Runtime, so install the PPMs first.
+The source is also dependent on the modules found in the
+Modules dir. Install them, then run the Perl file
+``lib/tgl.pl''</P>
+<P>
+<HR>
+<H1><A NAME="demos">DEMOS</A></H1>
+<P>The Demo programs are located in the Demo directory. After
+you have installed the Runtime PPMs, just run the Perl
+scripts to see them in action.</P>
+<P>The code is commented to point out interesting and important
+things, so a code walkabout could be educational.</P>
+<P>
+<H2><A NAME="password">Password</A></H2>
+<P>A simple demo of the Win32::GUI::Loft::Design class.</P>
+<img src="pic/windowdesign.gif" width="224" height="102"><P>To demonstrate the timer, I chose to implement one very good
+user interface detail in some versions of the e-mail program
+Eudora; when Caps-lock is active, Eudora will warn the user
+that the password probably will get screwed up. The demo
+warns regardless of the Caps-lock state.</P>
+<P>Things to learn from:</P>
+<UL>
+<LI>
+How to create the window
+<P></P>
+<LI>
+How to access the window from event handlers
+<P></P>
+<LI>
+Password-style textfield
+<P></P>
+<LI>
+Button with bitmap image
+<P></P>
+<LI>
+Timer used to blink text (yeah, I know... :)
+<P></P></UL>
+<P>
+<H2><A NAME="fetchurl">FetchURL</A></H2>
+<P>Enter a URL and Fetch will do a GET and display the HTTP
+headers and the raw HTML.</P>
+<P>This is a great example of a quick GUI wrapper around a
+simple Perl program.  A colleague asked if I knew how to see
+the HTTP response of a GET request.</P>
+<P>-``Sure, that's a few lines of Perl''</P>
+<P>Whining. -``Isn't there a Windows program to do that already?''</P>
+<P>Well, fifteen minutes later, there was. And I spent most of
+that time trying to find the HTTP::Response method returning
+the HTTP headers (headers_as_string).</P>
+<P>Things to learn from:</P>
+<UL>
+<LI>
+Keep the .gld file opened in The GUI Loft while you browse
+the code. You'll need to check control names and stuff.
+<P></P>
+<LI>
+Look at how the Resize properties are set.
+<P></P>
+<LI>
+Look at how the TabStrip is done using Clusters.
+<P></P>
+<LI>
+In the btnFetch_Click event handler, take note of how to
+access the Win32::GUI Window object and the contained
+controls, e.g. $win-&gt;tfURL-&gt;<CODE>Text()</CODE>
+<P></P>
+<LI>
+How to use a ControlInspector to modify the controls in the
+window at build time.
+<P></P></UL>
+<P>
+<H2><A NAME="filedisplay">FileDisplay</A></H2>
+<P>Simple program to display files in a RichEdit control.</P>
+<P>Things to learn from:</P>
+<UL>
+<LI>
+How to attach a menu to your window during the build.
+<P></P>
+<LI>
+How to manually code the resizer stuff when there is a
+Splitter control involved.
+<P></P>
+<LI>
+How to separate the actual GUI code from your application
+code as much as possible.
+<P></P></UL>
+<P>
+<H2><A NAME="the gui loft">The GUI Loft</A></H2>
+<P>For real world examples, look in the Loft\resource
+directory. Here you can find the windows and dialogs used in
+The GUI Loft.</P>
+<P>If you decide to experiment or change anyhing, it might be a
+sligthly clever idea to make a backup copy first. But you
+already knew that... ;)</P>
+<P>
+<HR>
+<H1><A NAME="building loft windows">BUILDING LOFT WINDOWS</A></H1>
+<P>
+<H2><A NAME="the demo programs">The Demo programs</A></H2>
+<P>Until this section gets a little more complete, the best way
+to learn is to check out the code in the Demo programs.</P>
+<P>It's not overly complicated, and the demos are nicely
+commented.</P>
+<P>
+<H2><A NAME="building the window">Building the Window</A></H2>
+<P>
+<H2><A NAME="the name of the window">The -name of the Window</A></H2>
+<P>The Name property, and how to change it</P>
+<P>
+<H2><A NAME="adding menus">Adding Menus</A></H2>
+<P>Adding a menu to your window is really simple.</P>
+<P>Create the menu the usual way, create the Design object,
+then set the mnuMenu property before you actually build the
+window. An example from the FileDisplay demo program:</P>
+<PRE>
+        my $fileWindow = &quot;filedisplay.gld&quot;;
+        my $objDesign = Win32::GUI::Loft::Design-&gt;newLoad($fileWindow);</PRE>
+<PRE>
+        $objDesign-&gt;mnuMenu( Win32::GUI::MakeMenu(
+                        &quot;&amp;File&quot;                                         =&gt; &quot;mnuFile&quot;,
+                        &quot; &gt; E&amp;xit&quot;                                      =&gt; &quot;mnuFileExit&quot;,
+                        ) );</PRE>
+<PRE>
+        my $win = $objDesign-&gt;buildWindow();</PRE>
+<P>[Note: This example doesn't contain error checking. The demo
+program does.]</P>
+<P>
+<H2><A NAME="other loft::design methods">Other Loft::Design Methods</A></H2>
+<P>
+<HR>
+<H1><A NAME="win32::gui + loft windows">WIN32::GUI + LOFT WINDOWS</A></H1>
+<P>This section contains advice on how to do Win32::GUI coding
+with the windows you designed in The GUI Loft.</P>
+<P>
+<H2><A NAME="the %window hash">The %window hash</A></H2>
+<P>
+<H2><A NAME="the %design hash">The %design hash</A></H2>
+<P>
+<H2><A NAME="clustered controls">Clustered controls</A></H2>
+<P>There is a method <CODE>rhClusterWingc()</CODE> on your Design objects
+you can use to access the clusters and their controls.</P>
+<P>$deisgn-&gt;<CODE>rhClusterWingc()</CODE> is a hash ref with (key = Cluster
+name, value = array ref (with Win32::GUI controls)).</P>
+<PRE>
+        #Let's say your created window is called winTest
+        defined(my $win = $Win32::GUI::Loft::window{winTest}) or return(1);
+        my $design = $Win32::GUI::Loft::design{winTest};</PRE>
+<PRE>
+        #Here are the clusters
+        print join(&quot;, &quot;, keys %{$design-&gt;rhClusterWingc()}) . &quot;\n\n&quot;;</PRE>
+<PRE>
+        #Display all clustered controls
+        print Dumper($design-&gt;rhClusterWingc());</PRE>
+<P>
+<HR>
+<H1><A NAME="customizing the build process">CUSTOMIZING THE BUILD PROCESS</A></H1>
+<P>
+<H2><A NAME="custom controls">Custom controls</A></H2>
+<P>
+<H2><A NAME="inspecting and changing options">Inspecting and changing options</A></H2>
+<P>Each control can be altered at build time using a subclassed
+Win32::GUI::Loft::ControlInspector object. You can -
+addstyle, -remstyle, etc. and basically change the entire
+list of options passed to the method creating the control.</P>
+<P>The Demo program FetchURL is an example of this, changing
+the background color of the window (to an ugly color...
+sorry), and adding a style to the window, making it a
+ToolWindow.</P>
+<P>Study the method ``buildOptions'' in the FetchInspector.pm
+file for hints on how to do this.</P>
+<P>Note that you might have to remove existing options before
+adding your own.</P>
+<P>Some extracts from the Demo program:</P>
+<PRE>
+        ### Creating the Win32::GUI::Window object,
+        ### we use a ControlInspector object
+        my $objInspector = FetchInspector-&gt;new() or die(&quot;Could not create Inspector}n&quot;);
+        my $win = $objDesign-&gt;buildWindow(undef, $objInspector)
+                        or die(&quot;Could not build window ($fileWindow)&quot;);</PRE>
+<PRE>
+        ...</PRE>
+<PRE>
+        ### Subclass the Win32::GUI::Loft::ControlInspector class
+        package FetchInspector;
+        use base qw( Win32::GUI::Loft::ControlInspector );</PRE>
+<PRE>
+        ### Override tbe buildoptions method
+        sub buildOptions { my $self = shift; my $pkg = ref($self);
+                my ($objControl, $raOption) = @_;</PRE>
+<PRE>
+                #Modify the main window
+                if($objControl-&gt;prop(&quot;Name&quot;) eq &quot;winFetch&quot;) {</PRE>
+<PRE>
+                        #Create a class with a certain bg color
+                        my $clsFetch = Win32::GUI::Class-&gt;new(
+                                -name =&gt; &quot;classFetchMisc&quot;,
+                                -color =&gt; 2,
+                                        ) or die(&quot;Could not create Class\n&quot;);
+                        push(@$raOption, &quot;-class&quot; =&gt; $clsFetch);</PRE>
+<PRE>
+                        #Add an extended style (to make it a toolwindow)
+                        #
+                        #(Note that you can do this from within The GUI Loft Editor,
+                        #this is just to illustrate how to do this kind of thing)
+                        push(@$raOption, &quot;-addexstyle&quot; =&gt; 0x00000080);          #WS_EX_TOOLWINDOW
+                        }</PRE>
+<PRE>
+                return(@$raOption);
+                }</PRE>
+<P>
+<HR>
+<H1><A NAME="distribution">DISTRIBUTION</A></H1>
+<P>When you create applications using Win32::GUI::Loft, you
+need to supply the modules somehow along with the Perl
+program.</P>
+<P>
+<H2><A NAME="the runtime">The Runtime</A></H2>
+<P>Include the PPM files in your distribution script, or point
+to The GUI Loft web site.</P>
+<P>
+<H2><A NAME="using perlapp et al">Using PerlApp et al</A></H2>
+<P>The GUI Loft binary is a PerlApp application, and so any
+program you write using Win32::GUI::Loft should work equally
+well in that regard.</P>
+<P>This is actually a really handy little program, since
+it totally eliminates the deployment problem.</P>
+<P>I haven't tried using Perl2Exe and other similar programs,
+but there are reports that at least Perl2Exe works well.</P>
+<P><A HREF="http://www.activestate.com/Products/Perl_Dev_Kit/s">http://www.activestate.com/Products/Perl_Dev_Kit/s</A></P>
+<P><A HREF="http://www.indigostar.com/perl2exe.htm">http://www.indigostar.com/perl2exe.htm</A></P>
+<P>
+<HR>
+<H1><A NAME="on gui coding">ON GUI CODING</A></H1>
+<P>
+<H2><A NAME="what no perl code">What? No Perl Code?</A></H2>
+<P>Originally, I planned to have The GUI Loft generate Perl
+code to build the window in addition to have a runtime
+module create it. I have since abandoned that idea.</P>
+<P>Why? There are certainly advantages with producing code:</P>
+<UL>
+<LI>
+Programmers new to The GUI Loft will feel better when they
+can see that ``yes, this is my Perl code''. It's tangible, and
+nothing is hidden in a weird class they didn't write
+themselves.
+<P></P>
+<LI>
+People can learn from it. Create things in WYSIWYG mode,
+export as Perl and see exactly how this or that was done.
+Using Win32::GUI should ideally mean that the programmer is
+exposed to Win32::GUI code and familiar with how it works.
+<P></P>
+<LI>
+Code can be tweaked to produce 100% what's desired. If it's
+possible within the realms of Win32::GUI and Win32::API, it
+can be done no matter what.
+<P></P>
+<LI>
+Clever programmers can easily add controls not yet supported
+by The GUI Loft.
+<P></P></UL>
+<P>However, there are a few disadvantages with exported code
+that need mentioning:</P>
+<UL>
+<LI>
+Generated code is ``one way''. If you're gonna modify it,
+which is kind of the point, parsing it is bound to be
+fragile and random at best. Not something I would like to
+rely on anyway.
+<P></P>
+<LI>
+Generated code is static, running code is dynamic. Say you
+tweaked your code to perfection and then needed to change
+the layout in The GUI Loft? Regenerate the code and retweak?
+Argghhhh!!! What a maintenance nightmare!
+<P>With The GUI Loft you <STRONG>can</STRONG> provide code to tweak the
+controls during the build. You can also incorporate Custom
+controls in your Design and later on generate them with
+code, giving you the best of both worlds.</P>
+<P></P>
+<LI>
+Maybe a minor point: the generated code is unlikely to
+comply with your coding standards.
+<P></P>
+<LI>
+As I started to implement more and more features of The GUI
+Loft I came to the realisation that any Perl code I would
+generate to produce the same result would inevitably require
+a lot of runtime modules (at <STRONG>least</STRONG> Win32::GUI::Loft::Design) to work
+in order to avoid duplicate code; The GUI Loft (or rather
+the class Win32::GUI::Loft::Design) had become an extension of
+Win32::GUI.
+<P>My vague future plans emphasize this even more, but let me
+give them some more thought before I elaborate.</P>
+<P></P></UL>
+<P>
+<H2><A NAME="use window state">Use Window State</A></H2>
+<P>
+<H2><A NAME="gui vs. application">GUI vs. Application</A></H2>
+<P>Separate the specifics of your current GUI implementation
+from your application as much as possible.</P>
+<P>
+<H2><A NAME="debug events with carp">Debug Events With Carp</A></H2>
+<P>
+<H2><A NAME="knowing win32::gui">Knowing Win32::GUI</A></H2>
+<P>The GUI Loft will shield you from code. That's good and bad.</P>
+<P>It's good because you don't need to know everything about a
+subject to be able to use it, the same way you e.g. don't
+need to understand the finer points of the POP3 protocol to
+use Mail::POP3Client. That's reuse of code and knowledge.
+That's what will bring productivity gains.</P>
+<P>But it's also bad, because The GUI Loft can only take you so
+far before you run into things that aren't implemented, or
+that fall outside the scope of the program. Then you have to
+do the difficult things yourself anyway (only with a solid
+base and a nice framework). But you still have to do the
+work.</P>
+<P>So, study Win32::GUI code and learn how things are done. Use
+the help files under the Help menu. If you are going to use
+Win32::GUI then you'll have to know how it works. There is
+no way around that. And when the capabilities of Win32::GUI
+ends, you'll have to look at the Win32 API and Aldo's
+Win32::API module. Get used to it.</P>
+<P>
+<H2><A NAME="the internals of win32::gui">The Internals of Win32::GUI</A></H2>
+<P>If you're serious about Win32::GUI, I recommend a brief tour
+of GUI.xs and GUI.pm.</P>
+<P>You'll get a better view of what's in there, and a few hints
+of what you need to look for in the Win32 docs. Armed with
+that, it's possible to do quite a lot of things that aren't
+fully supported by Win32::GUI (or just plain undocumented :)</P>
+<P>
+<HR>
+<H1><A NAME="resources and downloads">RESOURCES AND DOWNLOADS</A></H1>
+<P>The docs - [ship them with a nice ToC]</P>
+<P>The sample apps</P>
+<P>Win32 SDK - donwload and online link</P>
+<P>WINUSER.H ? Copyright on that one? :(</P>
+<P>Other bookmarks</P>
+<P>The mailing list + archive</P>
+<P>Erick Bourgeois ``cookbook'' site</P>
+<P>
+<HR>
+<H1><A NAME="copyright">COPYRIGHT</A></H1>
+<P>Win32::GUI::Loft is Copyright (c) Johan Lindström,
+<A HREF="mailto:johanl@bahnhof.se">johanl@bahnhof.se</A></P>
+<P>The Perl Artistic license applies.</P>
+
+</BODY>
+
+</HTML>

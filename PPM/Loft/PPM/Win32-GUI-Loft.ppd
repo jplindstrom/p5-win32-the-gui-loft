@@ -1,0 +1,13 @@
+<SOFTPKG NAME="Win32-GUI-Loft" VERSION="0,10,0,0">
+	<TITLE>Win32-GUI-Loft</TITLE>
+	<ABSTRACT>The GUI Loft runtime modules</ABSTRACT>
+	<AUTHOR>Johan Lindstrom &lt;johanl@bahnhof.se&gt;</AUTHOR>
+	<IMPLEMENTATION>
+		<DEPENDENCY NAME="Win32" VERSION="0,171,0,0" />
+		<DEPENDENCY NAME="Win32-GUI" VERSION="0,0,558,0" />
+		<DEPENDENCY NAME="Win32-GUI-AdHoc" VERSION="0,01,0,0" />
+		<OS NAME="MSWin32" />
+		<ARCHITECTURE NAME="MSWin32-x86-multi-thread" />
+		<CODEBASE HREF="Win32-GUI-Loft-0.13-PPM.tar.gz" />
+	</IMPLEMENTATION>
+</SOFTPKG>

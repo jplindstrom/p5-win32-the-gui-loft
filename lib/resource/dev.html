@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<TITLE>Reference -- how to extend The GUI Loft</TITLE>
+<LINK REV="made" HREF="mailto:">
+</HEAD>
+
+<BODY>
+
+<A NAME="__index__"></A>
+<!-- INDEX BEGIN -->
+
+<UL>
+
+	<LI><A HREF="#name">NAME</A></LI>
+	<LI><A HREF="#common procedures">COMMON PROCEDURES</A></LI>
+	<UL>
+
+		<LI><A HREF="#adding a new control">Adding a new control</A></LI>
+	</UL>
+
+	<LI><A HREF="#common bugs">COMMON BUGS</A></LI>
+	<UL>
+
+		<LI><A HREF="#the design window flickers when i add a certain type of contol">The design window flickers when I add a certain type of contol</A></LI>
+	</UL>
+
+	<LI><A HREF="#copyright">COPYRIGHT</A></LI>
+</UL>
+<!-- INDEX END -->
+
+<HR>
+<P>
+<H1><A NAME="name">NAME</A></H1>
+<P>The GUI Loft Developer's Reference -- how to extend The GUI Loft</P>
+<P>
+<HR>
+<H1><A NAME="common procedures">COMMON PROCEDURES</A></H1>
+<P>
+<H2><A NAME="adding a new control">Adding a new control</A></H2>
+<P>Read up on the control. Look in the samples, docs, GUI.pm 
+and GUI.xs.</P>
+<P>Add the control to the resource/tools.gld</P>
+<P>Add a new event handler to TGL/WindowTool.pm</P>
+<P>Add ``use'' etc. to PPM\Loft\lib\Win32\GUI\Loft\Design.pm</P>
+<P>Copy an appropriate (similar) control from 
+PPM\Loft\lib\Win32\GUI\Loft\Control and modify it.</P>
+<P>Add the file name to PPM\Loft\MANIFEST, run ``perl 
+Makefile.PL'' again.</P>
+<P>First decide which properties to use, then modify enough 
+(not the paint routine) to get the code running. Add a 
+control and preview the window to see it in place.</P>
+<P>Now you're ready to modify the paint method.</P>
+<P>Add a section in the User Manual file resource/manual.pod</P>
+<P>
+<HR>
+<H1><A NAME="common bugs">COMMON BUGS</A></H1>
+<P>
+<H2><A NAME="the design window flickers when i add a certain type of contol">The design window flickers when I add a certain type of contol</A></H2>
+<P>You have made a syntax error or is calling a nonexistant 
+method or somesuch. The error is trapped in an eval, causing 
+the update to take too long time. Spellcheck your last edit.</P>
+<P>
+<HR>
+<H1><A NAME="copyright">COPYRIGHT</A></H1>
+<P>Win32::GUI::Loft is Copyright (c) Johan Lindström,
+<A HREF="mailto:johanl@bahnhof.se">johanl@bahnhof.se</A></P>
+<P>The Perl Artistic license applies.</P>
+
+</BODY>
+
+</HTML>

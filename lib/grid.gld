@@ -1,0 +1,161 @@
+$VAR1 = bless( {
+  'rhImageList' => {},
+  'rhIcon' => {},
+  'gridSnap' => 1,
+  'snapX' => 1,
+  'rhWingcTabStripGroup' => {},
+  'rhBitmap' => {},
+  'mnuMenu' => undef,
+  'snapY' => 1,
+  'fileName' => 'C:\\Dokument\\Projekt\\Dev\\Loft\\lib\\grid.gld',
+  'buildControlNameBase' => '',
+  'objControlWindow' => bless( {
+    'objContainer' => undef,
+    'designIsSelected' => 0,
+    'rhControlProperty' => {
+      'MinHeight' => bless( {
+        'value' => undef
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Text' => bless( {
+        'value' => 'winWindow1'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Width' => bless( {
+        'value' => 350
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Top' => bless( {
+        'value' => 100
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'MaxHeight' => bless( {
+        'value' => undef
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Name' => bless( {
+        'value' => 'winWindow1'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'MinWidth' => bless( {
+        'value' => undef
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'PreviewMenu' => bless( {
+        'value' => ''
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Height' => bless( {
+        'value' => 200
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Topmost' => bless( {
+        'value' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'WindowIcon' => bless( {
+        'value' => ''
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'DialogBox' => bless( {
+        'value' => 'window'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'MaxWidth' => bless( {
+        'value' => undef
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Left' => bless( {
+        'value' => 250
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'DialogUI' => bless( {
+        'value' => 1
+      }, 'Win32::GUI::Loft::ControlProperty' )
+    },
+    'designIsVisible' => 1
+  }, 'Win32::GUI::Loft::Control::Window' ),
+  'raControl' => [
+    bless( {
+      'objContainer' => {},
+      'designIsSelected' => 1,
+      'rhControlProperty' => {
+        'View' => bless( {
+          'value' => 'details'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'SortDescending' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ImageList' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Width' => bless( {
+          'value' => 100
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Arrange' => bless( {
+          'value' => 'current'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Name' => bless( {
+          'value' => 'lvw661'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'NoSortHeader' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Tabstop' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'GridLines' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'SortAscending' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Left' => bless( {
+          'value' => '112'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Columns' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Visible' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'FullRowSelect' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'CheckBoxes' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'NoColumnHeader' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Top' => bless( {
+          'value' => '54'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'TextBkColor' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'TextColor' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Height' => bless( {
+          'value' => 50
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ShowSelAlways' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'PreviewList' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'HotTrack' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Autoarrange' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'SingleSel' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Enable' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ReorderColumns' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' )
+      },
+      'designIsVisible' => 1
+    }, 'Win32::GUI::Loft::Control::ListView' )
+  ],
+  'buildWindowName' => '',
+  'isPreview' => 0,
+  'raCluster' => [],
+  'gridShow' => 0,
+  'pathBase' => 'C:\\Dokument\\Projekt\\Dev\\Loft\\lib\\',
+  'isDirty' => 0
+}, 'Win32::GUI::Loft::Design' );
+$VAR1->{'raControl'}[0]{'objContainer'} = $VAR1->{'objControlWindow'};

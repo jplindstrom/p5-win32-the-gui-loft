@@ -1,0 +1,54 @@
+$VAR1 = bless( {
+  'gridSnap' => 1,
+  'snapX' => 4,
+  'snapY' => 4,
+  'fileName' => 'C:\\Dokument\\Projekt\\Dev\\Loft\\lib\\save.gld',
+  'buildControlNameBase' => '',
+  'objControlWindow' => bless( {
+    'objContainer' => undef,
+    'designIsSelected' => 0,
+    'rhControlProperty' => {
+      'ControlProperty:MinHeight' => undef
+      'ControlProperty:Maximizebox' => 1,
+      'ControlProperty:Controlparent' => 0,
+      'ControlProperty:Width' => 350,
+      'ControlProperty:Name' => 'winTestSave',
+    },
+    'designIsVisible' => 1
+  }, 'Win32::GUI::Loft::Control::Window' ),
+  'raControl' => [
+    bless( {
+      'objContainer' => {},
+      'designIsSelected' => 0,
+      'rhControlProperty' => {
+        'ControlProperty:Bottom' => 0,
+      },
+      'designIsVisible' => 1
+    }, 'Win32::GUI::Loft::Control::TabStrip' ),
+    bless( {
+      'objContainer' => {},
+      'designIsSelected' => 0,
+      'rhControlProperty' => {
+        'ControlProperty:ScrollAutoH' => 0,
+        'ControlProperty:Password' => 0,
+        'ControlProperty:Valign' => 'top',
+      },
+      'designIsVisible' => 1
+    }, 'Win32::GUI::Loft::Control::Textfield' ),
+    bless( {
+      'objContainer' => {},
+      'designIsSelected' => 0,
+      'rhControlProperty' => {
+        'ControlProperty:Cancel' => 0,
+        'ControlProperty:Text' => 'Ok',
+      },
+      'designIsVisible' => 1
+    }, 'Win32::GUI::Loft::Control::Button' )
+  ],
+  'buildWindowName' => '',
+  'isPreview' => 0,
+  'raCluster' => [],
+  'gridShow' => 0,
+  'pathBase' => 'C:\\Dokument\\Projekt\\Dev\\Loft\\lib\\',
+  'isDirty' => 0
+}, 'Win32::GUI::Loft::Design' );

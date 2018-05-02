@@ -1,0 +1,255 @@
+
+
+
+*** Windows
+
+** Control tree window with main menu (parent window)
+
+Controls
+
+Layer 
+- List of groups (including <none>). Select a layer 
+and all controls get selected. Change the selection and 
+click a "Remember" button. 
+
+- A layer has a Visible property like in Photoshop.
+
+- All controls have a Layer property ? (maybe bad, only in 
+one layer at a time).
+
+- Connect a TabStrip to a layer and a TabStripGroup
+
+
+** Design window
+
+
+** Properties pallette
+
+* Control
+- Properties
+- Info
+
+* Settings
+- Grid
+  [X] Show
+  [X] Snap
+  _x_ _y_
+  (color)
+
+...
+
+
+** Control pallette
+
+
+
+
+
+*** Classes
+
+** Loft::Control
+
+* How to paint itself
+* How to create the actual control
+
+* Control properties
++events supported
++properties initial values
+-parent control
+
+* Run-time properties
+-selected
+-visible
+
+
+** ControlProperty
+-name
+-nameProperty
+-nameOption
+-value
+
+* This should become a class hierarchy where the properties 
+know how to let the user enter data.
+
+ControlProperty
+	ControlPropertyBoolean
+	ControlPropertyScalar
+	ControlPropertyMultiValue
+	ControlPropertyBitmap
+	ControlPropertyIcon
+	ControlPropertyBitmaps
+
+
+** Loft::App
+
+The application
+
+
+
+
+*** Inheritance tree
+
+Control
+	Menu
+	Window+
+	Button+
+	Label+
+	Picture
+	TextField+
+	RadioButton+
+	CheckBox+
+	GroupBox+
+	Listbox+
+	RichEdit+
+	ListView+
+	ComboBox+
+	TreeView+
+	StatusBar+
+	Splitter+
+	ProgressBar+
+	TabStrip+
+	UpDown
+	Timer+
+	ImageList+
+
+
+ControlProperty
+
+
+
+
+*** Model, Controller, View
+
+* model
+reportProp
+ -Called by controllers
+
+* View
+reportProp
+ -Called by the model
+
+
+
+
+*** Right Click
+
+** One
+
+Selected		<- only for the one below the cursor
+-
+Edit
+ Cut
+ Copy
+ Paste
+ Duplicate
+Bring
+ Z up
+ Z down
+ To top
+ To bottom
+Align
+ Left
+ Center
+ Right
+ -
+ Top
+ Middle
+ Bottom
+
+
+** Many
+
+Selected
+ v btnOk
+   lblThereYouGo
+...
+
+
+
+
+*** Properties Windows layout
+
+btnConfirmation (Button)
+150@200, 60x21
+
+Height     _________
+----------------
+Property  | Value
+DialogBox | 0
+Height    | 166
+MaxHeight |
+Name      | winWindow1
+
+
+
+
+
+
+*** Implementation
+
+** Radio Buttons
+
+#define WS_GROUP            0x00020000L
+
+
+
+*** Automatic behaviour - Micro Events/Auto Events/Eventlets
+
+Auto-generate event handler with certain code to generate a behaviour
+
+
+** Events
+
+OnClick
+OnGetFocus
+OnChange
+...
+
+
+** Actions
+
+SetProperty(c,p,v)
+FocusNext
+FocusPrev
+Focus(c)
+Show
+Hide
+VisibleToggle
+Enable(b)
+EnableToggle
+Checked(b)
+CheckedToggle
+
+...
+
+
+
+*** Auto-use Resizer
+
+** Properties
+
+ResizeH: "", left, width
+ResizeHMod: "", neg, div2, div3, div4
+ResizeHValue: splitterTop
+ResizeV: "", top, height
+ResizeModV: "", neg, div2, div3, div4
+ResizeVValue: ""
+
+ResizeHValue -- The influencing property. Default: the 
+window's width. Otherwise, a "specialvalue" controlled by 
+the programmer (refer to the Win32::GUI::Resizer docs).
+
+ResizeH -- When ResizeHValue changes, change the (left|width) of 
+this control.
+
+ResizeHMod -- When ResizeHValue causes ResizeH to change, 
+modify the change.
+
+	div2 -- half
+	div3 -- third
+	neg -- opposite
+	neg2 -- half opposite
+	neg3 -- third opposite
+	etc.
+	
+

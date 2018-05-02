@@ -1,0 +1,663 @@
+$VAR1 = bless( {
+  'rhIcon' => {},
+  'rhImageList' => {},
+  'gridSnap' => 1,
+  'objResizer' => bless( {
+    'raPreMinimizedSize' => [
+      451,
+      333
+    ],
+    'isMinimized' => 0,
+    'initDone' => 1,
+    'winResize' => bless( {
+      '-type' => 0,
+      'tfURL9943425604353' => bless( {
+        '-type' => 13,
+        '-name' => 'tfURL9943425604353',
+        '-handle' => 1446532
+      }, 'Win32::GUI::Textfield' ),
+      '-handle' => 5771730,
+      'reHtml9943425604353' => bless( {
+        '-type' => 34,
+        '-name' => 'reHtml9943425604353',
+        '-handle' => 18747868
+      }, 'Win32::GUI::RichEdit' ),
+      '-name' => 'winTest9943425604353',
+      'reHttp9943425604353' => bless( {
+        '-type' => 34,
+        '-name' => 'reHttp9943425604353',
+        '-handle' => 201468
+      }, 'Win32::GUI::RichEdit' ),
+      'lblInfo9943425604353' => bless( {
+        '-type' => 11,
+        '-name' => 'lblInfo9943425604353',
+        '-handle' => 201466
+      }, 'Win32::GUI::Label' ),
+      'tsResult9943425604353' => bless( {
+        '-type' => 33,
+        '-name' => 'tsResult9943425604353',
+        '-handle' => 1511888
+      }, 'Win32::GUI::TabStrip' ),
+      'btnFetch9943425604353' => bless( {
+        '-type' => 12,
+        '-name' => 'btnFetch9943425604353',
+        '-handle' => 660096
+      }, 'Win32::GUI::Button' )
+    }, 'Win32::GUI::Window' ),
+    'rhCache' => {
+      '$winResize->reHttp9943425604353()' => {},
+      '$winResize->reHtml9943425604353()' => {},
+      '$winResize->reHttp9943425604353()->Height()' => 248,
+      '$winResize->btnFetch9943425604353()->Left()' => 379,
+      '$winResize->reHtml9943425604353()->Height()' => 248,
+      '$winResize->lblInfo9943425604353()->Width()' => 435,
+      '$winResize->reHtml9943425604353()->Width()' => 430,
+      '$winResize->tfURL9943425604353()->Width()' => 372,
+      '$winResize->lblInfo9943425604353()->Top()' => 317,
+      '$winResize->lblInfo9943425604353()' => {},
+      '$winResize->reHttp9943425604353()->Width()' => 430,
+      '$winResize->btnFetch9943425604353()' => {},
+      '$winResize->tfURL9943425604353()' => {}
+    },
+    'raRelations' => [
+      'winWidth',
+      [
+        [
+          '$winResize->tfURL9943425604353()->Width()'
+        ],
+        [
+          '$winResize->btnFetch9943425604353()->Left()'
+        ],
+        [
+          '$winResize->reHtml9943425604353()->Width()'
+        ],
+        [
+          '$winResize->reHttp9943425604353()->Width()'
+        ],
+        [
+          '$winResize->lblInfo9943425604353()->Width()'
+        ]
+      ],
+      'winHeight',
+      [
+        [
+          '$winResize->reHtml9943425604353()->Height()'
+        ],
+        [
+          '$winResize->reHttp9943425604353()->Height()'
+        ],
+        [
+          '$winResize->lblInfo9943425604353()->Top()'
+        ]
+      ]
+    ],
+    'rhSpecialValue' => {
+      'winWidth' => 451,
+      'winHeight' => 333
+    },
+    'rhSpecialValueOld' => {
+      'winWidth' => 451,
+      'winHeight' => 333
+    }
+  }, 'Win32::GUI::Resizer' ),
+  'snapX' => 4,
+  'fileName' => 'C:\\Dokument\\Projekt\\Dev\\FetchURL\\fetch.gld',
+  'snapY' => 4,
+  'mnuMenu' => undef,
+  'rhBitmap' => {},
+  'rhWingcTabStripGroup' => {
+    'tsResult9943425604353' => bless( {
+      'rhTab' => {
+        '0' => {
+          'Win32::GUI::RichEdit=HASH(0x1990b3c)' => {
+            'visible' => 1,
+            'objControl' => {}
+          }
+        },
+        '1' => {
+          'Win32::GUI::RichEdit=HASH(0x1a2c3e0)' => {
+            'visible' => 1,
+            'objControl' => {}
+          }
+        }
+      },
+      'tsStrip' => {}
+    }, 'Win32::GUI::TabStripGroup' )
+  },
+  'buildControlNameBase' => '',
+  'objControlWindow' => bless( {
+    'objContainer' => undef,
+    'designIsSelected' => 0,
+    'rhControlProperty' => {
+      'MinHeight' => bless( {
+        'value' => undef
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Text' => bless( {
+        'value' => 'Fetch HTTP Headers and stuff'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Width' => bless( {
+        'value' => '444'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Top' => bless( {
+        'value' => 73
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'MaxHeight' => bless( {
+        'value' => undef
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Name' => bless( {
+        'value' => 'winFetch'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'MinWidth' => bless( {
+        'value' => undef
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'PreviewMenu' => bless( {
+        'value' => ''
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Height' => bless( {
+        'value' => '373'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Topmost' => bless( {
+        'value' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'WindowIcon' => bless( {
+        'value' => ''
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'DialogBox' => bless( {
+        'value' => 'window'
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'MaxWidth' => bless( {
+        'value' => undef
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Left' => bless( {
+        'value' => 250
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'DialogUI' => bless( {
+        'value' => 1
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'ResizeVMod' => bless( {
+        'value' => ''
+      }, 'Win32::GUI::Loft::ControlProperty' )
+    },
+    'designIsVisible' => 1
+  }, 'Win32::GUI::Loft::Control::Window' ),
+  'raControl' => [
+    bless( {
+      'objContainer' => {},
+      'designIsSelected' => 0,
+      'rhControlProperty' => {
+        'ScrollAutoH' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Password' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Valign' => bless( {
+          'value' => 'top'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeV' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Width' => bless( {
+          'value' => '357'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Case' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Number' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ScrollH' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Name' => bless( {
+          'value' => 'tfURL'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Tabstop' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Left' => bless( {
+          'value' => '4'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Visible' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeVMod' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ScrollAutoV' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Text' => bless( {
+          'value' => 'http://'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Top' => bless( {
+          'value' => '4'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeH' => bless( {
+          'value' => 'width'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeHMod' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ScrollV' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Keepselection' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Height' => bless( {
+          'value' => '21'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Align' => bless( {
+          'value' => 'left'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'OEMConvert' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Readonly' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Enable' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Multiline' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' )
+      },
+      'designIsVisible' => 1
+    }, 'Win32::GUI::Loft::Control::Textfield' ),
+    bless( {
+      'objContainer' => {},
+      'designIsSelected' => 0,
+      'rhControlProperty' => {
+        'Cancel' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Text' => bless( {
+          'value' => '&Fetch URL'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Tabstop' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Height' => bless( {
+          'value' => '21'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Valign' => bless( {
+          'value' => undef
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Align' => bless( {
+          'value' => undef
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeV' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Width' => bless( {
+          'value' => '67'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Top' => bless( {
+          'value' => '4'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Left' => bless( {
+          'value' => '364'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Bitmap' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeHMod' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeH' => bless( {
+          'value' => 'left'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Visible' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Default' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeVMod' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Enable' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Ok' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Name' => bless( {
+          'value' => 'btnFetch'
+        }, 'Win32::GUI::Loft::ControlProperty' )
+      },
+      'designIsVisible' => 1
+    }, 'Win32::GUI::Loft::Control::Button' ),
+    bless( {
+      'objContainer' => {},
+      'designIsSelected' => 0,
+      'rhControlProperty' => {
+        'Bottom' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ImageList' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeV' => bless( {
+          'value' => 'height'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Width' => bless( {
+          'value' => '424'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Right' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Name' => bless( {
+          'value' => 'tsResult'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Tabstop' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Justify' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Left' => bless( {
+          'value' => '4'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Visible' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeVMod' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Top' => bless( {
+          'value' => '32'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Buttons' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeH' => bless( {
+          'value' => 'width'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeHMod' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Tabs' => bless( {
+          'value' => 'Ht&ml;Ht&tp'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Select' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Height' => bless( {
+          'value' => '295'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Clusters' => bless( {
+          'value' => 'Html;Http'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'HotTrack' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Enable' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Multiline' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' )
+      },
+      'designIsVisible' => 1
+    }, 'Win32::GUI::Loft::Control::TabStrip' ),
+    bless( {
+      'objContainer' => {},
+      'designIsSelected' => 0,
+      'rhControlProperty' => {
+        'ScrollAutoH' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Password' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeV' => bless( {
+          'value' => 'height'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Width' => bless( {
+          'value' => '415'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ScrollH' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Name' => bless( {
+          'value' => 'reHtml'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Tabstop' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Left' => bless( {
+          'value' => '8'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Visible' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeVMod' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Text' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ScrollAutoV' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Top' => bless( {
+          'value' => '60'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeH' => bless( {
+          'value' => 'width'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeHMod' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ScrollV' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Keepselection' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Height' => bless( {
+          'value' => '261'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Align' => bless( {
+          'value' => 'left'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Readonly' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Enable' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Multiline' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' )
+      },
+      'designIsVisible' => 1
+    }, 'Win32::GUI::Loft::Control::RichEdit' ),
+    bless( {
+      'objContainer' => {},
+      'designIsSelected' => 0,
+      'rhControlProperty' => {
+        'ScrollAutoH' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Password' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeV' => bless( {
+          'value' => 'height'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Width' => bless( {
+          'value' => '415'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ScrollH' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Name' => bless( {
+          'value' => 'reHttp'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Tabstop' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Left' => bless( {
+          'value' => '8'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Visible' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeVMod' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Text' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ScrollAutoV' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Top' => bless( {
+          'value' => '60'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeH' => bless( {
+          'value' => 'width'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeHMod' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ScrollV' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Keepselection' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Height' => bless( {
+          'value' => '261'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Align' => bless( {
+          'value' => 'left'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Readonly' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Enable' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Multiline' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' )
+      },
+      'designIsVisible' => 0
+    }, 'Win32::GUI::Loft::Control::RichEdit' ),
+    bless( {
+      'objContainer' => {},
+      'designIsSelected' => 0,
+      'offsetTextLeft' => 0,
+      'offsetTextRight' => 0,
+      'rhControlProperty' => {
+        'Notify' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeV' => bless( {
+          'value' => 'top'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Width' => bless( {
+          'value' => '420'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Name' => bless( {
+          'value' => 'lblInfo'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Tabstop' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Left' => bless( {
+          'value' => '8'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Visible' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeVMod' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Wrap' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Text' => bless( {
+          'value' => 'Fetch HTTP && HTML'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Top' => bless( {
+          'value' => '330'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Bitmap' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeH' => bless( {
+          'value' => 'width'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeHMod' => bless( {
+          'value' => ''
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Frame' => bless( {
+          'value' => 'none'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Truncate' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Height' => bless( {
+          'value' => '20'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Align' => bless( {
+          'value' => 'left'
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Enable' => bless( {
+          'value' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Noprefix' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Sunken' => bless( {
+          'value' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' )
+      },
+      'designIsVisible' => 1,
+      'offsetTextTop' => 0
+    }, 'Win32::GUI::Loft::Control::Label' )
+  ],
+  'isPreview' => 1,
+  'buildWindowName' => '',
+  'raCluster' => [
+    bless( {
+      'rhControl' => {
+        'Win32::GUI::Loft::Control::RichEdit=HASH(0x1b77f80)' => {}
+      },
+      'isVisible' => 1,
+      'name' => 'Html'
+    }, 'Win32::GUI::Loft::Cluster' ),
+    bless( {
+      'rhControl' => {
+        'Win32::GUI::Loft::Control::RichEdit=HASH(0x1b37a38)' => {}
+      },
+      'isVisible' => 0,
+      'name' => 'Http'
+    }, 'Win32::GUI::Loft::Cluster' )
+  ],
+  'gridShow' => 0,
+  'pathBase' => 'C:\\Dokument\\Projekt\\Dev\\FetchURL\\',
+  'isDirty' => 0
+}, 'Win32::GUI::Loft::Design' );
+$VAR1->{'objResizer'}{'rhCache'}{'$winResize->reHttp9943425604353()'} = $VAR1->{'objResizer'}{'winResize'}{'reHttp9943425604353'};
+$VAR1->{'objResizer'}{'rhCache'}{'$winResize->reHtml9943425604353()'} = $VAR1->{'objResizer'}{'winResize'}{'reHtml9943425604353'};
+$VAR1->{'objResizer'}{'rhCache'}{'$winResize->lblInfo9943425604353()'} = $VAR1->{'objResizer'}{'winResize'}{'lblInfo9943425604353'};
+$VAR1->{'objResizer'}{'rhCache'}{'$winResize->btnFetch9943425604353()'} = $VAR1->{'objResizer'}{'winResize'}{'btnFetch9943425604353'};
+$VAR1->{'objResizer'}{'rhCache'}{'$winResize->tfURL9943425604353()'} = $VAR1->{'objResizer'}{'winResize'}{'tfURL9943425604353'};
+$VAR1->{'rhWingcTabStripGroup'}{'tsResult9943425604353'}{'rhTab'}{'0'}{'Win32::GUI::RichEdit=HASH(0x1990b3c)'}{'objControl'} = $VAR1->{'objResizer'}{'winResize'}{'reHtml9943425604353'};
+$VAR1->{'rhWingcTabStripGroup'}{'tsResult9943425604353'}{'rhTab'}{'1'}{'Win32::GUI::RichEdit=HASH(0x1a2c3e0)'}{'objControl'} = $VAR1->{'objResizer'}{'winResize'}{'reHttp9943425604353'};
+$VAR1->{'rhWingcTabStripGroup'}{'tsResult9943425604353'}{'tsStrip'} = $VAR1->{'objResizer'}{'winResize'}{'tsResult9943425604353'};
+$VAR1->{'raControl'}[0]{'objContainer'} = $VAR1->{'objControlWindow'};
+$VAR1->{'raControl'}[1]{'objContainer'} = $VAR1->{'objControlWindow'};
+$VAR1->{'raControl'}[2]{'objContainer'} = $VAR1->{'objControlWindow'};
+$VAR1->{'raControl'}[3]{'objContainer'} = $VAR1->{'objControlWindow'};
+$VAR1->{'raControl'}[4]{'objContainer'} = $VAR1->{'objControlWindow'};
+$VAR1->{'raControl'}[5]{'objContainer'} = $VAR1->{'objControlWindow'};
+$VAR1->{'raCluster'}[0]{'rhControl'}{'Win32::GUI::Loft::Control::RichEdit=HASH(0x1b77f80)'} = $VAR1->{'raControl'}[3];
+$VAR1->{'raCluster'}[1]{'rhControl'}{'Win32::GUI::Loft::Control::RichEdit=HASH(0x1b37a38)'} = $VAR1->{'raControl'}[4];

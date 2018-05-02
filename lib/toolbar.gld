@@ -1,0 +1,227 @@
+$VAR1 = bless( {
+  'rhImageList' => {},
+  'rhIcon' => {},
+  'objResizer' => undef,
+  'gridSnap' => 1,
+  'snapX' => 4,
+  'rhWingcTabStripGroup' => {},
+  'rhBitmap' => {},
+  'mnuMenu' => undef,
+  'snapY' => 4,
+  'fileName' => 'C:\\Dokument\\Projekt\\Dev\\Loft\\lib\\toolbar.gld',
+  'buildControlNameBase' => '',
+  'objControlWindow' => bless( {
+    'objContainer' => undef,
+    'designIsSelected' => 0,
+    'rhControlProperty' => {
+      'MinHeight' => bless( {
+        'value' => undef,
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Maximizebox' => bless( {
+        'value' => 1,
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Controlparent' => bless( {
+        'value' => 0,
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Width' => bless( {
+        'value' => '350',
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Helpbox' => bless( {
+        'value' => 0,
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Menubox' => bless( {
+        'value' => 1,
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'MaxHeight' => bless( {
+        'value' => undef,
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Name' => bless( {
+        'value' => 'winWindow1',
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'MinWidth' => bless( {
+        'value' => undef,
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'PreviewMenu' => bless( {
+        'value' => '',
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Topmost' => bless( {
+        'value' => 0,
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'WindowIcon' => bless( {
+        'value' => '',
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'MaxWidth' => bless( {
+        'value' => undef,
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Resizable' => bless( {
+        'value' => 1,
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Left' => bless( {
+        'value' => 250,
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'ResizeVMod' => bless( {
+        'value' => '',
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Text' => bless( {
+        'value' => 'winWindow1',
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Top' => bless( {
+        'value' => 100,
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Minimizebox' => bless( {
+        'value' => 1,
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'Height' => bless( {
+        'value' => '200',
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'DialogBox' => bless( {
+        'value' => 'window',
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' ),
+      'DialogUI' => bless( {
+        'value' => 1,
+        'readonly' => 0
+      }, 'Win32::GUI::Loft::ControlProperty' )
+    },
+    'designIsVisible' => 1
+  }, 'Win32::GUI::Loft::Control::Window' ),
+  'raControl' => [
+    bless( {
+      'objContainer' => {},
+      'designIsSelected' => 0,
+      'rhControlProperty' => {
+        'Valign' => bless( {
+          'isMultiValue' => 1,
+          'value' => 'top',
+          'readonly' => 0,
+          'isBoolean' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Buttons' => bless( {
+          'value' => '0, 4, 2, 0; 1, 4, 0, 0; 1, 4, 0,0',
+          'readonly' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeV' => bless( {
+          'value' => '',
+          'readonly' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Width' => bless( {
+          'isMultiValue' => 0,
+          'value' => '333',
+          'readonly' => 0,
+          'isBoolean' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Top' => bless( {
+          'isMultiValue' => 0,
+          'value' => '0',
+          'readonly' => 0,
+          'isBoolean' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Bitmap' => bless( {
+          'value' => '_test\\tools.bmp',
+          'readonly' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeHMod' => bless( {
+          'value' => '',
+          'readonly' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeH' => bless( {
+          'value' => '',
+          'readonly' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Name' => bless( {
+          'value' => 'tbToolbar1',
+          'readonly' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Height' => bless( {
+          'isMultiValue' => 0,
+          'value' => '21',
+          'readonly' => 0,
+          'isBoolean' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Tabstop' => bless( {
+          'isMultiValue' => 1,
+          'value' => 0,
+          'readonly' => 0,
+          'isBoolean' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'BitmapWidth' => bless( {
+          'value' => 16,
+          'readonly' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Left' => bless( {
+          'isMultiValue' => 0,
+          'value' => '0',
+          'readonly' => 0,
+          'isBoolean' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'BitmapHeight' => bless( {
+          'value' => 15,
+          'readonly' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Visible' => bless( {
+          'isMultiValue' => 1,
+          'value' => 1,
+          'readonly' => 0,
+          'isBoolean' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Enable' => bless( {
+          'isMultiValue' => 1,
+          'value' => 1,
+          'readonly' => 0,
+          'isBoolean' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'ResizeVMod' => bless( {
+          'value' => '',
+          'readonly' => 0
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Flat' => bless( {
+          'isMultiValue' => 1,
+          'value' => 0,
+          'readonly' => 0,
+          'isBoolean' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Multiline' => bless( {
+          'isMultiValue' => 1,
+          'value' => 0,
+          'readonly' => 0,
+          'isBoolean' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' ),
+        'Nodivider' => bless( {
+          'isMultiValue' => 1,
+          'value' => 1,
+          'readonly' => 0,
+          'isBoolean' => 1
+        }, 'Win32::GUI::Loft::ControlProperty' )
+      },
+      'designIsVisible' => 1,
+      'offsetTextTop' => 7
+    }, 'Win32::GUI::Loft::Control::Toolbar' )
+  ],
+  'buildWindowName' => '',
+  'isPreview' => 1,
+  'raCluster' => [],
+  'gridShow' => 0,
+  'pathBase' => 'C:\\Dokument\\Projekt\\Dev\\Loft\\lib\\',
+  'isDirty' => 0
+}, 'Win32::GUI::Loft::Design' );
+$VAR1->{'raControl'}[0]{'objContainer'} = $VAR1->{'objControlWindow'};

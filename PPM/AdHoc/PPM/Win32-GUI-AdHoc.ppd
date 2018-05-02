@@ -1,0 +1,12 @@
+<SOFTPKG NAME="Win32-GUI-AdHoc" VERSION="0,02,0,0">
+	<TITLE>Win32-GUI-AdHoc</TITLE>
+	<ABSTRACT>Various Win32::GUI utility modules</ABSTRACT>
+	<AUTHOR>Johan Lindstrom &lt;johanl@bahnhof.se&gt;</AUTHOR>
+	<IMPLEMENTATION>
+		<DEPENDENCY NAME="Win32" VERSION="0,171,0,0" />
+		<DEPENDENCY NAME="Win32-GUI" VERSION="0,0,558,0" />
+		<OS NAME="MSWin32" />
+		<ARCHITECTURE NAME="MSWin32-x86-multi-thread" />
+		<CODEBASE HREF="Win32-GUI-AdHoc-0.03-PPM.tar.gz" />
+	</IMPLEMENTATION>
+</SOFTPKG>

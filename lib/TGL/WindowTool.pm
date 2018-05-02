@@ -56,7 +56,8 @@ my %ghPerm;
 The Toolbox window object
 
 =cut
-sub winTool { my $self = shift; my $pkg = ref($self);
+sub winTool {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -78,7 +79,8 @@ if no such thing exists.
 Set to 0 to undef
 
 =cut
-sub objDesign { my $self = shift; my $pkg = ref($self);
+sub objDesign {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -100,7 +102,8 @@ The Win32::GUI::Loft::Canvas that is the current state of the objDesign()
 Set to 0 to undef
 
 =cut
-sub objCanvas { my $self = shift; my $pkg = ref($self);
+sub objCanvas {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -120,7 +123,8 @@ sub objCanvas { my $self = shift; my $pkg = ref($self);
 The main window object
 
 =cut
-sub objWindowApp { my $self = shift; my $pkg = ref($self);
+sub objWindowApp {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -139,7 +143,8 @@ sub objWindowApp { my $self = shift; my $pkg = ref($self);
 The properties window object
 
 =cut
-sub objWindowProp { my $self = shift; my $pkg = ref($self);
+sub objWindowProp {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -158,7 +163,8 @@ sub objWindowProp { my $self = shift; my $pkg = ref($self);
 The design window object
 
 =cut
-sub objWindowDesign { my $self = shift; my $pkg = ref($self);
+sub objWindowDesign {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -179,7 +185,8 @@ sub objWindowDesign { my $self = shift; my $pkg = ref($self);
 Create new UI for Windows.
 
 =cut
-sub new { my $pkg = shift; $pkg = ref($pkg) || $pkg;
+sub new {
+    my $pkg = shift; $pkg = ref($pkg) || $pkg;
 	defined($gObjSingleton) and return($gObjSingleton);
 
 	my $self = $gObjSingleton = $pkg->SUPER::new();
@@ -205,7 +212,8 @@ Init application, info, windows etc.
 Return 1 on succes, else 0.
 
 =cut
-sub init { my $self = shift; my $pkg = ref($self);
+sub init {
+    my $self = shift; my $pkg = ref($self);
 	my ($winMain) = @_;
 
 
@@ -434,7 +442,8 @@ sub ::winTool_Resize { my $self = TGL::WindowTool->new();
 
 
 
-sub ::winTool_DropFiles { my $self = TGL::WindowApp->new();	#Note! The App window!
+sub ::winTool_DropFiles {
+    my $self = TGL::WindowApp->new();	#Note! The App window!
 	my ($handleDrop) = @_;
 
 	$self->dropFiles($handleDrop);
@@ -451,7 +460,8 @@ sub ::winTool_DropFiles { my $self = TGL::WindowApp->new();	#Note! The App windo
 Create new control
 
 =cut
-sub ::btnButton_Click { my $self = TGL::WindowTool->new();
+sub ::btnButton_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("Button", "btn") or $self->errorReport("Could not create new Button");
 
@@ -467,7 +477,8 @@ sub ::btnButton_Click { my $self = TGL::WindowTool->new();
 Create new control
 
 =cut
-sub ::btnRichEdit_Click { my $self = TGL::WindowTool->new();
+sub ::btnRichEdit_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("RichEdit", "re") or $self->errorReport("Could not create new RichEdit");
 
@@ -483,7 +494,8 @@ sub ::btnRichEdit_Click { my $self = TGL::WindowTool->new();
 Create new control
 
 =cut
-sub ::btnTextfield_Click { my $self = TGL::WindowTool->new();
+sub ::btnTextfield_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("Textfield", "tf") or $self->errorReport("Could not create new Textfield");
 
@@ -499,7 +511,8 @@ sub ::btnTextfield_Click { my $self = TGL::WindowTool->new();
 Create new control
 
 =cut
-sub ::btnLabel_Click { my $self = TGL::WindowTool->new();
+sub ::btnLabel_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("Label", "lbl") or $self->errorReport("Could not create new Label");
 
@@ -515,7 +528,8 @@ sub ::btnLabel_Click { my $self = TGL::WindowTool->new();
 Create new control
 
 =cut
-sub ::btnCheckbox_Click { my $self = TGL::WindowTool->new();
+sub ::btnCheckbox_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("Checkbox", "chb") or $self->errorReport("Could not create new Checkbox");
 
@@ -531,7 +545,8 @@ sub ::btnCheckbox_Click { my $self = TGL::WindowTool->new();
 Create new control
 
 =cut
-sub ::btnRadiobutton_Click { my $self = TGL::WindowTool->new();
+sub ::btnRadiobutton_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("Radiobutton", "rb") or $self->errorReport("Could not create new Radiobutton");
 
@@ -547,7 +562,8 @@ sub ::btnRadiobutton_Click { my $self = TGL::WindowTool->new();
 Create new control
 
 =cut
-sub ::btnListbox_Click { my $self = TGL::WindowTool->new();
+sub ::btnListbox_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("Listbox", "lb") or $self->errorReport("Could not create new Listbox");
 
@@ -563,7 +579,8 @@ sub ::btnListbox_Click { my $self = TGL::WindowTool->new();
 Create new control
 
 =cut
-sub ::btnTreeView_Click { my $self = TGL::WindowTool->new();
+sub ::btnTreeView_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("TreeView", "tvw") or $self->errorReport("Could not create new TreeView");
 
@@ -579,7 +596,8 @@ sub ::btnTreeView_Click { my $self = TGL::WindowTool->new();
 Create new control
 
 =cut
-sub ::btnListView_Click { my $self = TGL::WindowTool->new();
+sub ::btnListView_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("ListView", "lvw") or $self->errorReport("Could not create new ListView");
 
@@ -595,7 +613,8 @@ sub ::btnListView_Click { my $self = TGL::WindowTool->new();
 Create new control
 
 =cut
-sub ::btnCombobox_Click { my $self = TGL::WindowTool->new();
+sub ::btnCombobox_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("Combobox", "cb") or $self->errorReport("Could not create new Combobox");
 
@@ -611,7 +630,8 @@ sub ::btnCombobox_Click { my $self = TGL::WindowTool->new();
 Create new control
 
 =cut
-sub ::btnGroupbox_Click { my $self = TGL::WindowTool->new();
+sub ::btnGroupbox_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("Groupbox", "gb") or $self->errorReport("Could not create new Groupbox");
 
@@ -627,7 +647,8 @@ sub ::btnGroupbox_Click { my $self = TGL::WindowTool->new();
 Create new control
 
 =cut
-sub ::btnGraphic_Click { my $self = TGL::WindowTool->new();
+sub ::btnGraphic_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("Graphic", "gr") or $self->errorReport("Could not create new Graphic");
 
@@ -643,7 +664,8 @@ sub ::btnGraphic_Click { my $self = TGL::WindowTool->new();
 Create new control
 
 =cut
-sub ::btnToolbar_Click { my $self = TGL::WindowTool->new();
+sub ::btnToolbar_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("Toolbar", "tb") or $self->errorReport("Could not create new Toolbar");
 
@@ -659,7 +681,8 @@ sub ::btnToolbar_Click { my $self = TGL::WindowTool->new();
 Create new control
 
 =cut
-sub ::btnStatusBar_Click { my $self = TGL::WindowTool->new();
+sub ::btnStatusBar_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("StatusBar", "sb") or $self->errorReport("Could not create new StatusBar");
 
@@ -675,7 +698,8 @@ sub ::btnStatusBar_Click { my $self = TGL::WindowTool->new();
 Create new control
 
 =cut
-sub ::btnProgressBar_Click { my $self = TGL::WindowTool->new();
+sub ::btnProgressBar_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("ProgressBar", "pb") or $self->errorReport("Could not create new ProgressBar");
 
@@ -691,7 +715,8 @@ sub ::btnProgressBar_Click { my $self = TGL::WindowTool->new();
 Create new control
 
 =cut
-sub ::btnTabStrip_Click { my $self = TGL::WindowTool->new();
+sub ::btnTabStrip_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("TabStrip", "ts") or $self->errorReport("Could not create new TabStrip");
 
@@ -707,7 +732,8 @@ sub ::btnTabStrip_Click { my $self = TGL::WindowTool->new();
 Create new control
 
 =cut
-sub ::btnSplitter_Click { my $self = TGL::WindowTool->new();
+sub ::btnSplitter_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("Splitter", "spl") or $self->errorReport("Could not create new Splitter");
 
@@ -723,7 +749,8 @@ sub ::btnSplitter_Click { my $self = TGL::WindowTool->new();
 Create new control
 
 =cut
-sub ::btnTimer_Click { my $self = TGL::WindowTool->new();
+sub ::btnTimer_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("Timer", "tim") or $self->errorReport("Could not create new Timer");
 
@@ -739,7 +766,8 @@ sub ::btnTimer_Click { my $self = TGL::WindowTool->new();
 Create new control
 
 =cut
-sub ::btnImageList_Click { my $self = TGL::WindowTool->new();
+sub ::btnImageList_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("ImageList", "il") or $self->errorReport("Could not create new ImageList");
 
@@ -755,7 +783,8 @@ sub ::btnImageList_Click { my $self = TGL::WindowTool->new();
 Create new control
 
 =cut
-sub ::btnCustom_Click { my $self = TGL::WindowTool->new();
+sub ::btnCustom_Click {
+    my $self = TGL::WindowTool->new();
 
 	$self->newControl("Custom", "ctm") or $self->errorReport("Could not create new Custom control");
 

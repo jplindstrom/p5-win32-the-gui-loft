@@ -35,7 +35,8 @@ E.g. "ilImageList".
 Readonly.
 
 =cut
-sub nameDefault { my $self = shift; my $pkg = ref($self);
+sub nameDefault {
+    my $self = shift; my $pkg = ref($self);
 	return("ilImageList");
 	}
 
@@ -52,7 +53,8 @@ E.g. "ImageList".
 Readonly.
 
 =cut
-sub type { my $self = shift; my $pkg = ref($self);
+sub type {
+    my $self = shift; my $pkg = ref($self);
 	return("ImageList");
 	}
 
@@ -68,7 +70,8 @@ control to a container object.
 Readonly
 
 =cut
-sub addMethod { my $self = shift; my $pkg = ref($self);
+sub addMethod {
+    my $self = shift; my $pkg = ref($self);
 	return("");
 	}
 
@@ -86,7 +89,8 @@ Default: 1
 Readonly.
 
 =cut
-sub buildPreControlPhase { my $self = shift; my $pkg = ref($self);
+sub buildPreControlPhase {
+    my $self = shift; my $pkg = ref($self);
 	return(1);
 	}
 
@@ -104,7 +108,8 @@ Default: 0
 Readonly.
 
 =cut
-sub buildControlPhase { my $self = shift; my $pkg = ref($self);
+sub buildControlPhase {
+    my $self = shift; my $pkg = ref($self);
 	return(0);
 	}
 
@@ -119,7 +124,8 @@ sub buildControlPhase { my $self = shift; my $pkg = ref($self);
 Create new Control object.
 
 =cut
-sub new { my $pkg = shift; $pkg = ref($pkg) || $pkg;
+sub new {
+    my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
 	my $self = $pkg->SUPER::new();
 
@@ -176,7 +182,8 @@ my %hFlags = (
 		"color32" => 0x0020,
 		"colorddb" => 0x00FE,
 		);
-sub buildAdd { my $self = shift; my $pkg = ref($self);
+sub buildAdd {
+    my $self = shift; my $pkg = ref($self);
 	my ($objDesign, $objControlContainerDefault, $objInspector) = @_;
 
 
@@ -219,7 +226,8 @@ options for the creation of the control.
 Return an empty array on errors.
 
 =cut
-sub buildOptionsSpecial { my $self = shift; my $pkg = ref($self);
+sub buildOptionsSpecial {
+    my $self = shift; my $pkg = ref($self);
 	my ($objDesign) = @_;
 	my @aOption;
 
@@ -238,7 +246,8 @@ option.
 Return 1 on success, else 0.
 
 =cut
-sub buildMethodsSpecial { my $self = shift; my $pkg = ref($self);
+sub buildMethodsSpecial {
+    my $self = shift; my $pkg = ref($self);
 	my ($objNew, $objDesign) = @_;
 
 	return(1);

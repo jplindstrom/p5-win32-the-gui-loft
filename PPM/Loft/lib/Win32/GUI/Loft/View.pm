@@ -31,7 +31,8 @@ use Carp qw( cluck );
 Create new View.
 
 =cut
-sub new { my $pkg = shift; $pkg = ref($pkg) || $pkg;
+sub new {
+    my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
 	my $self = {
 
@@ -54,7 +55,8 @@ $rhControl.
 Return 1 on success, else 0.
 
 =cut
-sub propPopulate { my $self = shift; my $pkg = ref($self);
+sub propPopulate {
+    my $self = shift; my $pkg = ref($self);
 	my ($rhControl) = @_;
 
 	return(1);
@@ -72,7 +74,8 @@ $rhControl.
 Return 1 on success, else 0.
 
 =cut
-sub propNotifyChange { my $self = shift; my $pkg = ref($self);
+sub propNotifyChange {
+    my $self = shift; my $pkg = ref($self);
 	my ($rhControl, $raPropName) = @_;
 
 	return(1);
@@ -89,7 +92,8 @@ The number of conrols that are selected has changed.
 Return 1 on success, else 0.
 
 =cut
-sub propNotifySelected { my $self = shift; my $pkg = ref($self);
+sub propNotifySelected {
+    my $self = shift; my $pkg = ref($self);
 	my ($rhControl) = @_;
 
 	return(1);
@@ -110,7 +114,8 @@ If $left is undef, the user is not anymore.
 Return 1 on success, else 0.
 
 =cut
-sub propNotifySelectionBox { my $self = shift; my $pkg = ref($self);
+sub propNotifySelectionBox {
+    my $self = shift; my $pkg = ref($self);
 	my ($left, $top, $width, $height) = @_;
 
 	return(1);
@@ -127,7 +132,8 @@ The number of controls has changed.
 Return 1 on success, else 0.
 
 =cut
-sub propNotifyFundamental { my $self = shift; my $pkg = ref($self);
+sub propNotifyFundamental {
+    my $self = shift; my $pkg = ref($self);
 
 	return(1);
 	}
@@ -144,7 +150,8 @@ clusters.
 Return 1 on success, else 0.
 
 =cut
-sub clusterNotifyFundamental { my $self = shift; my $pkg = ref($self);
+sub clusterNotifyFundamental {
+    my $self = shift; my $pkg = ref($self);
 
 
 

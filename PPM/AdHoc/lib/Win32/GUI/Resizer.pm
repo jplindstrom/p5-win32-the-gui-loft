@@ -165,7 +165,8 @@ use strict;
 The Win32::GUI window object to resize.
 
 =cut
-sub winResize { my $self = shift;
+sub winResize {
+    my $self = shift;
     my ($val) = @_;
 
     if(defined($val)) {
@@ -189,7 +190,8 @@ The syntax and structure of the array ref is described
 below.
 
 =cut
-sub raRelations { my $self = shift;
+sub raRelations {
+    my $self = shift;
     my ($val) = @_;
 
     if(defined($val)) {
@@ -209,7 +211,8 @@ Whether the window is minimized or not. Set by the resize()
 method when the window size is (0,0).
 
 =cut
-sub isMinimized { my $self = shift; my $pkg = ref($self);
+sub isMinimized {
+    my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
     if(defined($val)) {
@@ -229,7 +232,8 @@ Array ref with two items, the w/h of the window size prior
 to a minimize.
 
 =cut
-sub raPreMinimizedSize { my $self = shift; my $pkg = ref($self);
+sub raPreMinimizedSize {
+    my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
     if(defined($val)) {
@@ -250,7 +254,8 @@ sub raPreMinimizedSize { my $self = shift; my $pkg = ref($self);
 Create new Resizer object for $winResize.
 
 =cut
-sub new { my $pkg = shift; $pkg = ref($pkg) || $pkg;
+sub new {
+    my $pkg = shift; $pkg = ref($pkg) || $pkg;
     my ($winResize) = @_;
 
     my $self = {
@@ -285,7 +290,8 @@ way you want it.
 Return 1 on success, else 0.
 
 =cut
-sub memorize { my $self = shift;
+sub memorize {
+    my $self = shift;
     
     $self->createCache() if(!$self->{initDone});
 
@@ -324,7 +330,8 @@ of any control that you have under Resizer control.
 Return 1 on success, else 0.
 
 =cut
-sub rememorize { my $self = shift;
+sub rememorize {
+    my $self = shift;
 
     $self->{rhCache} = {};
     $self->createCache();
@@ -351,7 +358,8 @@ method).
 Return the value, or undef if $key has no value.
 
 =cut
-sub specialValue { my $self = shift;
+sub specialValue {
+    my $self = shift;
     my ($key, $val, $resize) = @_;
     defined($resize) or $resize = 1;
 
@@ -381,7 +389,8 @@ Call this method from the window's Resize() event, like so:
         }
 
 =cut
-sub resize { my $self = shift;
+sub resize {
+    my $self = shift;
 
     return(0) if(!$self->{initDone});
 
@@ -539,7 +548,8 @@ Get or set the $val for $key.
 Return the value, or undef if $key has no value.
 
 =cut
-sub specialValueOld { my $self = shift;
+sub specialValueOld {
+    my $self = shift;
     my ($key, $val) = @_;
 
     if(defined($val)) {
@@ -560,7 +570,8 @@ Set the specialValuesOld to specialValues.
 Return 1 on success, else 0.
 
 =cut
-sub resetSpecialValues { my $self = shift;
+sub resetSpecialValues {
+    my $self = shift;
     my ($val) = @_;
 
     my %hTemp = %{$self->{rhSpecialValue}}; 
@@ -595,7 +606,8 @@ Return 1 on success, else 0. Die on fatal (config) errors.
 #would be coded with Move() and Resize() rather than
 #two calls to Left()/Top() and Height()/Width().
 #
-sub createCache { my $self = shift;
+sub createCache {
+    my $self = shift;
 
     #Lexicalize the window so we have a scope for the symbol
     my $winResize = $self->winResize();     

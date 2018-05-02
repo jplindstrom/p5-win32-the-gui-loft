@@ -35,7 +35,8 @@ use Data::Dumper;
 The property name.
 
 =cut
-sub name { my $self = shift; my $pkg = ref($self);
+sub name {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -59,7 +60,8 @@ This may be "" if no such sub exists.
 Example: "Left"
 
 =cut
-sub nameProperty { my $self = shift; my $pkg = ref($self);
+sub nameProperty {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -83,7 +85,8 @@ This may be "" if no such option exists.
 Example: "-left"
 
 =cut
-sub nameOption { my $self = shift; my $pkg = ref($self);
+sub nameOption {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -102,7 +105,8 @@ sub nameOption { my $self = shift; my $pkg = ref($self);
 The current value of this property.
 
 =cut
-sub value { my $self = shift; my $pkg = ref($self);
+sub value {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val) && !$self->readonly()) {
@@ -124,7 +128,8 @@ should be fed to the method indicated by nameProperty().
 Readonly.
 
 =cut
-sub valueParameter { my $self = shift; my $pkg = ref($self);
+sub valueParameter {
+    my $self = shift; my $pkg = ref($self);
 	
 	return($self->value()) if($self->isScalar());
 	return($self->value()) if($self->isBoolean());
@@ -156,7 +161,8 @@ The current value of this property. When set, increase the
 current value. Snap to a multiple of $snap (if != 0).
 
 =cut
-sub valueIncSnap { my $self = shift; my $pkg = ref($self);
+sub valueIncSnap {
+    my $self = shift; my $pkg = ref($self);
 	my ($val, $snap) = @_;
 
 	if(defined($val) && !$self->readonly()) {
@@ -190,7 +196,8 @@ nameProperty or nameOption).
 Example: [ { "current" => 0 }, { "left edge" => 1, } ]
 
 =cut
-sub raValue { my $self = shift; my $pkg = ref($self);
+sub raValue {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -212,7 +219,8 @@ values are allowed.
 Readonly.
 
 =cut
-sub raValuesString { my $self = shift; my $pkg = ref($self);
+sub raValuesString {
+    my $self = shift; my $pkg = ref($self);
 
 	if(ref($self->raValue()->[0]) eq "HASH") {
 		my @aVal;
@@ -235,7 +243,8 @@ sub raValuesString { my $self = shift; my $pkg = ref($self);
 Return 1 if this property is a boolean value, else 0.
 
 =cut
-sub isBoolean { my $self = shift; my $pkg = ref($self);
+sub isBoolean {
+    my $self = shift; my $pkg = ref($self);
 
 	if(!defined($self->{isBoolean})) {
 		$self->{isBoolean} = ( 
@@ -257,7 +266,8 @@ sub isBoolean { my $self = shift; my $pkg = ref($self);
 Return 1 if this property is a multi-value, else 0.
 
 =cut
-sub isMultiValue { my $self = shift; my $pkg = ref($self);
+sub isMultiValue {
+    my $self = shift; my $pkg = ref($self);
 	 
 	if(!defined($self->{isMultiValue})) {
 		$self->{isMultiValue} = defined($self->raValue()->[0]) ? 1 : 0;
@@ -275,7 +285,8 @@ sub isMultiValue { my $self = shift; my $pkg = ref($self);
 Return 1 if this property is a scalar value, else 0.
 
 =cut
-sub isScalar { my $self = shift; my $pkg = ref($self);
+sub isScalar {
+    my $self = shift; my $pkg = ref($self);
 	 
 	return(0) if($self->isMultiValue());
 	return(0) if($self->isBoolean());
@@ -294,7 +305,8 @@ Whether the property is currently readonly or not.
 Default: 0
 
 =cut
-sub readonly { my $self = shift; my $pkg = ref($self);
+sub readonly {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -317,7 +329,8 @@ Create new ControlProperty object.
 Die if $name isn't passed.
 
 =cut
-sub new { my $pkg = shift; $pkg = ref($pkg) || $pkg;
+sub new {
+    my $pkg = shift; $pkg = ref($pkg) || $pkg;
 	my ($name, $value, $raValue, $nameOption, $nameProperty) = @_;	
 	defined($name) or die("ControlProperty->new(): $name must be passed");
 	defined($nameProperty) or $nameProperty = $name;
@@ -352,7 +365,8 @@ the corresponding Win32::GUI method.
 Return 1 on success, else 0.
 
 =cut
-sub guiSet { my $self = shift; my $pkg = ref($self);
+sub guiSet {
+    my $self = shift; my $pkg = ref($self);
 	my ($objGuiControl) = @_;
 
 	if(my $method = $self->nameProperty()) {
@@ -386,7 +400,8 @@ the important values.
 Return 1 on success, else 0.
 
 =cut
-sub transformSlim { my $self = shift; my $pkg = ref($self);
+sub transformSlim {
+    my $self = shift; my $pkg = ref($self);
 
 	#value
 	delete $self->{'name'};
@@ -409,7 +424,8 @@ important values of this object. Set the name() to $name.
 Return the altered $objFresh.
 
 =cut
-sub imprint { my $self = shift; my $pkg = ref($self);
+sub imprint {
+    my $self = shift; my $pkg = ref($self);
 	my ($objFresh, $name) = @_;
 
 	$objFresh->{name} = $name;

@@ -39,7 +39,8 @@ E.g. "btnButton".
 Readonly.
 
 =cut
-sub nameDefault { my $self = shift; my $pkg = ref($self);
+sub nameDefault {
+    my $self = shift; my $pkg = ref($self);
 	return("lvwListView");
 	}
 
@@ -56,7 +57,8 @@ Example: "left"
 Readonly.
 
 =cut
-sub alignDefault { my $self = shift; my $pkg = ref($self);
+sub alignDefault {
+    my $self = shift; my $pkg = ref($self);
 	return("left");
 	}
 
@@ -73,7 +75,8 @@ Example: "top"
 Readonly.
 
 =cut
-sub valignDefault { my $self = shift; my $pkg = ref($self);
+sub valignDefault {
+    my $self = shift; my $pkg = ref($self);
 	return("top");
 	}
 
@@ -87,7 +90,8 @@ The offset from the left side of the control that texts
 should be located for this type of control.
 
 =cut
-sub offsetTextLeft { my $self = shift; my $pkg = ref($self);
+sub offsetTextLeft {
+    my $self = shift; my $pkg = ref($self);
 	return(6);
 	}
 
@@ -101,7 +105,8 @@ The offset from the top side of the control that texts
 should be located for this type of control.
 
 =cut
-sub offsetTextTop { my $self = shift; my $pkg = ref($self);
+sub offsetTextTop {
+    my $self = shift; my $pkg = ref($self);
 	return(6);
 	}
 
@@ -118,7 +123,8 @@ E.g. "ListView".
 Readonly.
 
 =cut
-sub type { my $self = shift; my $pkg = ref($self);
+sub type {
+    my $self = shift; my $pkg = ref($self);
 	return("ListView");
 	}
 
@@ -134,7 +140,8 @@ control to a container object.
 Readonly
 
 =cut
-sub addMethod { my $self = shift; my $pkg = ref($self);
+sub addMethod {
+    my $self = shift; my $pkg = ref($self);
 	return("AddListView");
 	}
 
@@ -149,7 +156,8 @@ sub addMethod { my $self = shift; my $pkg = ref($self);
 Create new Control object.
 
 =cut
-sub new { my $pkg = shift; $pkg = ref($pkg) || $pkg;
+sub new {
+    my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
 	my $self = $pkg->SUPER::new();
 
@@ -238,7 +246,8 @@ options for the creation of the control.
 Return an empty array on errors.
 
 =cut
-sub buildOptionsSpecial { my $self = shift; my $pkg = ref($self);
+sub buildOptionsSpecial {
+    my $self = shift; my $pkg = ref($self);
 	my ($objDesign) = @_;
 	my @aOption;
 
@@ -279,7 +288,8 @@ option.
 Return 1 on success, else 0.
 
 =cut
-sub buildMethodsSpecial { my $self = shift; my $pkg = ref($self);
+sub buildMethodsSpecial {
+    my $self = shift; my $pkg = ref($self);
 	my ($objNew, $objDesign) = @_;
 
 	if($self->prop("Columns") || "" ne "") {
@@ -324,7 +334,8 @@ using $ndeTop as parent node (if not undef).
 Return the new node, or undef on errors.
 
 =cut
-sub ListViewInsertItem { my $self = shift; my $pkg = ref($self);
+sub ListViewInsertItem {
+    my $self = shift; my $pkg = ref($self);
 	my ($tvwTree, $ndeTop, $itemText) = @_;
 
 	#Hej:0, Hopp:1, Hallå:1;Nisse, Manpower:2
@@ -360,7 +371,8 @@ Paint the control in the $dcDev.
 Return 1 on success, else 0.
 
 =cut
-sub paint { my $self = shift; my $pkg = ref($self);
+sub paint {
+    my $self = shift; my $pkg = ref($self);
 	my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
 
 	return(1) if(!$self->designIsVisible());

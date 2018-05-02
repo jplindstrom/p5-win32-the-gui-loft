@@ -58,7 +58,8 @@ my %ghPerm;
 The Properties window object
 
 =cut
-sub winProp { my $self = shift; my $pkg = ref($self);
+sub winProp {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -78,7 +79,8 @@ The Win32::GUI::Resizer object used to resize the controls
 in the winProp window.
 
 =cut
-sub objResizerDesign { my $self = shift; my $pkg = ref($self);
+sub objResizerDesign {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -97,7 +99,8 @@ sub objResizerDesign { my $self = shift; my $pkg = ref($self);
 The main window object
 
 =cut
-sub objWindowApp { my $self = shift; my $pkg = ref($self);
+sub objWindowApp {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -119,7 +122,8 @@ if no such thing exists.
 Set to 0 to undef
 
 =cut
-sub objDesign { my $self = shift; my $pkg = ref($self);
+sub objDesign {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -141,7 +145,8 @@ The Win32::GUI::Loft::Canvas that is the current state of the objDesign()
 Set to 0 to undef
 
 =cut
-sub objCanvas { my $self = shift; my $pkg = ref($self);
+sub objCanvas {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -161,7 +166,8 @@ sub objCanvas { my $self = shift; my $pkg = ref($self);
 The design window object
 
 =cut
-sub objWindowDesign { my $self = shift; my $pkg = ref($self);
+sub objWindowDesign {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -180,7 +186,8 @@ sub objWindowDesign { my $self = shift; my $pkg = ref($self);
 The index of the property that was last edited.
 
 =cut
-sub propLastIndex { my $self = shift; my $pkg = ref($self);
+sub propLastIndex {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -199,7 +206,8 @@ sub propLastIndex { my $self = shift; my $pkg = ref($self);
 The key of the property that was last edited.
 
 =cut
-sub propLastKey { my $self = shift; my $pkg = ref($self);
+sub propLastKey {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -218,7 +226,8 @@ sub propLastKey { my $self = shift; my $pkg = ref($self);
 The initial value of the property that was last displayed.
 
 =cut
-sub propLastValue { my $self = shift; my $pkg = ref($self);
+sub propLastValue {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -237,7 +246,8 @@ sub propLastValue { my $self = shift; my $pkg = ref($self);
 Whether the currently edited property was actually changed.
 
 =cut
-sub propIsDirty { my $self = shift; my $pkg = ref($self);
+sub propIsDirty {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -261,7 +271,8 @@ Used to reset focus to that window after an edit.
 Set to 0 to undef
 
 =cut
-sub winInitiatedProperty { my $self = shift; my $pkg = ref($self);
+sub winInitiatedProperty {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -283,7 +294,8 @@ sub winInitiatedProperty { my $self = shift; my $pkg = ref($self);
 Create new UI for Windows.
 
 =cut
-sub new { my $pkg = shift; $pkg = ref($pkg) || $pkg;
+sub new {
+    my $pkg = shift; $pkg = ref($pkg) || $pkg;
 	defined($gObjSingleton) and return($gObjSingleton);
 
 	my $self = $gObjSingleton = $pkg->SUPER::new();
@@ -316,7 +328,8 @@ Init application, info, windows etc.
 Return 1 on succes, else 0.
 
 =cut
-sub init { my $self = shift; my $pkg = ref($self);
+sub init {
+    my $self = shift; my $pkg = ref($self);
 	my ($winMain) = @_;
 
 
@@ -496,7 +509,8 @@ the application.
 Return 1.
 
 =cut
-sub setWindowState { my $self = shift; my $pkg = ref($self);
+sub setWindowState {
+    my $self = shift; my $pkg = ref($self);
 
 
 	return(1);
@@ -515,7 +529,8 @@ prefix.
 Return 1 on success, else 0.
 
 =cut
-sub setFocus { my $self = shift; my $pkg = ref($self);
+sub setFocus {
+    my $self = shift; my $pkg = ref($self);
 	my ($property) = @_;
 
 	my $lvwProp = $self->winProp()->lvwProp();
@@ -569,7 +584,8 @@ Display info in labels.
 Return 1 on success, else 0.
 
 =cut
-sub infoDisplay { my $self = shift; my $pkg = ref($self);
+sub infoDisplay {
+    my $self = shift; my $pkg = ref($self);
 	my ($rhControl) = @_;
 	
 
@@ -634,7 +650,8 @@ $rhControl. Update the info label
 Return 1 on success, else 0.
 
 =cut
-sub propPopulate { my $self = shift; my $pkg = ref($self);
+sub propPopulate {
+    my $self = shift; my $pkg = ref($self);
 	my ($rhControl) = @_;
 
 	my @aControls = keys %$rhControl;
@@ -701,7 +718,8 @@ $rhControl.
 Return 1 on success, else 0.
 
 =cut
-sub propUpdate { my $self = shift; my $pkg = ref($self);
+sub propUpdate {
+    my $self = shift; my $pkg = ref($self);
 	my ($rhControl, $raPropName) = @_;
 	
 #	my $lvwProp = $self->winProp()->lvwProp();
@@ -729,7 +747,8 @@ Display edit control above ListView and populate it.
 Return 1 on success, else 0.
 
 =cut
-sub propDisplay { my $self = shift; my $pkg = ref($self);
+sub propDisplay {
+    my $self = shift; my $pkg = ref($self);
 	my ($itmClicked) = @_;
 
 
@@ -806,7 +825,8 @@ $rhControl.
 Return 1 on success, else 0.
 
 =cut
-sub propNotifyChange { my $self = shift; my $pkg = ref($self);
+sub propNotifyChange {
+    my $self = shift; my $pkg = ref($self);
 	my ($rhControl, $raPropName) = @_;
 
 	$self->propUpdate( $rhControl, $raPropName );
@@ -825,7 +845,8 @@ The number of conrols that are selected has changed.
 Return 1 on success, else 0.
 
 =cut
-sub propNotifySelected { my $self = shift; my $pkg = ref($self);
+sub propNotifySelected {
+    my $self = shift; my $pkg = ref($self);
 	my ($rhControl, $raPropName) = @_;
 
 	$self->infoDisplay($rhControl);
@@ -848,7 +869,8 @@ If $left is undef, the user is not anymore.
 Return 1 on success, else 0.
 
 =cut
-sub propNotifySelectionBox { my $self = shift; my $pkg = ref($self);
+sub propNotifySelectionBox {
+    my $self = shift; my $pkg = ref($self);
 	my ($left, $top, $width, $height) = @_;
 
 	if(defined($left)) {
@@ -878,7 +900,8 @@ Set focus to the Design window when all is done.
 Return 1 on success, else 0.
 
 =cut
-sub textfieldPropEvaluate { my $self = shift; my $pkg = ref($self);
+sub textfieldPropEvaluate {
+    my $self = shift; my $pkg = ref($self);
 
 	if($self->propIsDirty()) {
 		$self->propIsDirty(0);
@@ -951,7 +974,8 @@ sub textfieldPropEvaluate { my $self = shift; my $pkg = ref($self);
 Block the close operation.
 
 =cut
-sub ::winProp_Terminate { my $self = TGL::WindowProp->new();
+sub ::winProp_Terminate {
+    my $self = TGL::WindowProp->new();
 print "winProp_Terminate()\n";
 	$self->winProp()->Hide();
 
@@ -967,7 +991,8 @@ print "winProp_Terminate()\n";
 Resize the main window. Store the size into the Design.
 
 =cut
-sub ::winProp_Resize { my $self = TGL::WindowProp->new();
+sub ::winProp_Resize {
+    my $self = TGL::WindowProp->new();
 	defined($self->objResizerDesign()) and $self->objResizerDesign()->resize();
 	}
 
@@ -980,7 +1005,8 @@ sub ::winProp_Resize { my $self = TGL::WindowProp->new();
 Activate the window and perform Modalizer stuff.
 
 =cut
-sub ::winProp_Activate { my $self = TGL::WindowProp->new();
+sub ::winProp_Activate {
+    my $self = TGL::WindowProp->new();
 	defined($self->objWindowApp()->objModalizer()) and $self->objWindowApp()->objModalizer()->activate($self->winProp());
 	}
 
@@ -988,7 +1014,8 @@ sub ::winProp_Activate { my $self = TGL::WindowProp->new();
 
 
 
-sub ::winProp_DropFiles { my $self = TGL::WindowApp->new();	#Note! The App window!
+sub ::winProp_DropFiles {
+    my $self = TGL::WindowApp->new();	#Note! The App window!
 	my ($handleDrop) = @_;
 
 	$self->dropFiles($handleDrop);
@@ -1005,7 +1032,8 @@ sub ::winProp_DropFiles { my $self = TGL::WindowApp->new();	#Note! The App windo
 Display edit box on top of item.
 
 =cut
-sub ::lvwProp_ItemClick { my $self = TGL::WindowProp->new();
+sub ::lvwProp_ItemClick {
+    my $self = TGL::WindowProp->new();
 	my ($itmClicked) = @_;
 
 	$self->propDisplay($itmClicked);
@@ -1024,7 +1052,8 @@ sub ::lvwProp_ItemClick { my $self = TGL::WindowProp->new();
 Make the new value take effect
 
 =cut
-sub ::tfValue_LostFocus { my $self = TGL::WindowProp->new();
+sub ::tfValue_LostFocus {
+    my $self = TGL::WindowProp->new();
 
 #	if($self->propLastValue() ne $self->winProp()->tfValue()->Text()) {
 #		::btnOk_Click();
@@ -1042,7 +1071,8 @@ sub ::tfValue_LostFocus { my $self = TGL::WindowProp->new();
 Note that the value changed.
 
 =cut
-sub ::tfValue_Change { my $self = TGL::WindowProp->new();
+sub ::tfValue_Change {
+    my $self = TGL::WindowProp->new();
 	$self->propIsDirty(1);
 	}
 
@@ -1055,7 +1085,8 @@ sub ::tfValue_Change { my $self = TGL::WindowProp->new();
 Make the new value take effect
 
 =cut
-sub ::chbValue_LostFocus { my $self = TGL::WindowProp->new();
+sub ::chbValue_LostFocus {
+    my $self = TGL::WindowProp->new();
 	::btnOk_Click();
 	}
 
@@ -1068,7 +1099,8 @@ sub ::chbValue_LostFocus { my $self = TGL::WindowProp->new();
 Note that the value changed.
 
 =cut
-sub ::chbValue_Click { my $self = TGL::WindowProp->new();
+sub ::chbValue_Click {
+    my $self = TGL::WindowProp->new();
 	$self->propIsDirty(1);
 	::btnOk_Click();
 	}
@@ -1082,7 +1114,8 @@ sub ::chbValue_Click { my $self = TGL::WindowProp->new();
 Note that the value changed.
 
 =cut
-sub ::cbValue_Change { my $self = TGL::WindowProp->new();
+sub ::cbValue_Change {
+    my $self = TGL::WindowProp->new();
 	$self->propIsDirty(1);
 	::btnOk_Click();
 	}
@@ -1096,7 +1129,8 @@ sub ::cbValue_Change { my $self = TGL::WindowProp->new();
 Make the new value take effect
 
 =cut
-sub ::btnOk_Click { my $self = TGL::WindowProp->new();
+sub ::btnOk_Click {
+    my $self = TGL::WindowProp->new();
 
 	$self->textfieldPropEvaluate();
 
@@ -1113,7 +1147,8 @@ Trap the event and "do nothing" to prevent the Esc key from
 closing the window.
 
 =cut
-sub ::btnFakeCancel_Click { my $self = TGL::WindowProp->new();
+sub ::btnFakeCancel_Click {
+    my $self = TGL::WindowProp->new();
 
 	return(0);
 	}
@@ -1128,7 +1163,8 @@ Keep track of values in the tfValue and popup the Open
 dialog when appropriate.
 
 =cut
-sub ::timOpen_Timer { my $self = TGL::WindowProp->new();
+sub ::timOpen_Timer {
+    my $self = TGL::WindowProp->new();
 
 	return(1) if($self->{timOpen_Timer});
 	$self->{timOpen_Timer} = 1;

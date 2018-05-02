@@ -37,7 +37,8 @@ E.g. "btnButton".
 Readonly.
 
 =cut
-sub nameDefault { my $self = shift; my $pkg = ref($self);
+sub nameDefault {
+    my $self = shift; my $pkg = ref($self);
 	return("grGraphic");
 	}
 
@@ -54,7 +55,8 @@ E.g. "Graphic".
 Readonly.
 
 =cut
-sub type { my $self = shift; my $pkg = ref($self);
+sub type {
+    my $self = shift; my $pkg = ref($self);
 	return("Graphic");
 	}
 
@@ -73,7 +75,8 @@ container object as the first param.
 Readonly
 
 =cut
-sub addMethod { my $self = shift; my $pkg = ref($self);
+sub addMethod {
+    my $self = shift; my $pkg = ref($self);
 	return("Win32::GUI::Graphic");
 	}
 
@@ -88,7 +91,8 @@ sub addMethod { my $self = shift; my $pkg = ref($self);
 Create new Control object.
 
 =cut
-sub new { my $pkg = shift; $pkg = ref($pkg) || $pkg;
+sub new {
+    my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
 	my $self = $pkg->SUPER::new();
 
@@ -116,7 +120,8 @@ Paint the control in the $dcDev.
 Return 1 on success, else 0.
 
 =cut
-sub paint { my $self = shift; my $pkg = ref($self);
+sub paint {
+    my $self = shift; my $pkg = ref($self);
 	my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
 
 	return(1) if(!$self->designIsVisible());

@@ -121,7 +121,8 @@ warnings. And, it's plain annoying.
 Original idea: Eric Bennett on the Win32::GUI mailing list.
 
 =cut
-sub blockGUIWarnings { my $self = shift;
+sub blockGUIWarnings {
+    my $self = shift;
 
 	$SIG{'__WARN__'} = sub {
 		my ($warning) = @_;

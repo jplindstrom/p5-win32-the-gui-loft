@@ -55,11 +55,13 @@ Return the array on success, else an empty array () in which
 case the control will not be created.
 
 =cut
-sub buildOptions { my $self = shift; my $pkg = ref($self);
+sub buildOptions {
+    my $self = shift; my $pkg = ref($self);
 	my ($objControl, $raOption) = @_;
 
 	#Modify the main window
 	if($objControl->prop("Name") eq "winFetch") {
+        
 
 		#Create a class with a certain bg color
 		my $clsFetch = Win32::GUI::Class->new(

@@ -65,7 +65,8 @@ Win32::GUI::AdHoc::blockGUIWarnings();
 The design window object
 
 =cut
-sub winDesign { my $self = shift; my $pkg = ref($self);
+sub winDesign {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -84,7 +85,8 @@ sub winDesign { my $self = shift; my $pkg = ref($self);
 The properties window object.
 
 =cut
-sub objWindowProp { my $self = shift; my $pkg = ref($self);
+sub objWindowProp {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -103,7 +105,8 @@ sub objWindowProp { my $self = shift; my $pkg = ref($self);
 The main window object
 
 =cut
-sub objWindowApp { my $self = shift; my $pkg = ref($self);
+sub objWindowApp {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -123,7 +126,8 @@ The Win32::GUI::Resizer object used to resize the controls
 in the winMain window.
 
 =cut
-sub objResizerDesign { my $self = shift; my $pkg = ref($self);
+sub objResizerDesign {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -145,7 +149,8 @@ if no such thing exists.
 Set to 0 to undef
 
 =cut
-sub objDesign { my $self = shift; my $pkg = ref($self);
+sub objDesign {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -166,7 +171,8 @@ The Win32::GUI::Loft::Canvas object that is current state of the
 objDesign().
 
 =cut
-sub objCanvas { my $self = shift; my $pkg = ref($self);
+sub objCanvas {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -185,7 +191,8 @@ sub objCanvas { my $self = shift; my $pkg = ref($self);
 The window handle of the main window (the App window).
 
 =cut
-sub hwindMain { my $self = shift; my $pkg = ref($self);
+sub hwindMain {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -205,7 +212,8 @@ Whether the mouse is in drag mode, i.e. it depressed on a
 control, moved, and still hasn't released.
 
 =cut
-sub mouseIsDragging { my $self = shift; my $pkg = ref($self);
+sub mouseIsDragging {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -225,7 +233,8 @@ Whether the mouse is in select box mode, i.e. it depressed
 outside of a control, moved, and still hasn't released.
 
 =cut
-sub mouseIsSelectBox { my $self = shift; my $pkg = ref($self);
+sub mouseIsSelectBox {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -252,7 +261,8 @@ and still hasn't released.
 	 3: Top right
 
 =cut
-sub mouseResizeCorner { my $self = shift; my $pkg = ref($self);
+sub mouseResizeCorner {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -276,7 +286,8 @@ operation (either of an object, or of a click corner).
 	2 - Vertical
 
 =cut
-sub mouseDragDirection { my $self = shift; my $pkg = ref($self);
+sub mouseDragDirection {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -295,7 +306,8 @@ sub mouseDragDirection { my $self = shift; my $pkg = ref($self);
 Whether the mouse button is down or not.
 
 =cut
-sub mouseIsDown { my $self = shift; my $pkg = ref($self);
+sub mouseIsDown {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -314,7 +326,8 @@ sub mouseIsDown { my $self = shift; my $pkg = ref($self);
 Whether the shift button is depressed.
 
 =cut
-sub downShift { my $self = shift; my $pkg = ref($self);
+sub downShift {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -333,7 +346,8 @@ sub downShift { my $self = shift; my $pkg = ref($self);
 Whether the ctrl key is depressed.
 
 =cut
-sub downCtrl { my $self = shift; my $pkg = ref($self);
+sub downCtrl {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -353,7 +367,8 @@ Two element array ref with the coordinate where the mouse
 was depressed. Only valid if mouseIsDown().
 
 =cut
-sub raMousePosDown { my $self = shift; my $pkg = ref($self);
+sub raMousePosDown {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -373,7 +388,8 @@ Two element array ref with the coordinate where the mouse
 was last clicked or moved. Only valid if mouseIsDown().
 
 =cut
-sub raMousePosLast { my $self = shift; my $pkg = ref($self);
+sub raMousePosLast {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -394,7 +410,8 @@ sub raMousePosLast { my $self = shift; my $pkg = ref($self);
 Create new UI for Windows.
 
 =cut
-sub new { my $pkg = shift; $pkg = ref($pkg) || $pkg;
+sub new {
+    my $pkg = shift; $pkg = ref($pkg) || $pkg;
 	defined($gObjSingleton) and return($gObjSingleton);
 
 	my $self = $gObjSingleton = $pkg->SUPER::new();
@@ -433,7 +450,8 @@ Init application, info, windows etc.
 Return 1 on succes, else 0.
 
 =cut
-sub init { my $self = shift; my $pkg = ref($self);
+sub init {
+    my $self = shift; my $pkg = ref($self);
 	my ($winMain) = @_;
 
 
@@ -509,7 +527,8 @@ $rhControl.
 Return 1 on success, else 0.
 
 =cut
-sub propPopulate { my $self = shift; my $pkg = ref($self);
+sub propPopulate {
+    my $self = shift; my $pkg = ref($self);
 	my ($rhControl) = @_;
 
 
@@ -528,7 +547,8 @@ $rhControl.
 Return 1 on success, else 0.
 
 =cut
-sub propNotifyChange { my $self = shift; my $pkg = ref($self);
+sub propNotifyChange {
+    my $self = shift; my $pkg = ref($self);
 	my ($rhControl, $raPropName) = @_;
 
 	my @aControls = values %{$rhControl};
@@ -560,7 +580,8 @@ The number of conrols that are selected has changed.
 Return 1 on success, else 0.
 
 =cut
-sub propNotifySelected { my $self = shift; my $pkg = ref($self);
+sub propNotifySelected {
+    my $self = shift; my $pkg = ref($self);
 	my ($rhControl, $raPropName) = @_;
 
 	$self->winDesign()->InvalidateRect(1);
@@ -834,7 +855,8 @@ sub ::winDesign_Deactivate { my $self = TGL::WindowDesign->new();
 
 
 
-sub ::winDesign_DropFiles { my $self = TGL::WindowApp->new();	#Note! The App window!
+sub ::winDesign_DropFiles {
+    my $self = TGL::WindowApp->new();	#Note! The App window!
 	my ($handleDrop) = @_;
 
 	$self->dropFiles($handleDrop);
@@ -869,7 +891,8 @@ my %hBrush = (
 	font		=> Win32::GUI::GetStockObject(17),
 	colorWindow	=> Win32::GUI::AdHoc::GetSysColor( COLOR_BTNFACE ),		#COLOR_WINDOW
 	);
-sub ::grCanvas_Paint { my $self = TGL::WindowDesign->new();
+sub ::grCanvas_Paint {
+    my $self = TGL::WindowDesign->new();
 	my($dcDev) = @_;
 
 	return(0) if(!$dcDev);
@@ -990,7 +1013,8 @@ c) Start of click-move on the window (selecting rectangle)
 d) Start resizing
 
 =cut
-sub ::grCanvas_LButtonDown { my $self = TGL::WindowDesign->new();
+sub ::grCanvas_LButtonDown {
+    my $self = TGL::WindowDesign->new();
 	my ($dummy, @aPos) = @_;
 
 	$self->mouseIsDown(1);
@@ -1031,7 +1055,8 @@ b) End of click-move on the window (selecting rectangle)
 c) End of resizing
 
 =cut
-sub ::grCanvas_LButtonUp { my $self = TGL::WindowDesign->new();
+sub ::grCanvas_LButtonUp {
+    my $self = TGL::WindowDesign->new();
 	my ($dummy, @aPos) = @_;
 
 	#Make sure we have a depressed state
@@ -1134,7 +1159,8 @@ sub ::grCanvas_LButtonUp { my $self = TGL::WindowDesign->new();
 Register the movement.
 
 =cut
-sub ::grCanvas_MouseMove { my $self = TGL::WindowDesign->new();
+sub ::grCanvas_MouseMove {
+    my $self = TGL::WindowDesign->new();
 	my ($dummy, @aPos) = @_;
 
 	return(1) if(!$self->mouseIsDown());
@@ -1263,7 +1289,8 @@ my @gaMenu = (
 		" > &Duplicate"			=> "mnuEditDuplicate",
 		);
 my $gControlId = 0;
-sub ::grCanvas_RButtonUp { my $self = TGL::WindowDesign->new();
+sub ::grCanvas_RButtonUp {
+    my $self = TGL::WindowDesign->new();
 	my ($dummy, @aPos) = @_;
 
 	#Any control selected?
@@ -1338,7 +1365,8 @@ everything.
 Called from the popup event handlers.
 
 =cut
-sub ::mnuPopupSelect { my $self = TGL::WindowDesign->new();
+sub ::mnuPopupSelect {
+    my $self = TGL::WindowDesign->new();
 	my ($objControl) = @_;
 	
 	$self->objCanvas()->controlSelected($objControl, !$objControl->designIsSelected());
@@ -1359,7 +1387,8 @@ events available!
 
 =cut
 my $timKeyBlockDefault = 4;
-sub ::timKey_Timer { my $self = TGL::WindowDesign->new();
+sub ::timKey_Timer {
+    my $self = TGL::WindowDesign->new();
 
 	#Some operations must not be processed too often. E.g. after a paste
 	#operation, don't listen to keyboard events for a few events.

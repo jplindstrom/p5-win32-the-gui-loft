@@ -42,7 +42,8 @@ Default: 1
 Readonly.
 
 =cut
-sub designIsTangible { my $self = shift; my $pkg = ref($self);
+sub designIsTangible {
+    my $self = shift; my $pkg = ref($self);
 	return(0);
 	}
 
@@ -57,7 +58,8 @@ sub designIsTangible { my $self = shift; my $pkg = ref($self);
 Create new Control object.
 
 =cut
-sub new { my $pkg = shift; $pkg = ref($pkg) || $pkg;
+sub new {
+    my $pkg = shift; $pkg = ref($pkg) || $pkg;
 	
 	my $self = $pkg->SUPER::new();
 	
@@ -88,7 +90,8 @@ sub new { my $pkg = shift; $pkg = ref($pkg) || $pkg;
 Return 1 if the coords are within the control, else 0.
 
 =cut
-sub isClicked { my $self = shift; my $pkg = ref($self);
+sub isClicked {
+    my $self = shift; my $pkg = ref($self);
 	my ($left, $top) = @_;
 
 	return(0);
@@ -104,7 +107,8 @@ Return 1 if the coords are within a selected box located at
 $leftSel, $topSel, else return 0.
 
 =cut
-sub isClickedSelected { my $self = shift; my $pkg = ref($self);
+sub isClickedSelected {
+    my $self = shift; my $pkg = ref($self);
 	my ($left, $top, $leftSel, $topSel) = @_;
 
 	return(0);
@@ -126,7 +130,8 @@ selected boxes.
 	 3: Top right
 
 =cut
-sub clickedSelectCorner { my $self = shift; my $pkg = ref($self);
+sub clickedSelectCorner {
+    my $self = shift; my $pkg = ref($self);
 	my ($left, $top) = @_;
 
 	return(-1);
@@ -142,7 +147,8 @@ Return 1 if the control is within or touched by the
 rectangle, else 0.
 
 =cut
-sub isTouchedByRect { my $self = shift; my $pkg = ref($self);
+sub isTouchedByRect {
+    my $self = shift; my $pkg = ref($self);
 	my ($left, $top, $right, $bottom) = @_;
 
 	return(0);
@@ -160,7 +166,8 @@ of $snap (if $snap != 0).
 Return undef if the property doesn't exist.
 
 =cut
-sub propIncSnap { my $self = shift; my $pkg = ref($self);
+sub propIncSnap {
+    my $self = shift; my $pkg = ref($self);
 	my ($propertyName, $val, $snap) = @_;
 
 	return(undef);
@@ -176,7 +183,8 @@ Return hash ref with a snapshot of the positional
 properties, used for cashing the expensive lookups.
 
 =cut
-sub rhPosCache { my $self = shift; my $pkg = ref($self);
+sub rhPosCache {
+    my $self = shift; my $pkg = ref($self);
 	return({});
 	}
 
@@ -191,7 +199,8 @@ Paint the control in the $dcDev.
 Return 1 on success, else 0.
 
 =cut
-sub paint { my $self = shift; my $pkg = ref($self);
+sub paint {
+    my $self = shift; my $pkg = ref($self);
 	my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
 
 	return(1);
@@ -208,7 +217,8 @@ Paint the Text property on the control if there is one.
 Return 1 on success, else 0.
 
 =cut
-sub paintText { my $self = shift; my $pkg = ref($self);
+sub paintText {
+    my $self = shift; my $pkg = ref($self);
 	my ($dcDev, $rhBrush, $rhPosCache) = @_;
 
 	return(1);
@@ -225,7 +235,8 @@ Paint the Name property on the control if there is one.
 Return 1 on success, else 0.
 
 =cut
-sub paintName { my $self = shift; my $pkg = ref($self);
+sub paintName {
+    my $self = shift; my $pkg = ref($self);
 	my ($dcDev, $rhBrush, $rhPosCache) = @_;
 
 	return(1);
@@ -242,7 +253,8 @@ Paint the $text property on the control.
 Return 1 on success, else 0.
 
 =cut
-sub paintTextGeneric { my $self = shift; my $pkg = ref($self);
+sub paintTextGeneric {
+    my $self = shift; my $pkg = ref($self);
 	my ($dcDev, $rhBrush, $rhPosCache, $text) = @_;
 
 	return(1);
@@ -259,7 +271,8 @@ Paint the $bmBitmap on the control.
 Return 1 on success, else 0.
 
 =cut
-sub paintBitmap { my $self = shift; my $pkg = ref($self);
+sub paintBitmap {
+    my $self = shift; my $pkg = ref($self);
 	my ($dcDev, $rhBrush, $rhPosCache, $objDesign) = @_;
 
 	return(1);
@@ -277,7 +290,8 @@ designIsSelected().
 Return 1 on success, else 0.
 
 =cut
-sub paintSelected { my $self = shift; my $pkg = ref($self);
+sub paintSelected {
+    my $self = shift; my $pkg = ref($self);
 	my ($dcDev, $rhBrush, $rhPosCache) = @_;
 
 	return(1);

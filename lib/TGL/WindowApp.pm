@@ -86,7 +86,8 @@ Win32::GUI::AdHoc::blockGUIWarnings();
 The main window object
 
 =cut
-sub winMain { my $self = shift; my $pkg = ref($self);
+sub winMain {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -105,7 +106,8 @@ sub winMain { my $self = shift; my $pkg = ref($self);
 The Export Perl window object.
 
 =cut
-sub winClusterProp { my $self = shift; my $pkg = ref($self);
+sub winClusterProp {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -124,7 +126,8 @@ sub winClusterProp { my $self = shift; my $pkg = ref($self);
 The menu for the main window
 
 =cut
-sub mnuMain { my $self = shift; my $pkg = ref($self);
+sub mnuMain {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -144,7 +147,8 @@ The Win32::GUI::Resizer object used to resize the controls
 in the winMain window.
 
 =cut
-sub objResizerMain { my $self = shift; my $pkg = ref($self);
+sub objResizerMain {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -163,7 +167,8 @@ sub objResizerMain { my $self = shift; my $pkg = ref($self);
 The Win32::GUI::Modalizer object used to make dialogs modal.
 
 =cut
-sub objModalizer { my $self = shift; my $pkg = ref($self);
+sub objModalizer {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -183,7 +188,8 @@ The Properties window object (not the design
 Win32::GUI::Window object).
 
 =cut
-sub objWindowProp { my $self = shift; my $pkg = ref($self);
+sub objWindowProp {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -203,7 +209,8 @@ The Design window object (not the design Win32::GUI::Window
 object).
 
 =cut
-sub objWindowDesign { my $self = shift; my $pkg = ref($self);
+sub objWindowDesign {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -223,7 +230,8 @@ The Toolbox window object (not the design Win32::GUI::Window
 object).
 
 =cut
-sub objWindowTool { my $self = shift; my $pkg = ref($self);
+sub objWindowTool {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -244,7 +252,8 @@ The Win32::GUI::Loft::Canvas that is the current state of the objDesign()
 Set to 0 to undef
 
 =cut
-sub objCanvas { my $self = shift; my $pkg = ref($self);
+sub objCanvas {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -267,7 +276,8 @@ if no such thing exists.
 Set to 0 to undef
 
 =cut
-sub objDesign { my $self = shift; my $pkg = ref($self);
+sub objDesign {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -290,7 +300,8 @@ or undef.
 Set to 0 to undef.
 
 =cut
-sub objClusterLastEdited { my $self = shift; my $pkg = ref($self);
+sub objClusterLastEdited {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -311,7 +322,8 @@ Array ref with window objects that have been opened and not
 yet been hidden/closed.
 
 =cut
-sub raWinTest { my $self = shift; my $pkg = ref($self);
+sub raWinTest {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -332,7 +344,8 @@ sub raWinTest { my $self = shift; my $pkg = ref($self);
 Create new UI for Windows.
 
 =cut
-sub new { my $pkg = shift; $pkg = ref($pkg) || $pkg;
+sub new {
+    my $pkg = shift; $pkg = ref($pkg) || $pkg;
 	defined($gObjSingleton) and return($gObjSingleton);
 
 	my $self = $gObjSingleton = $pkg->SUPER::new();
@@ -364,7 +377,8 @@ Init application, info, windows etc.
 Return 1 on succes, else 0.
 
 =cut
-sub init { my $self = shift; my $pkg = ref($self);
+sub init {
+    my $self = shift; my $pkg = ref($self);
 
 
 	###Build GUI
@@ -740,7 +754,8 @@ Run the UI.
 Return 1 on success, else 0.
 
 =cut
-sub run { my $self = shift; my $pkg = ref($self);
+sub run {
+    my $self = shift; my $pkg = ref($self);
 
 	Win32::GUI::Dialog();
 
@@ -758,7 +773,8 @@ Shutdown application, close stuff, save etc.
 Return 1 on succes, else 0.
 
 =cut
-sub shutdown { my $self = shift; my $pkg = ref($self);
+sub shutdown {
+    my $self = shift; my $pkg = ref($self);
 
 	$self->configWindowSave(
 			$self->winMain->Left(),
@@ -790,7 +806,8 @@ defined in that config file.
 Return 1 on success, else die().
 
 =cut
-sub configLoad { my $self = shift; my $pkg = ref($self);
+sub configLoad {
+    my $self = shift; my $pkg = ref($self);
 	my ($fileConfig) = @_;
 
 	$self->fileConfig($fileConfig);
@@ -813,7 +830,8 @@ Save the rhConfig.
 Return 1 on success, else 0.
 
 =cut
-sub configSave { my $self = shift; my $pkg = ref($self);
+sub configSave {
+    my $self = shift; my $pkg = ref($self);
 	return($self->saveXMLFile($self->fileConfig(), $self->rhConfig()));
 	}
 
@@ -828,7 +846,8 @@ Save the window state config file
 Return 1 on success, else 0.
 
 =cut
-sub configWindowSave { my $self = shift; my $pkg = ref($self);
+sub configWindowSave {
+    my $self = shift; my $pkg = ref($self);
 	my ($mainLeft, $mainTop, $mainWidth, $mainHeight, $propLeft,
 			$propTop, $propWidth, $propHeight) = @_;
 
@@ -858,7 +877,8 @@ the application.
 Return 1.
 
 =cut
-sub setWindowState { my $self = shift; my $pkg = ref($self);
+sub setWindowState {
+    my $self = shift; my $pkg = ref($self);
 
 #	my $winMain = $self->winMain() or return(0);
 #	my $mnuMain = $self->mnuMain() or return(0);
@@ -903,7 +923,8 @@ A user cancellation is a success.
 Return 1 on success, else 0.
 
 =cut
-sub openFile { my $self = shift; my $pkg = ref($self);
+sub openFile {
+    my $self = shift; my $pkg = ref($self);
 	my ($fileName) = @_;
 
 	$self->canvasClose() or return(1);
@@ -934,7 +955,8 @@ $handleDrop.
 Return 1 on success, else 0.
 
 =cut
-sub dropFiles { my $self = shift; my $pkg = ref($self);
+sub dropFiles {
+    my $self = shift; my $pkg = ref($self);
 	my ($handleDrop) = @_;
 
 	#Show and focus the app window
@@ -960,7 +982,8 @@ passed, use that one as the new design.
 Return 1 on success, else 0.
 
 =cut
-sub canvasNew { my $self = shift; my $pkg = ref($self);
+sub canvasNew {
+    my $self = shift; my $pkg = ref($self);
 	my ($objNew) = @_;
 	Win32::GUI::Loft::Design->resetInstanceCount();		#Hide the fact that we have created a few windows
 	defined($objNew) or ($objNew = Win32::GUI::Loft::Design->new()) or return(0);
@@ -1013,7 +1036,8 @@ Make sure the user gets the opportunity to save if need be.
 Return 1 on success, else 0.
 
 =cut
-sub canvasClose { my $self = shift; my $pkg = ref($self);
+sub canvasClose {
+    my $self = shift; my $pkg = ref($self);
 #$DB::single = 1;
 	if($self->objDesign() && $self->objDesign()->isDirty()) {
 		my $fileName = basename($self->objDesign()->fileName()) || "current design";
@@ -1043,7 +1067,8 @@ $rhControl.
 Return 1 on success, else 0.
 
 =cut
-sub propNotifyChange { my $self = shift; my $pkg = ref($self);
+sub propNotifyChange {
+    my $self = shift; my $pkg = ref($self);
 	my ($rhControl, $raPropName) = @_;
 
 	for my $prop (@{$raPropName}) {
@@ -1064,7 +1089,8 @@ The number of controls has changed.
 Return 1 on success, else 0.
 
 =cut
-sub propNotifyFundamental { my $self = shift; my $pkg = ref($self);
+sub propNotifyFundamental {
+    my $self = shift; my $pkg = ref($self);
 	my ($rhControl, $raPropName) = @_;
 
 	$self->controlPopulate();
@@ -1085,7 +1111,8 @@ The number of conrols that are selected has changed.
 Return 1 on success, else 0.
 
 =cut
-sub propNotifySelected { my $self = shift; my $pkg = ref($self);
+sub propNotifySelected {
+    my $self = shift; my $pkg = ref($self);
 	my ($rhControl) = @_;
 
 	$self->controlSelect( $rhControl );
@@ -1107,7 +1134,8 @@ clusters.
 Return 1 on success, else 0.
 
 =cut
-sub clusterNotifyFundamental { my $self = shift; my $pkg = ref($self);
+sub clusterNotifyFundamental {
+    my $self = shift; my $pkg = ref($self);
 
 	$self->clusterPopulate();
 
@@ -1127,7 +1155,8 @@ Fill the list with the available controls.
 Return 1 on success, else 0.
 
 =cut
-sub controlPopulate { my $self = shift; my $pkg = ref($self);
+sub controlPopulate {
+    my $self = shift; my $pkg = ref($self);
 
 	$self->winMain()->lbControl()->Clear();
 
@@ -1154,7 +1183,8 @@ Sync the ListBox with the selected controls.
 Return 1 on success, else 0.
 
 =cut
-sub controlSelect { my $self = shift; my $pkg = ref($self);
+sub controlSelect {
+    my $self = shift; my $pkg = ref($self);
 
 	my $check = ( keys %{$self->objCanvas()->rhControlSelected()}  ) ? 0 : 1;
 	$self->winMain()->lbControl()->SendMessage(0x0185, $check, 0);				#LB_SETSEL
@@ -1181,7 +1211,8 @@ the correct controls.
 Return 1 on success, else 0.
 
 =cut
-sub controlSetSelection { my $self = shift; my $pkg = ref($self);
+sub controlSetSelection {
+    my $self = shift; my $pkg = ref($self);
 
 	#First, deselect the window if any other controls are selected
 	my @aSelected = $self->winMain()->lbControl()->SelectedItems();
@@ -1220,7 +1251,8 @@ above the window control since it is the main container.
 Return 1 on success, else 0.
 
 =cut
-sub controlMove { my $self = shift; my $pkg = ref($self);
+sub controlMove {
+    my $self = shift; my $pkg = ref($self);
 	my ($dir) = @_;
 
 	my @aSelected = map { $_ - 1 } $self->winMain()->lbControl()->SelectedItems();
@@ -1246,7 +1278,8 @@ if none. If many are selected, return only the first.
 Return 1 on success, else 0.
 
 =cut
-sub clusterGetSelected { my $self = shift; my $pkg = ref($self);
+sub clusterGetSelected {
+    my $self = shift; my $pkg = ref($self);
 
 	my @aSelected = $self->winMain()->lvwCluster()->SelectedItems();
 
@@ -1267,7 +1300,8 @@ Re-fill lvwCluster with the current clusters.
 Return 1 on success, else 0.
 
 =cut
-sub clusterPopulate { my $self = shift; my $pkg = ref($self);
+sub clusterPopulate {
+    my $self = shift; my $pkg = ref($self);
 
 	#Reset the lvwCluster and refill it
 	$self->winMain()->lvwCluster()->Clear();
@@ -1293,7 +1327,8 @@ Change the image in the listview to $visible for item $index.
 Return 1 on success, else 0.
 
 =cut
-sub clusterSetVisible { my $self = shift; my $pkg = ref($self);
+sub clusterSetVisible {
+    my $self = shift; my $pkg = ref($self);
 	my ($index, $visible) = @_;
 	return(0) if($visible < 0 || $visible > 1);
 
@@ -1316,7 +1351,8 @@ Test the current window.
 Return 1 on success, else 0.
 
 =cut
-sub windowTest { my $self = shift; my $pkg = ref($self);
+sub windowTest {
+    my $self = shift; my $pkg = ref($self);
 
 	##Use a temp name so it's not colliding with the application's name space
 	#Store old values
@@ -1373,7 +1409,8 @@ $subName -- If ne "", it's the sub in which to put the code.
 Return 1 on success, else 0.
 
 =cut
-sub perlExport { my $self = shift; my $pkg = ref($self);
+sub perlExport {
+    my $self = shift; my $pkg = ref($self);
 	my ($fileName, $subName) = @_;
 
 
@@ -1408,7 +1445,8 @@ sub ::winMain_Terminate {
 Resize the main window.
 
 =cut
-#sub ::winMain_Resize { my $self = TGL::WindowApp->new();
+#sub ::winMain_Resize {
+my $self = TGL::WindowApp->new();
 #	defined($self->objResizerMain()) and $self->objResizerMain()->resize();
 #	}
 
@@ -1421,7 +1459,8 @@ Resize the main window.
 Activate the window and perform Modalizer stuff.
 
 =cut
-sub ::winMain_Activate { my $self = TGL::WindowApp->new();
+sub ::winMain_Activate {
+    my $self = TGL::WindowApp->new();
 	defined($self->objModalizer()) and $self->objModalizer()->activate($self->winMain());
 	}
 
@@ -1429,7 +1468,8 @@ sub ::winMain_Activate { my $self = TGL::WindowApp->new();
 
 
 
-sub ::winMain_DropFiles { my $self = TGL::WindowApp->new();
+sub ::winMain_DropFiles {
+    my $self = TGL::WindowApp->new();
 	my ($handleDrop) = @_;
 
 	$self->dropFiles($handleDrop);
@@ -1446,7 +1486,8 @@ sub ::winMain_DropFiles { my $self = TGL::WindowApp->new();
 The selected state change, so reflect that.
 
 =cut
-sub ::lbControl_Click { my $self = TGL::WindowApp->new();
+sub ::lbControl_Click {
+    my $self = TGL::WindowApp->new();
 
 	$self->controlSetSelection();
 
@@ -1464,7 +1505,8 @@ sub ::lbControl_Click { my $self = TGL::WindowApp->new();
 New design.
 
 =cut
-sub ::btnNew_Click { my $self = TGL::WindowApp->new();
+sub ::btnNew_Click {
+    my $self = TGL::WindowApp->new();
 
 	::mnuFileNew_Click();
 
@@ -1480,7 +1522,8 @@ sub ::btnNew_Click { my $self = TGL::WindowApp->new();
 Open design.
 
 =cut
-sub ::btnOpen_Click { my $self = TGL::WindowApp->new();
+sub ::btnOpen_Click {
+    my $self = TGL::WindowApp->new();
 
 	::mnuFileOpen_Click();
 
@@ -1498,7 +1541,8 @@ sub ::btnOpen_Click { my $self = TGL::WindowApp->new();
 Save design.
 
 =cut
-sub ::btnSave_Click { my $self = TGL::WindowApp->new();
+sub ::btnSave_Click {
+    my $self = TGL::WindowApp->new();
 
 	::mnuFileSave_Click();
 
@@ -1516,7 +1560,8 @@ sub ::btnSave_Click { my $self = TGL::WindowApp->new();
 Cut selected controls.
 
 =cut
-sub ::btnCut_Click { my $self = TGL::WindowApp->new();
+sub ::btnCut_Click {
+    my $self = TGL::WindowApp->new();
 
 	my $clipboard = $self->objCanvas()->controlCut();
 	Win32::Clipboard::Set( $clipboard );
@@ -1533,7 +1578,8 @@ sub ::btnCut_Click { my $self = TGL::WindowApp->new();
 Copy selected controls.
 
 =cut
-sub ::btnCopy_Click { my $self = TGL::WindowApp->new();
+sub ::btnCopy_Click {
+    my $self = TGL::WindowApp->new();
 
 	my $clipboard = $self->objCanvas()->controlCopy() or return(1);
 	Win32::Clipboard::Set( $clipboard );
@@ -1550,7 +1596,8 @@ sub ::btnCopy_Click { my $self = TGL::WindowApp->new();
 Paste selected controls.
 
 =cut
-sub ::btnPaste_Click { my $self = TGL::WindowApp->new();
+sub ::btnPaste_Click {
+    my $self = TGL::WindowApp->new();
 
 	my $clipboard = Win32::Clipboard::GetText();
 	$self->objCanvas()->controlPaste($clipboard);
@@ -1567,7 +1614,8 @@ sub ::btnPaste_Click { my $self = TGL::WindowApp->new();
 Delete selected controls.
 
 =cut
-sub ::btnDelete_Click { my $self = TGL::WindowApp->new();
+sub ::btnDelete_Click {
+    my $self = TGL::WindowApp->new();
 
 	$self->objCanvas()->controlDelete();
 
@@ -1583,7 +1631,8 @@ sub ::btnDelete_Click { my $self = TGL::WindowApp->new();
 Move selected controls up one step
 
 =cut
-sub ::btnUp_Click { my $self = TGL::WindowApp->new();
+sub ::btnUp_Click {
+    my $self = TGL::WindowApp->new();
 
 	$self->controlMove(1);
 
@@ -1599,7 +1648,8 @@ sub ::btnUp_Click { my $self = TGL::WindowApp->new();
 Move selected controls down one step
 
 =cut
-sub ::btnDown_Click { my $self = TGL::WindowApp->new();
+sub ::btnDown_Click {
+    my $self = TGL::WindowApp->new();
 
 	$self->controlMove(0);
 
@@ -1615,7 +1665,8 @@ sub ::btnDown_Click { my $self = TGL::WindowApp->new();
 New cluster
 
 =cut
-sub ::btnClusterNew_Click { my $self = TGL::WindowApp->new();
+sub ::btnClusterNew_Click {
+    my $self = TGL::WindowApp->new();
 
 	my $name = "New cluster";
 	$self->objCanvas()->clusterNew($name) or return(1);
@@ -1635,7 +1686,8 @@ sub ::btnClusterNew_Click { my $self = TGL::WindowApp->new();
 Rename cluster
 
 =cut
-sub ::btnClusterRename_Click { my $self = TGL::WindowApp->new();
+sub ::btnClusterRename_Click {
+    my $self = TGL::WindowApp->new();
 
 	my ($index, $objCluster) = $self->clusterGetSelected() or return(1);
 
@@ -1662,7 +1714,8 @@ sub ::btnClusterRename_Click { my $self = TGL::WindowApp->new();
 Delete cluster
 
 =cut
-sub ::btnClusterDelete_Click { my $self = TGL::WindowApp->new();
+sub ::btnClusterDelete_Click {
+    my $self = TGL::WindowApp->new();
 
 	my ($index, $objCluster) = $self->clusterGetSelected() or return(1);
 	$self->objCanvas()->clusterDelete($objCluster);
@@ -1679,7 +1732,8 @@ sub ::btnClusterDelete_Click { my $self = TGL::WindowApp->new();
 Delete cluster
 
 =cut
-sub ::btnClusterMemorize_Click { my $self = TGL::WindowApp->new();
+sub ::btnClusterMemorize_Click {
+    my $self = TGL::WindowApp->new();
 
 	my ($index, $objCluster) = $self->clusterGetSelected() or return(1);
 	$self->objCanvas()->clusterMemorize($objCluster);
@@ -1696,7 +1750,8 @@ sub ::btnClusterMemorize_Click { my $self = TGL::WindowApp->new();
 Grid Apply button. Sync the Design with the form contents.
 
 =cut
-sub ::btnGridApply_Click { my $self = TGL::WindowApp->new();
+sub ::btnGridApply_Click {
+    my $self = TGL::WindowApp->new();
 
 	$self->objDesign->gridSnap( $self->winMain()->chbGridSnap()->Checked() );
 	$self->objDesign->gridShow( $self->winMain()->chbGridShow()->Checked() );
@@ -1725,7 +1780,8 @@ sub ::btnGridApply_Click { my $self = TGL::WindowApp->new();
 Grid Reset button. Sync the form contents with the Design.
 
 =cut
-sub ::btnGridReset_Click { my $self = TGL::WindowApp->new();
+sub ::btnGridReset_Click {
+    my $self = TGL::WindowApp->new();
 
 	$self->winMain()->chbGridSnap()->Checked( $self->objDesign->gridSnap() );
 	$self->winMain()->chbGridShow()->Checked( $self->objDesign->gridShow() );
@@ -1745,7 +1801,8 @@ sub ::btnGridReset_Click { my $self = TGL::WindowApp->new();
 Change visible state
 
 =cut
-sub ::lvwCluster_DblClick { my $self = TGL::WindowApp->new();
+sub ::lvwCluster_DblClick {
+    my $self = TGL::WindowApp->new();
 
 	my ($index, $objCluster) = $self->clusterGetSelected() or return(undef);
 
@@ -1765,7 +1822,8 @@ sub ::lvwCluster_DblClick { my $self = TGL::WindowApp->new();
 Exit the app.
 
 =cut
-sub ::mnuFileNew_Click { my $self = TGL::WindowApp->new();
+sub ::mnuFileNew_Click {
+    my $self = TGL::WindowApp->new();
 
 	$self->canvasClose() or return(1);
 	$self->canvasNew();
@@ -1782,7 +1840,8 @@ sub ::mnuFileNew_Click { my $self = TGL::WindowApp->new();
 Open new design and replace the existing one.
 
 =cut
-sub ::mnuFileOpen_Click { my $self = TGL::WindowApp->new();
+sub ::mnuFileOpen_Click {
+    my $self = TGL::WindowApp->new();
 
 	my $dir = ($self->objDesign() and dirname($self->objDesign()->fileName())
 			or "");
@@ -1812,7 +1871,8 @@ sub ::mnuFileOpen_Click { my $self = TGL::WindowApp->new();
 Save the current design.
 
 =cut
-sub ::mnuFileSave_Click { my $self = TGL::WindowApp->new();
+sub ::mnuFileSave_Click {
+    my $self = TGL::WindowApp->new();
 	return(1) if(!$self->objDesign());
 
 	my $fileName = $self->objDesign()->fileName() || "";
@@ -1835,7 +1895,8 @@ sub ::mnuFileSave_Click { my $self = TGL::WindowApp->new();
 Save the current design.
 
 =cut
-sub ::mnuFileSaveAs_Click { my $self = TGL::WindowApp->new();
+sub ::mnuFileSaveAs_Click {
+    my $self = TGL::WindowApp->new();
 	return(1) if(!$self->objDesign());
 
 	my $fileRet = GUI::GetSaveFileName(
@@ -1882,7 +1943,8 @@ sub ::mnuFileExit_Click {
 Copy the names of selected controls to the Clipboard.
 
 =cut
-sub ::mnuEditCopyPerlName_Click { my $self = TGL::WindowApp->new();
+sub ::mnuEditCopyPerlName_Click {
+    my $self = TGL::WindowApp->new();
 
 	my $clipboard = $self->objCanvas()->controlCopyName() or return(1);
 	$clipboard =~ s{\n}{\r\n}gs;
@@ -1902,7 +1964,8 @@ Generate Perl code for the resizer stuff and put it in the
 Clipboard.
 
 =cut
-sub ::mnuEditCopyPerlResizer_Click { my $self = TGL::WindowApp->new();
+sub ::mnuEditCopyPerlResizer_Click {
+    my $self = TGL::WindowApp->new();
 
 	my $perlRes = $self->objDesign()->perlResizer();
 	$perlRes =~ s{\n}{\r\n}gs;
@@ -1921,7 +1984,8 @@ sub ::mnuEditCopyPerlResizer_Click { my $self = TGL::WindowApp->new();
 Select all controls (except the window).
 
 =cut
-sub ::mnuEditSelectAll_Click { my $self = TGL::WindowApp->new();
+sub ::mnuEditSelectAll_Click {
+    my $self = TGL::WindowApp->new();
 
 	$self->objCanvas()->controlAllSelect() or $self->errorReport("Could not select all");
 
@@ -1937,7 +2001,8 @@ sub ::mnuEditSelectAll_Click { my $self = TGL::WindowApp->new();
 Deselect all controls (select the window).
 
 =cut
-sub ::mnuEditSelectWindow_Click { my $self = TGL::WindowApp->new();
+sub ::mnuEditSelectWindow_Click {
+    my $self = TGL::WindowApp->new();
 
 	$self->objCanvas()->controlAllDeselect() or $self->errorReport("Could not deselect all");
 
@@ -1953,7 +2018,8 @@ sub ::mnuEditSelectWindow_Click { my $self = TGL::WindowApp->new();
 Bring the selected controls to the top of the Tab Order.
 
 =cut
-sub ::mnuEditBringToTop_Click { my $self = TGL::WindowApp->new();
+sub ::mnuEditBringToTop_Click {
+    my $self = TGL::WindowApp->new();
 
 	return( $self->controlMove(3) );
 	}
@@ -1967,7 +2033,8 @@ sub ::mnuEditBringToTop_Click { my $self = TGL::WindowApp->new();
 Bring the selected controls up one step in the Tab Order.
 
 =cut
-sub ::mnuEditBringUp_Click { my $self = TGL::WindowApp->new();
+sub ::mnuEditBringUp_Click {
+    my $self = TGL::WindowApp->new();
 
 	return( $self->controlMove(1) );
 	}
@@ -1981,7 +2048,8 @@ sub ::mnuEditBringUp_Click { my $self = TGL::WindowApp->new();
 Bring the selected controls up one step in the Tab Order.
 
 =cut
-sub ::mnuEditBringDown_Click { my $self = TGL::WindowApp->new();
+sub ::mnuEditBringDown_Click {
+    my $self = TGL::WindowApp->new();
 
 	return( $self->controlMove(0) );
 	}
@@ -1995,7 +2063,8 @@ sub ::mnuEditBringDown_Click { my $self = TGL::WindowApp->new();
 Bring the selected controls to the top of the Tab Order.
 
 =cut
-sub ::mnuEditBringToBottom_Click { my $self = TGL::WindowApp->new();
+sub ::mnuEditBringToBottom_Click {
+    my $self = TGL::WindowApp->new();
 
 	return( $self->controlMove(2) );
 	}
@@ -2009,7 +2078,8 @@ sub ::mnuEditBringToBottom_Click { my $self = TGL::WindowApp->new();
 Align selected controls right
 
 =cut
-sub ::mnuEditAlignRight_Click { my $self = TGL::WindowApp->new();
+sub ::mnuEditAlignRight_Click {
+    my $self = TGL::WindowApp->new();
 
 	return( $self->objCanvas()->controlAlignSelected("right") );
 	}
@@ -2023,7 +2093,8 @@ sub ::mnuEditAlignRight_Click { my $self = TGL::WindowApp->new();
 Align selected controls left
 
 =cut
-sub ::mnuEditAlignLeft_Click { my $self = TGL::WindowApp->new();
+sub ::mnuEditAlignLeft_Click {
+    my $self = TGL::WindowApp->new();
 
 	return( $self->objCanvas()->controlAlignSelected("left") );
 	}
@@ -2037,7 +2108,8 @@ sub ::mnuEditAlignLeft_Click { my $self = TGL::WindowApp->new();
 Align selected controls top
 
 =cut
-sub ::mnuEditAlignTop_Click { my $self = TGL::WindowApp->new();
+sub ::mnuEditAlignTop_Click {
+    my $self = TGL::WindowApp->new();
 
 	return( $self->objCanvas()->controlAlignSelected("top") );
 	}
@@ -2051,7 +2123,8 @@ sub ::mnuEditAlignTop_Click { my $self = TGL::WindowApp->new();
 Align selected controls bottom
 
 =cut
-sub ::mnuEditAlignBottom_Click { my $self = TGL::WindowApp->new();
+sub ::mnuEditAlignBottom_Click {
+    my $self = TGL::WindowApp->new();
 
 	return( $self->objCanvas()->controlAlignSelected("bottom") );
 	}
@@ -2065,7 +2138,8 @@ sub ::mnuEditAlignBottom_Click { my $self = TGL::WindowApp->new();
 Align selected controls center
 
 =cut
-sub ::mnuEditAlignCenter_Click { my $self = TGL::WindowApp->new();
+sub ::mnuEditAlignCenter_Click {
+    my $self = TGL::WindowApp->new();
 
 	return( $self->objCanvas()->controlAlignSelected("center") );
 	}
@@ -2079,7 +2153,8 @@ sub ::mnuEditAlignCenter_Click { my $self = TGL::WindowApp->new();
 Align selected controls middle
 
 =cut
-sub ::mnuEditAlignMiddle_Click { my $self = TGL::WindowApp->new();
+sub ::mnuEditAlignMiddle_Click {
+    my $self = TGL::WindowApp->new();
 
 	return( $self->objCanvas()->controlAlignSelected("middle") );
 	}
@@ -2093,7 +2168,8 @@ sub ::mnuEditAlignMiddle_Click { my $self = TGL::WindowApp->new();
 Align selected controls to the max height
 
 =cut
-sub ::mnuEditAlignMaxHeight_Click { my $self = TGL::WindowApp->new();
+sub ::mnuEditAlignMaxHeight_Click {
+    my $self = TGL::WindowApp->new();
 
 	return( $self->objCanvas()->controlAlignSelected("maxheight") );
 	}
@@ -2107,7 +2183,8 @@ sub ::mnuEditAlignMaxHeight_Click { my $self = TGL::WindowApp->new();
 Align selected controls to the max width
 
 =cut
-sub ::mnuEditAlignMaxWidth_Click { my $self = TGL::WindowApp->new();
+sub ::mnuEditAlignMaxWidth_Click {
+    my $self = TGL::WindowApp->new();
 
 	return( $self->objCanvas()->controlAlignSelected("maxwidth") );
 	}
@@ -2121,7 +2198,8 @@ sub ::mnuEditAlignMaxWidth_Click { my $self = TGL::WindowApp->new();
 Test the window
 
 =cut
-sub ::mnuDesignTest_Click { my $self = TGL::WindowApp->new();
+sub ::mnuDesignTest_Click {
+    my $self = TGL::WindowApp->new();
 
 	$self->windowTest() or $self->errorReport("Could not create Test window");
 
@@ -2137,7 +2215,8 @@ sub ::mnuDesignTest_Click { my $self = TGL::WindowApp->new();
 Test the window
 
 =cut
-sub ::mnuDesignCloseTest_Click { my $self = TGL::WindowApp->new();
+sub ::mnuDesignCloseTest_Click {
+    my $self = TGL::WindowApp->new();
 
 	#Hide all test windows
 	for my $winTest (@{$self->raWinTest()}) {
@@ -2159,7 +2238,8 @@ sub ::mnuDesignCloseTest_Click { my $self = TGL::WindowApp->new();
 User manual HTML page
 
 =cut
-sub ::mnuHelpUserManual_Click { my $self = TGL::WindowApp->new();
+sub ::mnuHelpUserManual_Click {
+    my $self = TGL::WindowApp->new();
 
 	system("explorer " . $self->rhConfig()->{fileHelpManual});
 
@@ -2174,7 +2254,8 @@ sub ::mnuHelpUserManual_Click { my $self = TGL::WindowApp->new();
 Win32::GUI docs HTML page
 
 =cut
-sub ::mnuHelpWin32GUI_Click { my $self = TGL::WindowApp->new();
+sub ::mnuHelpWin32GUI_Click {
+    my $self = TGL::WindowApp->new();
 
 	system("explorer " . $self->rhConfig()->{fileHelpWin32GUI});
 
@@ -2190,7 +2271,8 @@ Win32::GUI docs HTML page for the currently selected
 control.
 
 =cut
-sub ::mnuHelpWin32GUISelectedControl_Click { my $self = TGL::WindowApp->new();
+sub ::mnuHelpWin32GUISelectedControl_Click {
+    my $self = TGL::WindowApp->new();
 
 	my $name = $self->objCanvas()->helpFileSelected() or return(1);
 	my $file = sprintf($self->rhConfig()->{dirTemplateHelpWin32GUISelectedControl}, $name);
@@ -2209,7 +2291,8 @@ sub ::mnuHelpWin32GUISelectedControl_Click { my $self = TGL::WindowApp->new();
 Programmer's Reference HTML page
 
 =cut
-sub ::mnuHelpProgrammersReference_Click { my $self = TGL::WindowApp->new();
+sub ::mnuHelpProgrammersReference_Click {
+    my $self = TGL::WindowApp->new();
 
 	system("explorer " . $self->rhConfig()->{fileHelpReference});
 
@@ -2224,7 +2307,8 @@ sub ::mnuHelpProgrammersReference_Click { my $self = TGL::WindowApp->new();
 FAQ HTML page
 
 =cut
-sub ::mnuHelpFAQ_Click { my $self = TGL::WindowApp->new();
+sub ::mnuHelpFAQ_Click {
+    my $self = TGL::WindowApp->new();
 
 	system("explorer " . $self->rhConfig()->{fileHelpFAQ});
 
@@ -2239,7 +2323,8 @@ sub ::mnuHelpFAQ_Click { my $self = TGL::WindowApp->new();
 Win32 API
 
 =cut
-sub ::mnuHelpWin32SDK_Click { my $self = TGL::WindowApp->new();
+sub ::mnuHelpWin32SDK_Click {
+    my $self = TGL::WindowApp->new();
 
 	system('explorer "' . $self->rhConfig()->{urlWin32API} . '"');
 
@@ -2255,7 +2340,8 @@ sub ::mnuHelpWin32SDK_Click { my $self = TGL::WindowApp->new();
 Win32 API
 
 =cut
-sub ::mnuHelpChanges_Click { my $self = TGL::WindowApp->new();
+sub ::mnuHelpChanges_Click {
+    my $self = TGL::WindowApp->new();
 
 	system("explorer " . $self->rhConfig()->{fileHelpChanges});
 
@@ -2273,7 +2359,8 @@ sub ::mnuHelpChanges_Click { my $self = TGL::WindowApp->new();
 Hide the window.
 
 =cut
-sub ::winClusterProp_Terminate { my $self = TGL::WindowApp->new();
+sub ::winClusterProp_Terminate {
+    my $self = TGL::WindowApp->new();
 
 	#$self->winClusterProp()->Hide();
 	$self->objModalizer()->endDialog();
@@ -2290,7 +2377,8 @@ sub ::winClusterProp_Terminate { my $self = TGL::WindowApp->new();
 Hide the window and do stuff
 
 =cut
-sub ::btnClusterOk_Click { my $self = TGL::WindowApp->new();
+sub ::btnClusterOk_Click {
+    my $self = TGL::WindowApp->new();
 
 	#$self->winClusterProp()->Hide();
 	$self->objModalizer()->endDialog();
@@ -2313,7 +2401,8 @@ sub ::btnClusterOk_Click { my $self = TGL::WindowApp->new();
 Hide the window and don't do stuff
 
 =cut
-sub ::btnClusterCancel_Click { my $self = TGL::WindowApp->new();
+sub ::btnClusterCancel_Click {
+    my $self = TGL::WindowApp->new();
 
 	#$self->winClusterProp()->Hide();
 	$self->objModalizer()->endDialog();

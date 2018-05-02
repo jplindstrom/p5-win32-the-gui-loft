@@ -34,7 +34,8 @@ use Win32::GUI::Loft::ControlProperty;
 The name of the cluster. Not unique.
 
 =cut
-sub name { my $self = shift; my $pkg = ref($self);
+sub name {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -56,7 +57,8 @@ clustered controls using setDesignIsVisible().
 Default: 1
 
 =cut
-sub isVisible { my $self = shift; my $pkg = ref($self);
+sub isVisible {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -79,7 +81,8 @@ Win32::GUI::Loft::Control object). These are the controls that are
 currently in this cluster.
 
 =cut
-sub rhControl { my $self = shift; my $pkg = ref($self);
+sub rhControl {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -100,7 +103,8 @@ sub rhControl { my $self = shift; my $pkg = ref($self);
 Create new Cluster.
 
 =cut
-sub new { my $pkg = shift; $pkg = ref($pkg) || $pkg;
+sub new {
+    my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
 	my $self = {
 			name					=> "",
@@ -125,7 +129,8 @@ Add the controls in $rhControl to the clustered controls.
 Return 1 on success, else 0.
 
 =cut
-sub controlAdd { my $self = shift; my $pkg = ref($self);
+sub controlAdd {
+    my $self = shift; my $pkg = ref($self);
 	my ($rhControl) = @_;
 
 	for my $nameControl (keys %{$rhControl}) {
@@ -147,7 +152,8 @@ controls.
 Return 1 on success, else 0.
 
 =cut
-sub controlDelete { my $self = shift; my $pkg = ref($self);
+sub controlDelete {
+    my $self = shift; my $pkg = ref($self);
 	my ($rhControl) = @_;
 
 	for my $nameControl (keys %{$self->rhControl()}) {
@@ -167,7 +173,8 @@ sub controlDelete { my $self = shift; my $pkg = ref($self);
 Return 1 if $objControl is part of this cluster, else 0.
 
 =cut
-sub controlIsClustered { my $self = shift; my $pkg = ref($self);
+sub controlIsClustered {
+    my $self = shift; my $pkg = ref($self);
 	my ($objControl) = @_;
 
 	return( exists $self->rhControl()->{$objControl} ? 1 : 0 );
@@ -184,7 +191,8 @@ Toggle the isVisible state.
 Return the new visible state.
 
 =cut
-sub visibleToggle() { my $self = shift; my $pkg = ref($self);
+sub visibleToggle() {
+    my $self = shift; my $pkg = ref($self);
 	return( $self->isVisible( $self->isVisible() ? 0 : 1 ) );
 	}
 
@@ -200,7 +208,8 @@ current isVisible value.
 Return 1 on success, else 0.
 
 =cut
-sub setDesignIsVisible { my $self = shift; my $pkg = ref($self);
+sub setDesignIsVisible {
+    my $self = shift; my $pkg = ref($self);
 
 	my $visible = $self->isVisible();
 	for my $objControl (values %{$self->rhControl()}) {

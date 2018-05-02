@@ -35,7 +35,8 @@ E.g. "pbProgressBar".
 Readonly.
 
 =cut
-sub nameDefault { my $self = shift; my $pkg = ref($self);
+sub nameDefault {
+    my $self = shift; my $pkg = ref($self);
 	return("pbProgressBar");
 	}
 
@@ -52,7 +53,8 @@ Example: "top"
 Readonly.
 
 =cut
-sub valignDefault { my $self = shift; my $pkg = ref($self);
+sub valignDefault {
+    my $self = shift; my $pkg = ref($self);
 	return("top");
 	}
 
@@ -69,7 +71,8 @@ E.g. "ProgressBar".
 Readonly.
 
 =cut
-sub type { my $self = shift; my $pkg = ref($self);
+sub type {
+    my $self = shift; my $pkg = ref($self);
 	return("ProgressBar");
 	}
 
@@ -85,7 +88,8 @@ control to a container object.
 Readonly
 
 =cut
-sub addMethod { my $self = shift; my $pkg = ref($self);
+sub addMethod {
+    my $self = shift; my $pkg = ref($self);
 	return("AddProgressBar");
 	}
 
@@ -100,7 +104,8 @@ sub addMethod { my $self = shift; my $pkg = ref($self);
 Create new Control object.
 
 =cut
-sub new { my $pkg = shift; $pkg = ref($pkg) || $pkg;
+sub new {
+    my $pkg = shift; $pkg = ref($pkg) || $pkg;
 	
 	my $self = $pkg->SUPER::new();
 		
@@ -145,7 +150,8 @@ option.
 Return 1 on success, else 0.
 
 =cut
-sub buildMethodsSpecial { my $self = shift; my $pkg = ref($self);
+sub buildMethodsSpecial {
+    my $self = shift; my $pkg = ref($self);
 	my ($objNew, $objDesign) = @_;
 
 #	if($self->prop("Bitmap") ne "") {
@@ -167,7 +173,8 @@ Paint the control in the $dcDev.
 Return 1 on success, else 0.
 
 =cut
-sub paint { my $self = shift; my $pkg = ref($self);
+sub paint {
+    my $self = shift; my $pkg = ref($self);
 	my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
 	
 	return(1) if(!$self->designIsVisible());

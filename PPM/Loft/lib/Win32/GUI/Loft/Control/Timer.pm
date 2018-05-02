@@ -35,7 +35,8 @@ E.g. "timTimer".
 Readonly.
 
 =cut
-sub nameDefault { my $self = shift; my $pkg = ref($self);
+sub nameDefault {
+    my $self = shift; my $pkg = ref($self);
 	return("timTimer");
 	}
 
@@ -52,7 +53,8 @@ E.g. "Timer".
 Readonly.
 
 =cut
-sub type { my $self = shift; my $pkg = ref($self);
+sub type {
+    my $self = shift; my $pkg = ref($self);
 	return("Timer");
 	}
 
@@ -68,7 +70,8 @@ control to a container object.
 Readonly
 
 =cut
-sub addMethod { my $self = shift; my $pkg = ref($self);
+sub addMethod {
+    my $self = shift; my $pkg = ref($self);
 	return("AddTimer");
 	}
 
@@ -86,7 +89,8 @@ Default: 0
 Readonly.
 
 =cut
-sub buildControlPhase { my $self = shift; my $pkg = ref($self);
+sub buildControlPhase {
+    my $self = shift; my $pkg = ref($self);
 	return(0);
 	}
 
@@ -104,7 +108,8 @@ Default: 1
 Readonly.
 
 =cut
-sub buildPostControlPhase { my $self = shift; my $pkg = ref($self);
+sub buildPostControlPhase {
+    my $self = shift; my $pkg = ref($self);
 	return(1);
 	}
 
@@ -119,7 +124,8 @@ sub buildPostControlPhase { my $self = shift; my $pkg = ref($self);
 Create new Control object.
 
 =cut
-sub new { my $pkg = shift; $pkg = ref($pkg) || $pkg;
+sub new {
+    my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
 	my $self = $pkg->SUPER::new();
 
@@ -152,7 +158,8 @@ $objControlContainerDefault is used as container]
 Return the new control object, or undef on errors.
 
 =cut
-sub buildAdd { my $self = shift; my $pkg = ref($self);
+sub buildAdd {
+    my $self = shift; my $pkg = ref($self);
 	my ($objDesign, $objControlContainerDefault, $objInspector) = @_;
 
 ##todo: Implement the container object stuff

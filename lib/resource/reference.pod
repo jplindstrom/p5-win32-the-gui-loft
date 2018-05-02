@@ -380,7 +380,8 @@ Some extracts from the Demo program:
 	use base qw( Win32::GUI::Loft::ControlInspector );
 
 	### Override tbe buildoptions method
-	sub buildOptions { my $self = shift; my $pkg = ref($self);
+	sub buildOptions {
+my $self = shift; my $pkg = ref($self);
 		my ($objControl, $raOption) = @_;
 
 		#Modify the main window

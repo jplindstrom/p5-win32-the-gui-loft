@@ -36,7 +36,8 @@ small buttons in the caption. Other than this, it's a
 regular Window object.
 
 =cut
-sub new { my $pkg = shift; $pkg = ref($pkg) || $pkg;
+sub new {
+    my $pkg = shift; $pkg = ref($pkg) || $pkg;
 	my (%hOption) = @_;
 
 	$hOption{-style} =

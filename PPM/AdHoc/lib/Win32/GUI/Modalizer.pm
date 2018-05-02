@@ -285,7 +285,8 @@ may change this at will unless you have a modal window
 visible.
 
 =cut
-sub raWinModeless { my $self = shift;
+sub raWinModeless {
+    my $self = shift;
     my ($val) = @_;
 
     if(defined($val)) {
@@ -304,7 +305,8 @@ sub raWinModeless { my $self = shift;
 Hash ref with (key = Window object, value = block level).
 
 =cut
-sub rhBlocked { my $self = shift; my $pkg = ref($self);
+sub rhBlocked {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -326,7 +328,8 @@ modal.
 Set to 0 to undef.
 
 =cut
-sub winModal { my $self = shift; my $pkg = ref($self);
+sub winModal {
+    my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
     if(defined($val)) {
@@ -349,7 +352,8 @@ undef if no such window was defined.
 Set to 0 to undef.
 
 =cut
-sub winModeless { my $self = shift; my $pkg = ref($self);
+sub winModeless {
+    my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
     if(defined($val)) {
@@ -375,7 +379,8 @@ These Windows objects are the modeless ones that should be
 "frozen" when a modal window is displayed.
 
 =cut
-sub new { my $pkg = shift; $pkg = ref($pkg) || $pkg;
+sub new {
+    my $pkg = shift; $pkg = ref($pkg) || $pkg;
     my (@aWinModeless) = @_;
 
     my $self = {
@@ -408,7 +413,8 @@ modal state.
 Return 1 on success, else 0.
 
 =cut
-sub beginDialog { my $self = shift; my $pkg = ref($self);
+sub beginDialog {
+    my $self = shift; my $pkg = ref($self);
 	my ($winModal, $winModeless) = @_;
 	defined($winModeless) and $self->winModeless($winModeless);
 
@@ -441,7 +447,8 @@ state of all other affected windows.
 Return 1 on success, else 0.
 
 =cut
-sub endDialog { my $self = shift; my $pkg = ref($self);
+sub endDialog {
+    my $self = shift; my $pkg = ref($self);
 
 	#Not modal?
 	return(0) if(!$self->winModal());
@@ -484,7 +491,8 @@ $winActivated is the Window that just got activated.
 Return 1 on success, else 0.
 
 =cut
-sub activate { my $self = shift; my $pkg = ref($self);
+sub activate {
+    my $self = shift; my $pkg = ref($self);
 	my ($winActivated) = @_;
 
 	#Not modal?

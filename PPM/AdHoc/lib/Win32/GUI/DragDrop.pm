@@ -259,7 +259,8 @@ Return undef on errors.
 =cut
 my $rsDragAcceptFiles = new Win32::API ('shell32', 'DragAcceptFiles', "NI", "") || undef;
 my %hHwindDragAccept;
-sub DragAcceptFiles { my $self = shift;
+sub DragAcceptFiles {
+    my $self = shift;
 	my ($doAccept) = @_;
 	return(undef) if(!defined($rsDragAcceptFiles));
 

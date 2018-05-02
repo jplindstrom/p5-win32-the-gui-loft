@@ -36,7 +36,8 @@ use XML::Simple;
 The file that the rhConfig() was loaded from.
 
 =cut
-sub fileConfig { my $self = shift; my $pkg = ref($self);
+sub fileConfig {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -55,7 +56,8 @@ sub fileConfig { my $self = shift; my $pkg = ref($self);
 Configuration variables.
 
 =cut
-sub rhConfig { my $self = shift; my $pkg = ref($self);
+sub rhConfig {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -74,7 +76,8 @@ sub rhConfig { my $self = shift; my $pkg = ref($self);
 The config for the application window.
 
 =cut
-sub rhWindowConfig { my $self = shift; my $pkg = ref($self);
+sub rhWindowConfig {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -97,7 +100,8 @@ call.
 Default: 0
 
 =cut
-sub isClosed { my $self = shift; my $pkg = ref($self);
+sub isClosed {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -118,7 +122,8 @@ Array ref with accumulated errors.
 Default: []
 
 =cut
-sub raError { my $self = shift; my $pkg = ref($self);
+sub raError {
+    my $self = shift; my $pkg = ref($self);
 	my ($val) = @_;
 
 	if(defined($val)) {
@@ -139,7 +144,8 @@ sub raError { my $self = shift; my $pkg = ref($self);
 
 
 =cut
-sub new { my $pkg = shift; $pkg = ref($pkg) || $pkg;
+sub new {
+    my $pkg = shift; $pkg = ref($pkg) || $pkg;
 	my ($tsStrip) = @_;
 
 	my $self = {
@@ -167,7 +173,8 @@ the file is parsed to be a hash ref, return [].
 Die on errors.
 
 =cut
-sub loadXMLFile { my $self = shift; my $pkg = ref($self);
+sub loadXMLFile {
+    my $self = shift; my $pkg = ref($self);
 	my ($file, $mustBeArray) = @_;
 	defined($mustBeArray) or $mustBeArray = 0;
 
@@ -194,7 +201,8 @@ Save $rhData into $file.
 Return 1 on success, else 0.
 
 =cut
-sub saveXMLFile { my $self = shift; my $pkg = ref($self);
+sub saveXMLFile {
+    my $self = shift; my $pkg = ref($self);
 	my ($file, $rhData) = @_;
 
 	eval {
@@ -218,7 +226,8 @@ might call errorMessage().
 Return 1 on success, else 0.
 
 =cut
-sub errorClear { my $self = shift; my $pkg = ref($self);
+sub errorClear {
+    my $self = shift; my $pkg = ref($self);
 	
 	$self->raError([]);
 
@@ -236,7 +245,8 @@ Unshift $message to the raError array.
 Return $ret.
 
 =cut
-sub errorMessage { my $self = shift; my $pkg = ref($self);
+sub errorMessage {
+    my $self = shift; my $pkg = ref($self);
 	my ($message, $ret) = @_;
 	defined($ret) or $ret = 1;
 
@@ -260,7 +270,8 @@ array is joined and displayed. If raError is empty, return
 Return 1 on success, else 0.
 
 =cut
-sub errorReport { my $self = shift; my $pkg = ref($self);
+sub errorReport {
+    my $self = shift; my $pkg = ref($self);
 	my ($messError) = @_;
 	
 	if(!defined($messError)) {
@@ -282,7 +293,8 @@ sub errorReport { my $self = shift; my $pkg = ref($self);
 Return $val, or $default if $val is undef.
 
 =cut
-sub default { my $self = shift; my $pkg = ref($self);
+sub default {
+    my $self = shift; my $pkg = ref($self);
 	my ($val, $default) = @_;
 
 	defined($val) and return($val);

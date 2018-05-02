@@ -53,7 +53,8 @@ Return string representing the current size + location of
 $winWindow, or "" on errors.
 
 =cut
-sub Win32::GUI::Window::PosAsString { my $self = shift;
+sub Win32::GUI::Window::PosAsString {
+    my $self = shift;
     my ($strPos) = @_;
 
 	if(defined($strPos)) {

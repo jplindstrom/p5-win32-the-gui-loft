@@ -34,7 +34,8 @@ use strict;
 Create new Control object.
 
 =cut
-sub new { my $pkg = shift; $pkg = ref($pkg) || $pkg;
+sub new {
+    my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
 	my $self = $pkg->SUPER::new();
 
@@ -59,7 +60,8 @@ options for the creation of the control.
 Return an empty array on errors.
 
 =cut
-sub buildOptionsSpecial { my $self = shift; my $pkg = ref($self);
+sub buildOptionsSpecial {
+    my $self = shift; my $pkg = ref($self);
 	my ($objDesign) = @_;
 	my @aOption;
 

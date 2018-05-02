@@ -37,8 +37,8 @@ Readonly.
 =cut
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
-	return("lblLabel");
-	}
+    return("lblLabel");
+    }
 
 
 
@@ -55,8 +55,8 @@ Readonly.
 =cut
 sub valignDefault {
     my $self = shift; my $pkg = ref($self);
-	return("top");
-	}
+    return("top");
+    }
 
 
 
@@ -70,14 +70,14 @@ should be located for this type of control.
 =cut
 sub offsetTextLeft {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{offsetTextLeft} = $val;
-		}
+    if(defined($val)) {
+        $self->{offsetTextLeft} = $val;
+        }
 
-	return($self->{offsetTextLeft});
-	}
+    return($self->{offsetTextLeft});
+    }
 
 
 
@@ -91,14 +91,14 @@ should be located for this type of control.
 =cut
 sub offsetTextRight {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{offsetTextRight} = $val;
-		}
+    if(defined($val)) {
+        $self->{offsetTextRight} = $val;
+        }
 
-	return($self->{offsetTextRight});
-	}
+    return($self->{offsetTextRight});
+    }
 
 
 
@@ -112,14 +112,14 @@ should be located for this type of control.
 =cut
 sub offsetTextTop {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{offsetTextTop} = $val;
-		}
+    if(defined($val)) {
+        $self->{offsetTextTop} = $val;
+        }
 
-	return($self->{offsetTextTop});
-	}
+    return($self->{offsetTextTop});
+    }
 
 
 
@@ -136,8 +136,8 @@ Readonly.
 =cut
 sub type {
     my $self = shift; my $pkg = ref($self);
-	return("Label");
-	}
+    return("Label");
+    }
 
 
 
@@ -153,8 +153,8 @@ Readonly
 =cut
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
-	return("AddLabel");
-	}
+    return("AddLabel");
+    }
 
 
 
@@ -170,50 +170,50 @@ Create new Control object.
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
-	my $self = $pkg->SUPER::new();
+    my $self = $pkg->SUPER::new();
 
-	#New defaults
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Width", 80));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Height", 20));
+    #New defaults
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Width", 80));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Height", 20));
 
-	#New properties
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Tabstop", 0, [ 0, 1 ], undef, ""));
+    #New properties
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Tabstop", 0, [ 0, 1 ], undef, ""));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Text", ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Align", "left", [ "", "left", "center", "right" ], "", ""));
-#	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-#			"Valign", "top", [ "", "top", "center", "bottom" ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Text", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Align", "left", [ "", "left", "center", "right" ], "", ""));
+#   $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+#           "Valign", "top", [ "", "top", "center", "bottom" ], undef, ""));
 
 ##todo: fill, doesn't seem to work; produces weird results
-#	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-#			"Fill", "none", [ "none", "black", "gray", "white" ], undef, ""));
+#   $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+#           "Fill", "none", [ "none", "black", "gray", "white" ], undef, ""));
 
 ##todo: "black", "gray", "white", but these seem totally weird
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Frame", "none", [ "none", "etched" ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Frame", "none", [ "none", "etched" ], undef, ""));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Noprefix", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Notify", 1, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Sunken", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Truncate", 0, [ 0, 1, "word", "path" ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Wrap", 1, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Bitmap", "", [], "", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Noprefix", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Notify", 1, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Sunken", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Truncate", 0, [ 0, 1, "word", "path" ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Wrap", 1, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Bitmap", "", [], "", ""));
 
 ##todo: icon
 
-	return($self);
-	}
+    return($self);
+    }
 
 
 
@@ -229,21 +229,21 @@ Return an empty array on errors.
 =cut
 sub buildOptionsSpecial {
     my $self = shift; my $pkg = ref($self);
-	my ($objDesign) = @_;
-	my @aOption = $self->SUPER::buildOptionsSpecial($objDesign);
+    my ($objDesign) = @_;
+    my @aOption = $self->SUPER::buildOptionsSpecial($objDesign);
 
-	if($self->prop("Bitmap") ne "") {
-		my $bmBitmap = $objDesign->rhBitmap()->{ $self->prop("Bitmap") };
-		push(@aOption, ("-bitmap", 1)) if($bmBitmap);	#Just make the label aware of the bitmap
-		}
+    if($self->prop("Bitmap") ne "") {
+        my $bmBitmap = $objDesign->rhBitmap()->{ $self->prop("Bitmap") };
+        push(@aOption, ("-bitmap", 1)) if($bmBitmap);   #Just make the label aware of the bitmap
+        }
 
-	my $align = $self->prop("Align") || "";
-	if($align ne "" && $align ne "left") {
-		push(@aOption, ("-align", $self->prop("Align")));
-		}
+    my $align = $self->prop("Align") || "";
+    if($align ne "" && $align ne "left") {
+        push(@aOption, ("-align", $self->prop("Align")));
+        }
 
-	return(@aOption);
-	}
+    return(@aOption);
+    }
 
 
 
@@ -259,15 +259,15 @@ Return 1 on success, else 0.
 =cut
 sub buildMethodsSpecial {
     my $self = shift; my $pkg = ref($self);
-	my ($objNew, $objDesign) = @_;
+    my ($objNew, $objDesign) = @_;
 
-	if($self->prop("Bitmap") ne "") {
-		my $bmBitmap = $objDesign->rhBitmap()->{ $self->prop("Bitmap") };
-		$objNew->SetImage($bmBitmap);
-		}
+    if($self->prop("Bitmap") ne "") {
+        my $bmBitmap = $objDesign->rhBitmap()->{ $self->prop("Bitmap") };
+        $objNew->SetImage($bmBitmap);
+        }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -282,85 +282,85 @@ Return 1 on success, else 0.
 =cut
 sub paint {
     my $self = shift; my $pkg = ref($self);
-	my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
+    my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
 
-	return(1) if(!$self->designIsVisible());
+    return(1) if(!$self->designIsVisible());
 
-	#Draw Label
-	$dcDev->SelectObject($rhBrush->{noPen});
-	$dcDev->SelectObject($rhBrush->{whiteBrush});
-#	$dcDev->Rectangle(
-#			$rhPosCache->{left} + 1,
-#			$rhPosCache->{top} + 1,
-#			$rhPosCache->{left} + $rhPosCache->{width} - 1,
-#			$rhPosCache->{top} + $rhPosCache->{height} - 1,
-#			) if($self->prop("Visible"));
+    #Draw Label
+    $dcDev->SelectObject($rhBrush->{noPen});
+    $dcDev->SelectObject($rhBrush->{whiteBrush});
+#   $dcDev->Rectangle(
+#           $rhPosCache->{left} + 1,
+#           $rhPosCache->{top} + 1,
+#           $rhPosCache->{left} + $rhPosCache->{width} - 1,
+#           $rhPosCache->{top} + $rhPosCache->{height} - 1,
+#           ) if($self->prop("Visible"));
 
-#	$dcDev->DrawEdge(
-#			$rhPosCache->{left} + 1,
-#			$rhPosCache->{top} + 1,
-#			$rhPosCache->{left} + $rhPosCache->{width} - 1,
-#			$rhPosCache->{top} + $rhPosCache->{height} - 1,
-#			0x0002 | 0x0008,			#BDR_SUNKENOUTER | BDR_SUNKENINNER
-#			);
-	$dcDev->BkMode(1);
+#   $dcDev->DrawEdge(
+#           $rhPosCache->{left} + 1,
+#           $rhPosCache->{top} + 1,
+#           $rhPosCache->{left} + $rhPosCache->{width} - 1,
+#           $rhPosCache->{top} + $rhPosCache->{height} - 1,
+#           0x0002 | 0x0008,            #BDR_SUNKENOUTER | BDR_SUNKENINNER
+#           );
+    $dcDev->BkMode(1);
 
 
-	if($self->prop("Frame") eq "none") {
+    if($self->prop("Frame") eq "none") {
 
-		if($self->prop("Sunken")) {
-			$dcDev->SelectObject($rhBrush->{grayPen});
+        if($self->prop("Sunken")) {
+            $dcDev->SelectObject($rhBrush->{grayPen});
             $dcDev->MoveTo($rhPosCache->{left},
-            		$rhPosCache->{top} + $rhPosCache->{height});
+                    $rhPosCache->{top} + $rhPosCache->{height});
             $dcDev->LineTo(
-            		$rhPosCache->{left},
-            		$rhPosCache->{top});
+                    $rhPosCache->{left},
+                    $rhPosCache->{top});
             $dcDev->LineTo(
-            		$rhPosCache->{left} + $rhPosCache->{width} - 1,
-            		$rhPosCache->{top});
+                    $rhPosCache->{left} + $rhPosCache->{width} - 1,
+                    $rhPosCache->{top});
 
             $dcDev->SelectObject($rhBrush->{whitePen});
             $dcDev->LineTo(
-            		$rhPosCache->{left} + $rhPosCache->{width} - 1,
-            		$rhPosCache->{top} + $rhPosCache->{height} - 1);
+                    $rhPosCache->{left} + $rhPosCache->{width} - 1,
+                    $rhPosCache->{top} + $rhPosCache->{height} - 1);
             $dcDev->LineTo(
-            		$rhPosCache->{left},
-            		$rhPosCache->{top} + $rhPosCache->{height} - 1);
+                    $rhPosCache->{left},
+                    $rhPosCache->{top} + $rhPosCache->{height} - 1);
 
-#					$rhPosCache->{left} + $rhPosCache->{width},
-#					$rhPosCache->{top} + $rhPosCache->{height},
+#                   $rhPosCache->{left} + $rhPosCache->{width},
+#                   $rhPosCache->{top} + $rhPosCache->{height},
 
-			$self->offsetTextLeft(1);
-			$self->offsetTextRight(1);
-			$self->offsetTextTop(1);
-			}
-		else {
-			$self->offsetTextLeft(0);
-			$self->offsetTextRight(0);
-			$self->offsetTextTop(0);
-			}
+            $self->offsetTextLeft(1);
+            $self->offsetTextRight(1);
+            $self->offsetTextTop(1);
+            }
+        else {
+            $self->offsetTextLeft(0);
+            $self->offsetTextRight(0);
+            $self->offsetTextTop(0);
+            }
 
-		if($self->prop("Bitmap")) {
-			$self->paintBitmap($dcDev, $rhBrush, $rhPosCache, $objDesign);
-			}
-		else {
-			$self->paintText($dcDev, $rhBrush, $rhPosCache);
-			}
-		}
-	else {
-		$dcDev->DrawEdge(
-				$rhPosCache->{left},
-				$rhPosCache->{top},
-				$rhPosCache->{left} + $rhPosCache->{width},
-				$rhPosCache->{top},
-				0x0002 | 0x0004,		#BDR_SUNKENOUTER | BDR_RAISEDINNER
-				0x0002					#BF_TOP
-				);
-		}
-#	$self->paintSelected($dcDev, $rhBrush, $rhPosCache);
+        if($self->prop("Bitmap")) {
+            $self->paintBitmap($dcDev, $rhBrush, $rhPosCache, $objDesign);
+            }
+        else {
+            $self->paintText($dcDev, $rhBrush, $rhPosCache);
+            }
+        }
+    else {
+        $dcDev->DrawEdge(
+                $rhPosCache->{left},
+                $rhPosCache->{top},
+                $rhPosCache->{left} + $rhPosCache->{width},
+                $rhPosCache->{top},
+                0x0002 | 0x0004,        #BDR_SUNKENOUTER | BDR_RAISEDINNER
+                0x0002                  #BF_TOP
+                );
+        }
+#   $self->paintSelected($dcDev, $rhBrush, $rhPosCache);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 

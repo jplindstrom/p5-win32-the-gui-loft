@@ -36,14 +36,14 @@ The name of the cluster. Not unique.
 =cut
 sub name {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{name} = $val;
-		}
+    if(defined($val)) {
+        $self->{name} = $val;
+        }
 
-	return($self->{name});
-	}
+    return($self->{name});
+    }
 
 
 
@@ -59,16 +59,16 @@ Default: 1
 =cut
 sub isVisible {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{isVisible} = $val;
-		
-		$self->setDesignIsVisible();
-		}
+    if(defined($val)) {
+        $self->{isVisible} = $val;
+        
+        $self->setDesignIsVisible();
+        }
 
-	return($self->{isVisible});
-	}
+    return($self->{isVisible});
+    }
 
 
 
@@ -83,14 +83,14 @@ currently in this cluster.
 =cut
 sub rhControl {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{rhControl} = $val;
-		}
+    if(defined($val)) {
+        $self->{rhControl} = $val;
+        }
 
-	return($self->{rhControl});
-	}
+    return($self->{rhControl});
+    }
 
 
 
@@ -106,17 +106,17 @@ Create new Cluster.
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
-	my $self = {
-			name					=> "",
-			isVisible				=> 1,
-			rhControl		=> {},
-			
-			};
-	bless $self, $pkg;
+    my $self = {
+            name                    => "",
+            isVisible               => 1,
+            rhControl       => {},
+            
+            };
+    bless $self, $pkg;
 
 
-	return($self);
-	}
+    return($self);
+    }
 
 
 
@@ -131,14 +131,14 @@ Return 1 on success, else 0.
 =cut
 sub controlAdd {
     my $self = shift; my $pkg = ref($self);
-	my ($rhControl) = @_;
+    my ($rhControl) = @_;
 
-	for my $nameControl (keys %{$rhControl}) {
-		$self->rhControl()->{ $nameControl } = $rhControl->{ $nameControl };
-		}
+    for my $nameControl (keys %{$rhControl}) {
+        $self->rhControl()->{ $nameControl } = $rhControl->{ $nameControl };
+        }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -154,15 +154,15 @@ Return 1 on success, else 0.
 =cut
 sub controlDelete {
     my $self = shift; my $pkg = ref($self);
-	my ($rhControl) = @_;
+    my ($rhControl) = @_;
 
-	for my $nameControl (keys %{$self->rhControl()}) {
-		delete $self->rhControl()->{$nameControl}
-				if(exists $rhControl->{$nameControl});
-		}
+    for my $nameControl (keys %{$self->rhControl()}) {
+        delete $self->rhControl()->{$nameControl}
+                if(exists $rhControl->{$nameControl});
+        }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -175,10 +175,10 @@ Return 1 if $objControl is part of this cluster, else 0.
 =cut
 sub controlIsClustered {
     my $self = shift; my $pkg = ref($self);
-	my ($objControl) = @_;
+    my ($objControl) = @_;
 
-	return( exists $self->rhControl()->{$objControl} ? 1 : 0 );
-	}
+    return( exists $self->rhControl()->{$objControl} ? 1 : 0 );
+    }
 
 
 
@@ -193,8 +193,8 @@ Return the new visible state.
 =cut
 sub visibleToggle() {
     my $self = shift; my $pkg = ref($self);
-	return( $self->isVisible( $self->isVisible() ? 0 : 1 ) );
-	}
+    return( $self->isVisible( $self->isVisible() ? 0 : 1 ) );
+    }
 
 
 
@@ -211,13 +211,13 @@ Return 1 on success, else 0.
 sub setDesignIsVisible {
     my $self = shift; my $pkg = ref($self);
 
-	my $visible = $self->isVisible();
-	for my $objControl (values %{$self->rhControl()}) {
-		$objControl->designIsVisible( $visible );
-		}
+    my $visible = $self->isVisible();
+    for my $objControl (values %{$self->rhControl()}) {
+        $objControl->designIsVisible( $visible );
+        }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 

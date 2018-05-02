@@ -37,8 +37,8 @@ Readonly.
 =cut
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
-	return("ilImageList");
-	}
+    return("ilImageList");
+    }
 
 
 
@@ -55,8 +55,8 @@ Readonly.
 =cut
 sub type {
     my $self = shift; my $pkg = ref($self);
-	return("ImageList");
-	}
+    return("ImageList");
+    }
 
 
 
@@ -72,8 +72,8 @@ Readonly
 =cut
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
-	return("");
-	}
+    return("");
+    }
 
 
 
@@ -91,8 +91,8 @@ Readonly.
 =cut
 sub buildPreControlPhase {
     my $self = shift; my $pkg = ref($self);
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -110,8 +110,8 @@ Readonly.
 =cut
 sub buildControlPhase {
     my $self = shift; my $pkg = ref($self);
-	return(0);
-	}
+    return(0);
+    }
 
 
 
@@ -127,33 +127,33 @@ Create new Control object.
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
-	my $self = $pkg->SUPER::new();
+    my $self = $pkg->SUPER::new();
 
-	#Remove properties
+    #Remove properties
 
-	#New properties
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"ImageWidth", "16", [], "", ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"ImageHeight", "16", [], "", ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Images", "", undef, "", ""));
+    #New properties
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "ImageWidth", "16", [], "", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "ImageHeight", "16", [], "", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Images", "", undef, "", ""));
 ##todo: add using AddMasked,
-#		using imagename.bmp| or imagename.bmp|192
-#		to specify the mask
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Flags", "color",
-			[ "color", "color4", "color8", "color16", "color24", "color32", "colorddb" ],
-			"", ""));
+#       using imagename.bmp| or imagename.bmp|192
+#       to specify the mask
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Flags", "color",
+            [ "color", "color4", "color8", "color16", "color24", "color32", "colorddb" ],
+            "", ""));
 ##todo: mask, specify the mask image as imagename.bmp|maskimagename.bmp, ...
-#	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-#			"Mask", 0, [ 0, 1 ], "", ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Grow", "", [], undef, ""));
+#   $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+#           "Mask", 0, [ 0, 1 ], "", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Grow", "", [], undef, ""));
 
 
-	return($self);
-	}
+    return($self);
+    }
 
 
 
@@ -174,45 +174,45 @@ Return the new control object, or undef on errors.
 
 =cut
 my %hFlags = (
-		"color" => 0x0000,
-		"color4" => 0x0004,
-		"color8" => 0x0008,
-		"color16" => 0x0010,
-		"color24" => 0x0018,
-		"color32" => 0x0020,
-		"colorddb" => 0x00FE,
-		);
+        "color" => 0x0000,
+        "color4" => 0x0004,
+        "color8" => 0x0008,
+        "color16" => 0x0010,
+        "color24" => 0x0018,
+        "color32" => 0x0020,
+        "colorddb" => 0x00FE,
+        );
 sub buildAdd {
     my $self = shift; my $pkg = ref($self);
-	my ($objDesign, $objControlContainerDefault, $objInspector) = @_;
+    my ($objDesign, $objControlContainerDefault, $objInspector) = @_;
 
 
-	#Parse the Images prop
-	my @aImage = split(/,\s*/, $self->prop("Images"));
+    #Parse the Images prop
+    my @aImage = split(/,\s*/, $self->prop("Images"));
 
-	my $flags = $hFlags{$self->prop("Flags")};	##todo: mask stuff
-	my $initial = scalar(@aImage);
-	my $grow = int($self->prop("Grow") || 0);
-	$grow = $initial if($grow < $initial);
+    my $flags = $hFlags{$self->prop("Flags")};  ##todo: mask stuff
+    my $initial = scalar(@aImage);
+    my $grow = int($self->prop("Grow") || 0);
+    $grow = $initial if($grow < $initial);
 
-	##todo: pass this to the inspector somehow,
-	#		probably in a new (generic?) method
-	my $objNew = new Win32::GUI::ImageList(
-			$self->prop("ImageWidth"),
-			$self->prop("ImageHeight"),
-			$flags, $initial, $grow);
+    ##todo: pass this to the inspector somehow,
+    #       probably in a new (generic?) method
+    my $objNew = new Win32::GUI::ImageList(
+            $self->prop("ImageWidth"),
+            $self->prop("ImageHeight"),
+            $flags, $initial, $grow);
 
-	for my $fileImage (@aImage) {
-		$objDesign->bitmapLoad($fileImage) or next;
-		$objNew->Add($objDesign->rhBitmap()->{$fileImage});		##todo: mask stuff
-		}
+    for my $fileImage (@aImage) {
+        $objDesign->bitmapLoad($fileImage) or next;
+        $objNew->Add($objDesign->rhBitmap()->{$fileImage});     ##todo: mask stuff
+        }
 
-	#Stick the ImageList in the Design object
-	$objDesign->rhImageList()->{$self->prop("Name")} = $objNew;
+    #Stick the ImageList in the Design object
+    $objDesign->rhImageList()->{$self->prop("Name")} = $objNew;
 
 
-	return($objNew);
-	}
+    return($objNew);
+    }
 
 
 
@@ -228,11 +228,11 @@ Return an empty array on errors.
 =cut
 sub buildOptionsSpecial {
     my $self = shift; my $pkg = ref($self);
-	my ($objDesign) = @_;
-	my @aOption;
+    my ($objDesign) = @_;
+    my @aOption;
 
-	return(@aOption);
-	}
+    return(@aOption);
+    }
 
 
 
@@ -248,10 +248,10 @@ Return 1 on success, else 0.
 =cut
 sub buildMethodsSpecial {
     my $self = shift; my $pkg = ref($self);
-	my ($objNew, $objDesign) = @_;
+    my ($objNew, $objDesign) = @_;
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 

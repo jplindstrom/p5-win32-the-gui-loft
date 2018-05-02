@@ -39,8 +39,8 @@ Readonly.
 =cut
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
-	return("sbStatusBar");
-	}
+    return("sbStatusBar");
+    }
 
 
 
@@ -57,8 +57,8 @@ Readonly.
 =cut
 sub type {
     my $self = shift; my $pkg = ref($self);
-	return("StatusBar");
-	}
+    return("StatusBar");
+    }
 
 
 
@@ -74,8 +74,8 @@ Readonly
 =cut
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
-	return("AddStatusBar");
-	}
+    return("AddStatusBar");
+    }
 
 
 
@@ -92,8 +92,8 @@ Readonly.
 =cut
 sub alignDefault {
     my $self = shift; my $pkg = ref($self);
-	return("left");
-	}
+    return("left");
+    }
 
 
 
@@ -107,14 +107,14 @@ should be located for this type of control.
 =cut
 sub offsetTextLeft {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{offsetTextLeft} = $val;
-		}
+    if(defined($val)) {
+        $self->{offsetTextLeft} = $val;
+        }
 
-	return($self->{offsetTextLeft});
-	}
+    return($self->{offsetTextLeft});
+    }
 
 
 
@@ -130,26 +130,26 @@ Create new Control object.
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
-	my $self = $pkg->SUPER::new();
+    my $self = $pkg->SUPER::new();
 
-	#New defaults
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Width", 160));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty::Readonly->new(
-			"Height", 18));
+    #New defaults
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Width", 160));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty::Readonly->new(
+            "Height", 18));
 
-	#New properties
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Text", ""));
-#	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-#			"Align", undef, [ "", "left", "center", "right" ], undef, ""));
-#	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-#			"Valign", undef, [ "", "top", "center", "bottom" ], undef, ""));
-#	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-#			"Default", 0, [ 0, 1 ], undef, ""));
+    #New properties
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Text", ""));
+#   $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+#           "Align", undef, [ "", "left", "center", "right" ], undef, ""));
+#   $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+#           "Valign", undef, [ "", "top", "center", "bottom" ], undef, ""));
+#   $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+#           "Default", 0, [ 0, 1 ], undef, ""));
 
-	return($self);
-	}
+    return($self);
+    }
 
 
 
@@ -164,54 +164,54 @@ Return 1 on success, else 0.
 =cut
 sub paint {
     my $self = shift; my $pkg = ref($self);
-	my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
+    my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
 
-	return(1) if(!$self->designIsVisible());
+    return(1) if(!$self->designIsVisible());
 
 
 
-	#The right corner
-	Win32::GUI::AdHoc::DrawFrameControl($dcDev,
-			$rhPosCache->{left},
-			$rhPosCache->{top},
-			$rhPosCache->{left} + $rhPosCache->{width},
-			$rhPosCache->{top} + $rhPosCache->{height},
-			3,							#DFC_SCROLL
-			0x0008						#DFCS_SCROLLSIZEGRIP 
-			);
+    #The right corner
+    Win32::GUI::AdHoc::DrawFrameControl($dcDev,
+            $rhPosCache->{left},
+            $rhPosCache->{top},
+            $rhPosCache->{left} + $rhPosCache->{width},
+            $rhPosCache->{top} + $rhPosCache->{height},
+            3,                          #DFC_SCROLL
+            0x0008                      #DFCS_SCROLLSIZEGRIP 
+            );
 
-	#Draw sunken box
-	$dcDev->SelectObject($rhBrush->{whiteBrush});
+    #Draw sunken box
+    $dcDev->SelectObject($rhBrush->{whiteBrush});
 
-	$dcDev->BkMode(1);
+    $dcDev->BkMode(1);
 
-	$dcDev->SelectObject($rhBrush->{grayPen});
+    $dcDev->SelectObject($rhBrush->{grayPen});
     $dcDev->MoveTo($rhPosCache->{left}, 
-    		$rhPosCache->{top} + $rhPosCache->{height});
+            $rhPosCache->{top} + $rhPosCache->{height});
     $dcDev->LineTo(
-    		$rhPosCache->{left}, 
-    		$rhPosCache->{top});
+            $rhPosCache->{left}, 
+            $rhPosCache->{top});
     $dcDev->LineTo(
-    		$rhPosCache->{left} + $rhPosCache->{width} - 1, 
-    		$rhPosCache->{top});
-    		
+            $rhPosCache->{left} + $rhPosCache->{width} - 1, 
+            $rhPosCache->{top});
+            
     $dcDev->SelectObject($rhBrush->{whitePen});
     $dcDev->LineTo(
-    		$rhPosCache->{left} + $rhPosCache->{width} - 1, 
-    		$rhPosCache->{top} + $rhPosCache->{height} - 1);
+            $rhPosCache->{left} + $rhPosCache->{width} - 1, 
+            $rhPosCache->{top} + $rhPosCache->{height} - 1);
     $dcDev->LineTo(
-    		$rhPosCache->{left}, 
-    		$rhPosCache->{top} + $rhPosCache->{height} - 1);
+            $rhPosCache->{left}, 
+            $rhPosCache->{top} + $rhPosCache->{height} - 1);
     
-	$self->offsetTextLeft(2);
-	$self->offsetTextTop(1);
+    $self->offsetTextLeft(2);
+    $self->offsetTextTop(1);
 
 
-	
-	$self->paintText($dcDev, $rhBrush, $rhPosCache);
+    
+    $self->paintText($dcDev, $rhBrush, $rhPosCache);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 

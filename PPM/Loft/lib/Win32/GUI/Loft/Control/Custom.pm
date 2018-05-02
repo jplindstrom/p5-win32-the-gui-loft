@@ -37,8 +37,8 @@ Readonly.
 =cut
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
-	return("ctmCustom");
-	}
+    return("ctmCustom");
+    }
 
 
 
@@ -55,8 +55,8 @@ Readonly.
 =cut
 sub type {
     my $self = shift; my $pkg = ref($self);
-	return("Custom");
-	}
+    return("Custom");
+    }
 
 
 
@@ -72,8 +72,8 @@ Readonly
 =cut
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
-	return("");
-	}
+    return("");
+    }
 
 
 
@@ -89,16 +89,16 @@ Create new Control object.
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
-	my $self = $pkg->SUPER::new();
+    my $self = $pkg->SUPER::new();
 
-	#New defaults
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Width", 80));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Height", 50));
+    #New defaults
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Width", 80));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Height", 50));
 
-	return($self);
-	}
+    return($self);
+    }
 
 
 
@@ -113,39 +113,39 @@ Return 1 on success, else 0.
 =cut
 sub paint {
     my $self = shift; my $pkg = ref($self);
-	my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
+    my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
 
-	return(1) if(!$self->designIsVisible());
+    return(1) if(!$self->designIsVisible());
 
-	#Draw Custom
-	$dcDev->SelectObject($rhBrush->{noBrush});
-	$dcDev->SelectObject($rhBrush->{blackPen});
+    #Draw Custom
+    $dcDev->SelectObject($rhBrush->{noBrush});
+    $dcDev->SelectObject($rhBrush->{blackPen});
 
 
-	$dcDev->DrawEdge(
-			$rhPosCache->{left},
-			$rhPosCache->{top},
-			$rhPosCache->{left} + $rhPosCache->{width},
-			$rhPosCache->{top} + $rhPosCache->{height},
-			1,
-			0x4000 | 0x8000 | 15,	#BF_FLAT, BF_MONO, BF_LEFT, BF_TOP, BF_RIGHT, BF_BOTTOM
+    $dcDev->DrawEdge(
+            $rhPosCache->{left},
+            $rhPosCache->{top},
+            $rhPosCache->{left} + $rhPosCache->{width},
+            $rhPosCache->{top} + $rhPosCache->{height},
+            1,
+            0x4000 | 0x8000 | 15,   #BF_FLAT, BF_MONO, BF_LEFT, BF_TOP, BF_RIGHT, BF_BOTTOM
 
-			);
+            );
     $dcDev->MoveTo($rhPosCache->{left},
-			$rhPosCache->{top});
-	$dcDev->LineTo($rhPosCache->{left} + $rhPosCache->{width},
-			$rhPosCache->{top} + $rhPosCache->{height});
+            $rhPosCache->{top});
+    $dcDev->LineTo($rhPosCache->{left} + $rhPosCache->{width},
+            $rhPosCache->{top} + $rhPosCache->{height});
     $dcDev->MoveTo($rhPosCache->{left} + $rhPosCache->{width},
-			$rhPosCache->{top});
-	$dcDev->LineTo($rhPosCache->{left},
-			$rhPosCache->{top} + $rhPosCache->{height});
+            $rhPosCache->{top});
+    $dcDev->LineTo($rhPosCache->{left},
+            $rhPosCache->{top} + $rhPosCache->{height});
 
-	$dcDev->BkMode(1);
+    $dcDev->BkMode(1);
 
-	$self->paintName($dcDev, $rhBrush, $rhPosCache);
+    $self->paintName($dcDev, $rhBrush, $rhPosCache);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 

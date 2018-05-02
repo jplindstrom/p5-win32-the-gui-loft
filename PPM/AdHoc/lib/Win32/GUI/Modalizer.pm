@@ -114,144 +114,144 @@ You're done. Cool!
 
 =head1 SYNOPSIS
 
-	#!/usr/local/bin/perl -w
-	
-	use strict;
-	
-	use Win32::GUI;
-	
-	my $winModeless = new Win32::GUI::Window(
-	        -left   => 13,
-	        -top    => 32,
-	        -width  => 439,
-	        -height => 260,
-	        -name   => "winModeless",
-	        -text   => "Win32::GUI::Modalizer Synopsis [1]"
-	        );
-	
-	$winModeless->AddButton(
-	        -text    => "&Open",
-	        -name    => "btnModelessOpen",
-	        -left    => 358,
-	        -top     => 207,
-	        -width   => 70,
-	        -height  => 21,
-	        );
-	
-	$winModeless->AddButton(
-	        -text    => "&Test",
-	        -name    => "btnModelessTest",
-	        -left    => 358,
-	        -top     => 20,
-	        -width   => 70,
-	        -height  => 21,
-	        );
-	
-	
-	my $winModeless2 = new Win32::GUI::Window(
-	        -left   => 100,
-	        -top    => 100,
-	        -width  => 439,
-	        -height => 260,
-	        -name   => "winModeless2",
-	        -text   => "Win32::GUI::Modalizer Synopsis [2]"
-	
-	        );
-	
-	$winModeless2->AddButton(
-	        -text    => "&Open",
-	        -name    => "btnModeless2Open",
-	        -left    => 358,
-	        -top     => 207,
-	        -width   => 70,
-	        -height  => 21,
-	        );
-	
-	
-	my $winDialog = new Win32::GUI::DialogBox(
-	        -left   => 50,
-	        -top    => 50,
-	        -width  => 439,
-	        -height => 260,
-	        -name   => "winDialog",
-	        -text   => "Dialog Box",
-	        );
-	
-	$winDialog->AddButton(
-	        -text    => "&Ok",
-	        -name    => "btnDialogOk",
-	        -left    => 358,
-	        -top     => 207,
-	        -width   => 70,
-	        -height  => 21,
-	        );
-	
-	
-	$winModeless->Show();
-	$winModeless2->Show();
-	
-	
-	#Do the Modalizer stuff
-	use Win32::GUI::Modalizer;
-	
-	my $objModalizer = Win32::GUI::Modalizer->new($winModeless, $winModeless2);
-	
-	#Go modal
-	Win32::GUI::Dialog();
-	
-	
-	#Modeless window
-	sub winModeless_Terminate {
-	    return(-1);
-	    }
-	
-	sub winModeless_Activate {
-		defined($objModalizer) and $objModalizer->activate($winModeless);
-	    return(1);
-	    }
-	
-	sub btnModelessOpen_Click {
-	    $objModalizer->beginDialog($winDialog, $winModeless);
-	    return(1);
-	    }
-	
-	sub btnModelessTest_Click {
-	    Win32::GUI::MessageBox(0, "Clicked the Test button", "Test Button");
-	    return(1);
-	    }
-	
-	#Modeless2 window
-	sub winModeless2_Terminate {
-	    return(-1);
-	    }
-	
-	sub winModeless2_Activate {
-		defined($objModalizer) and $objModalizer->activate($winModeless2);
-	    return(1);
-	    }
-	
-	sub btnModeless2Open_Click {
-	    $objModalizer->beginDialog($winDialog, $winModeless2);
-	    return(1);
-	    }
-	
-	#Dialog window
-	sub winDialog_Terminate {
-		$objModalizer->endDialog();
-	    return 0;
-	    }
-	
-	sub winDialog_Activate {
-		$objModalizer->activate($winDialog);
-	    return(1);
-	    }
-	
-	sub btnDialogOk_Click {
-	    winDialog_Terminate();
-	    return(1);
-	    }
-	
-	#EOF
+    #!/usr/local/bin/perl -w
+    
+    use strict;
+    
+    use Win32::GUI;
+    
+    my $winModeless = new Win32::GUI::Window(
+            -left   => 13,
+            -top    => 32,
+            -width  => 439,
+            -height => 260,
+            -name   => "winModeless",
+            -text   => "Win32::GUI::Modalizer Synopsis [1]"
+            );
+    
+    $winModeless->AddButton(
+            -text    => "&Open",
+            -name    => "btnModelessOpen",
+            -left    => 358,
+            -top     => 207,
+            -width   => 70,
+            -height  => 21,
+            );
+    
+    $winModeless->AddButton(
+            -text    => "&Test",
+            -name    => "btnModelessTest",
+            -left    => 358,
+            -top     => 20,
+            -width   => 70,
+            -height  => 21,
+            );
+    
+    
+    my $winModeless2 = new Win32::GUI::Window(
+            -left   => 100,
+            -top    => 100,
+            -width  => 439,
+            -height => 260,
+            -name   => "winModeless2",
+            -text   => "Win32::GUI::Modalizer Synopsis [2]"
+    
+            );
+    
+    $winModeless2->AddButton(
+            -text    => "&Open",
+            -name    => "btnModeless2Open",
+            -left    => 358,
+            -top     => 207,
+            -width   => 70,
+            -height  => 21,
+            );
+    
+    
+    my $winDialog = new Win32::GUI::DialogBox(
+            -left   => 50,
+            -top    => 50,
+            -width  => 439,
+            -height => 260,
+            -name   => "winDialog",
+            -text   => "Dialog Box",
+            );
+    
+    $winDialog->AddButton(
+            -text    => "&Ok",
+            -name    => "btnDialogOk",
+            -left    => 358,
+            -top     => 207,
+            -width   => 70,
+            -height  => 21,
+            );
+    
+    
+    $winModeless->Show();
+    $winModeless2->Show();
+    
+    
+    #Do the Modalizer stuff
+    use Win32::GUI::Modalizer;
+    
+    my $objModalizer = Win32::GUI::Modalizer->new($winModeless, $winModeless2);
+    
+    #Go modal
+    Win32::GUI::Dialog();
+    
+    
+    #Modeless window
+    sub winModeless_Terminate {
+        return(-1);
+        }
+    
+    sub winModeless_Activate {
+        defined($objModalizer) and $objModalizer->activate($winModeless);
+        return(1);
+        }
+    
+    sub btnModelessOpen_Click {
+        $objModalizer->beginDialog($winDialog, $winModeless);
+        return(1);
+        }
+    
+    sub btnModelessTest_Click {
+        Win32::GUI::MessageBox(0, "Clicked the Test button", "Test Button");
+        return(1);
+        }
+    
+    #Modeless2 window
+    sub winModeless2_Terminate {
+        return(-1);
+        }
+    
+    sub winModeless2_Activate {
+        defined($objModalizer) and $objModalizer->activate($winModeless2);
+        return(1);
+        }
+    
+    sub btnModeless2Open_Click {
+        $objModalizer->beginDialog($winDialog, $winModeless2);
+        return(1);
+        }
+    
+    #Dialog window
+    sub winDialog_Terminate {
+        $objModalizer->endDialog();
+        return 0;
+        }
+    
+    sub winDialog_Activate {
+        $objModalizer->activate($winDialog);
+        return(1);
+        }
+    
+    sub btnDialogOk_Click {
+        winDialog_Terminate();
+        return(1);
+        }
+    
+    #EOF
 
 =cut
 
@@ -307,14 +307,14 @@ Hash ref with (key = Window object, value = block level).
 =cut
 sub rhBlocked {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{rhBlocked} = $val;
-		}
+    if(defined($val)) {
+        $self->{rhBlocked} = $val;
+        }
 
-	return($self->{rhBlocked});
-	}
+    return($self->{rhBlocked});
+    }
 
 
 
@@ -384,10 +384,10 @@ sub new {
     my (@aWinModeless) = @_;
 
     my $self = {
-        raWinModeless			=> \@aWinModeless,
-        rhBlocked				=> {},
-        winModal				=> undef,
-        winModeless				=> undef,
+        raWinModeless           => \@aWinModeless,
+        rhBlocked               => {},
+        winModal                => undef,
+        winModeless             => undef,
         };
     bless $self, $pkg;
 
@@ -415,25 +415,25 @@ Return 1 on success, else 0.
 =cut
 sub beginDialog {
     my $self = shift; my $pkg = ref($self);
-	my ($winModal, $winModeless) = @_;
-	defined($winModeless) and $self->winModeless($winModeless);
+    my ($winModal, $winModeless) = @_;
+    defined($winModeless) and $self->winModeless($winModeless);
 
-	#Already modal?
-	return(0) if($self->winModal());
+    #Already modal?
+    return(0) if($self->winModal());
 
-	$self->winModal($winModal);
+    $self->winModal($winModal);
 
-	for my $winCur (@{$self->raWinModeless()}) {
-		$self->rhBlocked()->{ $winCur } = 0;
-		}
+    for my $winCur (@{$self->raWinModeless()}) {
+        $self->rhBlocked()->{ $winCur } = 0;
+        }
 
-	$self->rhBlocked()->{ $winModal } = 1;
+    $self->rhBlocked()->{ $winModal } = 1;
 #print "Modal: Block" . $self->winModal() . "\n";
-	$winModal->Show();
-	$winModal->BringWindowToTop();
+    $winModal->Show();
+    $winModal->BringWindowToTop();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -450,31 +450,31 @@ Return 1 on success, else 0.
 sub endDialog {
     my $self = shift; my $pkg = ref($self);
 
-	#Not modal?
-	return(0) if(!$self->winModal());
+    #Not modal?
+    return(0) if(!$self->winModal());
 
-	#Do the modal window
-	my $winModal = $self->winModal();
-	$self->winModal(0);
-	$winModal->Hide();		#Will not enter the activate() method, winModal() == 0
+    #Do the modal window
+    my $winModal = $self->winModal();
+    $self->winModal(0);
+    $winModal->Hide();      #Will not enter the activate() method, winModal() == 0
 
-	#Do windows other than the main modeless window
-	my $winModeless = defined($self->winModeless()) ? $self->winModeless() : 0;
-	for my $winCur (@{$self->raWinModeless()}) {
-		next if($winCur == $winModeless);
-		$winCur->Enable() if($winCur->IsVisible());
-		$winCur->SetFocus();
-		}
+    #Do windows other than the main modeless window
+    my $winModeless = defined($self->winModeless()) ? $self->winModeless() : 0;
+    for my $winCur (@{$self->raWinModeless()}) {
+        next if($winCur == $winModeless);
+        $winCur->Enable() if($winCur->IsVisible());
+        $winCur->SetFocus();
+        }
 
-	#Do the main modeless window
-	if($self->winModeless()) {
-		$self->winModeless()->Enable();
-		$self->winModeless()->SetFocus();
-		$self->winModeless(0);
-		}
+    #Do the main modeless window
+    if($self->winModeless()) {
+        $self->winModeless()->Enable();
+        $self->winModeless()->SetFocus();
+        $self->winModeless(0);
+        }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -493,48 +493,48 @@ Return 1 on success, else 0.
 =cut
 sub activate {
     my $self = shift; my $pkg = ref($self);
-	my ($winActivated) = @_;
+    my ($winActivated) = @_;
 
-	#Not modal?
-	return(0) if(!$self->winModal());
+    #Not modal?
+    return(0) if(!$self->winModal());
 
-	#Selectively block re-entry
+    #Selectively block re-entry
 #print "Modal: " if($self->winModal() == $winActivated);
-	$self->rhBlocked()->{$winActivated}--;
-	if($self->rhBlocked()->{$winActivated} >= 0) {
+    $self->rhBlocked()->{$winActivated}--;
+    if($self->rhBlocked()->{$winActivated} >= 0) {
 #print "Blocked: $winActivated: " . $self->rhBlocked()->{$winActivated} . "\n\n";
-		return(0);
-		}
+        return(0);
+        }
 #print "Passed: $winActivated\n";
 
-	if($winActivated == $self->winModal()) {
+    if($winActivated == $self->winModal()) {
 
-		#Bring to front all visible main windows
-		for my $winCur (@{$self->raWinModeless()}) {
-			if($winCur->IsVisible()) {
-				$self->rhBlocked()->{$winCur} = 1;
+        #Bring to front all visible main windows
+        for my $winCur (@{$self->raWinModeless()}) {
+            if($winCur->IsVisible()) {
+                $self->rhBlocked()->{$winCur} = 1;
 #print "Modeless: Block: $winCur\n";
-				$winCur->BringWindowToTop();
-				}
-			}
+                $winCur->BringWindowToTop();
+                }
+            }
 
-		#Bring to front the modal window
-		$self->rhBlocked()->{ $self->winModal() } = 1;
+        #Bring to front the modal window
+        $self->rhBlocked()->{ $self->winModal() } = 1;
 #print "Modal: Block: " . $self->winModal() . "\n";
-		$self->winModal()->BringWindowToTop();
-		}
-	else {
-		#Bring to front the modal window
-		$self->rhBlocked()->{ $self->winModal() } = 1;
+        $self->winModal()->BringWindowToTop();
+        }
+    else {
+        #Bring to front the modal window
+        $self->rhBlocked()->{ $self->winModal() } = 1;
 #print "Modal: Block: " . $self->winModal() . "\n";
 
-		$self->winModal()->BringWindowToTop();
-		}
+        $self->winModal()->BringWindowToTop();
+        }
 
 #print "\n";
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 

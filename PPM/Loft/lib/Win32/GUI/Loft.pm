@@ -74,14 +74,14 @@ isn't a built TGL window.
 
 =cut
 sub tglApp {
-	my ($nameWindow) = @_;
-	
-	my $win = $Win32::GUI::Loft::window{$nameWindow} or return();
-	my $design = $Win32::GUI::Loft::design{$nameWindow} or return();
-	my $app = $design->objApp();
+    my ($nameWindow) = @_;
+    
+    my $win = $Win32::GUI::Loft::window{$nameWindow} or return();
+    my $design = $Win32::GUI::Loft::design{$nameWindow} or return();
+    my $app = $design->objApp();
 
-	return($win, $design, $app);
-	}
+    return($win, $design, $app);
+    }
 
 
 

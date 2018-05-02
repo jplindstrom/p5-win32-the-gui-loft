@@ -40,7 +40,7 @@ be present many times, so you may NOT treat it as a hash.
 
 An example of a $raOption:
 
-	[ "-name", "winMain", "-text", "Main window" ]
+    [ "-name", "winMain", "-text", "Main window" ]
 
 You may change the contents of $raOption. You may NOT change
 $objControl!
@@ -57,29 +57,29 @@ case the control will not be created.
 =cut
 sub buildOptions {
     my $self = shift; my $pkg = ref($self);
-	my ($objControl, $raOption) = @_;
+    my ($objControl, $raOption) = @_;
 
-	#Modify the main window
-	if($objControl->prop("Name") eq "winFetch") {
+    #Modify the main window
+    if($objControl->prop("Name") eq "winFetch") {
         
 
-		#Create a class with a certain bg color
-		my $clsFetch = Win32::GUI::Class->new(
-		    	-name => "classFetchMisc",
-		    	-color => 2,
-				) or die("Could not create Class\n");
-		push(@$raOption, "-class" => $clsFetch);
+        #Create a class with a certain bg color
+        my $clsFetch = Win32::GUI::Class->new(
+                -name => "classFetchMisc",
+                -color => 2,
+                ) or die("Could not create Class\n");
+        push(@$raOption, "-class" => $clsFetch);
 
 
-		#Add an extended style (to make it a toolwindow)
-		#
-		#(Note that you can do this from within The GUI Loft Editor,
-		#this is just to illustrate how to do this kind of thing)
-		push(@$raOption, "-addexstyle" => 0x00000080);		#WS_EX_TOOLWINDOW
-		}
+        #Add an extended style (to make it a toolwindow)
+        #
+        #(Note that you can do this from within The GUI Loft Editor,
+        #this is just to illustrate how to do this kind of thing)
+        push(@$raOption, "-addexstyle" => 0x00000080);      #WS_EX_TOOLWINDOW
+        }
 
-	return(@$raOption);
-	}
+    return(@$raOption);
+    }
 
 
 

@@ -39,8 +39,8 @@ Readonly.
 =cut
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
-	return("tbToolbar");
-	}
+    return("tbToolbar");
+    }
 
 
 
@@ -57,8 +57,8 @@ Readonly.
 =cut
 sub valignDefault {
     my $self = shift; my $pkg = ref($self);
-	return("top");
-	}
+    return("top");
+    }
 
 
 
@@ -75,8 +75,8 @@ Readonly.
 =cut
 sub alignDefault {
     my $self = shift; my $pkg = ref($self);
-	return("left");
-	}
+    return("left");
+    }
 
 
 
@@ -90,8 +90,8 @@ should be located for this type of control.
 =cut
 sub offsetTextLeft {
     my $self = shift; my $pkg = ref($self);
-	return(0);
-	}
+    return(0);
+    }
 
 
 
@@ -105,14 +105,14 @@ should be located for this type of control.
 =cut
 sub offsetTextTop {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{offsetTextTop} = $val;
-		}
+    if(defined($val)) {
+        $self->{offsetTextTop} = $val;
+        }
 
-	return($self->{offsetTextTop});
-	}
+    return($self->{offsetTextTop});
+    }
 
 
 
@@ -129,8 +129,8 @@ Readonly.
 =cut
 sub type {
     my $self = shift; my $pkg = ref($self);
-	return("Toolbar");
-	}
+    return("Toolbar");
+    }
 
 
 
@@ -146,8 +146,8 @@ Readonly
 =cut
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
-	return("AddToolbar");
-	}
+    return("AddToolbar");
+    }
 
 
 
@@ -163,8 +163,8 @@ Readonly;
 =cut
 sub noButtons {
     my $self = shift; my $pkg = ref($self);
-	return(scalar($self->aButtonText()));
-	}
+    return(scalar($self->aButtonText()));
+    }
 
 
 
@@ -180,42 +180,42 @@ Create new Control object.
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
-	my $self = $pkg->SUPER::new();
+    my $self = $pkg->SUPER::new();
 
-	#New defaults
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Width", 80));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Height", 16));
+    #New defaults
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Width", 80));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Height", 16));
 
-	#New properties
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Tabstop", 0, [ 0, 1 ], undef, ""));
+    #New properties
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Tabstop", 0, [ 0, 1 ], undef, ""));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"BitmapWidth", 16, [], "", ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"BitmapHeight", 15, [], "", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "BitmapWidth", 16, [], "", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "BitmapHeight", 15, [], "", ""));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Bitmap", "", [], "", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Bitmap", "", [], "", ""));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Buttons", "", [], "", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Buttons", "", [], "", ""));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Flat", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Nodivider", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Multiline", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Flat", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Nodivider", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Multiline", 0, [ 0, 1 ], undef, ""));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Valign", "top", [ "top", "bottom" ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Valign", "top", [ "top", "bottom" ], undef, ""));
 
 
-	return($self);
-	}
+    return($self);
+    }
 
 
 
@@ -231,15 +231,15 @@ Return an empty array on errors.
 =cut
 sub buildOptionsSpecial {
     my $self = shift; my $pkg = ref($self);
-	my ($objDesign) = @_;
-	my @aOption;
+    my ($objDesign) = @_;
+    my @aOption;
 
-	if($self->prop("Valign") eq "bottom") {				#Top is default
-		push(@aOption, ("-addstyle", 0x00000003));		#CCS_BOTTOM
-		}
+    if($self->prop("Valign") eq "bottom") {             #Top is default
+        push(@aOption, ("-addstyle", 0x00000003));      #CCS_BOTTOM
+        }
 
-	return(@aOption);
-	}
+    return(@aOption);
+    }
 
 
 
@@ -255,46 +255,46 @@ Return 1 on success, else 0.
 =cut
 sub buildMethodsSpecial {
     my $self = shift; my $pkg = ref($self);
-	my ($objNew, $objDesign) = @_;
+    my ($objNew, $objDesign) = @_;
 
 
-	if($self->prop("BitmapWidth") > 0 && $self->prop("BitmapHeight") > 0) {
-		$objNew->SetBitmapSize(
-				$self->prop("BitmapWidth"),
-				$self->prop("BitmapHeight")
-				);
-		}
+    if($self->prop("BitmapWidth") > 0 && $self->prop("BitmapHeight") > 0) {
+        $objNew->SetBitmapSize(
+                $self->prop("BitmapWidth"),
+                $self->prop("BitmapHeight")
+                );
+        }
 
 
-	if($self->prop("Bitmap") ne "" && $self->prop("Buttons") ne "") {
-		if((my $noButtons = $self->noButtons()) > 0) {
-			my $bmBitmap = $objDesign->rhBitmap()->{ $self->prop("Bitmap") };
-			$objNew->AddBitmap($bmBitmap, $noButtons);
-			}
-		}
+    if($self->prop("Bitmap") ne "" && $self->prop("Buttons") ne "") {
+        if((my $noButtons = $self->noButtons()) > 0) {
+            my $bmBitmap = $objDesign->rhBitmap()->{ $self->prop("Bitmap") };
+            $objNew->AddBitmap($bmBitmap, $noButtons);
+            }
+        }
 
 
-	if($self->prop("Buttons") ne "") {
-		my @aButton;
+    if($self->prop("Buttons") ne "") {
+        my @aButton;
 
-		my $i = 0;
-		for my $buttonText ($self->aButtonText()) {
-			my ($id, $state, $style, $string) = split(/,\s*/, $buttonText, 4);
-			defined($id) or $id = $i;
-			defined($state) or $state = 4;		#Some constant
-			defined($style) or $state = 0;
-			defined($string) or $string = "";
+        my $i = 0;
+        for my $buttonText ($self->aButtonText()) {
+            my ($id, $state, $style, $string) = split(/,\s*/, $buttonText, 4);
+            defined($id) or $id = $i;
+            defined($state) or $state = 4;      #Some constant
+            defined($style) or $state = 0;
+            defined($string) or $string = "";
 
-			push(@aButton, ($i, $id, $state, $style, $string));
+            push(@aButton, ($i, $id, $state, $style, $string));
 
-			$i++;
-			}
+            $i++;
+            }
 
-		$objNew->AddButtons($self->noButtons(), @aButton) if($i > 0);
-		}
+        $objNew->AddButtons($self->noButtons(), @aButton) if($i > 0);
+        }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -309,43 +309,43 @@ Return 1 on success, else 0.
 =cut
 sub paint {
     my $self = shift; my $pkg = ref($self);
-	my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
+    my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
 
-	return(1) if(!$self->designIsVisible());
+    return(1) if(!$self->designIsVisible());
 
-	##Draw Toolbar
-	$dcDev->BkMode(1);
+    ##Draw Toolbar
+    $dcDev->BkMode(1);
 
-	#Top line
-	$dcDev->SelectObject($rhBrush->{whiteBrush});
-	$dcDev->SelectObject($rhBrush->{grayPen});
+    #Top line
+    $dcDev->SelectObject($rhBrush->{whiteBrush});
+    $dcDev->SelectObject($rhBrush->{grayPen});
 
     $dcDev->MoveTo(
-    		$rhPosCache->{left},
-    		$rhPosCache->{top});
+            $rhPosCache->{left},
+            $rhPosCache->{top});
     $dcDev->LineTo(
-    		$rhPosCache->{left} + $rhPosCache->{width} - 1,
-    		$rhPosCache->{top});
+            $rhPosCache->{left} + $rhPosCache->{width} - 1,
+            $rhPosCache->{top});
     $dcDev->SelectObject($rhBrush->{whitePen});
     $dcDev->MoveTo(
-    		$rhPosCache->{left},
-    		$rhPosCache->{top} + 1);
+            $rhPosCache->{left},
+            $rhPosCache->{top} + 1);
     $dcDev->LineTo(
-    		$rhPosCache->{left} + $rhPosCache->{width} - 1,
-    		$rhPosCache->{top} + 1);
+            $rhPosCache->{left} + $rhPosCache->{width} - 1,
+            $rhPosCache->{top} + 1);
 
 
-	$self->offsetTextTop(0);
-	$self->paintName($dcDev, $rhBrush, $rhPosCache);
+    $self->offsetTextTop(0);
+    $self->paintName($dcDev, $rhBrush, $rhPosCache);
 
-	$self->offsetTextTop(7);
-	if($self->prop("Bitmap")) {
-		$self->paintBitmap($dcDev, $rhBrush, $rhPosCache, $objDesign);
-		}
+    $self->offsetTextTop(7);
+    if($self->prop("Bitmap")) {
+        $self->paintBitmap($dcDev, $rhBrush, $rhPosCache, $objDesign);
+        }
 
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -360,8 +360,8 @@ Buttons control property.
 sub aButtonText {
     my $self = shift; my $pkg = ref($self);
 
-	return(split( /;\s*/, $self->prop("Buttons") ));
-	}
+    return(split( /;\s*/, $self->prop("Buttons") ));
+    }
 
 
 

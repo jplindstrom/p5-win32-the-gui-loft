@@ -39,8 +39,8 @@ Readonly.
 =cut
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
-	return("gbGroupbox");
-	}
+    return("gbGroupbox");
+    }
 
 
 
@@ -57,8 +57,8 @@ Readonly.
 =cut
 sub alignDefault {
     my $self = shift; my $pkg = ref($self);
-	return("left");
-	}
+    return("left");
+    }
 
 
 
@@ -75,8 +75,8 @@ Readonly.
 =cut
 sub valignDefault {
     my $self = shift; my $pkg = ref($self);
-	return("top");
-	}
+    return("top");
+    }
 
 
 
@@ -92,8 +92,8 @@ Readonly.
 =cut
 sub bkModeDefault {
     my $self = shift; my $pkg = ref($self);
-	return(2);
-	}
+    return(2);
+    }
 
 
 
@@ -110,8 +110,8 @@ Readonly.
 =cut
 sub type {
     my $self = shift; my $pkg = ref($self);
-	return("Groupbox");
-	}
+    return("Groupbox");
+    }
 
 
 
@@ -127,8 +127,8 @@ Readonly
 =cut
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
-	return("AddGroupbox");
-	}
+    return("AddGroupbox");
+    }
 
 
 
@@ -142,8 +142,8 @@ should be located for this type of control.
 =cut
 sub offsetTextLeft {
     my $self = shift; my $pkg = ref($self);
-	return(9);
-	}
+    return(9);
+    }
 
 
 
@@ -157,8 +157,8 @@ should be located for this type of control.
 =cut
 sub offsetTextTop {
     my $self = shift; my $pkg = ref($self);
-	return(0);
-	}
+    return(0);
+    }
 
 
 
@@ -174,24 +174,24 @@ Create new Control object.
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
-	my $self = $pkg->SUPER::new();
+    my $self = $pkg->SUPER::new();
 
-	#New defaults
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Width", 100));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Height", 50));
+    #New defaults
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Width", 100));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Height", 50));
 
-	#New properties
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Tabstop", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Text", ""));
-#	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-#			"Groupstart", 0, [ 0, 1 ], "", ""));
+    #New properties
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Tabstop", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Text", ""));
+#   $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+#           "Groupstart", 0, [ 0, 1 ], "", ""));
 
-	return($self);
-	}
+    return($self);
+    }
 
 
 
@@ -206,27 +206,27 @@ Return 1 on success, else 0.
 =cut
 sub paint {
     my $self = shift; my $pkg = ref($self);
-	my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
+    my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
 
-	return(1) if(!$self->designIsVisible());
+    return(1) if(!$self->designIsVisible());
 
-	my $check = $self->prop("Checked") ? 0x0400 : 0;		#DFCS_CHECKED            
-	
-	#Draw Groupbox
-	$dcDev->DrawEdge(
-			$rhPosCache->{left},
-			$rhPosCache->{top} + 6,
-			$rhPosCache->{left} + $rhPosCache->{width},
-			$rhPosCache->{top} + $rhPosCache->{height},
-			0x0002 | 0x0004					#BDR_SUNKENOUTER | BDR_RAISEDINNER
-			);
+    my $check = $self->prop("Checked") ? 0x0400 : 0;        #DFCS_CHECKED            
+    
+    #Draw Groupbox
+    $dcDev->DrawEdge(
+            $rhPosCache->{left},
+            $rhPosCache->{top} + 6,
+            $rhPosCache->{left} + $rhPosCache->{width},
+            $rhPosCache->{top} + $rhPosCache->{height},
+            0x0002 | 0x0004                 #BDR_SUNKENOUTER | BDR_RAISEDINNER
+            );
 
-#	$dcDev->BkMode(1);
-	$self->paintText($dcDev, $rhBrush, $rhPosCache);
-#	$self->paintSelected($dcDev, $rhBrush, $rhPosCache);
+#   $dcDev->BkMode(1);
+    $self->paintText($dcDev, $rhBrush, $rhPosCache);
+#   $self->paintSelected($dcDev, $rhBrush, $rhPosCache);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 

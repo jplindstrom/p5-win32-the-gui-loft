@@ -88,14 +88,14 @@ The main window object
 =cut
 sub winMain {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{winMain} = $val;
-		}
+    if(defined($val)) {
+        $self->{winMain} = $val;
+        }
 
-	return($self->{winMain});
-	}
+    return($self->{winMain});
+    }
 
 
 
@@ -108,14 +108,14 @@ The Export Perl window object.
 =cut
 sub winClusterProp {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{winClusterProp} = $val;
-		}
+    if(defined($val)) {
+        $self->{winClusterProp} = $val;
+        }
 
-	return($self->{winClusterProp});
-	}
+    return($self->{winClusterProp});
+    }
 
 
 
@@ -128,14 +128,14 @@ The menu for the main window
 =cut
 sub mnuMain {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{mnuMain} = $val;
-		}
+    if(defined($val)) {
+        $self->{mnuMain} = $val;
+        }
 
-	return($self->{mnuMain});
-	}
+    return($self->{mnuMain});
+    }
 
 
 
@@ -149,14 +149,14 @@ in the winMain window.
 =cut
 sub objResizerMain {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{objResizerMain} = $val;
-		}
+    if(defined($val)) {
+        $self->{objResizerMain} = $val;
+        }
 
-	return($self->{objResizerMain});
-	}
+    return($self->{objResizerMain});
+    }
 
 
 
@@ -169,14 +169,14 @@ The Win32::GUI::Modalizer object used to make dialogs modal.
 =cut
 sub objModalizer {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{objModalizer} = $val;
-		}
+    if(defined($val)) {
+        $self->{objModalizer} = $val;
+        }
 
-	return($self->{objModalizer});
-	}
+    return($self->{objModalizer});
+    }
 
 
 
@@ -190,14 +190,14 @@ Win32::GUI::Window object).
 =cut
 sub objWindowProp {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{objWindowProp} = $val;
-		}
+    if(defined($val)) {
+        $self->{objWindowProp} = $val;
+        }
 
-	return($self->{objWindowProp});
-	}
+    return($self->{objWindowProp});
+    }
 
 
 
@@ -211,14 +211,14 @@ object).
 =cut
 sub objWindowDesign {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{objWindowDesign} = $val;
-		}
+    if(defined($val)) {
+        $self->{objWindowDesign} = $val;
+        }
 
-	return($self->{objWindowDesign});
-	}
+    return($self->{objWindowDesign});
+    }
 
 
 
@@ -232,14 +232,14 @@ object).
 =cut
 sub objWindowTool {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{objWindowTool} = $val;
-		}
+    if(defined($val)) {
+        $self->{objWindowTool} = $val;
+        }
 
-	return($self->{objWindowTool});
-	}
+    return($self->{objWindowTool});
+    }
 
 
 
@@ -254,15 +254,15 @@ Set to 0 to undef
 =cut
 sub objCanvas {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{objCanvas} = $val;
-		$self->{objCanvas} = undef if($val == 0);
-		}
+    if(defined($val)) {
+        $self->{objCanvas} = $val;
+        $self->{objCanvas} = undef if($val == 0);
+        }
 
-	return($self->{objCanvas});
-	}
+    return($self->{objCanvas});
+    }
 
 
 
@@ -278,15 +278,15 @@ Set to 0 to undef
 =cut
 sub objDesign {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{objDesign} = $val;
-		$self->{objDesign} = undef if($val == 0);
-		}
+    if(defined($val)) {
+        $self->{objDesign} = $val;
+        $self->{objDesign} = undef if($val == 0);
+        }
 
-	return($self->{objDesign});
-	}
+    return($self->{objDesign});
+    }
 
 
 
@@ -302,15 +302,15 @@ Set to 0 to undef.
 =cut
 sub objClusterLastEdited {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{objClusterLastEdited} = $val;
-		$self->{objClusterLastEdited} = undef if($val == 0);
-		}
+    if(defined($val)) {
+        $self->{objClusterLastEdited} = $val;
+        $self->{objClusterLastEdited} = undef if($val == 0);
+        }
 
-	return($self->{objClusterLastEdited});
-	}
+    return($self->{objClusterLastEdited});
+    }
 
 
 
@@ -324,14 +324,14 @@ yet been hidden/closed.
 =cut
 sub raWinTest {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{raWinTest} = $val;
-		}
+    if(defined($val)) {
+        $self->{raWinTest} = $val;
+        }
 
-	return($self->{raWinTest});
-	}
+    return($self->{raWinTest});
+    }
 
 
 
@@ -346,25 +346,25 @@ Create new UI for Windows.
 =cut
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
-	defined($gObjSingleton) and return($gObjSingleton);
+    defined($gObjSingleton) and return($gObjSingleton);
 
-	my $self = $gObjSingleton = $pkg->SUPER::new();
+    my $self = $gObjSingleton = $pkg->SUPER::new();
 
-	$self->winMain(undef);
-	$self->winClusterProp(undef);
-	$self->mnuMain(undef);
+    $self->winMain(undef);
+    $self->winClusterProp(undef);
+    $self->mnuMain(undef);
 
-	$self->objWindowDesign( TGL::WindowDesign->new() );
-	$self->objWindowProp( TGL::WindowProp->new() );
-	$self->objWindowTool( TGL::WindowTool->new() );
+    $self->objWindowDesign( TGL::WindowDesign->new() );
+    $self->objWindowProp( TGL::WindowProp->new() );
+    $self->objWindowTool( TGL::WindowTool->new() );
 
-	$self->raWinTest([]);
+    $self->raWinTest([]);
 
-	$self->objClusterLastEdited(0);
+    $self->objClusterLastEdited(0);
 
 
-	return($self);
-	}
+    return($self);
+    }
 
 
 
@@ -381,367 +381,367 @@ sub init {
     my $self = shift; my $pkg = ref($self);
 
 
-	###Build GUI
+    ###Build GUI
 
-	#The main window
-	my $mnuMain = Win32::GUI::MakeMenu(
-			"&File"   					=> "mnuFile",
-			" > &New\tCtrl+N"			=> "mnuFileNew",
-			" > &Open...\tCtrl+O"		=> "mnuFileOpen",
-			" > &Save\tCtrl+S"			=> "mnuFileSave",
-			" > Save &as..."			=> "mnuFileSaveAs",
-		    " > -"						=>  0,
-#			" > &Export Perl code..."	=> "mnuFileExportPerl",
-#		    " > -"						=>  0,
-			" > E&xit"					=> "mnuFileExit",
+    #The main window
+    my $mnuMain = Win32::GUI::MakeMenu(
+            "&File"                     => "mnuFile",
+            " > &New\tCtrl+N"           => "mnuFileNew",
+            " > &Open...\tCtrl+O"       => "mnuFileOpen",
+            " > &Save\tCtrl+S"          => "mnuFileSave",
+            " > Save &as..."            => "mnuFileSaveAs",
+            " > -"                      =>  0,
+#           " > &Export Perl code..."   => "mnuFileExportPerl",
+#           " > -"                      =>  0,
+            " > E&xit"                  => "mnuFileExit",
 
-			"&Edit"   					=> "mnuEdit",
-			" > &Cut\tCtrl+X"			=> "mnuEditCut",
-			" > &Copy\tCtrl+C"			=> "mnuEditCopy",
-			" > &Paste\tCtrl+V"			=> "mnuEditPaste",
-			" > Copy &Perl"				=> "mnuEditCopyPerl",
-			" > > Control &name"		=> "mnuEditCopyPerlName",
-			" > > &Resizer Code"		=> "mnuEditCopyPerlResizer",
-		    " > -"						=>  0,
-			" > &Delete\tDel"			=> "mnuEditDelete",
-			" > &Duplicate"				=> "mnuEditDuplicate",
-		    " > -"						=>  0,
+            "&Edit"                     => "mnuEdit",
+            " > &Cut\tCtrl+X"           => "mnuEditCut",
+            " > &Copy\tCtrl+C"          => "mnuEditCopy",
+            " > &Paste\tCtrl+V"         => "mnuEditPaste",
+            " > Copy &Perl"             => "mnuEditCopyPerl",
+            " > > Control &name"        => "mnuEditCopyPerlName",
+            " > > &Resizer Code"        => "mnuEditCopyPerlResizer",
+            " > -"                      =>  0,
+            " > &Delete\tDel"           => "mnuEditDelete",
+            " > &Duplicate"             => "mnuEditDuplicate",
+            " > -"                      =>  0,
 
-			" > &Select"				=> "mnuEditSelect",
-			" > > &All\tCtrl+A"			=> "mnuEditSelectAll",
-			" > > &Window"				=> "mnuEditSelectWindow",
+            " > &Select"                => "mnuEditSelect",
+            " > > &All\tCtrl+A"         => "mnuEditSelectAll",
+            " > > &Window"              => "mnuEditSelectWindow",
 
-			" > &Align"					=> "mnuEditAlign",
-			" > > &Left"				=> "mnuEditAlignLeft",
-			" > > &Center"				=> "mnuEditAlignCenter",
-			" > > &Right"				=> "mnuEditAlignRight",
-			" > > &Width"				=> "mnuEditAlignMaxWidth",
-		    " > > -"					=>  0,
-			" > > &Top"					=> "mnuEditAlignTop",
-			" > > &Middle"				=> "mnuEditAlignMiddle",
-			" > > &Bottom"				=> "mnuEditAlignBottom",
-			" > > &Height"				=> "mnuEditAlignMaxHeight",
+            " > &Align"                 => "mnuEditAlign",
+            " > > &Left"                => "mnuEditAlignLeft",
+            " > > &Center"              => "mnuEditAlignCenter",
+            " > > &Right"               => "mnuEditAlignRight",
+            " > > &Width"               => "mnuEditAlignMaxWidth",
+            " > > -"                    =>  0,
+            " > > &Top"                 => "mnuEditAlignTop",
+            " > > &Middle"              => "mnuEditAlignMiddle",
+            " > > &Bottom"              => "mnuEditAlignBottom",
+            " > > &Height"              => "mnuEditAlignMaxHeight",
 
-			" > &Bring"					=> "mnuEditBring",
-			" > > To &top"				=> "mnuEditBringToTop",
-			" > > &Up"					=> "mnuEditBringUp",
-			" > > &Down"				=> "mnuEditBringDown",
-			" > > To &bottom"			=> "mnuEditBringToBottom",
+            " > &Bring"                 => "mnuEditBring",
+            " > > To &top"              => "mnuEditBringToTop",
+            " > > &Up"                  => "mnuEditBringUp",
+            " > > &Down"                => "mnuEditBringDown",
+            " > > To &bottom"           => "mnuEditBringToBottom",
 
-		    " > -"					=>  0,
-			" > &Events\tCtrl-E"		=> "mnuEditEvents",
+            " > -"                  =>  0,
+            " > &Events\tCtrl-E"        => "mnuEditEvents",
 
-			"&Design"   				=> "mnuDesign",
-			" > &Test window\tCtrl+T"	=> "mnuDesignTest",
-			" > &Close all test windows"=> "mnuDesignCloseTest",
+            "&Design"                   => "mnuDesign",
+            " > &Test window\tCtrl+T"   => "mnuDesignTest",
+            " > &Close all test windows"=> "mnuDesignCloseTest",
 
-			"&Help"   					=> "mnuHelp",
-			" > &User manual"			=> "mnuHelpUserManual",
-			" > &Programmer's Reference"=> "mnuHelpProgrammersReference",
-			" > &FAQ"					=> "mnuHelpFAQ",
-		    " > -"						=>  0,
-			" > Win32::GUI Docs"		=> "mnuHelpWin32GUI",
-			" > Win32::GUI Selected Control" => "mnuHelpWin32GUISelectedControl",
-		    " > -"						=>  0,
-			" > Win32 &SDK web page"	=> "mnuHelpWin32SDK",
-		    " > -"						=>  0,
-			" > &Changes"				=> "mnuHelpChanges",
-			" > &About..."				=> "mnuHelpAbout",
-			);
+            "&Help"                     => "mnuHelp",
+            " > &User manual"           => "mnuHelpUserManual",
+            " > &Programmer's Reference"=> "mnuHelpProgrammersReference",
+            " > &FAQ"                   => "mnuHelpFAQ",
+            " > -"                      =>  0,
+            " > Win32::GUI Docs"        => "mnuHelpWin32GUI",
+            " > Win32::GUI Selected Control" => "mnuHelpWin32GUISelectedControl",
+            " > -"                      =>  0,
+            " > Win32 &SDK web page"    => "mnuHelpWin32SDK",
+            " > -"                      =>  0,
+            " > &Changes"               => "mnuHelpChanges",
+            " > &About..."              => "mnuHelpAbout",
+            );
 
-	$self->mnuMain($mnuMain);
+    $self->mnuMain($mnuMain);
 
-	#The window
+    #The window
 #=pod
-	my $fileWindow = "resource\\main.gld";		##todo: Move to config
-	my $objDesign = Win32::GUI::Loft::Design->newLoad($fileWindow) or
-			$self->errorReport("Could not open window file ($fileWindow)");
-	$objDesign->mnuMenu($mnuMain);
-	my $winMain = $objDesign->buildWindow() or
-			$self->errorReport("Could not build window ($fileWindow)");
-	$winMain->DragAcceptFiles(1);
+    my $fileWindow = "resource\\main.gld";      ##todo: Move to config
+    my $objDesign = Win32::GUI::Loft::Design->newLoad($fileWindow) or
+            $self->errorReport("Could not open window file ($fileWindow)");
+    $objDesign->mnuMenu($mnuMain);
+    my $winMain = $objDesign->buildWindow() or
+            $self->errorReport("Could not build window ($fileWindow)");
+    $winMain->DragAcceptFiles(1);
 
 #print Dumper($winMain);
 #print "$winMain->{-name}\n";
 #=cut
 =pod
-	my $winMain = new Win32::GUI::Window(
-	      -left   => 0,
-	      -top    => 100,
-	      -width  => 200,
-	      -height => 500,
-	      -name   => "winMain",
-	      -text   => "The GUI Loft",
-	      -menu   => $mnuMain,
-	      );
-	$winMain->{-dialogui} = 1;
+    my $winMain = new Win32::GUI::Window(
+          -left   => 0,
+          -top    => 100,
+          -width  => 200,
+          -height => 500,
+          -name   => "winMain",
+          -text   => "The GUI Loft",
+          -menu   => $mnuMain,
+          );
+    $winMain->{-dialogui} = 1;
 
-	my ($width, $height) = ($winMain->GetClientRect)[2..3];
-
-
-#	$self->objWindowDesign()->objModalizer( $self->objModalizer() );
+    my ($width, $height) = ($winMain->GetClientRect)[2..3];
 
 
-#	my $hw = 16;
-#	my $pathIcon = $self->rhConfig()->{dirIcon};
-#	my $ilIcon = new Win32::GUI::ImageList($hw, $hw, 0, @gaBitmap + 1, @gaBitmap + 1);
-#	for my $icon (@gaBitmap) {
-#		my $fileIcon =  "$pathIcon\\$icon";
-#		$ilIcon->Add(new Win32::GUI::Bitmap($fileIcon), 0);
-#		}
+#   $self->objWindowDesign()->objModalizer( $self->objModalizer() );
 
 
-	my $wb = 20;
-	my $hb = 20;
-	my $x = 0;
-	my $y = 0;
+#   my $hw = 16;
+#   my $pathIcon = $self->rhConfig()->{dirIcon};
+#   my $ilIcon = new Win32::GUI::ImageList($hw, $hw, 0, @gaBitmap + 1, @gaBitmap + 1);
+#   for my $icon (@gaBitmap) {
+#       my $fileIcon =  "$pathIcon\\$icon";
+#       $ilIcon->Add(new Win32::GUI::Bitmap($fileIcon), 0);
+#       }
 
-	$winMain->AddButton(
-	       -text    => "&Nw",
-	       -name    => "btnNew",
-	       -left    => $x,
-	       -top     => $y,
-	       -width   => $wb,
-	       -height  => $hb,
-	      );
-	$x += $wb;
-	$winMain->AddButton(
-	       -text    => "&Op",
-	       -name    => "btnOpen",
-	       -left    => $x,
-	       -top     => $y,
-	       -width   => $wb,
-	       -height  => $hb,
-	      );
-	$x += $wb;
-	$winMain->AddButton(
-	       -text    => "&Sv",
-	       -name    => "btnSave",
-	       -left    => $x,
-	       -top     => $y,
-	       -width   => $wb,
-	       -height  => $hb,
-	      );
-	$x += $wb;
 
-	$x += 2;
+    my $wb = 20;
+    my $hb = 20;
+    my $x = 0;
+    my $y = 0;
 
-	$winMain->AddButton(
-	       -text    => "&Ct",
-	       -name    => "btnCut",
-	       -left    => $x,
-	       -top     => $y,
-	       -width   => $wb,
-	       -height  => $hb,
-	      );
-	$x += $wb;
-	$winMain->AddButton(
-	       -text    => "&Cp",
-	       -name    => "btnCopy",
-	       -left    => $x,
-	       -top     => $y,
-	       -width   => $wb,
-	       -height  => $hb,
-	      );
-	$x += $wb;
-	$winMain->AddButton(
-	       -text    => "&Ps",
-	       -name    => "btnPaste",
-	       -left    => $x,
-	       -top     => $y,
-	       -width   => $wb,
-	       -height  => $hb,
-	      );
-	$x += $wb;
-	$winMain->AddButton(
-	       -text    => "&Dl",
-	       -name    => "btnDelete",
-	       -left    => $x,
-	       -top     => $y,
-	       -width   => $wb,
-	       -height  => $hb,
-	      );
-	$x += $wb;
+    $winMain->AddButton(
+           -text    => "&Nw",
+           -name    => "btnNew",
+           -left    => $x,
+           -top     => $y,
+           -width   => $wb,
+           -height  => $hb,
+          );
+    $x += $wb;
+    $winMain->AddButton(
+           -text    => "&Op",
+           -name    => "btnOpen",
+           -left    => $x,
+           -top     => $y,
+           -width   => $wb,
+           -height  => $hb,
+          );
+    $x += $wb;
+    $winMain->AddButton(
+           -text    => "&Sv",
+           -name    => "btnSave",
+           -left    => $x,
+           -top     => $y,
+           -width   => $wb,
+           -height  => $hb,
+          );
+    $x += $wb;
 
-	$x += 2;
+    $x += 2;
 
-	$winMain->AddButton(
-	       -text    => "&Up",
-	       -name    => "btnUp",
-	       -left    => $x,
-	       -top     => $y,
-	       -width   => $wb,
-	       -height  => $hb,
-	      );
-	$x += $wb;
-	$winMain->AddButton(
-	       -text    => "&Dn",
-	       -name    => "btnDown",
-	       -left    => $x,
-	       -top     => $y,
-	       -width   => $wb,
-	       -height  => $hb,
-	      );
-	$x += $wb;
-	$y += $hb;
+    $winMain->AddButton(
+           -text    => "&Ct",
+           -name    => "btnCut",
+           -left    => $x,
+           -top     => $y,
+           -width   => $wb,
+           -height  => $hb,
+          );
+    $x += $wb;
+    $winMain->AddButton(
+           -text    => "&Cp",
+           -name    => "btnCopy",
+           -left    => $x,
+           -top     => $y,
+           -width   => $wb,
+           -height  => $hb,
+          );
+    $x += $wb;
+    $winMain->AddButton(
+           -text    => "&Ps",
+           -name    => "btnPaste",
+           -left    => $x,
+           -top     => $y,
+           -width   => $wb,
+           -height  => $hb,
+          );
+    $x += $wb;
+    $winMain->AddButton(
+           -text    => "&Dl",
+           -name    => "btnDelete",
+           -left    => $x,
+           -top     => $y,
+           -width   => $wb,
+           -height  => $hb,
+          );
+    $x += $wb;
 
-	my $lbControl = $winMain->AddListbox(
-			-name      => "lbControl",
-			-text      => "",
-			-left      => 0,
-			-top       => $y,
-			-width     => $width,
-			-height    => $height,
-#			-style     =>
-#					WS_CHILD |
-#					WS_VISIBLE |
-#					1,
-			-multisel  => 2,
-			);
+    $x += 2;
 
-#	my $lvwControl = $winMain->AddListView(
-#			-name      => "lvwControl",
-#			-text      => "",
-#			-left      => 0,
-#			-top       => $y,
-#			-width     => $width,
-#			-height    => $height - $y,
-#			-style     =>
-#					WS_CHILD |
-#					WS_VISIBLE |
-#					1,
-#			-fullrowselect => 1,
-#			-gridlines => 1,
-#			);
+    $winMain->AddButton(
+           -text    => "&Up",
+           -name    => "btnUp",
+           -left    => $x,
+           -top     => $y,
+           -width   => $wb,
+           -height  => $hb,
+          );
+    $x += $wb;
+    $winMain->AddButton(
+           -text    => "&Dn",
+           -name    => "btnDown",
+           -left    => $x,
+           -top     => $y,
+           -width   => $wb,
+           -height  => $hb,
+          );
+    $x += $wb;
+    $y += $hb;
+
+    my $lbControl = $winMain->AddListbox(
+            -name      => "lbControl",
+            -text      => "",
+            -left      => 0,
+            -top       => $y,
+            -width     => $width,
+            -height    => $height,
+#           -style     =>
+#                   WS_CHILD |
+#                   WS_VISIBLE |
+#                   1,
+            -multisel  => 2,
+            );
+
+#   my $lvwControl = $winMain->AddListView(
+#           -name      => "lvwControl",
+#           -text      => "",
+#           -left      => 0,
+#           -top       => $y,
+#           -width     => $width,
+#           -height    => $height - $y,
+#           -style     =>
+#                   WS_CHILD |
+#                   WS_VISIBLE |
+#                   1,
+#           -fullrowselect => 1,
+#           -gridlines => 1,
+#           );
 #
-#	$lvwControl->InsertColumn(
-#			-index => 0,
-#			-width => $width / 2,
-#			-text  => "Control",
-#			);
-#	$lvwControl->InsertColumn(
-#			-index => 1,
-#			-width => $width / 2,
-#			-text  => "Type",
-#			);
+#   $lvwControl->InsertColumn(
+#           -index => 0,
+#           -width => $width / 2,
+#           -text  => "Control",
+#           );
+#   $lvwControl->InsertColumn(
+#           -index => 1,
+#           -width => $width / 2,
+#           -text  => "Type",
+#           );
 
 =cut
 
-	$self->winMain($winMain);
+    $self->winMain($winMain);
 
 
-	##The dialog is done, now arrange it.
-	my $objResizer = Win32::GUI::Resizer->new($winMain);
-	$self->objResizerMain($objResizer);
-	$objResizer->raRelations([
-			'winWidth' => [
-					['$winResize->lbControl->Width()'],
-					['$winResize->tsClusterGrid->Width()'],
+    ##The dialog is done, now arrange it.
+    my $objResizer = Win32::GUI::Resizer->new($winMain);
+    $self->objResizerMain($objResizer);
+    $objResizer->raRelations([
+            'winWidth' => [
+                    ['$winResize->lbControl->Width()'],
+                    ['$winResize->tsClusterGrid->Width()'],
 
-					['$winResize->lvwCluster->Width()'],
-					['$winResize->btnClusterMemorize->Width()'],
+                    ['$winResize->lvwCluster->Width()'],
+                    ['$winResize->btnClusterMemorize->Width()'],
 
-					['$winResize->gbGrid->Width()'],
-					['$winResize->lblGridSize->Left()'],
-					['$winResize->lblGridX->Left()'],
-					['$winResize->tfGridHeight->Left()'],
-					['$winResize->tfGridWidth->Left()'],
-					['$winResize->btnGridApply->Left()'],
-					['$winResize->btnGridReset->Left()'],
-					],
-			'winHeight' => [
-					['$winResize->lbControl->Height()'],
-					['$winResize->tsClusterGrid->Top()'],
+                    ['$winResize->gbGrid->Width()'],
+                    ['$winResize->lblGridSize->Left()'],
+                    ['$winResize->lblGridX->Left()'],
+                    ['$winResize->tfGridHeight->Left()'],
+                    ['$winResize->tfGridWidth->Left()'],
+                    ['$winResize->btnGridApply->Left()'],
+                    ['$winResize->btnGridReset->Left()'],
+                    ],
+            'winHeight' => [
+                    ['$winResize->lbControl->Height()'],
+                    ['$winResize->tsClusterGrid->Top()'],
 
-					['$winResize->lvwCluster->Top()'],
-					['$winResize->btnClusterNew->Top()'],
-					['$winResize->btnClusterDelete->Top()'],
-					['$winResize->btnClusterRename->Top()'],
-					['$winResize->btnClusterMemorize->Top()'],
+                    ['$winResize->lvwCluster->Top()'],
+                    ['$winResize->btnClusterNew->Top()'],
+                    ['$winResize->btnClusterDelete->Top()'],
+                    ['$winResize->btnClusterRename->Top()'],
+                    ['$winResize->btnClusterMemorize->Top()'],
 
-					['$winResize->gbGrid->Top()'],
-					['$winResize->lblGridSize->Top()'],
-					['$winResize->chbGridSnap->Top()'],
-					['$winResize->chbGridShow->Top()'],
-					['$winResize->lblGridX->Top()'],
-					['$winResize->tfGridHeight->Top()'],
-					['$winResize->tfGridWidth->Top()'],
-					['$winResize->btnGridApply->Top()'],
-					['$winResize->btnGridReset->Top()'],
+                    ['$winResize->gbGrid->Top()'],
+                    ['$winResize->lblGridSize->Top()'],
+                    ['$winResize->chbGridSnap->Top()'],
+                    ['$winResize->chbGridShow->Top()'],
+                    ['$winResize->lblGridX->Top()'],
+                    ['$winResize->tfGridHeight->Top()'],
+                    ['$winResize->tfGridWidth->Top()'],
+                    ['$winResize->btnGridApply->Top()'],
+                    ['$winResize->btnGridReset->Top()'],
 
-					],
-			]);
-	$objResizer->memorize();
-
-
-	##Resize to the saved position
-	my $rhWindowConfig = $self->rhWindowConfig();
-	$winMain->Left( $self->default($rhWindowConfig->{posMainLeft}, 100) );
-	$winMain->Top( $self->default($rhWindowConfig->{posMainTop}, 100) );
-	$winMain->Width( $self->default($rhWindowConfig->{posMainWidth} ,620) );
-	$winMain->Height( $self->default($rhWindowConfig->{posMainHeight} ,400) );
+                    ],
+            ]);
+    $objResizer->memorize();
 
 
-
-	##The Cluster properties window
-	$fileWindow = "resource\\cluster.gld";		##todo: Move to config
-	my $objClusterProp = Win32::GUI::Loft::Design->newLoad($fileWindow) or
-			$self->errorReport("Could not open window file ($fileWindow)");
-	my $winClusterProp = $objClusterProp->buildWindow($winMain) or
-			$self->errorReport("Could not build window ($fileWindow)");
-	$self->winClusterProp($winClusterProp);
+    ##Resize to the saved position
+    my $rhWindowConfig = $self->rhWindowConfig();
+    $winMain->Left( $self->default($rhWindowConfig->{posMainLeft}, 100) );
+    $winMain->Top( $self->default($rhWindowConfig->{posMainTop}, 100) );
+    $winMain->Width( $self->default($rhWindowConfig->{posMainWidth} ,620) );
+    $winMain->Height( $self->default($rhWindowConfig->{posMainHeight} ,400) );
 
 
 
-	##Tadaaa!
-	$self->setWindowState();
-	$winMain->Show();
+    ##The Cluster properties window
+    $fileWindow = "resource\\cluster.gld";      ##todo: Move to config
+    my $objClusterProp = Win32::GUI::Loft::Design->newLoad($fileWindow) or
+            $self->errorReport("Could not open window file ($fileWindow)");
+    my $winClusterProp = $objClusterProp->buildWindow($winMain) or
+            $self->errorReport("Could not build window ($fileWindow)");
+    $self->winClusterProp($winClusterProp);
 
 
-	##The Design window
-	$self->objWindowDesign()->rhConfig( $self->rhConfig() );
-	$self->objWindowDesign()->objWindowProp($self->objWindowProp());
-	$self->objWindowDesign()->objWindowApp($self);
-	$self->objWindowDesign->init($winMain);
+
+    ##Tadaaa!
+    $self->setWindowState();
+    $winMain->Show();
 
 
-	##The Properties window
-	$self->objWindowProp()->rhConfig( $self->rhConfig() );
-	$self->objWindowProp()->objWindowDesign($self->objWindowDesign());
-	$self->objWindowProp()->objWindowApp($self);
-	$self->objWindowProp->init($winMain);
-
-	$self->objWindowProp()->winProp()->Left( $self->default($rhWindowConfig->{posPropLeft}, 600) );
-	$self->objWindowProp()->winProp()->Top( $self->default($rhWindowConfig->{posPropTop}, 50) );
-	$self->objWindowProp()->winProp()->Width( $self->default($rhWindowConfig->{posPropWidth} ,250) );
-	$self->objWindowProp()->winProp()->Height( $self->default($rhWindowConfig->{posPropHeight} ,400) );
-
-	##The Toolbox window
-	$self->objWindowTool()->rhConfig( $self->rhConfig() );
-	$self->objWindowTool()->objWindowDesign($self->objWindowDesign());
-	$self->objWindowTool()->objWindowProp($self->objWindowProp());
-	$self->objWindowTool()->objWindowApp($self);
-	$self->objWindowTool->init($winMain);
+    ##The Design window
+    $self->objWindowDesign()->rhConfig( $self->rhConfig() );
+    $self->objWindowDesign()->objWindowProp($self->objWindowProp());
+    $self->objWindowDesign()->objWindowApp($self);
+    $self->objWindowDesign->init($winMain);
 
 
-	#All windows are done, prepare them for Modalizer
-	$self->objModalizer(Win32::GUI::Modalizer->new(
-			$winMain,
-			$self->objWindowProp()->winProp(),
-			$self->objWindowDesign()->winDesign(),
-			$self->objWindowTool()->winTool(),
-			));
+    ##The Properties window
+    $self->objWindowProp()->rhConfig( $self->rhConfig() );
+    $self->objWindowProp()->objWindowDesign($self->objWindowDesign());
+    $self->objWindowProp()->objWindowApp($self);
+    $self->objWindowProp->init($winMain);
+
+    $self->objWindowProp()->winProp()->Left( $self->default($rhWindowConfig->{posPropLeft}, 600) );
+    $self->objWindowProp()->winProp()->Top( $self->default($rhWindowConfig->{posPropTop}, 50) );
+    $self->objWindowProp()->winProp()->Width( $self->default($rhWindowConfig->{posPropWidth} ,250) );
+    $self->objWindowProp()->winProp()->Height( $self->default($rhWindowConfig->{posPropHeight} ,400) );
+
+    ##The Toolbox window
+    $self->objWindowTool()->rhConfig( $self->rhConfig() );
+    $self->objWindowTool()->objWindowDesign($self->objWindowDesign());
+    $self->objWindowTool()->objWindowProp($self->objWindowProp());
+    $self->objWindowTool()->objWindowApp($self);
+    $self->objWindowTool->init($winMain);
 
 
-	$self->canvasClose();
+    #All windows are done, prepare them for Modalizer
+    $self->objModalizer(Win32::GUI::Modalizer->new(
+            $winMain,
+            $self->objWindowProp()->winProp(),
+            $self->objWindowDesign()->winDesign(),
+            $self->objWindowTool()->winTool(),
+            ));
 
-	$winMain->SetForegroundWindow();
 
-	$self->objWindowProp()->winProp()->Show();
-	$self->objWindowTool()->winTool()->Show();
+    $self->canvasClose();
 
-	return(1);
-	}
+    $winMain->SetForegroundWindow();
+
+    $self->objWindowProp()->winProp()->Show();
+    $self->objWindowTool()->winTool()->Show();
+
+    return(1);
+    }
 
 
 
@@ -757,10 +757,10 @@ Return 1 on success, else 0.
 sub run {
     my $self = shift; my $pkg = ref($self);
 
-	Win32::GUI::Dialog();
+    Win32::GUI::Dialog();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -776,23 +776,23 @@ Return 1 on succes, else 0.
 sub shutdown {
     my $self = shift; my $pkg = ref($self);
 
-	$self->configWindowSave(
-			$self->winMain->Left(),
-			$self->winMain->Top(),
-			$self->winMain->Width(),
-			$self->winMain->Height(),
-			$self->objWindowProp()->winProp->Left(),
-			$self->objWindowProp()->winProp->Top(),
-			$self->objWindowProp()->winProp->Width(),
-			$self->objWindowProp()->winProp->Height(),
-			);
+    $self->configWindowSave(
+            $self->winMain->Left(),
+            $self->winMain->Top(),
+            $self->winMain->Width(),
+            $self->winMain->Height(),
+            $self->objWindowProp()->winProp->Left(),
+            $self->objWindowProp()->winProp->Top(),
+            $self->objWindowProp()->winProp->Width(),
+            $self->objWindowProp()->winProp->Height(),
+            );
 
-	$self->configSave();
+    $self->configSave();
 
-	$self->isClosed(1);
+    $self->isClosed(1);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -808,16 +808,16 @@ Return 1 on success, else die().
 =cut
 sub configLoad {
     my $self = shift; my $pkg = ref($self);
-	my ($fileConfig) = @_;
+    my ($fileConfig) = @_;
 
-	$self->fileConfig($fileConfig);
+    $self->fileConfig($fileConfig);
 
-	$self->rhConfig($self->loadXMLFile($fileConfig));
+    $self->rhConfig($self->loadXMLFile($fileConfig));
 
-	$self->rhWindowConfig($self->loadXMLFile( $self->rhConfig()->{fileWindow} ) ) if(-r $self->rhConfig()->{fileWindow});
+    $self->rhWindowConfig($self->loadXMLFile( $self->rhConfig()->{fileWindow} ) ) if(-r $self->rhConfig()->{fileWindow});
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -832,8 +832,8 @@ Return 1 on success, else 0.
 =cut
 sub configSave {
     my $self = shift; my $pkg = ref($self);
-	return($self->saveXMLFile($self->fileConfig(), $self->rhConfig()));
-	}
+    return($self->saveXMLFile($self->fileConfig(), $self->rhConfig()));
+    }
 
 
 
@@ -848,22 +848,22 @@ Return 1 on success, else 0.
 =cut
 sub configWindowSave {
     my $self = shift; my $pkg = ref($self);
-	my ($mainLeft, $mainTop, $mainWidth, $mainHeight, $propLeft,
-			$propTop, $propWidth, $propHeight) = @_;
+    my ($mainLeft, $mainTop, $mainWidth, $mainHeight, $propLeft,
+            $propTop, $propWidth, $propHeight) = @_;
 
-	$self->rhWindowConfig()->{posMainLeft} = $mainLeft;
-	$self->rhWindowConfig()->{posMainTop} = $mainTop;
-	$self->rhWindowConfig()->{posMainWidth} = $mainWidth;
-	$self->rhWindowConfig()->{posMainHeight} = $mainHeight;
-	$self->rhWindowConfig()->{posPropLeft} = $propLeft;
-	$self->rhWindowConfig()->{posPropTop} = $propTop;
-	$self->rhWindowConfig()->{posPropWidth} = $propWidth;
-	$self->rhWindowConfig()->{posPropHeight} = $propHeight;
+    $self->rhWindowConfig()->{posMainLeft} = $mainLeft;
+    $self->rhWindowConfig()->{posMainTop} = $mainTop;
+    $self->rhWindowConfig()->{posMainWidth} = $mainWidth;
+    $self->rhWindowConfig()->{posMainHeight} = $mainHeight;
+    $self->rhWindowConfig()->{posPropLeft} = $propLeft;
+    $self->rhWindowConfig()->{posPropTop} = $propTop;
+    $self->rhWindowConfig()->{posPropWidth} = $propWidth;
+    $self->rhWindowConfig()->{posPropHeight} = $propHeight;
 
-	$self->saveXMLFile($self->rhConfig()->{fileWindow}, $self->rhWindowConfig());
+    $self->saveXMLFile($self->rhConfig()->{fileWindow}, $self->rhWindowConfig());
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -880,35 +880,35 @@ Return 1.
 sub setWindowState {
     my $self = shift; my $pkg = ref($self);
 
-#	my $winMain = $self->winMain() or return(0);
-#	my $mnuMain = $self->mnuMain() or return(0);
-	my $objDesign = $self->objDesign() or return(0);
-	my $objCanvas = $self->objCanvas() or return(0);
-	my $win = $self->winMain() or return(0);
+#   my $winMain = $self->winMain() or return(0);
+#   my $mnuMain = $self->mnuMain() or return(0);
+    my $objDesign = $self->objDesign() or return(0);
+    my $objCanvas = $self->objCanvas() or return(0);
+    my $win = $self->winMain() or return(0);
 
-	if(keys %{$objCanvas->rhControlSelected()}) {
-		$win->btnCut()->Enable(1);
-		$win->btnCopy()->Enable(1);
-		$win->btnDelete()->Enable(1);
-		$win->btnUp()->Enable(1);
-		$win->btnDown()->Enable(1);
-		}
-	else {
-		$win->btnCut()->Enable(0);
-		$win->btnCopy()->Enable(0);
-		$win->btnDelete()->Enable(0);
-		$win->btnUp()->Enable(0);
-		$win->btnDown()->Enable(0);
-		}
+    if(keys %{$objCanvas->rhControlSelected()}) {
+        $win->btnCut()->Enable(1);
+        $win->btnCopy()->Enable(1);
+        $win->btnDelete()->Enable(1);
+        $win->btnUp()->Enable(1);
+        $win->btnDown()->Enable(1);
+        }
+    else {
+        $win->btnCut()->Enable(0);
+        $win->btnCopy()->Enable(0);
+        $win->btnDelete()->Enable(0);
+        $win->btnUp()->Enable(0);
+        $win->btnDown()->Enable(0);
+        }
 
-	my $clustEnable = defined($self->clusterGetSelected()) ? 1 : 0;
-	$win->btnClusterRename()->Enable($clustEnable);
-	$win->btnClusterDelete()->Enable($clustEnable);
-	$win->btnClusterMemorize()->Enable($clustEnable);
+    my $clustEnable = defined($self->clusterGetSelected()) ? 1 : 0;
+    $win->btnClusterRename()->Enable($clustEnable);
+    $win->btnClusterDelete()->Enable($clustEnable);
+    $win->btnClusterMemorize()->Enable($clustEnable);
 
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -925,23 +925,23 @@ Return 1 on success, else 0.
 =cut
 sub openFile {
     my $self = shift; my $pkg = ref($self);
-	my ($fileName) = @_;
+    my ($fileName) = @_;
 
-	$self->canvasClose() or return(1);
-	
-	my $objNew = Win32::GUI::Loft::Design->newLoad($fileName);
-	my $ret = 1;
-	if(!$objNew) {
-		$ret = 0;
-		}
+    $self->canvasClose() or return(1);
+    
+    my $objNew = Win32::GUI::Loft::Design->newLoad($fileName);
+    my $ret = 1;
+    if(!$objNew) {
+        $ret = 0;
+        }
 
-	$self->canvasNew($objNew);
+    $self->canvasNew($objNew);
 
-	#Sync the Grid settings
-	::btnGridReset_Click();
+    #Sync the Grid settings
+    ::btnGridReset_Click();
 
-	return($ret);
-	}
+    return($ret);
+    }
 
 
 
@@ -957,18 +957,18 @@ Return 1 on success, else 0.
 =cut
 sub dropFiles {
     my $self = shift; my $pkg = ref($self);
-	my ($handleDrop) = @_;
+    my ($handleDrop) = @_;
 
-	#Show and focus the app window
-	$self->winMain()->SetForegroundWindow();
-	
-	my @aFile = Win32::GUI::DragDrop::GetDroppedFiles($handleDrop);
-	my $fileOpen = $aFile[0] or return(0);
-	
-	$self->openFile($fileOpen) or $self->errorReport("Could not open Design ($fileOpen)");	
+    #Show and focus the app window
+    $self->winMain()->SetForegroundWindow();
+    
+    my @aFile = Win32::GUI::DragDrop::GetDroppedFiles($handleDrop);
+    my $fileOpen = $aFile[0] or return(0);
+    
+    $self->openFile($fileOpen) or $self->errorReport("Could not open Design ($fileOpen)");  
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -984,45 +984,45 @@ Return 1 on success, else 0.
 =cut
 sub canvasNew {
     my $self = shift; my $pkg = ref($self);
-	my ($objNew) = @_;
-	Win32::GUI::Loft::Design->resetInstanceCount();		#Hide the fact that we have created a few windows
-	defined($objNew) or ($objNew = Win32::GUI::Loft::Design->new()) or return(0);
+    my ($objNew) = @_;
+    Win32::GUI::Loft::Design->resetInstanceCount();     #Hide the fact that we have created a few windows
+    defined($objNew) or ($objNew = Win32::GUI::Loft::Design->new()) or return(0);
 
-	#Create new canvas, maybe using the existing design
-	$self->objDesign($objNew);
-	$self->objCanvas( Win32::GUI::Loft::Canvas->new() );
-	$self->objCanvas()->objDesign($objNew);
-
-
-	#The Model-Control-View views
-	$self->objCanvas()->raView( [
-			$objNew,						#The Win32::GUI::Loft::Design object
-			$self->objWindowDesign(),		#Design window
-			$self->objWindowProp(),			#Properties window
-			$self,							#Main window
-			] );
-
-	$self->objWindowDesign()->objDesign($objNew);
-	$self->objWindowDesign()->objCanvas( $self->objCanvas() );
-	$self->objWindowDesign()->hwindMain( $self->winMain()->{-handle} );
-
-	$self->objWindowProp()->objCanvas( $self->objCanvas() );
-	$self->objWindowProp()->objDesign( $self->objDesign() );
-
-	$self->objWindowTool()->objCanvas( $self->objCanvas() );
-	$self->objWindowTool()->objDesign( $self->objDesign() );
+    #Create new canvas, maybe using the existing design
+    $self->objDesign($objNew);
+    $self->objCanvas( Win32::GUI::Loft::Canvas->new() );
+    $self->objCanvas()->objDesign($objNew);
 
 
-	$self->objWindowDesign()->canvasNew();
+    #The Model-Control-View views
+    $self->objCanvas()->raView( [
+            $objNew,                        #The Win32::GUI::Loft::Design object
+            $self->objWindowDesign(),       #Design window
+            $self->objWindowProp(),         #Properties window
+            $self,                          #Main window
+            ] );
+
+    $self->objWindowDesign()->objDesign($objNew);
+    $self->objWindowDesign()->objCanvas( $self->objCanvas() );
+    $self->objWindowDesign()->hwindMain( $self->winMain()->{-handle} );
+
+    $self->objWindowProp()->objCanvas( $self->objCanvas() );
+    $self->objWindowProp()->objDesign( $self->objDesign() );
+
+    $self->objWindowTool()->objCanvas( $self->objCanvas() );
+    $self->objWindowTool()->objDesign( $self->objDesign() );
 
 
-	#Display design window
-	$self->objWindowDesign()->winDesign()->Show();
+    $self->objWindowDesign()->canvasNew();
 
-	$self->objCanvas()->clusterNotifyFundamental();
 
-	return(1);
-	}
+    #Display design window
+    $self->objWindowDesign()->winDesign()->Show();
+
+    $self->objCanvas()->clusterNotifyFundamental();
+
+    return(1);
+    }
 
 
 
@@ -1039,21 +1039,21 @@ Return 1 on success, else 0.
 sub canvasClose {
     my $self = shift; my $pkg = ref($self);
 #$DB::single = 1;
-	if($self->objDesign() && $self->objDesign()->isDirty()) {
-		my $fileName = basename($self->objDesign()->fileName()) || "current design";
-		my $ret = Win32::MsgBox(
-				"Save changes to $fileName?",
-				MB_YESNOCANCEL | MB_ICONQUESTION | MB_DEFBUTTON1 | MB_APPLMODAL,
-				"The GUI Loft");
-		return(0) if($ret == 2);				#IDCANCEL
-		::mnuFileSave_Click() if($ret == 6);	#IDYES
-		}
+    if($self->objDesign() && $self->objDesign()->isDirty()) {
+        my $fileName = basename($self->objDesign()->fileName()) || "current design";
+        my $ret = Win32::MsgBox(
+                "Save changes to $fileName?",
+                MB_YESNOCANCEL | MB_ICONQUESTION | MB_DEFBUTTON1 | MB_APPLMODAL,
+                "The GUI Loft");
+        return(0) if($ret == 2);                #IDCANCEL
+        ::mnuFileSave_Click() if($ret == 6);    #IDYES
+        }
 
-	$self->objWindowDesign()->winDesign()->Hide();
-	$self->objDesign(0);
+    $self->objWindowDesign()->winDesign()->Hide();
+    $self->objDesign(0);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1069,14 +1069,14 @@ Return 1 on success, else 0.
 =cut
 sub propNotifyChange {
     my $self = shift; my $pkg = ref($self);
-	my ($rhControl, $raPropName) = @_;
+    my ($rhControl, $raPropName) = @_;
 
-	for my $prop (@{$raPropName}) {
-		$self->controlPopulate() if($prop eq "Name");
-		}
+    for my $prop (@{$raPropName}) {
+        $self->controlPopulate() if($prop eq "Name");
+        }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1091,14 +1091,14 @@ Return 1 on success, else 0.
 =cut
 sub propNotifyFundamental {
     my $self = shift; my $pkg = ref($self);
-	my ($rhControl, $raPropName) = @_;
+    my ($rhControl, $raPropName) = @_;
 
-	$self->controlPopulate();
+    $self->controlPopulate();
 
-	$self->setWindowState();
+    $self->setWindowState();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1113,14 +1113,14 @@ Return 1 on success, else 0.
 =cut
 sub propNotifySelected {
     my $self = shift; my $pkg = ref($self);
-	my ($rhControl) = @_;
+    my ($rhControl) = @_;
 
-	$self->controlSelect( $rhControl );
+    $self->controlSelect( $rhControl );
 
-	$self->setWindowState();
+    $self->setWindowState();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1137,12 +1137,12 @@ Return 1 on success, else 0.
 sub clusterNotifyFundamental {
     my $self = shift; my $pkg = ref($self);
 
-	$self->clusterPopulate();
+    $self->clusterPopulate();
 
-	$self->setWindowState();
+    $self->setWindowState();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1158,19 +1158,19 @@ Return 1 on success, else 0.
 sub controlPopulate {
     my $self = shift; my $pkg = ref($self);
 
-	$self->winMain()->lbControl()->Clear();
+    $self->winMain()->lbControl()->Clear();
 
-	$self->winMain()->lbControl()->AddString( $self->objDesign()->objControlWindow()->prop("Name") );	#. " (Window)" );
+    $self->winMain()->lbControl()->AddString( $self->objDesign()->objControlWindow()->prop("Name") );   #. " (Window)" );
 
-	for my $objControl (@{$self->objDesign()->raControl()}) {
-		$self->winMain()->lbControl()->AddString(
-				$objControl->prop("Name") );		#. " (" . $objControl->type() . ")" );
-		}
+    for my $objControl (@{$self->objDesign()->raControl()}) {
+        $self->winMain()->lbControl()->AddString(
+                $objControl->prop("Name") );        #. " (" . $objControl->type() . ")" );
+        }
 
-	$self->controlSelect();
+    $self->controlSelect();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1186,18 +1186,18 @@ Return 1 on success, else 0.
 sub controlSelect {
     my $self = shift; my $pkg = ref($self);
 
-	my $check = ( keys %{$self->objCanvas()->rhControlSelected()}  ) ? 0 : 1;
-	$self->winMain()->lbControl()->SendMessage(0x0185, $check, 0);				#LB_SETSEL
+    my $check = ( keys %{$self->objCanvas()->rhControlSelected()}  ) ? 0 : 1;
+    $self->winMain()->lbControl()->SendMessage(0x0185, $check, 0);              #LB_SETSEL
 
-	my $i = 1;
-	for my $objControl (@{$self->objDesign()->raControl()}) {
-		$self->winMain()->lbControl()->SendMessage(0x0185,
-				$objControl->designIsSelected(), $i);				#LB_SETSEL
-		$i++;
-		}
+    my $i = 1;
+    for my $objControl (@{$self->objDesign()->raControl()}) {
+        $self->winMain()->lbControl()->SendMessage(0x0185,
+                $objControl->designIsSelected(), $i);               #LB_SETSEL
+        $i++;
+        }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1214,27 +1214,27 @@ Return 1 on success, else 0.
 sub controlSetSelection {
     my $self = shift; my $pkg = ref($self);
 
-	#First, deselect the window if any other controls are selected
-	my @aSelected = $self->winMain()->lbControl()->SelectedItems();
-#	if(@aSelected && 0 != $aSelected[0]) {
-#		$self->winMain()->lbControl()->SendMessage(0x0185, 0, 0);		#LB_SETSEL
-#		$self->objCanvas()->controlAllDeselect();
-#		}
+    #First, deselect the window if any other controls are selected
+    my @aSelected = $self->winMain()->lbControl()->SelectedItems();
+#   if(@aSelected && 0 != $aSelected[0]) {
+#       $self->winMain()->lbControl()->SendMessage(0x0185, 0, 0);       #LB_SETSEL
+#       $self->objCanvas()->controlAllDeselect();
+#       }
 
-	my %hSelected = map { $_ => 1 } @aSelected;
-	my $i = 1;
-	for my $objControl (@{$self->objDesign()->raControl()}) {
-		my $check = exists $hSelected{$i} ? 1 : 0;
-		$self->objCanvas()->controlSelected($objControl, $check);
+    my %hSelected = map { $_ => 1 } @aSelected;
+    my $i = 1;
+    for my $objControl (@{$self->objDesign()->raControl()}) {
+        my $check = exists $hSelected{$i} ? 1 : 0;
+        $self->objCanvas()->controlSelected($objControl, $check);
 
-		$i++;
-		}
+        $i++;
+        }
 
-	$self->controlSelect();
-	$self->objCanvas()->propNotifySelected($self);
+    $self->controlSelect();
+    $self->objCanvas()->propNotifySelected($self);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1253,17 +1253,17 @@ Return 1 on success, else 0.
 =cut
 sub controlMove {
     my $self = shift; my $pkg = ref($self);
-	my ($dir) = @_;
+    my ($dir) = @_;
 
-	my @aSelected = map { $_ - 1 } $self->winMain()->lbControl()->SelectedItems();
-	return(0) if(@aSelected && -1 == $aSelected[0]);
+    my @aSelected = map { $_ - 1 } $self->winMain()->lbControl()->SelectedItems();
+    return(0) if(@aSelected && -1 == $aSelected[0]);
 
-	$self->objDesign()->controlRearrange($dir, \@aSelected);
+    $self->objDesign()->controlRearrange($dir, \@aSelected);
 
-	$self->objCanvas()->propNotifyFundamental();
+    $self->objCanvas()->propNotifyFundamental();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1281,13 +1281,13 @@ Return 1 on success, else 0.
 sub clusterGetSelected {
     my $self = shift; my $pkg = ref($self);
 
-	my @aSelected = $self->winMain()->lvwCluster()->SelectedItems();
+    my @aSelected = $self->winMain()->lvwCluster()->SelectedItems();
 
-	my $index = $aSelected[0]; return(0) if(!defined($index));
-	my $objCluster = $self->objDesign()->raCluster()->[$index] or return();
+    my $index = $aSelected[0]; return(0) if(!defined($index));
+    my $objCluster = $self->objDesign()->raCluster()->[$index] or return();
 
-	return($index, $objCluster);
-	}
+    return($index, $objCluster);
+    }
 
 
 
@@ -1303,18 +1303,18 @@ Return 1 on success, else 0.
 sub clusterPopulate {
     my $self = shift; my $pkg = ref($self);
 
-	#Reset the lvwCluster and refill it
-	$self->winMain()->lvwCluster()->Clear();
+    #Reset the lvwCluster and refill it
+    $self->winMain()->lvwCluster()->Clear();
 
-	for my $objCluster (@{$self->objDesign()->raCluster()}) {
-		$self->winMain()->lvwCluster()->InsertItem(
-				-text => [ $objCluster->name() ],
-				-image => $objCluster->isVisible()
-				);
-		}
+    for my $objCluster (@{$self->objDesign()->raCluster()}) {
+        $self->winMain()->lvwCluster()->InsertItem(
+                -text => [ $objCluster->name() ],
+                -image => $objCluster->isVisible()
+                );
+        }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1329,16 +1329,16 @@ Return 1 on success, else 0.
 =cut
 sub clusterSetVisible {
     my $self = shift; my $pkg = ref($self);
-	my ($index, $visible) = @_;
-	return(0) if($visible < 0 || $visible > 1);
+    my ($index, $visible) = @_;
+    return(0) if($visible < 0 || $visible > 1);
 
-	$self->winMain()->lvwCluster()->ChangeItem(
-			-item		=> $index,
-			-image		=> $visible
-			);
+    $self->winMain()->lvwCluster()->ChangeItem(
+            -item       => $index,
+            -image      => $visible
+            );
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1354,47 +1354,47 @@ Return 1 on success, else 0.
 sub windowTest {
     my $self = shift; my $pkg = ref($self);
 
-	##Use a temp name so it's not colliding with the application's name space
-	#Store old values
-	my $buildWindowName = $self->objDesign()->buildWindowName();
-	my $buildControlNameBase = $self->objDesign()->buildControlNameBase();
+    ##Use a temp name so it's not colliding with the application's name space
+    #Store old values
+    my $buildWindowName = $self->objDesign()->buildWindowName();
+    my $buildControlNameBase = $self->objDesign()->buildControlNameBase();
 
-	my $id = time() . int(rand(10000));
-	$self->objDesign()->buildWindowName( "winTest$id" );
-	$self->objDesign()->buildControlNameBase( $id );
-
-
-	##If we have a preview menu, build one and provide it.
-	my $menuPreview = $self->objDesign()->objControlWindow()->prop("PreviewMenu");
-	if($menuPreview) {
-		my $mnuPreview = Win32::GUI::MakeMenu(
-				map { $_ => "mnu$_$id" } split(/,\s*/, $menuPreview)
-				);
-
-		$self->objDesign()->mnuMenu($mnuPreview);
-		}
-	else {
-		$self->objDesign()->mnuMenu(0);
-		}
+    my $id = time() . int(rand(10000));
+    $self->objDesign()->buildWindowName( "winTest$id" );
+    $self->objDesign()->buildControlNameBase( $id );
 
 
-	##Build the window
-	$self->objDesign()->isPreview(1);
-	my $winTest = $self->objDesign()->buildWindow($self->winMain());
+    ##If we have a preview menu, build one and provide it.
+    my $menuPreview = $self->objDesign()->objControlWindow()->prop("PreviewMenu");
+    if($menuPreview) {
+        my $mnuPreview = Win32::GUI::MakeMenu(
+                map { $_ => "mnu$_$id" } split(/,\s*/, $menuPreview)
+                );
 
-	##Restore old values
-	$self->objDesign()->buildWindowName( $buildWindowName );
-	$self->objDesign()->buildControlNameBase( $buildControlNameBase );
+        $self->objDesign()->mnuMenu($mnuPreview);
+        }
+    else {
+        $self->objDesign()->mnuMenu(0);
+        }
 
-	$winTest or return(0);
 
-	$winTest->Show();
+    ##Build the window
+    $self->objDesign()->isPreview(1);
+    my $winTest = $self->objDesign()->buildWindow($self->winMain());
 
-	#Add it to the array
-	$self->raWinTest([ $winTest, @{$self->raWinTest()} ]);
+    ##Restore old values
+    $self->objDesign()->buildWindowName( $buildWindowName );
+    $self->objDesign()->buildControlNameBase( $buildControlNameBase );
 
-	return(1);
-	}
+    $winTest or return(0);
+
+    $winTest->Show();
+
+    #Add it to the array
+    $self->raWinTest([ $winTest, @{$self->raWinTest()} ]);
+
+    return(1);
+    }
 
 
 
@@ -1411,12 +1411,12 @@ Return 1 on success, else 0.
 =cut
 sub perlExport {
     my $self = shift; my $pkg = ref($self);
-	my ($fileName, $subName) = @_;
+    my ($fileName, $subName) = @_;
 
 
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1431,10 +1431,10 @@ Terminate the main window
 =cut
 sub ::winMain_Terminate {
 
-	$gObjSingleton->shutdown();
+    $gObjSingleton->shutdown();
 
-	return(-1);
-	}
+    return(-1);
+    }
 
 
 
@@ -1447,8 +1447,8 @@ Resize the main window.
 =cut
 #sub ::winMain_Resize {
 my $self = TGL::WindowApp->new();
-#	defined($self->objResizerMain()) and $self->objResizerMain()->resize();
-#	}
+#   defined($self->objResizerMain()) and $self->objResizerMain()->resize();
+#   }
 
 
 
@@ -1461,8 +1461,8 @@ Activate the window and perform Modalizer stuff.
 =cut
 sub ::winMain_Activate {
     my $self = TGL::WindowApp->new();
-	defined($self->objModalizer()) and $self->objModalizer()->activate($self->winMain());
-	}
+    defined($self->objModalizer()) and $self->objModalizer()->activate($self->winMain());
+    }
 
 
 
@@ -1470,12 +1470,12 @@ sub ::winMain_Activate {
 
 sub ::winMain_DropFiles {
     my $self = TGL::WindowApp->new();
-	my ($handleDrop) = @_;
+    my ($handleDrop) = @_;
 
-	$self->dropFiles($handleDrop);
+    $self->dropFiles($handleDrop);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1489,12 +1489,12 @@ The selected state change, so reflect that.
 sub ::lbControl_Click {
     my $self = TGL::WindowApp->new();
 
-	$self->controlSetSelection();
+    $self->controlSetSelection();
 
-	$self->setWindowState();
+    $self->setWindowState();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1508,10 +1508,10 @@ New design.
 sub ::btnNew_Click {
     my $self = TGL::WindowApp->new();
 
-	::mnuFileNew_Click();
+    ::mnuFileNew_Click();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1525,12 +1525,12 @@ Open design.
 sub ::btnOpen_Click {
     my $self = TGL::WindowApp->new();
 
-	::mnuFileOpen_Click();
+    ::mnuFileOpen_Click();
 
-	$self->setWindowState();
+    $self->setWindowState();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1544,12 +1544,12 @@ Save design.
 sub ::btnSave_Click {
     my $self = TGL::WindowApp->new();
 
-	::mnuFileSave_Click();
+    ::mnuFileSave_Click();
 
-	$self->setWindowState();
+    $self->setWindowState();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1563,11 +1563,11 @@ Cut selected controls.
 sub ::btnCut_Click {
     my $self = TGL::WindowApp->new();
 
-	my $clipboard = $self->objCanvas()->controlCut();
-	Win32::Clipboard::Set( $clipboard );
+    my $clipboard = $self->objCanvas()->controlCut();
+    Win32::Clipboard::Set( $clipboard );
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1581,11 +1581,11 @@ Copy selected controls.
 sub ::btnCopy_Click {
     my $self = TGL::WindowApp->new();
 
-	my $clipboard = $self->objCanvas()->controlCopy() or return(1);
-	Win32::Clipboard::Set( $clipboard );
+    my $clipboard = $self->objCanvas()->controlCopy() or return(1);
+    Win32::Clipboard::Set( $clipboard );
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1599,11 +1599,11 @@ Paste selected controls.
 sub ::btnPaste_Click {
     my $self = TGL::WindowApp->new();
 
-	my $clipboard = Win32::Clipboard::GetText();
-	$self->objCanvas()->controlPaste($clipboard);
+    my $clipboard = Win32::Clipboard::GetText();
+    $self->objCanvas()->controlPaste($clipboard);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1617,10 +1617,10 @@ Delete selected controls.
 sub ::btnDelete_Click {
     my $self = TGL::WindowApp->new();
 
-	$self->objCanvas()->controlDelete();
+    $self->objCanvas()->controlDelete();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1634,10 +1634,10 @@ Move selected controls up one step
 sub ::btnUp_Click {
     my $self = TGL::WindowApp->new();
 
-	$self->controlMove(1);
+    $self->controlMove(1);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1651,10 +1651,10 @@ Move selected controls down one step
 sub ::btnDown_Click {
     my $self = TGL::WindowApp->new();
 
-	$self->controlMove(0);
+    $self->controlMove(0);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1668,14 +1668,14 @@ New cluster
 sub ::btnClusterNew_Click {
     my $self = TGL::WindowApp->new();
 
-	my $name = "New cluster";
-	$self->objCanvas()->clusterNew($name) or return(1);
+    my $name = "New cluster";
+    $self->objCanvas()->clusterNew($name) or return(1);
 
-#	my $index = $self->winMain()->lvwCluster()->Count() - 1;
-#	$self->clusterSetVisible($index, 1);
+#   my $index = $self->winMain()->lvwCluster()->Count() - 1;
+#   $self->clusterSetVisible($index, 1);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1689,21 +1689,21 @@ Rename cluster
 sub ::btnClusterRename_Click {
     my $self = TGL::WindowApp->new();
 
-	my ($index, $objCluster) = $self->clusterGetSelected() or return(1);
+    my ($index, $objCluster) = $self->clusterGetSelected() or return(1);
 
-	$self->objClusterLastEdited($objCluster);
+    $self->objClusterLastEdited($objCluster);
 
-	#Fill out the form
-	$self->winClusterProp()->tfClusterName()->Text( $objCluster->name() );
+    #Fill out the form
+    $self->winClusterProp()->tfClusterName()->Text( $objCluster->name() );
 
-	##todo: make it modal
-#	$self->winClusterProp()->Show();
-	$self->objModalizer()->beginDialog($self->winClusterProp(), $self->winMain());
-	$self->winClusterProp()->tfClusterName()->SelectAll();
-	$self->winClusterProp()->tfClusterName()->SetFocus();
+    ##todo: make it modal
+#   $self->winClusterProp()->Show();
+    $self->objModalizer()->beginDialog($self->winClusterProp(), $self->winMain());
+    $self->winClusterProp()->tfClusterName()->SelectAll();
+    $self->winClusterProp()->tfClusterName()->SetFocus();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1717,11 +1717,11 @@ Delete cluster
 sub ::btnClusterDelete_Click {
     my $self = TGL::WindowApp->new();
 
-	my ($index, $objCluster) = $self->clusterGetSelected() or return(1);
-	$self->objCanvas()->clusterDelete($objCluster);
+    my ($index, $objCluster) = $self->clusterGetSelected() or return(1);
+    $self->objCanvas()->clusterDelete($objCluster);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1735,11 +1735,11 @@ Delete cluster
 sub ::btnClusterMemorize_Click {
     my $self = TGL::WindowApp->new();
 
-	my ($index, $objCluster) = $self->clusterGetSelected() or return(1);
-	$self->objCanvas()->clusterMemorize($objCluster);
+    my ($index, $objCluster) = $self->clusterGetSelected() or return(1);
+    $self->objCanvas()->clusterMemorize($objCluster);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1753,23 +1753,23 @@ Grid Apply button. Sync the Design with the form contents.
 sub ::btnGridApply_Click {
     my $self = TGL::WindowApp->new();
 
-	$self->objDesign->gridSnap( $self->winMain()->chbGridSnap()->Checked() );
-	$self->objDesign->gridShow( $self->winMain()->chbGridShow()->Checked() );
+    $self->objDesign->gridSnap( $self->winMain()->chbGridSnap()->Checked() );
+    $self->objDesign->gridShow( $self->winMain()->chbGridShow()->Checked() );
 
-	$self->objDesign->snapX( $self->winMain()->tfGridWidth()->Text() );
-	$self->objDesign->snapY( $self->winMain()->tfGridHeight()->Text() );
+    $self->objDesign->snapX( $self->winMain()->tfGridWidth()->Text() );
+    $self->objDesign->snapY( $self->winMain()->tfGridHeight()->Text() );
 
-	#We have set the properties. They were validated when set.
-	#Now, "reload" them from their actual vaues.
-	::btnGridReset_Click();
+    #We have set the properties. They were validated when set.
+    #Now, "reload" them from their actual vaues.
+    ::btnGridReset_Click();
 
-	#Update the views
-	##todo: this should be a message specific for
-	#       "the view properties has changed" or something
-	$self->objCanvas()->propNotifyFundamental($self);
+    #Update the views
+    ##todo: this should be a message specific for
+    #       "the view properties has changed" or something
+    $self->objCanvas()->propNotifyFundamental($self);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1783,14 +1783,14 @@ Grid Reset button. Sync the form contents with the Design.
 sub ::btnGridReset_Click {
     my $self = TGL::WindowApp->new();
 
-	$self->winMain()->chbGridSnap()->Checked( $self->objDesign->gridSnap() );
-	$self->winMain()->chbGridShow()->Checked( $self->objDesign->gridShow() );
+    $self->winMain()->chbGridSnap()->Checked( $self->objDesign->gridSnap() );
+    $self->winMain()->chbGridShow()->Checked( $self->objDesign->gridShow() );
 
-	$self->winMain()->tfGridWidth()->Text( $self->objDesign->snapX() );
-	$self->winMain()->tfGridHeight()->Text( $self->objDesign->snapY() );
+    $self->winMain()->tfGridWidth()->Text( $self->objDesign->snapX() );
+    $self->winMain()->tfGridHeight()->Text( $self->objDesign->snapY() );
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1804,14 +1804,14 @@ Change visible state
 sub ::lvwCluster_DblClick {
     my $self = TGL::WindowApp->new();
 
-	my ($index, $objCluster) = $self->clusterGetSelected() or return(undef);
+    my ($index, $objCluster) = $self->clusterGetSelected() or return(undef);
 
-	#Toggle it's visible state
-	$self->objCanvas()->clusterVisibleToggle($objCluster);
-	$self->clusterSetVisible( $index, $objCluster->isVisible() );
+    #Toggle it's visible state
+    $self->objCanvas()->clusterVisibleToggle($objCluster);
+    $self->clusterSetVisible( $index, $objCluster->isVisible() );
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1825,11 +1825,11 @@ Exit the app.
 sub ::mnuFileNew_Click {
     my $self = TGL::WindowApp->new();
 
-	$self->canvasClose() or return(1);
-	$self->canvasNew();
+    $self->canvasClose() or return(1);
+    $self->canvasNew();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1843,24 +1843,24 @@ Open new design and replace the existing one.
 sub ::mnuFileOpen_Click {
     my $self = TGL::WindowApp->new();
 
-	my $dir = ($self->objDesign() and dirname($self->objDesign()->fileName())
-			or "");
-	my $fileRet = GUI::GetOpenFileName(
-			-owner => $self->winMain(),
-			-title  => "Open",
-			-directory => $dir,
-			-filter => [
-			        "GUI Loft Design files (*.gld)" => "*.gld",
-			        "All files (*.*)", "*.*",
-	    			],
-			);
+    my $dir = ($self->objDesign() and dirname($self->objDesign()->fileName())
+            or "");
+    my $fileRet = GUI::GetOpenFileName(
+            -owner => $self->winMain(),
+            -title  => "Open",
+            -directory => $dir,
+            -filter => [
+                    "GUI Loft Design files (*.gld)" => "*.gld",
+                    "All files (*.*)", "*.*",
+                    ],
+            );
 
-	return(1) if(!$fileRet);
+    return(1) if(!$fileRet);
 
-	$self->openFile($fileRet) or $self->errorReport("Could not open Design ($fileRet)");
+    $self->openFile($fileRet) or $self->errorReport("Could not open Design ($fileRet)");
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1873,18 +1873,18 @@ Save the current design.
 =cut
 sub ::mnuFileSave_Click {
     my $self = TGL::WindowApp->new();
-	return(1) if(!$self->objDesign());
+    return(1) if(!$self->objDesign());
 
-	my $fileName = $self->objDesign()->fileName() || "";
+    my $fileName = $self->objDesign()->fileName() || "";
 
-	if(!$fileName) {
-		return(::mnuFileSaveAs_Click());
-		}
+    if(!$fileName) {
+        return(::mnuFileSaveAs_Click());
+        }
 
-	$self->objDesign()->fileSave($fileName) or $self->errorReport("Could not save Design");
+    $self->objDesign()->fileSave($fileName) or $self->errorReport("Could not save Design");
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1897,26 +1897,26 @@ Save the current design.
 =cut
 sub ::mnuFileSaveAs_Click {
     my $self = TGL::WindowApp->new();
-	return(1) if(!$self->objDesign());
+    return(1) if(!$self->objDesign());
 
-	my $fileRet = GUI::GetSaveFileName(
-			-title  => "Save As...",
-#			-file   => "\0" . " " x 256,
-			-filter => [
-			        "GUI Loft Design files (*.gld)" => "*.gld",
-			        "All files (*.*)", "*.*",
-	    			],
-			);
+    my $fileRet = GUI::GetSaveFileName(
+            -title  => "Save As...",
+#           -file   => "\0" . " " x 256,
+            -filter => [
+                    "GUI Loft Design files (*.gld)" => "*.gld",
+                    "All files (*.*)", "*.*",
+                    ],
+            );
 
-	return(1) if(!$fileRet);
-	$fileRet .= ".gld" if($fileRet !~ /\.\w+$/);
+    return(1) if(!$fileRet);
+    $fileRet .= ".gld" if($fileRet !~ /\.\w+$/);
 
-	$self->objDesign()->fileName($fileRet);
+    $self->objDesign()->fileName($fileRet);
 
-	::mnuFileSave_Click();
+    ::mnuFileSave_Click();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1929,10 +1929,10 @@ Exit the app.
 =cut
 sub ::mnuFileExit_Click {
 
-	$gObjSingleton->shutdown();
+    $gObjSingleton->shutdown();
 
-	return(-1);
-	}
+    return(-1);
+    }
 
 
 
@@ -1946,13 +1946,13 @@ Copy the names of selected controls to the Clipboard.
 sub ::mnuEditCopyPerlName_Click {
     my $self = TGL::WindowApp->new();
 
-	my $clipboard = $self->objCanvas()->controlCopyName() or return(1);
-	$clipboard =~ s{\n}{\r\n}gs;
+    my $clipboard = $self->objCanvas()->controlCopyName() or return(1);
+    $clipboard =~ s{\n}{\r\n}gs;
 
-	Win32::Clipboard::Set( $clipboard );
+    Win32::Clipboard::Set( $clipboard );
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1967,13 +1967,13 @@ Clipboard.
 sub ::mnuEditCopyPerlResizer_Click {
     my $self = TGL::WindowApp->new();
 
-	my $perlRes = $self->objDesign()->perlResizer();
-	$perlRes =~ s{\n}{\r\n}gs;
+    my $perlRes = $self->objDesign()->perlResizer();
+    $perlRes =~ s{\n}{\r\n}gs;
 
-	Win32::Clipboard::Set( $perlRes );
+    Win32::Clipboard::Set( $perlRes );
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -1987,10 +1987,10 @@ Select all controls (except the window).
 sub ::mnuEditSelectAll_Click {
     my $self = TGL::WindowApp->new();
 
-	$self->objCanvas()->controlAllSelect() or $self->errorReport("Could not select all");
+    $self->objCanvas()->controlAllSelect() or $self->errorReport("Could not select all");
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -2004,10 +2004,10 @@ Deselect all controls (select the window).
 sub ::mnuEditSelectWindow_Click {
     my $self = TGL::WindowApp->new();
 
-	$self->objCanvas()->controlAllDeselect() or $self->errorReport("Could not deselect all");
+    $self->objCanvas()->controlAllDeselect() or $self->errorReport("Could not deselect all");
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -2021,8 +2021,8 @@ Bring the selected controls to the top of the Tab Order.
 sub ::mnuEditBringToTop_Click {
     my $self = TGL::WindowApp->new();
 
-	return( $self->controlMove(3) );
-	}
+    return( $self->controlMove(3) );
+    }
 
 
 
@@ -2036,8 +2036,8 @@ Bring the selected controls up one step in the Tab Order.
 sub ::mnuEditBringUp_Click {
     my $self = TGL::WindowApp->new();
 
-	return( $self->controlMove(1) );
-	}
+    return( $self->controlMove(1) );
+    }
 
 
 
@@ -2051,8 +2051,8 @@ Bring the selected controls up one step in the Tab Order.
 sub ::mnuEditBringDown_Click {
     my $self = TGL::WindowApp->new();
 
-	return( $self->controlMove(0) );
-	}
+    return( $self->controlMove(0) );
+    }
 
 
 
@@ -2066,8 +2066,8 @@ Bring the selected controls to the top of the Tab Order.
 sub ::mnuEditBringToBottom_Click {
     my $self = TGL::WindowApp->new();
 
-	return( $self->controlMove(2) );
-	}
+    return( $self->controlMove(2) );
+    }
 
 
 
@@ -2081,8 +2081,8 @@ Align selected controls right
 sub ::mnuEditAlignRight_Click {
     my $self = TGL::WindowApp->new();
 
-	return( $self->objCanvas()->controlAlignSelected("right") );
-	}
+    return( $self->objCanvas()->controlAlignSelected("right") );
+    }
 
 
 
@@ -2096,8 +2096,8 @@ Align selected controls left
 sub ::mnuEditAlignLeft_Click {
     my $self = TGL::WindowApp->new();
 
-	return( $self->objCanvas()->controlAlignSelected("left") );
-	}
+    return( $self->objCanvas()->controlAlignSelected("left") );
+    }
 
 
 
@@ -2111,8 +2111,8 @@ Align selected controls top
 sub ::mnuEditAlignTop_Click {
     my $self = TGL::WindowApp->new();
 
-	return( $self->objCanvas()->controlAlignSelected("top") );
-	}
+    return( $self->objCanvas()->controlAlignSelected("top") );
+    }
 
 
 
@@ -2126,8 +2126,8 @@ Align selected controls bottom
 sub ::mnuEditAlignBottom_Click {
     my $self = TGL::WindowApp->new();
 
-	return( $self->objCanvas()->controlAlignSelected("bottom") );
-	}
+    return( $self->objCanvas()->controlAlignSelected("bottom") );
+    }
 
 
 
@@ -2141,8 +2141,8 @@ Align selected controls center
 sub ::mnuEditAlignCenter_Click {
     my $self = TGL::WindowApp->new();
 
-	return( $self->objCanvas()->controlAlignSelected("center") );
-	}
+    return( $self->objCanvas()->controlAlignSelected("center") );
+    }
 
 
 
@@ -2156,8 +2156,8 @@ Align selected controls middle
 sub ::mnuEditAlignMiddle_Click {
     my $self = TGL::WindowApp->new();
 
-	return( $self->objCanvas()->controlAlignSelected("middle") );
-	}
+    return( $self->objCanvas()->controlAlignSelected("middle") );
+    }
 
 
 
@@ -2171,8 +2171,8 @@ Align selected controls to the max height
 sub ::mnuEditAlignMaxHeight_Click {
     my $self = TGL::WindowApp->new();
 
-	return( $self->objCanvas()->controlAlignSelected("maxheight") );
-	}
+    return( $self->objCanvas()->controlAlignSelected("maxheight") );
+    }
 
 
 
@@ -2186,8 +2186,8 @@ Align selected controls to the max width
 sub ::mnuEditAlignMaxWidth_Click {
     my $self = TGL::WindowApp->new();
 
-	return( $self->objCanvas()->controlAlignSelected("maxwidth") );
-	}
+    return( $self->objCanvas()->controlAlignSelected("maxwidth") );
+    }
 
 
 
@@ -2201,10 +2201,10 @@ Test the window
 sub ::mnuDesignTest_Click {
     my $self = TGL::WindowApp->new();
 
-	$self->windowTest() or $self->errorReport("Could not create Test window");
+    $self->windowTest() or $self->errorReport("Could not create Test window");
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -2218,16 +2218,16 @@ Test the window
 sub ::mnuDesignCloseTest_Click {
     my $self = TGL::WindowApp->new();
 
-	#Hide all test windows
-	for my $winTest (@{$self->raWinTest()}) {
-		$winTest->Hide();
-		}
+    #Hide all test windows
+    for my $winTest (@{$self->raWinTest()}) {
+        $winTest->Hide();
+        }
 
-	#Clear, they are hidden now
-	$self->raWinTest([]);
+    #Clear, they are hidden now
+    $self->raWinTest([]);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -2241,10 +2241,10 @@ User manual HTML page
 sub ::mnuHelpUserManual_Click {
     my $self = TGL::WindowApp->new();
 
-	system("explorer " . $self->rhConfig()->{fileHelpManual});
+    system("explorer " . $self->rhConfig()->{fileHelpManual});
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -2257,10 +2257,10 @@ Win32::GUI docs HTML page
 sub ::mnuHelpWin32GUI_Click {
     my $self = TGL::WindowApp->new();
 
-	system("explorer " . $self->rhConfig()->{fileHelpWin32GUI});
+    system("explorer " . $self->rhConfig()->{fileHelpWin32GUI});
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -2274,14 +2274,14 @@ control.
 sub ::mnuHelpWin32GUISelectedControl_Click {
     my $self = TGL::WindowApp->new();
 
-	my $name = $self->objCanvas()->helpFileSelected() or return(1);
-	my $file = sprintf($self->rhConfig()->{dirTemplateHelpWin32GUISelectedControl}, $name);
-	return(1) if(! -e $file);
+    my $name = $self->objCanvas()->helpFileSelected() or return(1);
+    my $file = sprintf($self->rhConfig()->{dirTemplateHelpWin32GUISelectedControl}, $name);
+    return(1) if(! -e $file);
 
-	system('explorer "' . $file . '"');
+    system('explorer "' . $file . '"');
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -2294,10 +2294,10 @@ Programmer's Reference HTML page
 sub ::mnuHelpProgrammersReference_Click {
     my $self = TGL::WindowApp->new();
 
-	system("explorer " . $self->rhConfig()->{fileHelpReference});
+    system("explorer " . $self->rhConfig()->{fileHelpReference});
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -2310,10 +2310,10 @@ FAQ HTML page
 sub ::mnuHelpFAQ_Click {
     my $self = TGL::WindowApp->new();
 
-	system("explorer " . $self->rhConfig()->{fileHelpFAQ});
+    system("explorer " . $self->rhConfig()->{fileHelpFAQ});
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -2326,10 +2326,10 @@ Win32 API
 sub ::mnuHelpWin32SDK_Click {
     my $self = TGL::WindowApp->new();
 
-	system('explorer "' . $self->rhConfig()->{urlWin32API} . '"');
+    system('explorer "' . $self->rhConfig()->{urlWin32API} . '"');
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -2343,10 +2343,10 @@ Win32 API
 sub ::mnuHelpChanges_Click {
     my $self = TGL::WindowApp->new();
 
-	system("explorer " . $self->rhConfig()->{fileHelpChanges});
+    system("explorer " . $self->rhConfig()->{fileHelpChanges});
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -2362,11 +2362,11 @@ Hide the window.
 sub ::winClusterProp_Terminate {
     my $self = TGL::WindowApp->new();
 
-	#$self->winClusterProp()->Hide();
-	$self->objModalizer()->endDialog();
+    #$self->winClusterProp()->Hide();
+    $self->objModalizer()->endDialog();
 
-	return(0);
-	}
+    return(0);
+    }
 
 
 
@@ -2380,17 +2380,17 @@ Hide the window and do stuff
 sub ::btnClusterOk_Click {
     my $self = TGL::WindowApp->new();
 
-	#$self->winClusterProp()->Hide();
-	$self->objModalizer()->endDialog();
+    #$self->winClusterProp()->Hide();
+    $self->objModalizer()->endDialog();
 
-	my $name = $self->winClusterProp()->tfClusterName()->Text();
-	$self->objClusterLastEdited()->name($name);
-	##todo: set dirty flag?
+    my $name = $self->winClusterProp()->tfClusterName()->Text();
+    $self->objClusterLastEdited()->name($name);
+    ##todo: set dirty flag?
 
-	$self->clusterNotifyFundamental();
+    $self->clusterNotifyFundamental();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -2404,11 +2404,11 @@ Hide the window and don't do stuff
 sub ::btnClusterCancel_Click {
     my $self = TGL::WindowApp->new();
 
-	#$self->winClusterProp()->Hide();
-	$self->objModalizer()->endDialog();
+    #$self->winClusterProp()->Hide();
+    $self->objModalizer()->endDialog();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 

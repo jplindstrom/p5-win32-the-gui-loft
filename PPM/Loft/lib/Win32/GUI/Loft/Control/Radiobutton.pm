@@ -39,8 +39,8 @@ Readonly.
 =cut
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
-	return("rbRadiobutton");
-	}
+    return("rbRadiobutton");
+    }
 
 
 
@@ -57,8 +57,8 @@ Readonly.
 =cut
 sub type {
     my $self = shift; my $pkg = ref($self);
-	return("Radiobutton");
-	}
+    return("Radiobutton");
+    }
 
 
 
@@ -74,8 +74,8 @@ Readonly
 =cut
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
-	return("AddRadioButton");
-	}
+    return("AddRadioButton");
+    }
 
 
 
@@ -89,8 +89,8 @@ should be located for this type of control.
 =cut
 sub offsetTextLeft {
     my $self = shift; my $pkg = ref($self);
-	return(18);
-	}
+    return(18);
+    }
 
 
 
@@ -104,8 +104,8 @@ should be located for this type of control.
 =cut
 sub offsetTextRight {
     my $self = shift; my $pkg = ref($self);
-	return(2);
-	}
+    return(2);
+    }
 
 
 
@@ -121,30 +121,30 @@ Create new Control object.
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
-	my $self = $pkg->SUPER::new();
+    my $self = $pkg->SUPER::new();
 
-	#New defaults
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Width", 100));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Height", 20));
+    #New defaults
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Width", 100));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Height", 20));
 
-	#New properties
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Tabstop", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Text", ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Align", "left", [ "left", "right" ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Checked", 0, [ 0, 1 ], "", undef));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Groupstart", 0, [ 0, 1 ], "", ""));
+    #New properties
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Tabstop", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Text", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Align", "left", [ "left", "right" ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Checked", 0, [ 0, 1 ], "", undef));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Groupstart", 0, [ 0, 1 ], "", ""));
 
 ##notdone: valign, doesn't seem to work with expected values
 
-	return($self);
-	}
+    return($self);
+    }
 
 
 
@@ -160,15 +160,15 @@ Return an empty array on errors.
 =cut
 sub buildOptionsSpecial {
     my $self = shift; my $pkg = ref($self);
-	my ($objDesign) = @_;
-	my @aOption;
+    my ($objDesign) = @_;
+    my @aOption;
 
-	if($self->prop("Groupstart")) {
-		push(@aOption, ("-addstyle", 0x00020000));		#WS_GROUP
-		}
+    if($self->prop("Groupstart")) {
+        push(@aOption, ("-addstyle", 0x00020000));      #WS_GROUP
+        }
 
-	return(@aOption);
-	}
+    return(@aOption);
+    }
 
 
 
@@ -183,39 +183,39 @@ Return 1 on success, else 0.
 =cut
 sub paint {
     my $self = shift; my $pkg = ref($self);
-	my ($dcDev, $rhBrush, $objDesign) = @_;
+    my ($dcDev, $rhBrush, $objDesign) = @_;
 
 
-	return(1) if(!$self->designIsVisible());
+    return(1) if(!$self->designIsVisible());
 
-	my $rhPosCache = $self->rhPosCache();		#Cache the expensive prop lookups
+    my $rhPosCache = $self->rhPosCache();       #Cache the expensive prop lookups
 
-	my $offsetVert = int(($rhPosCache->{height} / 2) - 12);
-	
-	my $check = $self->prop("Checked") ? 0x0400 : 0;		#DFCS_CHECKED            
-	
-	#Enable
-	my $enable = 0;
-	$enable = 0x0100 if(!$self->prop("Enable"));			#DFCS_INACTIVE           
-	
-	
-	#Draw Radiobutton
-	Win32::GUI::AdHoc::DrawFrameControl($dcDev,
-			$rhPosCache->{left} + 1,
-			$rhPosCache->{top} + 4 + $offsetVert,
-			$rhPosCache->{left} + 13,
-			$rhPosCache->{top} + 19 + $offsetVert,
-			4,							#define DFC_BUTTON
-			0x0004 | $check | $enable	#DFCS_BUTTONRADIO
-			);
+    my $offsetVert = int(($rhPosCache->{height} / 2) - 12);
+    
+    my $check = $self->prop("Checked") ? 0x0400 : 0;        #DFCS_CHECKED            
+    
+    #Enable
+    my $enable = 0;
+    $enable = 0x0100 if(!$self->prop("Enable"));            #DFCS_INACTIVE           
+    
+    
+    #Draw Radiobutton
+    Win32::GUI::AdHoc::DrawFrameControl($dcDev,
+            $rhPosCache->{left} + 1,
+            $rhPosCache->{top} + 4 + $offsetVert,
+            $rhPosCache->{left} + 13,
+            $rhPosCache->{top} + 19 + $offsetVert,
+            4,                          #define DFC_BUTTON
+            0x0004 | $check | $enable   #DFCS_BUTTONRADIO
+            );
 
-	$dcDev->BkMode(1);
+    $dcDev->BkMode(1);
 
-	$self->paintText($dcDev, $rhBrush, $rhPosCache);
-#	$self->paintSelected($dcDev, $rhBrush, $rhPosCache);
+    $self->paintText($dcDev, $rhBrush, $rhPosCache);
+#   $self->paintSelected($dcDev, $rhBrush, $rhPosCache);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 

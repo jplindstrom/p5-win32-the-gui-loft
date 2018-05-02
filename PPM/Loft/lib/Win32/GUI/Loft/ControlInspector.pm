@@ -46,13 +46,13 @@ Create new ControlInspector object.
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
-	my $self = {
-		};
-	bless $self, $pkg;
+    my $self = {
+        };
+    bless $self, $pkg;
 
 
-	return($self);
-	}
+    return($self);
+    }
 
 
 
@@ -72,7 +72,7 @@ be present many times, so you may NOT treat it as a hash.
 
 An example of a $raOption:
 
-	[ "-name", "winMain", "-text", "Main window" ]
+    [ "-name", "winMain", "-text", "Main window" ]
 
 You may change the contents of $raOption. You may NOT change
 $objControl!
@@ -87,14 +87,14 @@ case the control will not be created.
 =cut
 sub buildOptions {
     my $self = shift; my $pkg = ref($self);
-	my ($objControl, $raOption) = @_;
+    my ($objControl, $raOption) = @_;
 
-	#Use this to determine if you need to fiddle with
-	#the $raOption
-#	my $name = $objControl->prop("Name");
+    #Use this to determine if you need to fiddle with
+    #the $raOption
+#   my $name = $objControl->prop("Name");
 
-	return(@$raOption);
-	}
+    return(@$raOption);
+    }
 
 
 
@@ -123,20 +123,20 @@ created as usual).
 =cut
 sub buildAdd {
     my $self = shift; my $pkg = ref($self);
-	my ($objContainer, $objControl) = @_;
+    my ($objContainer, $objControl) = @_;
 
-	#Use this to determine what kind of control you want
-	#to add
-#	my $name = $objControl->prop("Name");
+    #Use this to determine what kind of control you want
+    #to add
+#   my $name = $objControl->prop("Name");
 
-	#Other properties of the Custom control are:
-	#Left, Top, Height, Width, Visible, Enable
-	#That's all you get to play with.
+    #Other properties of the Custom control are:
+    #Left, Top, Height, Width, Visible, Enable
+    #That's all you get to play with.
 
-#	my $objNew = $objContainer->AddXXX();	#Then you return $objNew
+#   my $objNew = $objContainer->AddXXX();   #Then you return $objNew
 
-	return(undef);
-	}
+    return(undef);
+    }
 
 
 

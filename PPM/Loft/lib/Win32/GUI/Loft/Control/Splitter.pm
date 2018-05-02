@@ -37,8 +37,8 @@ Readonly.
 =cut
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
-	return("splSplitter");
-	}
+    return("splSplitter");
+    }
 
 
 
@@ -55,8 +55,8 @@ Readonly.
 =cut
 sub valignDefault {
     my $self = shift; my $pkg = ref($self);
-	return("top");
-	}
+    return("top");
+    }
 
 
 
@@ -73,8 +73,8 @@ Readonly.
 =cut
 sub type {
     my $self = shift; my $pkg = ref($self);
-	return("Splitter");
-	}
+    return("Splitter");
+    }
 
 
 
@@ -90,8 +90,8 @@ Readonly
 =cut
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
-	return("AddSplitter");
-	}
+    return("AddSplitter");
+    }
 
 
 
@@ -106,26 +106,26 @@ Create new Control object.
 =cut
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
-	
-	my $self = $pkg->SUPER::new();
-		
-	#New defaults
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Width", 4));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Height", 100));
+    
+    my $self = $pkg->SUPER::new();
+        
+    #New defaults
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Width", 4));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Height", 100));
 
-	#New properties	
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Horizontal", 0, [ 0, 1 ], undef, ""));
+    #New properties 
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Horizontal", 0, [ 0, 1 ], undef, ""));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Max", -1));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Min", -1));
-	
-	return($self);
-	}
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Max", -1));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Min", -1));
+    
+    return($self);
+    }
 
 
 
@@ -140,43 +140,43 @@ Return 1 on success, else 0.
 =cut
 sub paint {
     my $self = shift; my $pkg = ref($self);
-	my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
-	
-	return(1) if(!$self->designIsVisible());
-	
-	#Draw Splitter
-	$dcDev->SelectObject($rhBrush->{noPen});
-	$dcDev->SelectObject($rhBrush->{whiteBrush});
-#	$dcDev->Rectangle(
-#			$rhPosCache->{left} + 1, 
-#			$rhPosCache->{top} + 1, 
-#			$rhPosCache->{left} + $rhPosCache->{width} - 1,
-#			$rhPosCache->{top} + $rhPosCache->{height} - 1,
-#			) if($self->prop("Visible"));
+    my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
+    
+    return(1) if(!$self->designIsVisible());
+    
+    #Draw Splitter
+    $dcDev->SelectObject($rhBrush->{noPen});
+    $dcDev->SelectObject($rhBrush->{whiteBrush});
+#   $dcDev->Rectangle(
+#           $rhPosCache->{left} + 1, 
+#           $rhPosCache->{top} + 1, 
+#           $rhPosCache->{left} + $rhPosCache->{width} - 1,
+#           $rhPosCache->{top} + $rhPosCache->{height} - 1,
+#           ) if($self->prop("Visible"));
 
-#	$dcDev->DrawEdge(
-#			$rhPosCache->{left} + 1,
-#			$rhPosCache->{top} + 1,
-#			$rhPosCache->{left} + $rhPosCache->{width} - 1,
-#			$rhPosCache->{top} + $rhPosCache->{height} - 1,
-#			0x0002 | 0x0008,			#BDR_SUNKENOUTER | BDR_SUNKENINNER 
-#			);
-	$dcDev->BkMode(1);
-		
-	$dcDev->SelectObject($rhBrush->{whiteBrush});	
-	$dcDev->Rectangle(
-			$rhPosCache->{left},
-			$rhPosCache->{top},
-			$rhPosCache->{left} + $rhPosCache->{width},
-			$rhPosCache->{top} + $rhPosCache->{height},
-			);
+#   $dcDev->DrawEdge(
+#           $rhPosCache->{left} + 1,
+#           $rhPosCache->{top} + 1,
+#           $rhPosCache->{left} + $rhPosCache->{width} - 1,
+#           $rhPosCache->{top} + $rhPosCache->{height} - 1,
+#           0x0002 | 0x0008,            #BDR_SUNKENOUTER | BDR_SUNKENINNER 
+#           );
+    $dcDev->BkMode(1);
+        
+    $dcDev->SelectObject($rhBrush->{whiteBrush});   
+    $dcDev->Rectangle(
+            $rhPosCache->{left},
+            $rhPosCache->{top},
+            $rhPosCache->{left} + $rhPosCache->{width},
+            $rhPosCache->{top} + $rhPosCache->{height},
+            );
 
 
-	$self->paintName($dcDev, $rhBrush, $rhPosCache);
+    $self->paintName($dcDev, $rhBrush, $rhPosCache);
 
-		
-	return(1);
-	}
+        
+    return(1);
+    }
 
 
 

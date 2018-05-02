@@ -39,8 +39,8 @@ Readonly.
 =cut
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
-	return("tvwTreeView");
-	}
+    return("tvwTreeView");
+    }
 
 
 
@@ -57,8 +57,8 @@ Readonly.
 =cut
 sub alignDefault {
     my $self = shift; my $pkg = ref($self);
-	return("left");
-	}
+    return("left");
+    }
 
 
 
@@ -75,8 +75,8 @@ Readonly.
 =cut
 sub valignDefault {
     my $self = shift; my $pkg = ref($self);
-	return("top");
-	}
+    return("top");
+    }
 
 
 
@@ -90,8 +90,8 @@ should be located for this type of control.
 =cut
 sub offsetTextLeft {
     my $self = shift; my $pkg = ref($self);
-	return(4);
-	}
+    return(4);
+    }
 
 
 
@@ -105,8 +105,8 @@ should be located for this type of control.
 =cut
 sub offsetTextTop {
     my $self = shift; my $pkg = ref($self);
-	return(4);
-	}
+    return(4);
+    }
 
 
 
@@ -123,8 +123,8 @@ Readonly.
 =cut
 sub type {
     my $self = shift; my $pkg = ref($self);
-	return("TreeView");
-	}
+    return("TreeView");
+    }
 
 
 
@@ -140,8 +140,8 @@ Readonly
 =cut
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
-	return("AddTreeView");
-	}
+    return("AddTreeView");
+    }
 
 
 
@@ -157,50 +157,50 @@ Create new Control object.
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
-	my $self = $pkg->SUPER::new();
+    my $self = $pkg->SUPER::new();
 
-	#New defaults
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Width", 100));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Height", 50));
+    #New defaults
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Width", 100));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Height", 50));
 
-	#New properties
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Tabstop", 1, [ 0, 1 ], undef, ""));
+    #New properties
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Tabstop", 1, [ 0, 1 ], undef, ""));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Lines", 1, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"RootLines", 1, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Buttons", 1, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"ImageList", "", [], "", ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"ShowSelAlways", 1, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"RootLines", 1, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Checkboxes", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"HotTrack", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Lines", 1, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "RootLines", 1, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Buttons", 1, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "ImageList", "", [], "", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "ShowSelAlways", 1, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "RootLines", 1, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Checkboxes", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "HotTrack", 0, [ 0, 1 ], undef, ""));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Indent", "", [], "", undef));
-##todo: real colors			
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"TextColor", "", [], "", undef));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Indent", "", [], "", undef));
+##todo: real colors         
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "TextColor", "", [], "", undef));
 ##todo: real colors
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"BackColor", "", [], "", undef));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "BackColor", "", [], "", undef));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"PreviewTree", "", undef, "", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "PreviewTree", "", undef, "", ""));
 
 
-	return($self);
-	}
+    return($self);
+    }
 
 
 
@@ -216,16 +216,16 @@ Return an empty array on errors.
 =cut
 sub buildOptionsSpecial {
     my $self = shift; my $pkg = ref($self);
-	my ($objDesign) = @_;
-	my @aOption = $self->SUPER::buildOptionsSpecial($objDesign);
+    my ($objDesign) = @_;
+    my @aOption = $self->SUPER::buildOptionsSpecial($objDesign);
 
-	if($self->prop("ImageList") ne "") {
-		my $ilImageList = $objDesign->rhImageList()->{ $self->prop("ImageList") };
-		push(@aOption, ("-imagelist", $ilImageList)) if($ilImageList);
-		}
+    if($self->prop("ImageList") ne "") {
+        my $ilImageList = $objDesign->rhImageList()->{ $self->prop("ImageList") };
+        push(@aOption, ("-imagelist", $ilImageList)) if($ilImageList);
+        }
 
-	return(@aOption);
-	}
+    return(@aOption);
+    }
 
 
 
@@ -241,27 +241,27 @@ Return 1 on success, else 0.
 =cut
 sub buildMethodsSpecial {
     my $self = shift; my $pkg = ref($self);
-	my ($objNew, $objDesign) = @_;
+    my ($objNew, $objDesign) = @_;
 
-	if($objDesign->isPreview() && $self->prop("PreviewTree") ne "") {
-		#Parse preview text
-		#Hej:0, Hopp:1, Hallå:1;Nisse, Manpower:2
-		my @aBranch = split(/;\s*/, $self->prop("PreviewTree"));
-		for my $branch (@aBranch) {
-			my ($top, @aSub) = split(/,\s*/, $branch);
-			
-			if($top) {
-				my $ndeTop = $self->treeviewInsertItem($objNew, undef, $top) or next;
-				
-				for my $sub (@aSub) {
-					$self->treeviewInsertItem($objNew, $ndeTop, $sub) or next;
-					}
-				}
-			}
-		}
+    if($objDesign->isPreview() && $self->prop("PreviewTree") ne "") {
+        #Parse preview text
+        #Hej:0, Hopp:1, Hallå:1;Nisse, Manpower:2
+        my @aBranch = split(/;\s*/, $self->prop("PreviewTree"));
+        for my $branch (@aBranch) {
+            my ($top, @aSub) = split(/,\s*/, $branch);
+            
+            if($top) {
+                my $ndeTop = $self->treeviewInsertItem($objNew, undef, $top) or next;
+                
+                for my $sub (@aSub) {
+                    $self->treeviewInsertItem($objNew, $ndeTop, $sub) or next;
+                    }
+                }
+            }
+        }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -277,29 +277,29 @@ Return the new node, or undef on errors.
 =cut
 sub treeviewInsertItem {
     my $self = shift; my $pkg = ref($self);
-	my ($tvwTree, $ndeTop, $itemText) = @_;
-	
-	#Hej:0, Hopp:1, Hallå:1;Nisse, Manpower:2
-	my ($text, $image) = ($itemText =~ m{^(.+?):?(\d+)?$});
+    my ($tvwTree, $ndeTop, $itemText) = @_;
+    
+    #Hej:0, Hopp:1, Hallå:1;Nisse, Manpower:2
+    my ($text, $image) = ($itemText =~ m{^(.+?):?(\d+)?$});
 
-	my @aImage = defined($image) ? (
-			-image => $image, 
-			-selectedimage => $image ) : 
-			();
+    my @aImage = defined($image) ? (
+            -image => $image, 
+            -selectedimage => $image ) : 
+            ();
 
-	#Don't use the image if there is no imagelist
-#	@aImage = () if(! $objDesign->rhImageList()->{ $self->prop("ImageList") } );
-	my @aParent = (defined($ndeTop)) ? (-parent => $ndeTop) : ();
-	my $ndeNew = $tvwTree->InsertItem(
-			-text          => $text,
-			@aImage,
-			@aParent,
-			);
-	$tvwTree->EnsureVisible($ndeNew);
-	
+    #Don't use the image if there is no imagelist
+#   @aImage = () if(! $objDesign->rhImageList()->{ $self->prop("ImageList") } );
+    my @aParent = (defined($ndeTop)) ? (-parent => $ndeTop) : ();
+    my $ndeNew = $tvwTree->InsertItem(
+            -text          => $text,
+            @aImage,
+            @aParent,
+            );
+    $tvwTree->EnsureVisible($ndeNew);
+    
 
-	return($ndeNew);
-	}
+    return($ndeNew);
+    }
 
 
 
@@ -314,33 +314,33 @@ Return 1 on success, else 0.
 =cut
 sub paint {
     my $self = shift; my $pkg = ref($self);
-	my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
+    my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
 
-	return(1) if(!$self->designIsVisible());
+    return(1) if(!$self->designIsVisible());
 
-	#Draw TreeView
-	$dcDev->SelectObject($rhBrush->{noPen});
-	$dcDev->SelectObject($rhBrush->{whiteBrush});
-	$dcDev->Rectangle(
-			$rhPosCache->{left} + 1,
-			$rhPosCache->{top} + 1,
-			$rhPosCache->{left} + $rhPosCache->{width} - 1,
-			$rhPosCache->{top} + $rhPosCache->{height} - 1,
-			) if($self->prop("Visible"));
-	$dcDev->DrawEdge(
-			$rhPosCache->{left} + 1,
-			$rhPosCache->{top} + 1,
-			$rhPosCache->{left} + $rhPosCache->{width} - 1,
-			$rhPosCache->{top} + $rhPosCache->{height} - 1,
-			0x0002 | 0x0008,			#BDR_SUNKENOUTER | BDR_SUNKENINNER
-			);
-	$dcDev->BkMode(1);
+    #Draw TreeView
+    $dcDev->SelectObject($rhBrush->{noPen});
+    $dcDev->SelectObject($rhBrush->{whiteBrush});
+    $dcDev->Rectangle(
+            $rhPosCache->{left} + 1,
+            $rhPosCache->{top} + 1,
+            $rhPosCache->{left} + $rhPosCache->{width} - 1,
+            $rhPosCache->{top} + $rhPosCache->{height} - 1,
+            ) if($self->prop("Visible"));
+    $dcDev->DrawEdge(
+            $rhPosCache->{left} + 1,
+            $rhPosCache->{top} + 1,
+            $rhPosCache->{left} + $rhPosCache->{width} - 1,
+            $rhPosCache->{top} + $rhPosCache->{height} - 1,
+            0x0002 | 0x0008,            #BDR_SUNKENOUTER | BDR_SUNKENINNER
+            );
+    $dcDev->BkMode(1);
 
-	$self->paintName($dcDev, $rhBrush, $rhPosCache);
-#	$self->paintSelected($dcDev, $rhBrush, $rhPosCache);
+    $self->paintName($dcDev, $rhBrush, $rhPosCache);
+#   $self->paintSelected($dcDev, $rhBrush, $rhPosCache);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 

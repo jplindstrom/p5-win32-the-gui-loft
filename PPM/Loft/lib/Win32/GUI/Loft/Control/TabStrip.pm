@@ -43,8 +43,8 @@ Readonly.
 =cut
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
-	return("tsTabStrip");
-	}
+    return("tsTabStrip");
+    }
 
 
 
@@ -61,8 +61,8 @@ Readonly.
 =cut
 sub alignDefault {
     my $self = shift; my $pkg = ref($self);
-	return("left");
-	}
+    return("left");
+    }
 
 
 
@@ -79,8 +79,8 @@ Readonly.
 =cut
 sub valignDefault {
     my $self = shift; my $pkg = ref($self);
-	return("top");
-	}
+    return("top");
+    }
 
 
 
@@ -94,8 +94,8 @@ should be located for this type of control.
 =cut
 sub offsetTextLeft {
     my $self = shift; my $pkg = ref($self);
-	return(0);
-	}
+    return(0);
+    }
 
 
 
@@ -109,8 +109,8 @@ should be located for this type of control.
 =cut
 sub offsetTextTop {
     my $self = shift; my $pkg = ref($self);
-	return(0);
-	}
+    return(0);
+    }
 
 
 
@@ -127,8 +127,8 @@ Readonly.
 =cut
 sub type {
     my $self = shift; my $pkg = ref($self);
-	return("TabStrip");
-	}
+    return("TabStrip");
+    }
 
 
 
@@ -144,8 +144,8 @@ Readonly
 =cut
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
-	return("AddTabStrip");
-	}
+    return("AddTabStrip");
+    }
 
 
 
@@ -161,45 +161,45 @@ Create new Control object.
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
-	my $self = $pkg->SUPER::new();
+    my $self = $pkg->SUPER::new();
 
-	#New defaults
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Width", 120));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Height", 100));
+    #New defaults
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Width", 120));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Height", 100));
 
-	#New properties
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Tabstop", 1, [ 0, 1 ], undef, ""));
+    #New properties
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Tabstop", 1, [ 0, 1 ], undef, ""));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Bottom", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Buttons", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Justify", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Multiline", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Right", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Bottom", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Buttons", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Justify", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Multiline", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Right", 0, [ 0, 1 ], undef, ""));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"HotTrack", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"ImageList", "", [], "", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "HotTrack", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "ImageList", "", [], "", ""));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Tabs", "", undef, "", ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Clusters", "", undef, "", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Tabs", "", undef, "", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Clusters", "", undef, "", ""));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Select", "", [], "", undef));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Select", "", [], "", undef));
 
 
-	return($self);
-	}
+    return($self);
+    }
 
 
 
@@ -217,12 +217,12 @@ Redifine in derived classes.
 =cut
 sub isUsingCluster {
     my $self = shift; my $pkg = ref($self);
-	my ($objCluster) = @_;
+    my ($objCluster) = @_;
 
-	my %hItem = map { $_ => 1 } split(/;\s*/, $self->prop("Clusters") || "");
+    my %hItem = map { $_ => 1 } split(/;\s*/, $self->prop("Clusters") || "");
 
-	return( exists $hItem{ $objCluster->name() } ? 1 : 0);
-	}
+    return( exists $hItem{ $objCluster->name() } ? 1 : 0);
+    }
 
 
 
@@ -240,18 +240,18 @@ Redefine in derived classes.
 =cut
 sub tabIndexFindByName {
     my $self = shift; my $pkg = ref($self);
-	my ($nameTab) = @_;
+    my ($nameTab) = @_;
 
-	my @aItem = split(/;\s*/, $self->prop("Clusters"));
+    my @aItem = split(/;\s*/, $self->prop("Clusters"));
 
-	my $i = 0;
-	for my $item (@aItem) {
-		return($i) if($item eq $nameTab);
-		$i++;
-		}
+    my $i = 0;
+    for my $item (@aItem) {
+        return($i) if($item eq $nameTab);
+        $i++;
+        }
 
-	return(undef);
-	}
+    return(undef);
+    }
 
 
 
@@ -267,16 +267,16 @@ Return an empty array on errors.
 =cut
 sub buildOptionsSpecial {
     my $self = shift; my $pkg = ref($self);
-	my ($objDesign) = @_;
-	my @aOption;
+    my ($objDesign) = @_;
+    my @aOption;
 
-	if($self->prop("ImageList") ne "") {
-		my $ilImageList = $objDesign->rhImageList()->{ $self->prop("ImageList") };
-		push(@aOption, ("-imagelist", $ilImageList)) if($ilImageList);
-		}
+    if($self->prop("ImageList") ne "") {
+        my $ilImageList = $objDesign->rhImageList()->{ $self->prop("ImageList") };
+        push(@aOption, ("-imagelist", $ilImageList)) if($ilImageList);
+        }
 
-	return(@aOption);
-	}
+    return(@aOption);
+    }
 
 
 
@@ -292,37 +292,37 @@ Return 1 on success, else 0.
 =cut
 sub buildMethodsSpecial {
     my $self = shift; my $pkg = ref($self);
-	my ($objNew, $objDesign) = @_;
+    my ($objNew, $objDesign) = @_;
 
-	if($self->prop("Tabs") || "" ne "") {
-		#Parse preview text
-		my @aItem = split(/;\s*/, $self->prop("Tabs"));
+    if($self->prop("Tabs") || "" ne "") {
+        #Parse preview text
+        my @aItem = split(/;\s*/, $self->prop("Tabs"));
 
-		for my $item (@aItem) {
-			my ($textItem, $image) = ($item =~ m{^(.+?):?(\d+)?$});
-			my @aImage = (($image || "") ne "") ? (-image => $image) : ();
+        for my $item (@aItem) {
+            my ($textItem, $image) = ($item =~ m{^(.+?):?(\d+)?$});
+            my @aImage = (($image || "") ne "") ? (-image => $image) : ();
 
-			$objNew->InsertItem(-text =>  $textItem, @aImage );
-			}
-		}
+            $objNew->InsertItem(-text =>  $textItem, @aImage );
+            }
+        }
 
 
-	if($self->prop("Clusters") || "" ne "") {
-		#Parse which clusters
-		my @aItem = split(/;\s*/, $self->prop("Clusters"));
+    if($self->prop("Clusters") || "" ne "") {
+        #Parse which clusters
+        my @aItem = split(/;\s*/, $self->prop("Clusters"));
 
-		if(@aItem) {
-			#Add a Win32::GUI::TabStripGroup control to manage the tabstrip
-			$objDesign->wingcTabStripGroupAdd($objNew);	#, \@aItem);
+        if(@aItem) {
+            #Add a Win32::GUI::TabStripGroup control to manage the tabstrip
+            $objDesign->wingcTabStripGroupAdd($objNew); #, \@aItem);
 
-#			for my $item (@aItem) {
+#           for my $item (@aItem) {
 #
-#				}
-			}
-		}
+#               }
+            }
+        }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -340,38 +340,38 @@ Return 1 on success, else 0.
 =cut
 sub buildEventHandlers {
     my $self = shift; my $pkg = ref($self);
-	my ($objNew, $objDesign) = @_;
+    my ($objNew, $objDesign) = @_;
 
-	if($self->prop("Clusters") || "" ne "") {
+    if($self->prop("Clusters") || "" ne "") {
 
-		#Create a _Change events
-		my $nameEvent = $objDesign->perlEventName($self, "Change");
-		my $perlVarLoft = $objDesign->perlVarLoft() or return(0);
-		my $perlVarTabStrip = $objDesign->perlVarControl($self) or return(0);
-		my $perlVarTabStripGroup = $objDesign->perlVarTabStripGroup( $self ) or return(0);
+        #Create a _Change events
+        my $nameEvent = $objDesign->perlEventName($self, "Change");
+        my $perlVarLoft = $objDesign->perlVarLoft() or return(0);
+        my $perlVarTabStrip = $objDesign->perlVarControl($self) or return(0);
+        my $perlVarTabStripGroup = $objDesign->perlVarTabStripGroup( $self ) or return(0);
 
-		my $perl = <<EOP;
+        my $perl = <<EOP;
 sub $nameEvent {
 
-	$perlVarLoft
+    $perlVarLoft
 
-	${perlVarTabStripGroup}->showTab(
-			${perlVarTabStrip}->SelectedItem()
-			);
+    ${perlVarTabStripGroup}->showTab(
+            ${perlVarTabStrip}->SelectedItem()
+            );
 
-		
-	return(1);
-	}
+        
+    return(1);
+    }
 EOP
-		eval($perl);
-		if($@) {
-			warn($@);
-			return(0);
-			}
-		}
+        eval($perl);
+        if($@) {
+            warn($@);
+            return(0);
+            }
+        }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -386,9 +386,9 @@ Return 1 on success, else 0.
 =cut
 sub paint {
     my $self = shift; my $pkg = ref($self);
-	my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
+    my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
 
-	return(1) if(!$self->designIsVisible());
+    return(1) if(!$self->designIsVisible());
 
 
 my $isScroll = 0;
@@ -402,111 +402,111 @@ my $widthButtonMin = 46;
 my $heightButton = 20;
 
 
-	##Draw TabStrip
-	#Tabs
-	my $firstInvisible = 0xFFFF;
-	my @aWidth;
-	if($self->prop("Tabs") || "" ne "") {
-		#Parse preview text
-		my @aItem = split(/;\s*/, $self->prop("Tabs"));
+    ##Draw TabStrip
+    #Tabs
+    my $firstInvisible = 0xFFFF;
+    my @aWidth;
+    if($self->prop("Tabs") || "" ne "") {
+        #Parse preview text
+        my @aItem = split(/;\s*/, $self->prop("Tabs"));
 
-		my @aLeft;
-		my $left = $rhPosCache->{left};
-		my $widthTotal = 0;
-		my $i = 0;
-		for my $item (@aItem) {
-			#Strip &
-			$item =~ s/&//gm;
-		
-			my $width = $self->widthTab($item, $i, $rhBrush);
-			$widthTotal += $width;
-			if(0xFFFF == $firstInvisible && $widthTotal > $rhPosCache->{width}) {
-				$firstInvisible = $i;
-				}
+        my @aLeft;
+        my $left = $rhPosCache->{left};
+        my $widthTotal = 0;
+        my $i = 0;
+        for my $item (@aItem) {
+            #Strip &
+            $item =~ s/&//gm;
+        
+            my $width = $self->widthTab($item, $i, $rhBrush);
+            $widthTotal += $width;
+            if(0xFFFF == $firstInvisible && $widthTotal > $rhPosCache->{width}) {
+                $firstInvisible = $i;
+                }
 
-			push(@aLeft, $left);
-			push(@aWidth, $width);
+            push(@aLeft, $left);
+            push(@aWidth, $width);
 
-			$left += $width;
-			$i++;
-			}
+            $left += $width;
+            $i++;
+            }
 
-		$i = $#aItem;
-		for my $item (reverse @aItem) {
-			if($i < $firstInvisible) {
-				my $offsetTop = ($i == 0) ? 0 : 2;
-				Win32::GUI::AdHoc::DrawFrameControl($dcDev,
-						$aLeft[$i],
-						$rhPosCache->{top} + $offsetTop,
-						$aLeft[$i] + $aWidth[$i],
-						$rhPosCache->{top} + $heightButton + 2,
-						4,							#DFC_BUTTON
-						0x0010						#DFCS_BUTTONPUSH
-						);
+        $i = $#aItem;
+        for my $item (reverse @aItem) {
+            if($i < $firstInvisible) {
+                my $offsetTop = ($i == 0) ? 0 : 2;
+                Win32::GUI::AdHoc::DrawFrameControl($dcDev,
+                        $aLeft[$i],
+                        $rhPosCache->{top} + $offsetTop,
+                        $aLeft[$i] + $aWidth[$i],
+                        $rhPosCache->{top} + $heightButton + 2,
+                        4,                          #DFC_BUTTON
+                        0x0010                      #DFCS_BUTTONPUSH
+                        );
 
-				#Paint text
-				my $offsetTopText = ($i == 0) ? -2 : 0;
-				my $offsetLeftText = ($i == 0) ? 0 : -4;
-				$offsetLeftText += 2 if($i > 1);
-				my $rhPos = {
-						left	=> $aLeft[$i] + $textOffsetLeft - 4 + $offsetLeftText,
-						top		=> $rhPosCache->{top} + $textOffsetTop + $offsetTopText,
-						width	=> $aWidth[$i],
-						height	=> $heightButton,
-						};
-				$self->paintTextGeneric($dcDev, $rhBrush, $rhPos, $aItem[$i]);
-				}
+                #Paint text
+                my $offsetTopText = ($i == 0) ? -2 : 0;
+                my $offsetLeftText = ($i == 0) ? 0 : -4;
+                $offsetLeftText += 2 if($i > 1);
+                my $rhPos = {
+                        left    => $aLeft[$i] + $textOffsetLeft - 4 + $offsetLeftText,
+                        top     => $rhPosCache->{top} + $textOffsetTop + $offsetTopText,
+                        width   => $aWidth[$i],
+                        height  => $heightButton,
+                        };
+                $self->paintTextGeneric($dcDev, $rhBrush, $rhPos, $aItem[$i]);
+                }
 
-			$i--;
-			}
-		}
+            $i--;
+            }
+        }
 
-	#Area
-	Win32::GUI::AdHoc::DrawFrameControl($dcDev,
-			$rhPosCache->{left},
-			$rhPosCache->{top} + $heightButton,
-			$rhPosCache->{left} + $rhPosCache->{width},
-			$rhPosCache->{top} + $rhPosCache->{height},
-			4,							#DFC_BUTTON
-			0x0010						#DFCS_BUTTONPUSH
-			);
+    #Area
+    Win32::GUI::AdHoc::DrawFrameControl($dcDev,
+            $rhPosCache->{left},
+            $rhPosCache->{top} + $heightButton,
+            $rhPosCache->{left} + $rhPosCache->{width},
+            $rhPosCache->{top} + $rhPosCache->{height},
+            4,                          #DFC_BUTTON
+            0x0010                      #DFCS_BUTTONPUSH
+            );
 
-	#Touch up
-	$dcDev->SelectObject($rhBrush->{buttonPen});
+    #Touch up
+    $dcDev->SelectObject($rhBrush->{buttonPen});
     $dcDev->MoveTo($rhPosCache->{left} + 1,
-			$rhPosCache->{top} + $heightButton);
-	$dcDev->LineTo($rhPosCache->{left} + ($aWidth[0] || 0),
-			$rhPosCache->{top} + $heightButton);
+            $rhPosCache->{top} + $heightButton);
+    $dcDev->LineTo($rhPosCache->{left} + ($aWidth[0] || 0),
+            $rhPosCache->{top} + $heightButton);
 
 
-	#"more arrows"
-	if(0xFFFF != $firstInvisible) {
-		my $widthArrow = 17;
-		my $heightArrow = 18;
-		Win32::GUI::AdHoc::DrawFrameControl($dcDev,
-				$rhPosCache->{left} + $rhPosCache->{width} - $widthArrow,
-				$rhPosCache->{top} + 1,
-				$rhPosCache->{left} + $rhPosCache->{width},
-				$rhPosCache->{top} + $heightArrow,
-				3,							#DFC_SCROLL
-				0x0003						#DFCS_SCROLLRIGHT
-				);
-		Win32::GUI::AdHoc::DrawFrameControl($dcDev,
-				$rhPosCache->{left} + $rhPosCache->{width} - $widthArrow - $widthArrow,
-				$rhPosCache->{top} + 1,
-				$rhPosCache->{left} + $rhPosCache->{width} - $widthArrow,
-				$rhPosCache->{top} + $heightArrow,
-				3,							#DFC_SCROLL
-				0x0002						#DFCS_SCROLLLEFT
-				);
-		}
+    #"more arrows"
+    if(0xFFFF != $firstInvisible) {
+        my $widthArrow = 17;
+        my $heightArrow = 18;
+        Win32::GUI::AdHoc::DrawFrameControl($dcDev,
+                $rhPosCache->{left} + $rhPosCache->{width} - $widthArrow,
+                $rhPosCache->{top} + 1,
+                $rhPosCache->{left} + $rhPosCache->{width},
+                $rhPosCache->{top} + $heightArrow,
+                3,                          #DFC_SCROLL
+                0x0003                      #DFCS_SCROLLRIGHT
+                );
+        Win32::GUI::AdHoc::DrawFrameControl($dcDev,
+                $rhPosCache->{left} + $rhPosCache->{width} - $widthArrow - $widthArrow,
+                $rhPosCache->{top} + 1,
+                $rhPosCache->{left} + $rhPosCache->{width} - $widthArrow,
+                $rhPosCache->{top} + $heightArrow,
+                3,                          #DFC_SCROLL
+                0x0002                      #DFCS_SCROLLLEFT
+                );
+        }
 
 ##todo: make bottom (or rather "right", since it's broken) work
 
-	$dcDev->BkMode(1);
+    $dcDev->BkMode(1);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -520,19 +520,19 @@ first Tab.
 =cut
 sub widthTab {
     my $self = shift; my $pkg = ref($self);
-	my ($text, $index, $rhBrush) = @_;
-	my $textOffsetLeft = 9;
-	my $textOffsetRight = 7;
-	my $widthButtonMin = 46;
+    my ($text, $index, $rhBrush) = @_;
+    my $textOffsetLeft = 9;
+    my $textOffsetRight = 7;
+    my $widthButtonMin = 46;
 
-	my ($widthText, $heightText) = Win32::GUI::GetTextExtentPoint32(undef, $text, $rhBrush->{font});
-	$widthText += ($textOffsetLeft + $textOffsetRight);
-	$widthText = $widthText < $widthButtonMin ? $widthButtonMin : $widthText;
-	$widthText -= 6 if($index > 0);
-	$widthText += 2 if($index > 1);
+    my ($widthText, $heightText) = Win32::GUI::GetTextExtentPoint32(undef, $text, $rhBrush->{font});
+    $widthText += ($textOffsetLeft + $textOffsetRight);
+    $widthText = $widthText < $widthButtonMin ? $widthButtonMin : $widthText;
+    $widthText -= 6 if($index > 0);
+    $widthText += 2 if($index > 1);
 
-	return($widthText);
-	}
+    return($widthText);
+    }
 
 
 

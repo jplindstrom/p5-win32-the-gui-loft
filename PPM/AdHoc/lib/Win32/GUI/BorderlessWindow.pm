@@ -37,14 +37,14 @@ this, it's a regular Window object.
 =cut
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
-	my (%hOption) = @_;
+    my (%hOption) = @_;
 
-	$hOption{-style} =
-			0x80000000 |		#WS_POPUP
-			0;
-	
-	return(Win32::GUI::Window->new(%hOption));
-	}
+    $hOption{-style} =
+            0x80000000 |        #WS_POPUP
+            0;
+    
+    return(Win32::GUI::Window->new(%hOption));
+    }
 
 
 

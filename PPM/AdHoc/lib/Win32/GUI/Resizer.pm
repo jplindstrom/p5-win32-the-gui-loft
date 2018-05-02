@@ -728,7 +728,7 @@ exported by default though, so to avoid the lengthy symbol
 name you might want to do that when you use the Resizer 
 class:
 
-	use Win32::GUI::Resizer qw( negResize );
+    use Win32::GUI::Resizer qw( negResize );
 
 =head2 Things to Think About
 

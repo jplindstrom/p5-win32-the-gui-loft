@@ -37,8 +37,8 @@ Readonly.
 =cut
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
-	return("pbProgressBar");
-	}
+    return("pbProgressBar");
+    }
 
 
 
@@ -55,8 +55,8 @@ Readonly.
 =cut
 sub valignDefault {
     my $self = shift; my $pkg = ref($self);
-	return("top");
-	}
+    return("top");
+    }
 
 
 
@@ -73,8 +73,8 @@ Readonly.
 =cut
 sub type {
     my $self = shift; my $pkg = ref($self);
-	return("ProgressBar");
-	}
+    return("ProgressBar");
+    }
 
 
 
@@ -90,8 +90,8 @@ Readonly
 =cut
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
-	return("AddProgressBar");
-	}
+    return("AddProgressBar");
+    }
 
 
 
@@ -106,37 +106,37 @@ Create new Control object.
 =cut
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
-	
-	my $self = $pkg->SUPER::new();
-		
-	#New defaults
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Width", 80));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Height", 20));
+    
+    my $self = $pkg->SUPER::new();
+        
+    #New defaults
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Width", 80));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Height", 20));
 
-	#New properties	
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Tabstop", 0, [ 0, 1 ], undef, ""));
+    #New properties 
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Tabstop", 0, [ 0, 1 ], undef, ""));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Smooth", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Vertical", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Smooth", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Vertical", 0, [ 0, 1 ], undef, ""));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Pos", 0, [], "", "SetPos"));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Step", 1, [], "", "SetStep"));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Pos", 0, [], "", "SetPos"));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Step", 1, [], "", "SetStep"));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"RangeMin", 0, [], "", ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"RangeMax", 99, [], "", ""));
-	
-	
-	return($self);
-	}
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "RangeMin", 0, [], "", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "RangeMax", 99, [], "", ""));
+    
+    
+    return($self);
+    }
 
 
 
@@ -152,15 +152,15 @@ Return 1 on success, else 0.
 =cut
 sub buildMethodsSpecial {
     my $self = shift; my $pkg = ref($self);
-	my ($objNew, $objDesign) = @_;
+    my ($objNew, $objDesign) = @_;
 
-#	if($self->prop("Bitmap") ne "") {
-#		my $bmBitmap = $objDesign->rhBitmap()->{ $self->prop("Bitmap") };
-#		$objNew->SetImage($bmBitmap);
-#		}
+#   if($self->prop("Bitmap") ne "") {
+#       my $bmBitmap = $objDesign->rhBitmap()->{ $self->prop("Bitmap") };
+#       $objNew->SetImage($bmBitmap);
+#       }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -175,45 +175,45 @@ Return 1 on success, else 0.
 =cut
 sub paint {
     my $self = shift; my $pkg = ref($self);
-	my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
-	
-	return(1) if(!$self->designIsVisible());
-	
-	#Draw ProgressBar
-	$dcDev->SelectObject($rhBrush->{noPen});
-	$dcDev->SelectObject($rhBrush->{whiteBrush});
-	$dcDev->BkMode(1);
+    my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
+    
+    return(1) if(!$self->designIsVisible());
+    
+    #Draw ProgressBar
+    $dcDev->SelectObject($rhBrush->{noPen});
+    $dcDev->SelectObject($rhBrush->{whiteBrush});
+    $dcDev->BkMode(1);
 
-		
-	$dcDev->SelectObject($rhBrush->{grayPen});
+        
+    $dcDev->SelectObject($rhBrush->{grayPen});
     $dcDev->MoveTo($rhPosCache->{left}, 
-    		$rhPosCache->{top} + $rhPosCache->{height});
+            $rhPosCache->{top} + $rhPosCache->{height});
     $dcDev->LineTo(
-    		$rhPosCache->{left}, 
-    		$rhPosCache->{top});
+            $rhPosCache->{left}, 
+            $rhPosCache->{top});
     $dcDev->LineTo(
-    		$rhPosCache->{left} + $rhPosCache->{width} - 1, 
-    		$rhPosCache->{top});
-    		
+            $rhPosCache->{left} + $rhPosCache->{width} - 1, 
+            $rhPosCache->{top});
+            
     $dcDev->SelectObject($rhBrush->{whitePen});
     $dcDev->LineTo(
-    		$rhPosCache->{left} + $rhPosCache->{width} - 1, 
-    		$rhPosCache->{top} + $rhPosCache->{height} - 1);
+            $rhPosCache->{left} + $rhPosCache->{width} - 1, 
+            $rhPosCache->{top} + $rhPosCache->{height} - 1);
     $dcDev->LineTo(
-    		$rhPosCache->{left}, 
-    		$rhPosCache->{top} + $rhPosCache->{height} - 1);
+            $rhPosCache->{left}, 
+            $rhPosCache->{top} + $rhPosCache->{height} - 1);
     
-#					$rhPosCache->{left} + $rhPosCache->{width},
-#					$rhPosCache->{top} + $rhPosCache->{height},
-	
-	$self->offsetTextLeft(1);
-	$self->offsetTextRight(1);
-	$self->offsetTextTop(1);
+#                   $rhPosCache->{left} + $rhPosCache->{width},
+#                   $rhPosCache->{top} + $rhPosCache->{height},
+    
+    $self->offsetTextLeft(1);
+    $self->offsetTextRight(1);
+    $self->offsetTextTop(1);
 
-	$self->paintName($dcDev, $rhBrush, $rhPosCache);
-		
-	return(1);
-	}
+    $self->paintName($dcDev, $rhBrush, $rhPosCache);
+        
+    return(1);
+    }
 
 
 

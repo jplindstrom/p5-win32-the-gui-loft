@@ -57,21 +57,21 @@ sub Win32::GUI::Window::PosAsString {
     my $self = shift;
     my ($strPos) = @_;
 
-	if(defined($strPos)) {
-		my $VAR1; my $rhSelf = eval($strPos);
-		return("") if($@);
-		
-		$self->Resize($rhSelf->{Width}, $rhSelf->{Height});
-		$self->Move($rhSelf->{Left}, $rhSelf->{Top});
-		}
-		
-	my $rhSelf = {
-		Left => $self->Left(), Top => $self->Top(),
-		Width => $self->Width(), Height => $self->Height(),
-		rhControl => {},
-		};
-	$strPos = Dumper($rhSelf); $strPos =~ s{\s+}{ }gs;
-	
+    if(defined($strPos)) {
+        my $VAR1; my $rhSelf = eval($strPos);
+        return("") if($@);
+        
+        $self->Resize($rhSelf->{Width}, $rhSelf->{Height});
+        $self->Move($rhSelf->{Left}, $rhSelf->{Top});
+        }
+        
+    my $rhSelf = {
+        Left => $self->Left(), Top => $self->Top(),
+        Width => $self->Width(), Height => $self->Height(),
+        rhControl => {},
+        };
+    $strPos = Dumper($rhSelf); $strPos =~ s{\s+}{ }gs;
+    
     return($strPos);
     }
 

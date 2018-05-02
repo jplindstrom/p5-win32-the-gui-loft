@@ -40,47 +40,47 @@ use Data::Dumper;
 
 =head2 Custom message to exit from the Dialog() function.
 
-	WM_EXITLOOP
-	WM_APP
+    WM_EXITLOOP
+    WM_APP
 
 =cut
-use constant WM_APP				=> 0x8000;			#From winuser.h (Visual Studio)
-use constant WM_EXITLOOP		=> WM_APP + 1;		#From GUI.xs
+use constant WM_APP             => 0x8000;          #From winuser.h (Visual Studio)
+use constant WM_EXITLOOP        => WM_APP + 1;      #From GUI.xs
 
 
 =head2 RichEdit
 
-	EM_LINESCROLL
-	EM_SETPARAFORMAT
+    EM_LINESCROLL
+    EM_SETPARAFORMAT
 
 =cut
-use constant EM_LINESCROLL		=> 182;				#From podview.pl
-use constant EM_SETPARAFORMAT	=> 0x447;			#From the Win32 SDK
+use constant EM_LINESCROLL      => 182;             #From podview.pl
+use constant EM_SETPARAFORMAT   => 0x447;           #From the Win32 SDK
 
 
 =head2 To make combo boxed non-editable
 
-	CBS_DROPDOWNLIST
-	CBS_DISABLENOSCROLL
+    CBS_DROPDOWNLIST
+    CBS_DISABLENOSCROLL
 =cut
-use constant CBS_DROPDOWNLIST => 0x0003;			#From winuser.h
+use constant CBS_DROPDOWNLIST => 0x0003;            #From winuser.h
 use constant CBS_DISABLENOSCROLL => 0x0800;
 
 
 =head2 ExWindow
 
-	GWL_EXSTYLE
-	WS_EX_TOOLWINDOW
+    GWL_EXSTYLE
+    WS_EX_TOOLWINDOW
 
 =cut
 
-use constant GWL_EXSTYLE => (-20);					#From wiuser.h
-#use constant WS_EX_TOOLWINDOW => 0x00000080;		#From wiuser.h
+use constant GWL_EXSTYLE => (-20);                  #From wiuser.h
+#use constant WS_EX_TOOLWINDOW => 0x00000080;       #From wiuser.h
 
 
 =head2 Label image options
 
-	SS_BITMAP
+    SS_BITMAP
 
 =cut
 use constant SS_BITMAP => 0x0000000E;
@@ -88,7 +88,7 @@ use constant SS_BITMAP => 0x0000000E;
 
 =head2 Drag-drop
 
-	WM_DROPFILES
+    WM_DROPFILES
 
 =cut
 use constant WM_DROPFILES => 0x0233;
@@ -124,22 +124,22 @@ Original idea: Eric Bennett on the Win32::GUI mailing list.
 sub blockGUIWarnings {
     my $self = shift;
 
-	$SIG{'__WARN__'} = sub {
-		my ($warning) = @_;
+    $SIG{'__WARN__'} = sub {
+        my ($warning) = @_;
 
-		if($warning =~ /^Use of uninitialized value in subroutine entry at .+? line \d+?\.$/) {
-			return(0);
-			}
+        if($warning =~ /^Use of uninitialized value in subroutine entry at .+? line \d+?\.$/) {
+            return(0);
+            }
 
-		if($warning =~ m{cleanup.*EXISTS.*Win32/GUI\.pm line \d+? during global destruction\.$}) {
-			return(0);
-			}
+        if($warning =~ m{cleanup.*EXISTS.*Win32/GUI\.pm line \d+? during global destruction\.$}) {
+            return(0);
+            }
 
-		print STDERR $warning;
-		};
+        print STDERR $warning;
+        };
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -156,12 +156,12 @@ Return 1 on success, else 0.
 
 =cut
 sub exitDialog {
-	my ($winSomewindow) = @_;
+    my ($winSomewindow) = @_;
 
-	$winSomewindow->PostMessage(WM_EXITLOOP, -1, 0);
+    $winSomewindow->PostMessage(WM_EXITLOOP, -1, 0);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -179,16 +179,16 @@ Return 1 on success, else 0.
 
 =cut
 sub windowCenter {
-	my ($winSelf, $winParent) = @_;
-	defined($winParent) or $winParent = Win32::GUI::GetDesktopWindow();
+    my ($winSelf, $winParent) = @_;
+    defined($winParent) or $winParent = Win32::GUI::GetDesktopWindow();
 
-	#Avoid OO notation to enable us to use either a hwind or a Win32::GUI::Window object
-	my $x = Win32::GUI::Left($winParent) + (Win32::GUI::Width($winParent) / 2) - (Win32::GUI::Width($winSelf) / 2);
-	my $y = Win32::GUI::Top($winParent) + (Win32::GUI::Height($winParent) / 2) - (Win32::GUI::Height($winSelf) / 2);
-	
-	Win32::GUI::Move($winSelf, $x, $y) and return(1);
-	return(0);
-	}
+    #Avoid OO notation to enable us to use either a hwind or a Win32::GUI::Window object
+    my $x = Win32::GUI::Left($winParent) + (Win32::GUI::Width($winParent) / 2) - (Win32::GUI::Width($winSelf) / 2);
+    my $y = Win32::GUI::Top($winParent) + (Win32::GUI::Height($winParent) / 2) - (Win32::GUI::Height($winSelf) / 2);
+    
+    Win32::GUI::Move($winSelf, $x, $y) and return(1);
+    return(0);
+    }
 
 
 
@@ -206,13 +206,13 @@ file.
 
 =cut
 sub richEditScroll {
-	my ($reControl, $noCol, $noLines) = @_;
+    my ($reControl, $noCol, $noLines) = @_;
 
-	my $diff = $noLines - $reControl->FirstVisibleLine();
-	$reControl->SendMessage(EM_LINESCROLL, $noCol, $diff);
+    my $diff = $noLines - $reControl->FirstVisibleLine();
+    $reControl->SendMessage(EM_LINESCROLL, $noCol, $diff);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -230,29 +230,29 @@ Harald Piske.
 =cut
 my $rsSendMessage = new Win32::API ('User32', $_ = 'SendMessage', "INIP", "I");
 sub richEditTabsizePixels {
-	my ($reControl, $tabSize) = @_;
+    my ($reControl, $tabSize) = @_;
 
-	my $formatParams = 'VVvvV3vvV32';
-	my $params = pack($formatParams,
-			0,						# cbSize (filled in later)
-			0x10,					# dwMask
-			0,						# wNumbering
-			0,						# wReserved
-			0,						# dxStartIndent
-			0,						# dxRightIndent
-			0,						# dxOffset
-			2,						# wAlignment
-			32,						# cTabCount
-			map { $tabSize * $_ }
-					(1..32),		# rgxTabs[MAX_TAB_STOPS]
-			);
-	my $lenParam = pack(substr($formatParams, 0, 1), length($params));
-	substr($params, 0, length($lenParam)) = $lenParam;
+    my $formatParams = 'VVvvV3vvV32';
+    my $params = pack($formatParams,
+            0,                      # cbSize (filled in later)
+            0x10,                   # dwMask
+            0,                      # wNumbering
+            0,                      # wReserved
+            0,                      # dxStartIndent
+            0,                      # dxRightIndent
+            0,                      # dxOffset
+            2,                      # wAlignment
+            32,                     # cTabCount
+            map { $tabSize * $_ }
+                    (1..32),        # rgxTabs[MAX_TAB_STOPS]
+            );
+    my $lenParam = pack(substr($formatParams, 0, 1), length($params));
+    substr($params, 0, length($lenParam)) = $lenParam;
 
-	$rsSendMessage->Call($reControl->{-handle}, EM_SETPARAFORMAT, 0, $params);
+    $rsSendMessage->Call($reControl->{-handle}, EM_SETPARAFORMAT, 0, $params);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -268,10 +268,10 @@ Example: COLOR_BTNFACE
 =cut
 my $rsGetSysColorBrush = new Win32::API("user32", "GetSysColorBrush", "N", "N");
 sub GetSysColorBrush {
-	my ($color) = @_;
+    my ($color) = @_;
 
-	return( $rsGetSysColorBrush->Call($color) );
-	}
+    return( $rsGetSysColorBrush->Call($color) );
+    }
 
 
 
@@ -288,10 +288,10 @@ Example: COLOR_BTNFACE
 =cut
 my $rsGetSysColor = new Win32::API("user32", "GetSysColor", "N", "N");
 sub GetSysColor {
-	my ($color) = @_;
+    my ($color) = @_;
 
-	return( $rsGetSysColor->Call($color) );
-	}
+    return( $rsGetSysColor->Call($color) );
+    }
 
 
 
@@ -311,12 +311,12 @@ Return 1 if the key is depressed, 0 if it's not.
 =cut
 my $rsGetAsyncKeyState = new Win32::API("user32", "GetAsyncKeyState", "N", "I");
 sub GetAsyncKeyState {
-	my ($keyCode) = @_;
+    my ($keyCode) = @_;
 
-	my $ret = $rsGetAsyncKeyState->Call($keyCode);
+    my $ret = $rsGetAsyncKeyState->Call($keyCode);
 print $ret;
-	return( $ret & 1 );
-	}
+    return( $ret & 1 );
+    }
 
 
 
@@ -334,13 +334,13 @@ current state.
 my $rsGetKeyboardState = new Win32::API("user32", "GetKeyboardState", "P", "I");
 sub GetKeyboardState {
 
-	my $buf = " " x 256;
-	$rsGetKeyboardState->Call($buf) or return([]);
-	
-	my @aState = map { $_ & 128 } unpack("C256", $buf);
+    my $buf = " " x 256;
+    $rsGetKeyboardState->Call($buf) or return([]);
+    
+    my @aState = map { $_ & 128 } unpack("C256", $buf);
 
-	return( \@aState );
-	}
+    return( \@aState );
+    }
 
 
 
@@ -358,13 +358,13 @@ Return 1 if the key is depressed, 0 if it's not.
 =cut
 my $rsDrawFrameControl = new Win32::API("user32", "DrawFrameControl", "NPII", "I");
 sub DrawFrameControl {
-	my ($dcDev, $left, $top, $right, $bottom, $type, $state) = @_;
+    my ($dcDev, $left, $top, $right, $bottom, $type, $state) = @_;
 
-	my $rect = pack("llll", $left, $top, $right, $bottom);
-	my $ret = $rsDrawFrameControl->Call($dcDev->{-handle}, $rect, $type, $state);
+    my $rect = pack("llll", $left, $top, $right, $bottom);
+    my $ret = $rsDrawFrameControl->Call($dcDev->{-handle}, $rect, $type, $state);
 
-	return( $ret );
-	}
+    return( $ret );
+    }
 
 
 
@@ -386,12 +386,12 @@ Return 1 if the key is depressed, 0 if it's not.
 =cut
 my $rsDrawIcon = new Win32::API("user32", "DrawIcon", "NNNN", "I");
 sub DrawIcon {
-	my ($dcDev, $left, $top, $icoIcon) = @_;
+    my ($dcDev, $left, $top, $icoIcon) = @_;
 
-	my $ret = $rsDrawIcon->Call($dcDev->{-handle}, int($left), int($top), $icoIcon->{-handle});
+    my $ret = $rsDrawIcon->Call($dcDev->{-handle}, int($left), int($top), $icoIcon->{-handle});
 
-	return( $ret );
-	}
+    return( $ret );
+    }
 
 
 
@@ -407,14 +407,14 @@ errors.
 =cut
 my $rsSetBrushOrgEx = new Win32::API("gdi32", "SetBrushOrgEx", "NNNP", "I") or die();
 sub SetBrushOrgEx {
-	my ($dcDev, $left, $top) = @_;
+    my ($dcDev, $left, $top) = @_;
 
-	my $old = "  " x 2;
-	$rsSetBrushOrgEx->Call($dcDev->{-handle}, $left, $top, $old) or return();
-	my @aRet = unpack("LL", $old);
+    my $old = "  " x 2;
+    $rsSetBrushOrgEx->Call($dcDev->{-handle}, $left, $top, $old) or return();
+    my @aRet = unpack("LL", $old);
 
-	return(@aRet);
-	}
+    return(@aRet);
+    }
 
 
 
@@ -434,14 +434,14 @@ Return 1 on success, else 0.
 =cut
 my $rsLockWindowUpdate = new Win32::API("user32", "LockWindowUpdate", "N", "I");
 sub LockWindowUpdate {
-	my ($winWindow) = @_;
-	defined($winWindow) or $winWindow = 0;
+    my ($winWindow) = @_;
+    defined($winWindow) or $winWindow = 0;
 
-	my $hwind = ($winWindow == 0) ? 0 : $winWindow->{-handle};
-	my $ret = $rsLockWindowUpdate->Call($hwind);
+    my $hwind = ($winWindow == 0) ? 0 : $winWindow->{-handle};
+    my $ret = $rsLockWindowUpdate->Call($hwind);
 
-	return( $ret );
-	}
+    return( $ret );
+    }
 
 
 

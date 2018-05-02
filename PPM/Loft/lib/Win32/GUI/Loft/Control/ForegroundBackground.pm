@@ -37,16 +37,16 @@ Create new Control object.
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
-	my $self = $pkg->SUPER::new();
+    my $self = $pkg->SUPER::new();
 
-	#New properties
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Foreground", "", undef, "", ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Background", "", undef, "", ""));
+    #New properties
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Foreground", "", undef, "", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Background", "", undef, "", ""));
 
-	return($self);
-	}
+    return($self);
+    }
 
 
 
@@ -62,25 +62,25 @@ Return an empty array on errors.
 =cut
 sub buildOptionsSpecial {
     my $self = shift; my $pkg = ref($self);
-	my ($objDesign) = @_;
-	my @aOption;
+    my ($objDesign) = @_;
+    my @aOption;
 
-	if((my $fg = $self->prop("Foreground") || "") ne "") {
-		my ($r, $g, $b) = ($fg =~ m{(\d+)[^\d]+(\d+)[^\d]+(\d+)} );
-		if(defined($b) && $b ne "") {
-			push(@aOption, ("-foreground", [$r, $g, $b]));
-			}
-		}
+    if((my $fg = $self->prop("Foreground") || "") ne "") {
+        my ($r, $g, $b) = ($fg =~ m{(\d+)[^\d]+(\d+)[^\d]+(\d+)} );
+        if(defined($b) && $b ne "") {
+            push(@aOption, ("-foreground", [$r, $g, $b]));
+            }
+        }
 
-	if((my $bg = $self->prop("Background") || "") ne "") {
-		my ($r, $g, $b) = ($bg =~ m{(\d+)[^\d]+(\d+)[^\d]+(\d+)});
-		if(defined($b) && $b ne "") {
-			push(@aOption, ("-background", [$r, $g, $b]));
-			}
-		}
+    if((my $bg = $self->prop("Background") || "") ne "") {
+        my ($r, $g, $b) = ($bg =~ m{(\d+)[^\d]+(\d+)[^\d]+(\d+)});
+        if(defined($b) && $b ne "") {
+            push(@aOption, ("-background", [$r, $g, $b]));
+            }
+        }
 
-	return(@aOption);
-	}
+    return(@aOption);
+    }
 
 
 

@@ -37,14 +37,14 @@ The property name.
 =cut
 sub name {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{name} = $val;
-		}
+    if(defined($val)) {
+        $self->{name} = $val;
+        }
 
-	return($self->{name});
-	}
+    return($self->{name});
+    }
 
 
 
@@ -62,14 +62,14 @@ Example: "Left"
 =cut
 sub nameProperty {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{nameProperty} = $val;
-		}
+    if(defined($val)) {
+        $self->{nameProperty} = $val;
+        }
 
-	return($self->{nameProperty});
-	}
+    return($self->{nameProperty});
+    }
 
 
 
@@ -87,14 +87,14 @@ Example: "-left"
 =cut
 sub nameOption {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{nameOption} = $val;
-		}
+    if(defined($val)) {
+        $self->{nameOption} = $val;
+        }
 
-	return($self->{nameOption});
-	}
+    return($self->{nameOption});
+    }
 
 
 
@@ -107,14 +107,14 @@ The current value of this property.
 =cut
 sub value {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val) && !$self->readonly()) {
-		$self->{value} = $val;
-		}
+    if(defined($val) && !$self->readonly()) {
+        $self->{value} = $val;
+        }
 
-	return($self->{value});
-	}
+    return($self->{value});
+    }
 
 
 
@@ -130,26 +130,26 @@ Readonly.
 =cut
 sub valueParameter {
     my $self = shift; my $pkg = ref($self);
-	
-	return($self->value()) if($self->isScalar());
-	return($self->value()) if($self->isBoolean());
+    
+    return($self->value()) if($self->isScalar());
+    return($self->value()) if($self->isBoolean());
 
-	#It's multi value
-	
-	#Is the first element in the list NOT a hash ref? 
-	return($self->value()) if("HASH" ne ref($self->raValue()->[0]));
-	
-	#It's a multi value with indirection
-	
-	for my $rhItem (@{$self->raValue()}) {
-		my ($key) = keys %$rhItem;
-		return($rhItem->{ $key }) if($key eq $self->value());
-		}
+    #It's multi value
+    
+    #Is the first element in the list NOT a hash ref? 
+    return($self->value()) if("HASH" ne ref($self->raValue()->[0]));
+    
+    #It's a multi value with indirection
+    
+    for my $rhItem (@{$self->raValue()}) {
+        my ($key) = keys %$rhItem;
+        return($rhItem->{ $key }) if($key eq $self->value());
+        }
 
-	cluck("ControlProperty::valueParameter(): Could not find parameter value for value (" . $self->value() . ")");
+    cluck("ControlProperty::valueParameter(): Could not find parameter value for value (" . $self->value() . ")");
 
-	return( undef );
-	}
+    return( undef );
+    }
 
 
 
@@ -163,15 +163,15 @@ current value. Snap to a multiple of $snap (if != 0).
 =cut
 sub valueIncSnap {
     my $self = shift; my $pkg = ref($self);
-	my ($val, $snap) = @_;
+    my ($val, $snap) = @_;
 
-	if(defined($val) && !$self->readonly()) {
-		$self->{value} += $val;
-		$self->{value} = int($self->{value} / $snap) * $snap if($snap != 0);
-		}
+    if(defined($val) && !$self->readonly()) {
+        $self->{value} += $val;
+        $self->{value} = int($self->{value} / $snap) * $snap if($snap != 0);
+        }
 
-	return($self->{value});
-	}
+    return($self->{value});
+    }
 
 
 
@@ -198,14 +198,14 @@ Example: [ { "current" => 0 }, { "left edge" => 1, } ]
 =cut
 sub raValue {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{raValue} = $val;
-		}
+    if(defined($val)) {
+        $self->{raValue} = $val;
+        }
 
-	return($self->{raValue});
-	}
+    return($self->{raValue});
+    }
 
 
 
@@ -222,17 +222,17 @@ Readonly.
 sub raValuesString {
     my $self = shift; my $pkg = ref($self);
 
-	if(ref($self->raValue()->[0]) eq "HASH") {
-		my @aVal;
-		for my $rhItem (@{$self->raValue()}) {
-			push(@aVal, keys %$rhItem);
-			}
-			
-		return(\@aVal);
-		}
-		
-	return($self->raValue());
-	}
+    if(ref($self->raValue()->[0]) eq "HASH") {
+        my @aVal;
+        for my $rhItem (@{$self->raValue()}) {
+            push(@aVal, keys %$rhItem);
+            }
+            
+        return(\@aVal);
+        }
+        
+    return($self->raValue());
+    }
 
 
 
@@ -246,16 +246,16 @@ Return 1 if this property is a boolean value, else 0.
 sub isBoolean {
     my $self = shift; my $pkg = ref($self);
 
-	if(!defined($self->{isBoolean})) {
-		$self->{isBoolean} = ( 
-				@{$self->raValue()} == 2 && 
-				$self->raValue()->[0] eq "0" && 
-				$self->raValue()->[1] eq "1"
-				) ? 1 : 0;
-		}
+    if(!defined($self->{isBoolean})) {
+        $self->{isBoolean} = ( 
+                @{$self->raValue()} == 2 && 
+                $self->raValue()->[0] eq "0" && 
+                $self->raValue()->[1] eq "1"
+                ) ? 1 : 0;
+        }
 
-	return($self->{isBoolean});
-	}
+    return($self->{isBoolean});
+    }
 
 
 
@@ -268,13 +268,13 @@ Return 1 if this property is a multi-value, else 0.
 =cut
 sub isMultiValue {
     my $self = shift; my $pkg = ref($self);
-	 
-	if(!defined($self->{isMultiValue})) {
-		$self->{isMultiValue} = defined($self->raValue()->[0]) ? 1 : 0;
-		}
+     
+    if(!defined($self->{isMultiValue})) {
+        $self->{isMultiValue} = defined($self->raValue()->[0]) ? 1 : 0;
+        }
 
-	return($self->{isMultiValue});
-	}
+    return($self->{isMultiValue});
+    }
 
 
 
@@ -287,12 +287,12 @@ Return 1 if this property is a scalar value, else 0.
 =cut
 sub isScalar {
     my $self = shift; my $pkg = ref($self);
-	 
-	return(0) if($self->isMultiValue());
-	return(0) if($self->isBoolean());
+     
+    return(0) if($self->isMultiValue());
+    return(0) if($self->isBoolean());
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -307,14 +307,14 @@ Default: 0
 =cut
 sub readonly {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{readonly} = $val;
-		}
+    if(defined($val)) {
+        $self->{readonly} = $val;
+        }
 
-	return($self->{readonly});
-	}
+    return($self->{readonly});
+    }
 
 
 
@@ -331,27 +331,27 @@ Die if $name isn't passed.
 =cut
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
-	my ($name, $value, $raValue, $nameOption, $nameProperty) = @_;	
-	defined($name) or die("ControlProperty->new(): $name must be passed");
-	defined($nameProperty) or $nameProperty = $name;
-	defined($nameOption) or $nameOption = lc("-$name");
-	defined($value) or $value = undef;		#Maybe "" ?
-	defined($raValue) or $raValue = [];
+    my ($name, $value, $raValue, $nameOption, $nameProperty) = @_;  
+    defined($name) or die("ControlProperty->new(): $name must be passed");
+    defined($nameProperty) or $nameProperty = $name;
+    defined($nameOption) or $nameOption = lc("-$name");
+    defined($value) or $value = undef;      #Maybe "" ?
+    defined($raValue) or $raValue = [];
 
-	my $self = {
-		'name'					=> $name,
-		'nameProperty'			=> $nameProperty,
-		'nameOption'			=> $nameOption,
-		'value'					=> $value,
-		'raValue'				=> $raValue,
-		
-		};
-	bless $self, $pkg;
-	
-	$self->readonly(0);
+    my $self = {
+        'name'                  => $name,
+        'nameProperty'          => $nameProperty,
+        'nameOption'            => $nameOption,
+        'value'                 => $value,
+        'raValue'               => $raValue,
+        
+        };
+    bless $self, $pkg;
+    
+    $self->readonly(0);
 
-	return($self);
-	}
+    return($self);
+    }
 
 
 
@@ -367,26 +367,26 @@ Return 1 on success, else 0.
 =cut
 sub guiSet {
     my $self = shift; my $pkg = ref($self);
-	my ($objGuiControl) = @_;
+    my ($objGuiControl) = @_;
 
-	if(my $method = $self->nameProperty()) {
-		eval {
-			$objGuiControl->$method( $self->value() );
-			};
-		if($@) {
-			warn(sprintf("ControlProperty::guiSet(%s) failed on object (%s->%s) %s",
-					$self->value(),
-					ref($objGuiControl),
-					$method, 
-					$@)
-					);
-			return(0);
-			}
-		}
-	##todo: else, ChangeOption() ?
+    if(my $method = $self->nameProperty()) {
+        eval {
+            $objGuiControl->$method( $self->value() );
+            };
+        if($@) {
+            warn(sprintf("ControlProperty::guiSet(%s) failed on object (%s->%s) %s",
+                    $self->value(),
+                    ref($objGuiControl),
+                    $method, 
+                    $@)
+                    );
+            return(0);
+            }
+        }
+    ##todo: else, ChangeOption() ?
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -403,14 +403,14 @@ Return 1 on success, else 0.
 sub transformSlim {
     my $self = shift; my $pkg = ref($self);
 
-	#value
-	delete $self->{'name'};
-	delete $self->{'nameProperty'};
-	delete $self->{'nameOption'};
-	delete $self->{'raValue'};
+    #value
+    delete $self->{'name'};
+    delete $self->{'nameProperty'};
+    delete $self->{'nameOption'};
+    delete $self->{'raValue'};
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -426,13 +426,13 @@ Return the altered $objFresh.
 =cut
 sub imprint {
     my $self = shift; my $pkg = ref($self);
-	my ($objFresh, $name) = @_;
+    my ($objFresh, $name) = @_;
 
-	$objFresh->{name} = $name;
-	$objFresh->{value} = $self->{value};
+    $objFresh->{name} = $name;
+    $objFresh->{value} = $self->{value};
 
-	return($objFresh);
-	}
+    return($objFresh);
+    }
 
 
 

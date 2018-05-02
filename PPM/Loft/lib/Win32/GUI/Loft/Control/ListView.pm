@@ -41,8 +41,8 @@ Readonly.
 =cut
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
-	return("lvwListView");
-	}
+    return("lvwListView");
+    }
 
 
 
@@ -59,8 +59,8 @@ Readonly.
 =cut
 sub alignDefault {
     my $self = shift; my $pkg = ref($self);
-	return("left");
-	}
+    return("left");
+    }
 
 
 
@@ -77,8 +77,8 @@ Readonly.
 =cut
 sub valignDefault {
     my $self = shift; my $pkg = ref($self);
-	return("top");
-	}
+    return("top");
+    }
 
 
 
@@ -92,8 +92,8 @@ should be located for this type of control.
 =cut
 sub offsetTextLeft {
     my $self = shift; my $pkg = ref($self);
-	return(6);
-	}
+    return(6);
+    }
 
 
 
@@ -107,8 +107,8 @@ should be located for this type of control.
 =cut
 sub offsetTextTop {
     my $self = shift; my $pkg = ref($self);
-	return(6);
-	}
+    return(6);
+    }
 
 
 
@@ -125,8 +125,8 @@ Readonly.
 =cut
 sub type {
     my $self = shift; my $pkg = ref($self);
-	return("ListView");
-	}
+    return("ListView");
+    }
 
 
 
@@ -142,8 +142,8 @@ Readonly
 =cut
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
-	return("AddListView");
-	}
+    return("AddListView");
+    }
 
 
 
@@ -159,80 +159,80 @@ Create new Control object.
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
-	my $self = $pkg->SUPER::new();
+    my $self = $pkg->SUPER::new();
 
-	#New defaults
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Width", 100));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Height", 50));
+    #New defaults
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Width", 100));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Height", 50));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Visible", 1, [ 0, 1 ], "", ""));
-			
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Visible", 1, [ 0, 1 ], "", ""));
+            
 
-	#New properties
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Tabstop", 1, [ 0, 1 ], undef, ""));
+    #New properties
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Tabstop", 1, [ 0, 1 ], undef, ""));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Autoarrange", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"CheckBoxes", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"FullRowSelect", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"GridLines", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"NoColumnHeader", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"NoSortHeader", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"ReorderColumns", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"ShowSelAlways", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"SingleSel", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"SortAscending", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"SortDescending", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"HotTrack", 0, [ 0, 1 ], undef, ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"ImageList", "", [], "", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Autoarrange", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "CheckBoxes", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "FullRowSelect", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "GridLines", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "NoColumnHeader", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "NoSortHeader", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "ReorderColumns", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "ShowSelAlways", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "SingleSel", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "SortAscending", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "SortDescending", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "HotTrack", 0, [ 0, 1 ], undef, ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "ImageList", "", [], "", ""));
 
 ##todo: real colors
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"TextColor", "", [], "", undef));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "TextColor", "", [], "", undef));
 ##todo: real colors
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"TextBkColor", "", [], "", undef));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "TextBkColor", "", [], "", undef));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Columns", "", undef, "", ""));
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"PreviewList", "", undef, "", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Columns", "", undef, "", ""));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "PreviewList", "", undef, "", ""));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"View", "details", [
-					{ "big icons" => 0 },
-					{ "details" => 1 },
-					{ "small icons" => 2 },
-					{ "list" => 3 },
-					], "", undef));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "View", "details", [
+                    { "big icons" => 0 },
+                    { "details" => 1 },
+                    { "small icons" => 2 },
+                    { "list" => 3 },
+                    ], "", undef));
 
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Arrange", "current", [
-					{ "current" => 0 },
-					{ "left edge" => 1 },
-					{ "top edge" => 2 },
-					{ "to grid" => 3 },
-					], "", undef));
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Arrange", "current", [
+                    { "current" => 0 },
+                    { "left edge" => 1 },
+                    { "top edge" => 2 },
+                    { "to grid" => 3 },
+                    ], "", undef));
 
 
-	return($self);
-	}
+    return($self);
+    }
 
 
 
@@ -248,33 +248,33 @@ Return an empty array on errors.
 =cut
 sub buildOptionsSpecial {
     my $self = shift; my $pkg = ref($self);
-	my ($objDesign) = @_;
-	my @aOption;
+    my ($objDesign) = @_;
+    my @aOption;
 
-	if($self->prop("ImageList") ne "") {
-		my $ilImageList = $objDesign->rhImageList()->{ $self->prop("ImageList") };
-		push(@aOption, ("-imagelist", $ilImageList)) if($ilImageList);
-		}
-		
-	#This one seems to HAVE to be there! Weirdness!
-	push(@aOption, (-style => WS_CHILD | 1));
+    if($self->prop("ImageList") ne "") {
+        my $ilImageList = $objDesign->rhImageList()->{ $self->prop("ImageList") };
+        push(@aOption, ("-imagelist", $ilImageList)) if($ilImageList);
+        }
+        
+    #This one seems to HAVE to be there! Weirdness!
+    push(@aOption, (-style => WS_CHILD | 1));
 
-	if($self->prop("Visible") ne "0") {
-		#If preview and the cluster is hidden, go for hidden
-		if(		$objDesign->isPreview() && 
-				!$self->designIsVisible() ) {
-			#Nothing, let it be invisible
-			}
-		else {
-			my $ilImageList = $objDesign->rhImageList()->{ $self->prop("ImageList") };
-			push(@aOption, ("-addstyle", WS_VISIBLE));
-			}
-		}
+    if($self->prop("Visible") ne "0") {
+        #If preview and the cluster is hidden, go for hidden
+        if(     $objDesign->isPreview() && 
+                !$self->designIsVisible() ) {
+            #Nothing, let it be invisible
+            }
+        else {
+            my $ilImageList = $objDesign->rhImageList()->{ $self->prop("ImageList") };
+            push(@aOption, ("-addstyle", WS_VISIBLE));
+            }
+        }
 
-	###
+    ###
 
-	return(@aOption);
-	}
+    return(@aOption);
+    }
 
 
 
@@ -290,37 +290,37 @@ Return 1 on success, else 0.
 =cut
 sub buildMethodsSpecial {
     my $self = shift; my $pkg = ref($self);
-	my ($objNew, $objDesign) = @_;
+    my ($objNew, $objDesign) = @_;
 
-	if($self->prop("Columns") || "" ne "") {
-		#Parse column text
-		my @aItem = split(/;\s*/, $self->prop("Columns"));
-		for my $item (@aItem) {
+    if($self->prop("Columns") || "" ne "") {
+        #Parse column text
+        my @aItem = split(/;\s*/, $self->prop("Columns"));
+        for my $item (@aItem) {
 
-			my ($text, $width) = ($item =~ m{^(.+?):?(-?\d+)?$});
+            my ($text, $width) = ($item =~ m{^(.+?):?(-?\d+)?$});
 
-			$objNew->InsertColumn(-text => $text, -width => $width);
-			}
-		}
+            $objNew->InsertColumn(-text => $text, -width => $width);
+            }
+        }
 
-	if($objDesign->isPreview() && $self->prop("PreviewList") || "" ne "") {
-		#Parse preview text
-		my @aItem = split(/;\s*/, $self->prop("PreviewList"));
+    if($objDesign->isPreview() && $self->prop("PreviewList") || "" ne "") {
+        #Parse preview text
+        my @aItem = split(/;\s*/, $self->prop("PreviewList"));
 
-		for my $item (@aItem) {
-			my ($textItem, $image) = ($item =~ m{^(.+?):?(\d+)?$});
+        for my $item (@aItem) {
+            my ($textItem, $image) = ($item =~ m{^(.+?):?(\d+)?$});
 
-			my @aText = split(/,\s*/, $textItem);
+            my @aText = split(/,\s*/, $textItem);
 
-			my @aImage = (($image || "") ne "") ? (-image => $image) : ();
+            my @aImage = (($image || "") ne "") ? (-image => $image) : ();
 
-			$objNew->InsertItem(-text => [ @aText ], @aImage );
-			}
+            $objNew->InsertItem(-text => [ @aText ], @aImage );
+            }
 
-		}
+        }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -336,29 +336,29 @@ Return the new node, or undef on errors.
 =cut
 sub ListViewInsertItem {
     my $self = shift; my $pkg = ref($self);
-	my ($tvwTree, $ndeTop, $itemText) = @_;
+    my ($tvwTree, $ndeTop, $itemText) = @_;
 
-	#Hej:0, Hopp:1, Hallå:1;Nisse, Manpower:2
-	my ($text, $image) = ($itemText =~ m{^(.+?):?(\d+)?$});
+    #Hej:0, Hopp:1, Hallå:1;Nisse, Manpower:2
+    my ($text, $image) = ($itemText =~ m{^(.+?):?(\d+)?$});
 
-	my @aImage = defined($image) ? (
-			-image => $image,
-			-selectedimage => $image ) :
-			();
+    my @aImage = defined($image) ? (
+            -image => $image,
+            -selectedimage => $image ) :
+            ();
 
-	#Don't use the image if there is no imagelist
-#	@aImage = () if(! $objDesign->rhImageList()->{ $self->prop("ImageList") } );
-	my @aParent = (defined($ndeTop)) ? (-parent => $ndeTop) : ();
-	my $ndeNew = $tvwTree->InsertItem(
-			-text          => $text,
-			@aImage,
-			@aParent,
-			);
-	$tvwTree->EnsureVisible($ndeNew);
+    #Don't use the image if there is no imagelist
+#   @aImage = () if(! $objDesign->rhImageList()->{ $self->prop("ImageList") } );
+    my @aParent = (defined($ndeTop)) ? (-parent => $ndeTop) : ();
+    my $ndeNew = $tvwTree->InsertItem(
+            -text          => $text,
+            @aImage,
+            @aParent,
+            );
+    $tvwTree->EnsureVisible($ndeNew);
 
 
-	return($ndeNew);
-	}
+    return($ndeNew);
+    }
 
 
 
@@ -373,54 +373,54 @@ Return 1 on success, else 0.
 =cut
 sub paint {
     my $self = shift; my $pkg = ref($self);
-	my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
+    my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
 
-	return(1) if(!$self->designIsVisible());
+    return(1) if(!$self->designIsVisible());
 
-	#Draw ListView
-	$dcDev->SelectObject($rhBrush->{noPen});
-	$dcDev->SelectObject($rhBrush->{whiteBrush});
-	$dcDev->Rectangle(
-			$rhPosCache->{left},
-			$rhPosCache->{top},
-			$rhPosCache->{left} + $rhPosCache->{width},
-			$rhPosCache->{top} + $rhPosCache->{height},
-			) if($self->prop("Visible"));
+    #Draw ListView
+    $dcDev->SelectObject($rhBrush->{noPen});
+    $dcDev->SelectObject($rhBrush->{whiteBrush});
+    $dcDev->Rectangle(
+            $rhPosCache->{left},
+            $rhPosCache->{top},
+            $rhPosCache->{left} + $rhPosCache->{width},
+            $rhPosCache->{top} + $rhPosCache->{height},
+            ) if($self->prop("Visible"));
 
-	if(!$self->prop("GridLines")) {
-		$dcDev->DrawEdge(
-				$rhPosCache->{left},
-				$rhPosCache->{top},
-				$rhPosCache->{left} + $rhPosCache->{width},
-				$rhPosCache->{top} + $rhPosCache->{height},
-				0x0002 | 0x0008,			#BDR_SUNKENOUTER | BDR_SUNKENINNER
-				);
+    if(!$self->prop("GridLines")) {
+        $dcDev->DrawEdge(
+                $rhPosCache->{left},
+                $rhPosCache->{top},
+                $rhPosCache->{left} + $rhPosCache->{width},
+                $rhPosCache->{top} + $rhPosCache->{height},
+                0x0002 | 0x0008,            #BDR_SUNKENOUTER | BDR_SUNKENINNER
+                );
 
-		}
-	else {
-		$dcDev->DrawEdge(
-				$rhPosCache->{left},
-				$rhPosCache->{top},
-				$rhPosCache->{left} + $rhPosCache->{width},
-				$rhPosCache->{top} + $rhPosCache->{height},
-				0x0004 | 0x0001,			#BDR_RAISEDINNER  | BDR_RAISEDOUTER
-				);
+        }
+    else {
+        $dcDev->DrawEdge(
+                $rhPosCache->{left},
+                $rhPosCache->{top},
+                $rhPosCache->{left} + $rhPosCache->{width},
+                $rhPosCache->{top} + $rhPosCache->{height},
+                0x0004 | 0x0001,            #BDR_RAISEDINNER  | BDR_RAISEDOUTER
+                );
 
-		$dcDev->DrawEdge(
-				$rhPosCache->{left} + 3,
-				$rhPosCache->{top} + 3,
-				$rhPosCache->{left} + $rhPosCache->{width} - 3,
-				$rhPosCache->{top} + $rhPosCache->{height} - 3,
-				0x0002 | 0x0008,			#BDR_SUNKENOUTER | BDR_SUNKENINNER
-				);
-		}
-	$dcDev->BkMode(1);
+        $dcDev->DrawEdge(
+                $rhPosCache->{left} + 3,
+                $rhPosCache->{top} + 3,
+                $rhPosCache->{left} + $rhPosCache->{width} - 3,
+                $rhPosCache->{top} + $rhPosCache->{height} - 3,
+                0x0002 | 0x0008,            #BDR_SUNKENOUTER | BDR_SUNKENINNER
+                );
+        }
+    $dcDev->BkMode(1);
 
-	$self->paintName($dcDev, $rhBrush, $rhPosCache);
-#	$self->paintSelected($dcDev, $rhBrush, $rhPosCache);
+    $self->paintName($dcDev, $rhBrush, $rhPosCache);
+#   $self->paintSelected($dcDev, $rhBrush, $rhPosCache);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 

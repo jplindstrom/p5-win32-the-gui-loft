@@ -37,8 +37,8 @@ Readonly.
 =cut
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
-	return("timTimer");
-	}
+    return("timTimer");
+    }
 
 
 
@@ -55,8 +55,8 @@ Readonly.
 =cut
 sub type {
     my $self = shift; my $pkg = ref($self);
-	return("Timer");
-	}
+    return("Timer");
+    }
 
 
 
@@ -72,8 +72,8 @@ Readonly
 =cut
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
-	return("AddTimer");
-	}
+    return("AddTimer");
+    }
 
 
 
@@ -91,8 +91,8 @@ Readonly.
 =cut
 sub buildControlPhase {
     my $self = shift; my $pkg = ref($self);
-	return(0);
-	}
+    return(0);
+    }
 
 
 
@@ -110,8 +110,8 @@ Readonly.
 =cut
 sub buildPostControlPhase {
     my $self = shift; my $pkg = ref($self);
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -127,18 +127,18 @@ Create new Control object.
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
-	my $self = $pkg->SUPER::new();
+    my $self = $pkg->SUPER::new();
 
-	#Redefine properties
-#	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-#			"Name", "", [], "", ""));
+    #Redefine properties
+#   $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+#           "Name", "", [], "", ""));
 
-	#New properties
-	$self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
-			"Interval", "1000", [], "", ""));
+    #New properties
+    $self->propertyAdd(Win32::GUI::Loft::ControlProperty->new(
+            "Interval", "1000", [], "", ""));
 
-	return($self);
-	}
+    return($self);
+    }
 
 
 
@@ -160,21 +160,21 @@ Return the new control object, or undef on errors.
 =cut
 sub buildAdd {
     my $self = shift; my $pkg = ref($self);
-	my ($objDesign, $objControlContainerDefault, $objInspector) = @_;
+    my ($objDesign, $objControlContainerDefault, $objInspector) = @_;
 
 ##todo: Implement the container object stuff
 ##Meanwhile, always use the
-	my $objContainer = $objControlContainerDefault;
+    my $objContainer = $objControlContainerDefault;
 
-	##todo: pass this to the inspector somehow,
-	#		probably in a new (generic?) method
-	my $objNew = $objContainer->AddTimer(
-			$self->prop("Name"),
-			$self->prop("Interval")
-			);
+    ##todo: pass this to the inspector somehow,
+    #       probably in a new (generic?) method
+    my $objNew = $objContainer->AddTimer(
+            $self->prop("Name"),
+            $self->prop("Interval")
+            );
 
-	return($objNew);
-	}
+    return($objNew);
+    }
 
 
 

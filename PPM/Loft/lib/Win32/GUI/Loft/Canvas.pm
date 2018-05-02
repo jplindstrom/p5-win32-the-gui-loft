@@ -54,15 +54,15 @@ Set to 0 to undef
 =cut
 sub objDesign {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{objDesign} = $val;
-		$self->{objDesign} = undef if($val == 0);
-		}
+    if(defined($val)) {
+        $self->{objDesign} = $val;
+        $self->{objDesign} = undef if($val == 0);
+        }
 
-	return($self->{objDesign});
-	}
+    return($self->{objDesign});
+    }
 
 
 
@@ -77,15 +77,15 @@ Set to 0 to undef
 =cut
 sub objCanvas {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{objCanvas} = $val;
-		$self->{objCanvas} = undef if($val == 0);
-		}
+    if(defined($val)) {
+        $self->{objCanvas} = $val;
+        $self->{objCanvas} = undef if($val == 0);
+        }
 
-	return($self->{objCanvas});
-	}
+    return($self->{objCanvas});
+    }
 
 
 
@@ -101,14 +101,14 @@ itself if no other control is selected.
 =cut
 sub rhControlSelected {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{rhControlSelected} = $val;
-		}
+    if(defined($val)) {
+        $self->{rhControlSelected} = $val;
+        }
 
-	return($self->{rhControlSelected});
-	}
+    return($self->{rhControlSelected});
+    }
 
 
 
@@ -127,15 +127,15 @@ Readonly.
 sub rhControlActuallySelected {
     my $self = shift; my $pkg = ref($self);
 
-	if(!keys %{$self->rhControlSelected()}) {
-		return( {
-				$self->objDesign()->objControlWindow() =>
-				$self->objDesign()->objControlWindow()
-				} );
-		}
+    if(!keys %{$self->rhControlSelected()}) {
+        return( {
+                $self->objDesign()->objControlWindow() =>
+                $self->objDesign()->objControlWindow()
+                } );
+        }
 
-	return($self->rhControlSelected());
-	}
+    return($self->rhControlSelected());
+    }
 
 
 
@@ -149,14 +149,14 @@ notified when something happens to the model.
 =cut
 sub raView {
     my $self = shift; my $pkg = ref($self);
-	my ($val) = @_;
+    my ($val) = @_;
 
-	if(defined($val)) {
-		$self->{raView} = $val;
-		}
+    if(defined($val)) {
+        $self->{raView} = $val;
+        }
 
-	return($self->{raView});
-	}
+    return($self->{raView});
+    }
 
 
 
@@ -172,16 +172,16 @@ Create new Canvas.
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
-	my $self = {
-			rhControlSelected		=> {},
-			raView					=> [],
+    my $self = {
+            rhControlSelected       => {},
+            raView                  => [],
 
-			};
-	bless $self, $pkg;
+            };
+    bless $self, $pkg;
 
 
-	return($self);
-	}
+    return($self);
+    }
 
 
 
@@ -198,22 +198,22 @@ Return 1 on success, else 0.
 =cut
 sub propNotifyChange {
     my $self = shift; my $pkg = ref($self);
-	my ($raPropName, $objBlocked) = @_;
-	defined($objBlocked) or $objBlocked = 0;
+    my ($raPropName, $objBlocked) = @_;
+    defined($objBlocked) or $objBlocked = 0;
 
-	my $rhControl = $self->rhControlSelected();
+    my $rhControl = $self->rhControlSelected();
 
-	#If no selected, view the window
-	if(! (keys %$rhControl)) {
-		$rhControl = { 1 => $self->objDesign()->objControlWindow() };
-		}
+    #If no selected, view the window
+    if(! (keys %$rhControl)) {
+        $rhControl = { 1 => $self->objDesign()->objControlWindow() };
+        }
 
-	for my $objView (@{$self->raView()}) {
-		$objView->propNotifyChange( $rhControl, $raPropName ) if($objBlocked != $objView);
-		}
+    for my $objView (@{$self->raView()}) {
+        $objView->propNotifyChange( $rhControl, $raPropName ) if($objBlocked != $objView);
+        }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -230,22 +230,22 @@ Return 1 on success, else 0.
 =cut
 sub propNotifySelected {
     my $self = shift; my $pkg = ref($self);
-	my ($objBlocked) = @_;
-	defined($objBlocked) or $objBlocked = 0;
+    my ($objBlocked) = @_;
+    defined($objBlocked) or $objBlocked = 0;
 
-	my $rhControl = $self->rhControlSelected();
+    my $rhControl = $self->rhControlSelected();
 
-	#If no selected, view the window
-	if(! (keys %$rhControl)) {
-		$rhControl = { 1 => $self->objDesign()->objControlWindow() };
-		}
+    #If no selected, view the window
+    if(! (keys %$rhControl)) {
+        $rhControl = { 1 => $self->objDesign()->objControlWindow() };
+        }
 
-	for my $objView (@{$self->raView()}) {
-		$objView->propNotifySelected( $rhControl, [] ) if($objBlocked != $objView);
-		}
+    for my $objView (@{$self->raView()}) {
+        $objView->propNotifySelected( $rhControl, [] ) if($objBlocked != $objView);
+        }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -263,15 +263,15 @@ Return 1 on success, else 0.
 =cut
 sub propNotifySelectionBox {
     my $self = shift; my $pkg = ref($self);
-	my ($left, $top, $width, $height, $objBlocked) = @_;
-	defined($objBlocked) or $objBlocked = 0;
+    my ($left, $top, $width, $height, $objBlocked) = @_;
+    defined($objBlocked) or $objBlocked = 0;
 
-	for my $objView (@{$self->raView()}) {
-		$objView->propNotifySelectionBox($left, $top, $width, $height) if($objBlocked != $objView);
-		}
+    for my $objView (@{$self->raView()}) {
+        $objView->propNotifySelectionBox($left, $top, $width, $height) if($objBlocked != $objView);
+        }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -286,15 +286,15 @@ Return 1 on success, else 0.
 =cut
 sub propNotifyFundamental {
     my $self = shift; my $pkg = ref($self);
-	my ($objBlocked) = @_;
-	defined($objBlocked) or $objBlocked = 0;
+    my ($objBlocked) = @_;
+    defined($objBlocked) or $objBlocked = 0;
 
-	for my $objView (@{$self->raView()}) {
-		$objView->propNotifyFundamental() if($objBlocked != $objView);
-		}
+    for my $objView (@{$self->raView()}) {
+        $objView->propNotifyFundamental() if($objBlocked != $objView);
+        }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -310,15 +310,15 @@ Return 1 on success, else 0.
 =cut
 sub clusterNotifyFundamental {
     my $self = shift; my $pkg = ref($self);
-	my ($objBlocked) = @_;
-	defined($objBlocked) or $objBlocked = 0;
+    my ($objBlocked) = @_;
+    defined($objBlocked) or $objBlocked = 0;
 
-	for my $objView (@{$self->raView()}) {
-		$objView->clusterNotifyFundamental() if($objBlocked != $objView);
-		}
+    for my $objView (@{$self->raView()}) {
+        $objView->clusterNotifyFundamental() if($objBlocked != $objView);
+        }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -335,13 +335,13 @@ Return 1 on success, else 0.
 sub setAppState {
     my $self = shift; my $pkg = ref($self);
 
-	#View the selected control's properties in the
-	#properties window
+    #View the selected control's properties in the
+    #properties window
 ##todo
 
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -352,22 +352,22 @@ sub setAppState {
 
 Align the selected controls to each other according to $how:
 
-	right
+    right
 
 Return 1 on success, else 0.
 
 =cut
 sub controlAlignSelected {
     my $self = shift; my $pkg = ref($self);
-	my ($how) = @_;	
-	my $raControl = [ values %{$self->rhControlSelected()} ];
-	
-	$self->objDesign()->controlAlignMultiple($raControl, $how);
-	
-	$self->propNotifyChange(["Left", "Top", "Width", "Height"]);
+    my ($how) = @_; 
+    my $raControl = [ values %{$self->rhControlSelected()} ];
+    
+    $self->objDesign()->controlAlignMultiple($raControl, $how);
+    
+    $self->propNotifyChange(["Left", "Top", "Width", "Height"]);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -382,21 +382,21 @@ Return 1 on success, else 0.
 =cut
 sub controlSelected {
     my $self = shift; my $pkg = ref($self);
-	my ($objControl, $isSelected) = @_;
+    my ($objControl, $isSelected) = @_;
 
-	if($isSelected) {
-###		if(!$objControl->designIsVisible()) {
-			$self->rhControlSelected()->{$objControl} = $objControl;
-###			}
-		}
-	else {
-		delete $self->rhControlSelected()->{$objControl};
-		}
+    if($isSelected) {
+###     if(!$objControl->designIsVisible()) {
+            $self->rhControlSelected()->{$objControl} = $objControl;
+###         }
+        }
+    else {
+        delete $self->rhControlSelected()->{$objControl};
+        }
 
-	$objControl->designIsSelected($isSelected);
+    $objControl->designIsSelected($isSelected);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -411,14 +411,14 @@ Return 1 on success, else 0.
 =cut
 sub controlMultipleSelect {
     my $self = shift; my $pkg = ref($self);
-	my ($rhControl, $isSelected) = @_;
+    my ($rhControl, $isSelected) = @_;
 
-	for my $objControl (values %{$rhControl}) {
-		$self->controlSelected($objControl, $isSelected);
-		}
+    for my $objControl (values %{$rhControl}) {
+        $self->controlSelected($objControl, $isSelected);
+        }
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -434,18 +434,18 @@ Return 1 on success, else 0.
 sub controlAllDeselect {
     my $self = shift; my $pkg = ref($self);
 
-	#Deselect all
-	for my $objControl (@{$self->objDesign()->raControl()}) {
-		$objControl->designIsSelected(0);
-		}
+    #Deselect all
+    for my $objControl (@{$self->objDesign()->raControl()}) {
+        $objControl->designIsSelected(0);
+        }
 
-	#Clear hash ref with selected
-	$self->rhControlSelected({});
-	
-	$self->propNotifySelected();
+    #Clear hash ref with selected
+    $self->rhControlSelected({});
+    
+    $self->propNotifySelected();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -461,17 +461,17 @@ Return 1 on success, else 0.
 sub controlAllSelect {
     my $self = shift; my $pkg = ref($self);
 
-#	$self->objDesign()->objControlWindow()->isSelected(0);
+#   $self->objDesign()->objControlWindow()->isSelected(0);
 
-	#Select all
-	for my $objControl (@{$self->objDesign()->raControl()}) {
-		$self->controlSelected($objControl, 1);
-		}
+    #Select all
+    for my $objControl (@{$self->objDesign()->raControl()}) {
+        $self->controlSelected($objControl, 1);
+        }
 
-	$self->propNotifySelected();
+    $self->propNotifySelected();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -488,14 +488,14 @@ failure.
 =cut
 sub controlNew {
     my $self = shift; my $pkg = ref($self);
-	my ($type) = @_;
+    my ($type) = @_;
 
-	my $objNew = $self->objDesign()->controlNew($type);
+    my $objNew = $self->objDesign()->controlNew($type);
 
-	$self->propNotifyFundamental();
+    $self->propNotifyFundamental();
 
-	return($objNew);
-	}
+    return($objNew);
+    }
 
 
 
@@ -512,11 +512,11 @@ success, else "".
 sub controlCut {
     my $self = shift; my $pkg = ref($self);
 
-	my $clipboard = $self->objDesign()->controlCopy( $self->rhControlSelected() );
-	$self->controlDelete();
+    my $clipboard = $self->objDesign()->controlCopy( $self->rhControlSelected() );
+    $self->controlDelete();
 
-	return($clipboard);
-	}
+    return($clipboard);
+    }
 
 
 
@@ -532,8 +532,8 @@ success, else  "".
 =cut
 sub controlCopy {
     my $self = shift; my $pkg = ref($self);
-	return( $self->objDesign()->controlCopy( $self->rhControlSelected() ) );
-	}
+    return( $self->objDesign()->controlCopy( $self->rhControlSelected() ) );
+    }
 
 
 
@@ -549,8 +549,8 @@ success, else  "".
 =cut
 sub controlCopyName {
     my $self = shift; my $pkg = ref($self);
-	return( $self->objDesign()->controlCopyName( $self->rhControlActuallySelected() ) );
-	}
+    return( $self->objDesign()->controlCopyName( $self->rhControlActuallySelected() ) );
+    }
 
 
 
@@ -565,22 +565,22 @@ Return 1 on success, else 0.
 =cut
 sub controlPaste {
     my $self = shift; my $pkg = ref($self);
-	my ($clipboard) = @_;
+    my ($clipboard) = @_;
 
-	$self->controlAllDeselect();
-	my $rhControl = $self->objDesign()->clipboardParseControl($clipboard);
-	$self->objDesign()->controlPaste($rhControl);
+    $self->controlAllDeselect();
+    my $rhControl = $self->objDesign()->clipboardParseControl($clipboard);
+    $self->objDesign()->controlPaste($rhControl);
 
-	#Select the new controls
-	for my $objControl (values %{$rhControl}) {
-		$self->controlSelected($objControl, 1);
-		}
+    #Select the new controls
+    for my $objControl (values %{$rhControl}) {
+        $self->controlSelected($objControl, 1);
+        }
 
-	#Notify
-	$self->propNotifyFundamental();
+    #Notify
+    $self->propNotifyFundamental();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -596,13 +596,13 @@ Return 1 on success, else 0.
 sub controlDelete {
     my $self = shift; my $pkg = ref($self);
 
-	my $raControl = $self->rhControlSelected();		#Store selected
-	$self->controlAllDeselect();					#Deselect from canvas
-	$self->objDesign()->controlDelete($raControl);	#Remove from design
-	$self->propNotifyFundamental();					#Nofify
+    my $raControl = $self->rhControlSelected();     #Store selected
+    $self->controlAllDeselect();                    #Deselect from canvas
+    $self->objDesign()->controlDelete($raControl);  #Remove from design
+    $self->propNotifyFundamental();                 #Nofify
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -618,14 +618,14 @@ Return 1 on success, else 0.
 =cut
 sub clusterNew {
     my $self = shift; my $pkg = ref($self);
-	my ($name) = @_;
+    my ($name) = @_;
 
-	$self->objDesign()->clusterNew($self->rhControlSelected(), $name) or return(0);
+    $self->objDesign()->clusterNew($self->rhControlSelected(), $name) or return(0);
 
-	$self->clusterNotifyFundamental();
+    $self->clusterNotifyFundamental();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -640,14 +640,14 @@ Return 1 on success, else 0.
 =cut
 sub clusterDelete {
     my $self = shift; my $pkg = ref($self);
-	my ($objCluster) = @_;
+    my ($objCluster) = @_;
 
-	$self->objDesign()->clusterDelete($objCluster) or return(0);
+    $self->objDesign()->clusterDelete($objCluster) or return(0);
 
-	$self->clusterNotifyFundamental();
+    $self->clusterNotifyFundamental();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -663,23 +663,23 @@ Return 1 on success, else 0.
 =cut
 sub clusterVisibleToggle {
     my $self = shift; my $pkg = ref($self);
-	my ($objCluster) = @_;
+    my ($objCluster) = @_;
 
-	#Toggle and (de)select
-	$objCluster->visibleToggle();
+    #Toggle and (de)select
+    $objCluster->visibleToggle();
 
-	#If "show", deselect all other controls before we select clustered controls
-	$self->controlAllDeselect() if($objCluster->isVisible());
+    #If "show", deselect all other controls before we select clustered controls
+    $self->controlAllDeselect() if($objCluster->isVisible());
 
-	#Select custered controls
-	$self->controlMultipleSelect($objCluster->rhControl(), $objCluster->isVisible());
+    #Select custered controls
+    $self->controlMultipleSelect($objCluster->rhControl(), $objCluster->isVisible());
 
 
-	$self->clusterNotifyFundamental();
-	$self->propNotifySelected();
+    $self->clusterNotifyFundamental();
+    $self->propNotifySelected();
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -694,12 +694,12 @@ Return 1 on success, else 0.
 =cut
 sub clusterMemorize {
     my $self = shift; my $pkg = ref($self);
-	my ($objCluster) = @_;
+    my ($objCluster) = @_;
 
-	$self->objDesign()->clusterMemorize($objCluster, $self->rhControlSelected()) or return(0);
+    $self->objDesign()->clusterMemorize($objCluster, $self->rhControlSelected()) or return(0);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -714,12 +714,12 @@ control, or "" if no or many controls are selected.
 sub helpFileSelected {
     my $self = shift; my $pkg = ref($self);
 
-	my @aControl = values %{$self->rhControlActuallySelected()};
+    my @aControl = values %{$self->rhControlActuallySelected()};
 
-	return($aControl[0]->type()) if(@aControl == 1);
+    return($aControl[0]->type()) if(@aControl == 1);
 
-	return("");
-	}
+    return("");
+    }
 
 
 

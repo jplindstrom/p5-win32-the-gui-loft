@@ -34,14 +34,14 @@ Create new View.
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
-	my $self = {
+    my $self = {
 
-			};
-	bless $self, $pkg;
+            };
+    bless $self, $pkg;
 
 
-	return($self);
-	}
+    return($self);
+    }
 
 
 
@@ -57,10 +57,10 @@ Return 1 on success, else 0.
 =cut
 sub propPopulate {
     my $self = shift; my $pkg = ref($self);
-	my ($rhControl) = @_;
+    my ($rhControl) = @_;
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -76,10 +76,10 @@ Return 1 on success, else 0.
 =cut
 sub propNotifyChange {
     my $self = shift; my $pkg = ref($self);
-	my ($rhControl, $raPropName) = @_;
+    my ($rhControl, $raPropName) = @_;
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -94,10 +94,10 @@ Return 1 on success, else 0.
 =cut
 sub propNotifySelected {
     my $self = shift; my $pkg = ref($self);
-	my ($rhControl) = @_;
+    my ($rhControl) = @_;
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -116,10 +116,10 @@ Return 1 on success, else 0.
 =cut
 sub propNotifySelectionBox {
     my $self = shift; my $pkg = ref($self);
-	my ($left, $top, $width, $height) = @_;
+    my ($left, $top, $width, $height) = @_;
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -135,8 +135,8 @@ Return 1 on success, else 0.
 sub propNotifyFundamental {
     my $self = shift; my $pkg = ref($self);
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -155,8 +155,8 @@ sub clusterNotifyFundamental {
 
 
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 

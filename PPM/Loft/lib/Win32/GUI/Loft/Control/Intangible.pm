@@ -44,8 +44,8 @@ Readonly.
 =cut
 sub designIsTangible {
     my $self = shift; my $pkg = ref($self);
-	return(0);
-	}
+    return(0);
+    }
 
 
 
@@ -60,26 +60,26 @@ Create new Control object.
 =cut
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
-	
-	my $self = $pkg->SUPER::new();
-	
-	#Remove properties
-	delete $self->rhControlProperty()->{"Visible"};
-	delete $self->rhControlProperty()->{"Enable"};
-	delete $self->rhControlProperty()->{"Left"};
-	delete $self->rhControlProperty()->{"Top"};
-	delete $self->rhControlProperty()->{"Width"};
-	delete $self->rhControlProperty()->{"Height"};
+    
+    my $self = $pkg->SUPER::new();
+    
+    #Remove properties
+    delete $self->rhControlProperty()->{"Visible"};
+    delete $self->rhControlProperty()->{"Enable"};
+    delete $self->rhControlProperty()->{"Left"};
+    delete $self->rhControlProperty()->{"Top"};
+    delete $self->rhControlProperty()->{"Width"};
+    delete $self->rhControlProperty()->{"Height"};
 
-	delete $self->rhControlProperty()->{"ResizeH"};
-	delete $self->rhControlProperty()->{"ResizeHMod"};
-	delete $self->rhControlProperty()->{"ResizeHValue"};
-	delete $self->rhControlProperty()->{"ResizeV"};
-	delete $self->rhControlProperty()->{"ResizeModV"};
-	delete $self->rhControlProperty()->{"ResizeVValue"};
-		
-	return($self);
-	}
+    delete $self->rhControlProperty()->{"ResizeH"};
+    delete $self->rhControlProperty()->{"ResizeHMod"};
+    delete $self->rhControlProperty()->{"ResizeHValue"};
+    delete $self->rhControlProperty()->{"ResizeV"};
+    delete $self->rhControlProperty()->{"ResizeModV"};
+    delete $self->rhControlProperty()->{"ResizeVValue"};
+        
+    return($self);
+    }
 
 
 
@@ -92,10 +92,10 @@ Return 1 if the coords are within the control, else 0.
 =cut
 sub isClicked {
     my $self = shift; my $pkg = ref($self);
-	my ($left, $top) = @_;
+    my ($left, $top) = @_;
 
-	return(0);
-	}
+    return(0);
+    }
 
 
 
@@ -109,10 +109,10 @@ $leftSel, $topSel, else return 0.
 =cut
 sub isClickedSelected {
     my $self = shift; my $pkg = ref($self);
-	my ($left, $top, $leftSel, $topSel) = @_;
+    my ($left, $top, $leftSel, $topSel) = @_;
 
-	return(0);
-	}
+    return(0);
+    }
 
 
 
@@ -123,19 +123,19 @@ sub isClickedSelected {
 Return corner index if the coords are within the control's
 selected boxes.
 
-	-1: No
-  	 0: Bottom right
-	 1: Bottom left
-	 2: Top left
-	 3: Top right
+    -1: No
+     0: Bottom right
+     1: Bottom left
+     2: Top left
+     3: Top right
 
 =cut
 sub clickedSelectCorner {
     my $self = shift; my $pkg = ref($self);
-	my ($left, $top) = @_;
+    my ($left, $top) = @_;
 
-	return(-1);
-	}
+    return(-1);
+    }
 
 
 
@@ -149,10 +149,10 @@ rectangle, else 0.
 =cut
 sub isTouchedByRect {
     my $self = shift; my $pkg = ref($self);
-	my ($left, $top, $right, $bottom) = @_;
+    my ($left, $top, $right, $bottom) = @_;
 
-	return(0);
-	}
+    return(0);
+    }
 
 
 
@@ -168,10 +168,10 @@ Return undef if the property doesn't exist.
 =cut
 sub propIncSnap {
     my $self = shift; my $pkg = ref($self);
-	my ($propertyName, $val, $snap) = @_;
+    my ($propertyName, $val, $snap) = @_;
 
-	return(undef);
-	}
+    return(undef);
+    }
 
 
 
@@ -185,8 +185,8 @@ properties, used for cashing the expensive lookups.
 =cut
 sub rhPosCache {
     my $self = shift; my $pkg = ref($self);
-	return({});
-	}
+    return({});
+    }
 
 
 
@@ -201,10 +201,10 @@ Return 1 on success, else 0.
 =cut
 sub paint {
     my $self = shift; my $pkg = ref($self);
-	my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
+    my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -219,10 +219,10 @@ Return 1 on success, else 0.
 =cut
 sub paintText {
     my $self = shift; my $pkg = ref($self);
-	my ($dcDev, $rhBrush, $rhPosCache) = @_;
+    my ($dcDev, $rhBrush, $rhPosCache) = @_;
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -237,10 +237,10 @@ Return 1 on success, else 0.
 =cut
 sub paintName {
     my $self = shift; my $pkg = ref($self);
-	my ($dcDev, $rhBrush, $rhPosCache) = @_;
+    my ($dcDev, $rhBrush, $rhPosCache) = @_;
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -255,10 +255,10 @@ Return 1 on success, else 0.
 =cut
 sub paintTextGeneric {
     my $self = shift; my $pkg = ref($self);
-	my ($dcDev, $rhBrush, $rhPosCache, $text) = @_;
+    my ($dcDev, $rhBrush, $rhPosCache, $text) = @_;
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -273,10 +273,10 @@ Return 1 on success, else 0.
 =cut
 sub paintBitmap {
     my $self = shift; my $pkg = ref($self);
-	my ($dcDev, $rhBrush, $rhPosCache, $objDesign) = @_;
+    my ($dcDev, $rhBrush, $rhPosCache, $objDesign) = @_;
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 
@@ -292,10 +292,10 @@ Return 1 on success, else 0.
 =cut
 sub paintSelected {
     my $self = shift; my $pkg = ref($self);
-	my ($dcDev, $rhBrush, $rhPosCache) = @_;
+    my ($dcDev, $rhBrush, $rhPosCache) = @_;
 
-	return(1);
-	}
+    return(1);
+    }
 
 
 

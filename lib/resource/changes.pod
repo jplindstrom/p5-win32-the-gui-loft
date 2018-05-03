@@ -197,6 +197,7 @@ Lotsa stuff
 The GUI Loft is Copyright (c) Johan Lindström, 
 johanl@bahnhof.se
 
-The Perl Artistic license applies.
+This program is free software; you can redistribute it and/or modify it
+under the GPL-2.0
 
 =cut

@@ -751,6 +751,7 @@ move controls at runtime, rememorize()
 
 Copyright 2001.. Johan Lindström <johanl@bahnhof.se>
 
-Same license as Perl.
+This program is free software; you can redistribute it and/or modify it
+under the GPL-2.0
 
 =cut

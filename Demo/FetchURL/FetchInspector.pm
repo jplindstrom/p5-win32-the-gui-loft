@@ -55,6 +55,7 @@ Return the array on success, else an empty array () in which
 case the control will not be created.
 
 =cut
+
 sub buildOptions {
     my $self = shift; my $pkg = ref($self);
     my ($objControl, $raOption) = @_;

@@ -34,6 +34,7 @@ use strict;
 Create new Control object.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
@@ -60,6 +61,7 @@ options for the creation of the control.
 Return an empty array on errors.
 
 =cut
+
 sub buildOptionsSpecial {
     my $self = shift; my $pkg = ref($self);
     my ($objDesign) = @_;

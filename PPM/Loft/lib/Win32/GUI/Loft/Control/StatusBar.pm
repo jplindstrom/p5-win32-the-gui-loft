@@ -37,6 +37,7 @@ E.g. "sbStatusBar".
 Readonly.
 
 =cut
+
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
     return("sbStatusBar");
@@ -55,6 +56,7 @@ E.g. "StatusBar".
 Readonly.
 
 =cut
+
 sub type {
     my $self = shift; my $pkg = ref($self);
     return("StatusBar");
@@ -72,6 +74,7 @@ control to a container object.
 Readonly
 
 =cut
+
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
     return("AddStatusBar");
@@ -90,6 +93,7 @@ Example: "left"
 Readonly.
 
 =cut
+
 sub alignDefault {
     my $self = shift; my $pkg = ref($self);
     return("left");
@@ -105,6 +109,7 @@ The offset from the left side of the control that texts
 should be located for this type of control.
 
 =cut
+
 sub offsetTextLeft {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -127,6 +132,7 @@ sub offsetTextLeft {
 Create new Control object.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
@@ -162,6 +168,7 @@ Paint the control in the $dcDev.
 Return 1 on success, else 0.
 
 =cut
+
 sub paint {
     my $self = shift; my $pkg = ref($self);
     my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;

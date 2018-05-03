@@ -35,6 +35,7 @@ E.g. "timTimer".
 Readonly.
 
 =cut
+
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
     return("timTimer");
@@ -53,6 +54,7 @@ E.g. "Timer".
 Readonly.
 
 =cut
+
 sub type {
     my $self = shift; my $pkg = ref($self);
     return("Timer");
@@ -70,6 +72,7 @@ control to a container object.
 Readonly
 
 =cut
+
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
     return("AddTimer");
@@ -89,6 +92,7 @@ Default: 0
 Readonly.
 
 =cut
+
 sub buildControlPhase {
     my $self = shift; my $pkg = ref($self);
     return(0);
@@ -108,6 +112,7 @@ Default: 1
 Readonly.
 
 =cut
+
 sub buildPostControlPhase {
     my $self = shift; my $pkg = ref($self);
     return(1);
@@ -124,6 +129,7 @@ sub buildPostControlPhase {
 Create new Control object.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
@@ -158,6 +164,7 @@ $objControlContainerDefault is used as container]
 Return the new control object, or undef on errors.
 
 =cut
+
 sub buildAdd {
     my $self = shift; my $pkg = ref($self);
     my ($objDesign, $objControlContainerDefault, $objInspector) = @_;

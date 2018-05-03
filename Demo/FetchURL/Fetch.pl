@@ -1,4 +1,5 @@
 #!/usr/local/bin/perl -w
+
 =head1 Name
 
 Fetch URL and display HTTP and HTML response.
@@ -102,6 +103,7 @@ sub ::winFetch_Terminate { defined(my $win = $Win32::GUI::Loft::window{winFetch}
 Fetch url in tfURL.
 
 =cut
+
 sub ::btnFetch_Click { defined(my $win = $Win32::GUI::Loft::window{winFetch}) or return(1);
 	
 	my $url = $win->tfURL->Text();

@@ -82,6 +82,7 @@ Win32::GUI::AdHoc::blockGUIWarnings();
 The main window object
 
 =cut
+
 sub winMain {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -102,6 +103,7 @@ sub winMain {
 The menu for the main window
 
 =cut
+
 sub mnuMain {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -123,6 +125,7 @@ The Win32::GUI::Resizer object used to resize the controls
 in the winMain window.
 
 =cut
+
 sub objResizerMain {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -143,6 +146,7 @@ sub objResizerMain {
 The Win32::GUI::Modalizer object used to make dialogs modal.
 
 =cut
+
 sub objModalizer {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -164,6 +168,7 @@ The Properties window object (not the design
 Win32::GUI::Window object).
 
 =cut
+
 sub objWindowProp {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -185,6 +190,7 @@ The Design window object (not the design Win32::GUI::Window
 object).
 
 =cut
+
 sub objWindowDesign {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -206,6 +212,7 @@ The Toolbox window object (not the design Win32::GUI::Window
 object).
 
 =cut
+
 sub objWindowTool {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -228,6 +235,7 @@ The Loft::Canvas that is the current state of the objDesign()
 Set to 0 to undef
 
 =cut
+
 sub objCanvas {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -252,6 +260,7 @@ if no such thing exists.
 Set to 0 to undef
 
 =cut
+
 sub objDesign {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -275,6 +284,7 @@ sub objDesign {
 Create new UI for Windows.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
     defined($gObjSingleton) and return($gObjSingleton);
@@ -303,6 +313,7 @@ Init application, info, windows etc.
 Return 1 on succes, else 0.
 
 =cut
+
 sub init {
     my $self = shift; my $pkg = ref($self);
 
@@ -392,6 +403,7 @@ sub init {
     $y += $hb;
 
 =pod
+
     my $lbControl = $winMain->AddListbox(
             -name      => "lbControl",
             -text      => "",
@@ -405,6 +417,7 @@ sub init {
                     1,
             -multisel  => 1,
             );
+
 =cut
 
     my $lvwControl = $winMain->AddListView(
@@ -438,13 +451,13 @@ sub init {
     my $objResizer = Win32::GUI::Resizer->new($winMain);
     $self->objResizerMain($objResizer);
     $objResizer->raRelations([
-            'winWidth' => [
-                    ['$winResize->lvwControl->Width()'],
-                    ],
-            'winHeight' => [
-                    ['$winResize->lvwControl->Height()'],
-                    ],
-            ]);
+        'winWidth' => [
+            ['$winResize->lvwControl->Width()'],
+        ],
+        'winHeight' => [
+            ['$winResize->lvwControl->Height()'],
+        ],
+    ]);
     $objResizer->memorize();
 
 
@@ -502,7 +515,9 @@ Run the UI.
 Return 1 on success, else 0.
 
 =cut
-sub run { my $self = shift; my $pkg = ref($self);
+
+sub run {
+    my $self = shift; my $pkg = ref($self);
 
     Win32::GUI::Dialog();
 
@@ -520,6 +535,7 @@ Shutdown application, close stuff, save etc.
 Return 1 on succes, else 0.
 
 =cut
+
 sub shutdown { my $self = shift; my $pkg = ref($self);
 
     $self->configWindowSave(
@@ -552,6 +568,7 @@ defined in that config file.
 Return 1 on success, else die().
 
 =cut
+
 sub configLoad {
     my $self = shift; my $pkg = ref($self);
     my ($fileConfig) = @_;
@@ -563,7 +580,7 @@ sub configLoad {
     $self->rhWindowConfig($self->loadXMLFile( $self->rhConfig()->{fileWindow} ) ) if(-r $self->rhConfig()->{fileWindow});
 
     return(1);
-    }
+}
 
 
 
@@ -576,10 +593,11 @@ Save the rhConfig.
 Return 1 on success, else 0.
 
 =cut
+
 sub configSave {
     my $self = shift; my $pkg = ref($self);
     return($self->saveXMLFile($self->fileConfig(), $self->rhConfig()));
-    }
+}
 
 
 
@@ -592,10 +610,11 @@ Save the window state config file
 Return 1 on success, else 0.
 
 =cut
+
 sub configWindowSave {
     my $self = shift; my $pkg = ref($self);
     my ($mainLeft, $mainTop, $mainWidth, $mainHeight, $propLeft,
-            $propTop, $propWidth, $propHeight) = @_;
+        $propTop, $propWidth, $propHeight) = @_;
 
     $self->rhWindowConfig()->{posMainLeft} = $mainLeft;
     $self->rhWindowConfig()->{posMainTop} = $mainTop;
@@ -609,7 +628,7 @@ sub configWindowSave {
     $self->saveXMLFile($self->rhConfig()->{fileWindow}, $self->rhWindowConfig());
 
     return(1);
-    }
+}
 
 
 
@@ -623,16 +642,17 @@ the application.
 Return 1.
 
 =cut
+
 sub setWindowState {
     my $self = shift; my $pkg = ref($self);
 
     my $winMain = $self->winMain();
     my $mnuMain = $self->mnuMain();
 
-#...
+    #...
 
     return(1);
-    }
+}
 
 
 
@@ -646,6 +666,7 @@ passed, use that one as the new design.
 Return 1 on success, else 0.
 
 =cut
+
 sub canvasNew {
     my $self = shift; my $pkg = ref($self);
     my ($objNew) = @_;
@@ -657,10 +678,10 @@ sub canvasNew {
     $self->objCanvas( Loft::Canvas->new() );
     $self->objCanvas()->objDesign($objNew);
     $self->objCanvas()->raView( [
-            $self->objWindowDesign(),
-            $self->objWindowProp(),
-            $self,
-            ] );
+        $self->objWindowDesign(),
+        $self->objWindowProp(),
+        $self,
+    ] );
 
 
     $self->objWindowDesign()->objDesign($objNew);
@@ -681,7 +702,7 @@ sub canvasNew {
 
 
     return(1);
-    }
+}
 
 
 
@@ -695,6 +716,7 @@ Make sure the user gets the opportunity to save if need be.
 Return 1 on success, else 0.
 
 =cut
+
 sub canvasClose {
     my $self = shift; my $pkg = ref($self);
 
@@ -726,6 +748,7 @@ $rhControl.
 Return 1 on success, else 0.
 
 =cut
+
 sub propNotifyChange {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl, $raPropName) = @_;
@@ -748,6 +771,7 @@ The number of controls has changed.
 Return 1 on success, else 0.
 
 =cut
+
 sub propNotifyFundamental {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl, $raPropName) = @_;
@@ -768,6 +792,7 @@ The number of conrols that are selected has changed.
 Return 1 on success, else 0.
 
 =cut
+
 sub propNotifySelected {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl) = @_;
@@ -788,17 +813,18 @@ Fill the list with the available controls.
 Return 1 on success, else 0.
 
 =cut
+
 sub controlPopulate {
     my $self = shift; my $pkg = ref($self);
 
     $self->winMain()->lvwControl()->Clear();
 
-    $self->winMain()->lvwControl()->InsertItem( 
-            -text => [ $self->objDesign()->objControlWindow()->prop("Name") , "Window" ] 
+    $self->winMain()->lvwControl()->InsertItem(
+            -text => [ $self->objDesign()->objControlWindow()->prop("Name") , "Window" ]
             );
 
     for my $objControl (@{$self->objDesign()->raControl()}) {
-        $self->winMain()->lvwControl()->InsertItem( 
+        $self->winMain()->lvwControl()->InsertItem(
                 -text => [ $objControl->prop("Name"), $objControl->type() ] );
         }
 
@@ -818,6 +844,7 @@ Sync the ListBox with the selected controls.
 Return 1 on success, else 0.
 
 =cut
+
 sub controlSelect {
     my $self = shift; my $pkg = ref($self);
 
@@ -829,7 +856,7 @@ sub controlSelect {
     for my $objControl (@{$self->objDesign()->raControl()}) {
 #       $self->winMain()->lbControl()->SendMessage(0x0185,
 #               $objControl->designIsSelected(), $i);               #LB_SETSEL
-        $self->winMain()->lvwControl()->Select($1); #, $objControl->designIsSelected());    
+        $self->winMain()->lvwControl()->Select($1); #, $objControl->designIsSelected());
         $i++;
         }
 
@@ -848,6 +875,7 @@ the correct controls.
 Return 1 on success, else 0.
 
 =cut
+
 sub controlSetSelection {
     my $self = shift; my $pkg = ref($self);
 
@@ -876,19 +904,20 @@ sub controlSetSelection {
 
 =head2 controlMove($dir)
 
-Move the selected controls in the $dir (0: down, 1: up). 
+Move the selected controls in the $dir (0: down, 1: up).
 
-Don't do anything with the window control, and don't move 
+Don't do anything with the window control, and don't move
 above the window control since it is the main container.
 
 Return 1 on success, else 0.
 
 =cut
+
 sub controlMove {
     my $self = shift; my $pkg = ref($self);
     my ($dir) = @_;
 
-    my @aSelected = map { $_ - 1 } $self->winMain()->lvwControl()->SelectedItems(); 
+    my @aSelected = map { $_ - 1 } $self->winMain()->lvwControl()->SelectedItems();
     return(0) if(@aSelected && -1 == $aSelected[0]);
 
     $self->objDesign()->controlRearrange($dir, \@aSelected);
@@ -909,6 +938,7 @@ sub controlMove {
 Terminate the main window
 
 =cut
+
 sub ::winMain_Terminate {
 
     $gObjSingleton->shutdown();
@@ -925,6 +955,7 @@ sub ::winMain_Terminate {
 Resize the main window.
 
 =cut
+
 sub ::winMain_Resize {
     my $self = Loft::WindowApp->new();
     defined($self->objResizerMain()) and $self->objResizerMain()->resize();
@@ -939,6 +970,7 @@ sub ::winMain_Resize {
 The selected state change, so reflect that.
 
 =cut
+
 sub ::lbControl_Click {
     my $self = Loft::WindowApp->new();
 
@@ -956,6 +988,7 @@ sub ::lbControl_Click {
 Move selected controls up one step
 
 =cut
+
 sub ::btnUp_Click {
     my $self = Loft::WindowApp->new();
 
@@ -973,6 +1006,7 @@ sub ::btnUp_Click {
 Move selected controls down one step
 
 =cut
+
 sub ::btnDown_Click {
     my $self = Loft::WindowApp->new();
 
@@ -990,6 +1024,7 @@ sub ::btnDown_Click {
 Exit the app.
 
 =cut
+
 sub ::mnuFileNew_Click {
     my $self = Loft::WindowApp->new();
 
@@ -1008,6 +1043,7 @@ sub ::mnuFileNew_Click {
 Open new design and replace the existing one.
 
 =cut
+
 sub ::mnuFileOpen_Click {
     my $self = Loft::WindowApp->new();
 
@@ -1047,6 +1083,7 @@ sub ::mnuFileOpen_Click {
 Save the current design.
 
 =cut
+
 sub ::mnuFileSave_Click {
     my $self = Loft::WindowApp->new();
     return(1) if(!$self->objDesign());
@@ -1071,6 +1108,7 @@ sub ::mnuFileSave_Click {
 Save the current design.
 
 =cut
+
 sub ::mnuFileSaveAs_Click {
     my $self = Loft::WindowApp->new();
     return(1) if(!$self->objDesign());
@@ -1103,6 +1141,7 @@ sub ::mnuFileSaveAs_Click {
 Exit the app.
 
 =cut
+
 sub ::mnuFileExit_Click {
 
     $gObjSingleton->shutdown();
@@ -1119,6 +1158,7 @@ sub ::mnuFileExit_Click {
 Test the window
 
 =cut
+
 sub ::mnuDesignTest_Click {
     my $self = Loft::WindowApp->new();
 

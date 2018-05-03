@@ -52,6 +52,7 @@ if no such thing exists.
 Set to 0 to undef
 
 =cut
+
 sub objDesign {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -75,6 +76,7 @@ The Win32::GUI::Loft::Canvas that is the current state of the objDesign()
 Set to 0 to undef
 
 =cut
+
 sub objCanvas {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -99,6 +101,7 @@ currently selected but does not include the window control
 itself if no other control is selected.
 
 =cut
+
 sub rhControlSelected {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -124,6 +127,7 @@ itself if no other control is selected.
 Readonly.
 
 =cut
+
 sub rhControlActuallySelected {
     my $self = shift; my $pkg = ref($self);
 
@@ -147,6 +151,7 @@ Array ref with objects of type Win32::GUI::Loft::View that should be
 notified when something happens to the model.
 
 =cut
+
 sub raView {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -169,6 +174,7 @@ sub raView {
 Create new Canvas.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
@@ -196,6 +202,7 @@ new value for the selected controls. If $objBlocked
 Return 1 on success, else 0.
 
 =cut
+
 sub propNotifyChange {
     my $self = shift; my $pkg = ref($self);
     my ($raPropName, $objBlocked) = @_;
@@ -228,6 +235,7 @@ that view.
 Return 1 on success, else 0.
 
 =cut
+
 sub propNotifySelected {
     my $self = shift; my $pkg = ref($self);
     my ($objBlocked) = @_;
@@ -261,6 +269,7 @@ If $left is undef, the user is not anymore.
 Return 1 on success, else 0.
 
 =cut
+
 sub propNotifySelectionBox {
     my $self = shift; my $pkg = ref($self);
     my ($left, $top, $width, $height, $objBlocked) = @_;
@@ -284,6 +293,7 @@ The number of controls has changed.
 Return 1 on success, else 0.
 
 =cut
+
 sub propNotifyFundamental {
     my $self = shift; my $pkg = ref($self);
     my ($objBlocked) = @_;
@@ -308,6 +318,7 @@ clusters.
 Return 1 on success, else 0.
 
 =cut
+
 sub clusterNotifyFundamental {
     my $self = shift; my $pkg = ref($self);
     my ($objBlocked) = @_;
@@ -332,6 +343,7 @@ match the state of the application.
 Return 1 on success, else 0.
 
 =cut
+
 sub setAppState {
     my $self = shift; my $pkg = ref($self);
 
@@ -357,6 +369,7 @@ Align the selected controls to each other according to $how:
 Return 1 on success, else 0.
 
 =cut
+
 sub controlAlignSelected {
     my $self = shift; my $pkg = ref($self);
     my ($how) = @_; 
@@ -380,6 +393,7 @@ Mark the $objControl as $isSelected (0|1).
 Return 1 on success, else 0.
 
 =cut
+
 sub controlSelected {
     my $self = shift; my $pkg = ref($self);
     my ($objControl, $isSelected) = @_;
@@ -409,6 +423,7 @@ Deselect the controls in $rhControl.
 Return 1 on success, else 0.
 
 =cut
+
 sub controlMultipleSelect {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl, $isSelected) = @_;
@@ -431,6 +446,7 @@ Deselect all selected controls.
 Return 1 on success, else 0.
 
 =cut
+
 sub controlAllDeselect {
     my $self = shift; my $pkg = ref($self);
 
@@ -458,6 +474,7 @@ Select all controls (except the window).
 Return 1 on success, else 0.
 
 =cut
+
 sub controlAllSelect {
     my $self = shift; my $pkg = ref($self);
 
@@ -486,6 +503,7 @@ Return the newly created Win32::GUI::Loft::Control::$type, or undef on
 failure.
 
 =cut
+
 sub controlNew {
     my $self = shift; my $pkg = ref($self);
     my ($type) = @_;
@@ -509,6 +527,7 @@ Return the resulting string (to be put in the clipboard) on
 success, else "".
 
 =cut
+
 sub controlCut {
     my $self = shift; my $pkg = ref($self);
 
@@ -530,6 +549,7 @@ Return the resulting string (to be put in the clipboard) on
 success, else  "".
 
 =cut
+
 sub controlCopy {
     my $self = shift; my $pkg = ref($self);
     return( $self->objDesign()->controlCopy( $self->rhControlSelected() ) );
@@ -547,6 +567,7 @@ Return the resulting string (to be put in the clipboard) on
 success, else  "".
 
 =cut
+
 sub controlCopyName {
     my $self = shift; my $pkg = ref($self);
     return( $self->objDesign()->controlCopyName( $self->rhControlActuallySelected() ) );
@@ -563,6 +584,7 @@ Paste the contents of the $clipboard.
 Return 1 on success, else 0.
 
 =cut
+
 sub controlPaste {
     my $self = shift; my $pkg = ref($self);
     my ($clipboard) = @_;
@@ -593,6 +615,7 @@ Delete the selected controls
 Return 1 on success, else 0.
 
 =cut
+
 sub controlDelete {
     my $self = shift; my $pkg = ref($self);
 
@@ -616,6 +639,7 @@ controls.
 Return 1 on success, else 0.
 
 =cut
+
 sub clusterNew {
     my $self = shift; my $pkg = ref($self);
     my ($name) = @_;
@@ -638,6 +662,7 @@ Delete $objCluster from the Design.
 Return 1 on success, else 0.
 
 =cut
+
 sub clusterDelete {
     my $self = shift; my $pkg = ref($self);
     my ($objCluster) = @_;
@@ -661,6 +686,7 @@ controls. Deselect if the new visible state is "invisible".
 Return 1 on success, else 0.
 
 =cut
+
 sub clusterVisibleToggle {
     my $self = shift; my $pkg = ref($self);
     my ($objCluster) = @_;
@@ -692,6 +718,7 @@ currently selected ones.
 Return 1 on success, else 0.
 
 =cut
+
 sub clusterMemorize {
     my $self = shift; my $pkg = ref($self);
     my ($objCluster) = @_;
@@ -711,6 +738,7 @@ Return "type", e.g. "Button" for the currently selected
 control, or "" if no or many controls are selected.
 
 =cut
+
 sub helpFileSelected {
     my $self = shift; my $pkg = ref($self);
 

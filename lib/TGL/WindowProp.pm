@@ -58,6 +58,7 @@ my %ghPerm;
 The Properties window object
 
 =cut
+
 sub winProp {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -79,6 +80,7 @@ The Win32::GUI::Resizer object used to resize the controls
 in the winProp window.
 
 =cut
+
 sub objResizerDesign {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -99,6 +101,7 @@ sub objResizerDesign {
 The main window object
 
 =cut
+
 sub objWindowApp {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -122,6 +125,7 @@ if no such thing exists.
 Set to 0 to undef
 
 =cut
+
 sub objDesign {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -145,6 +149,7 @@ The Win32::GUI::Loft::Canvas that is the current state of the objDesign()
 Set to 0 to undef
 
 =cut
+
 sub objCanvas {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -166,6 +171,7 @@ sub objCanvas {
 The design window object
 
 =cut
+
 sub objWindowDesign {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -186,6 +192,7 @@ sub objWindowDesign {
 The index of the property that was last edited.
 
 =cut
+
 sub propLastIndex {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -206,6 +213,7 @@ sub propLastIndex {
 The key of the property that was last edited.
 
 =cut
+
 sub propLastKey {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -226,6 +234,7 @@ sub propLastKey {
 The initial value of the property that was last displayed.
 
 =cut
+
 sub propLastValue {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -246,6 +255,7 @@ sub propLastValue {
 Whether the currently edited property was actually changed.
 
 =cut
+
 sub propIsDirty {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -271,6 +281,7 @@ Used to reset focus to that window after an edit.
 Set to 0 to undef
 
 =cut
+
 sub winInitiatedProperty {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -294,6 +305,7 @@ sub winInitiatedProperty {
 Create new UI for Windows.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
     defined($gObjSingleton) and return($gObjSingleton);
@@ -328,6 +340,7 @@ Init application, info, windows etc.
 Return 1 on succes, else 0.
 
 =cut
+
 sub init {
     my $self = shift; my $pkg = ref($self);
     my ($winMain) = @_;
@@ -509,6 +522,7 @@ the application.
 Return 1.
 
 =cut
+
 sub setWindowState {
     my $self = shift; my $pkg = ref($self);
 
@@ -529,6 +543,7 @@ prefix.
 Return 1 on success, else 0.
 
 =cut
+
 sub setFocus {
     my $self = shift; my $pkg = ref($self);
     my ($property) = @_;
@@ -584,6 +599,7 @@ Display info in labels.
 Return 1 on success, else 0.
 
 =cut
+
 sub infoDisplay {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl) = @_;
@@ -650,6 +666,7 @@ $rhControl. Update the info label
 Return 1 on success, else 0.
 
 =cut
+
 sub propPopulate {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl) = @_;
@@ -718,6 +735,7 @@ $rhControl.
 Return 1 on success, else 0.
 
 =cut
+
 sub propUpdate {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl, $raPropName) = @_;
@@ -747,6 +765,7 @@ Display edit control above ListView and populate it.
 Return 1 on success, else 0.
 
 =cut
+
 sub propDisplay {
     my $self = shift; my $pkg = ref($self);
     my ($itmClicked) = @_;
@@ -825,6 +844,7 @@ $rhControl.
 Return 1 on success, else 0.
 
 =cut
+
 sub propNotifyChange {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl, $raPropName) = @_;
@@ -845,6 +865,7 @@ The number of conrols that are selected has changed.
 Return 1 on success, else 0.
 
 =cut
+
 sub propNotifySelected {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl, $raPropName) = @_;
@@ -869,6 +890,7 @@ If $left is undef, the user is not anymore.
 Return 1 on success, else 0.
 
 =cut
+
 sub propNotifySelectionBox {
     my $self = shift; my $pkg = ref($self);
     my ($left, $top, $width, $height) = @_;
@@ -900,6 +922,7 @@ Set focus to the Design window when all is done.
 Return 1 on success, else 0.
 
 =cut
+
 sub textfieldPropEvaluate {
     my $self = shift; my $pkg = ref($self);
 
@@ -974,6 +997,7 @@ sub textfieldPropEvaluate {
 Block the close operation.
 
 =cut
+
 sub ::winProp_Terminate {
     my $self = TGL::WindowProp->new();
 print "winProp_Terminate()\n";
@@ -991,6 +1015,7 @@ print "winProp_Terminate()\n";
 Resize the main window. Store the size into the Design.
 
 =cut
+
 sub ::winProp_Resize {
     my $self = TGL::WindowProp->new();
     defined($self->objResizerDesign()) and $self->objResizerDesign()->resize();
@@ -1005,6 +1030,7 @@ sub ::winProp_Resize {
 Activate the window and perform Modalizer stuff.
 
 =cut
+
 sub ::winProp_Activate {
     my $self = TGL::WindowProp->new();
     defined($self->objWindowApp()->objModalizer()) and $self->objWindowApp()->objModalizer()->activate($self->winProp());
@@ -1032,6 +1058,7 @@ sub ::winProp_DropFiles {
 Display edit box on top of item.
 
 =cut
+
 sub ::lvwProp_ItemClick {
     my $self = TGL::WindowProp->new();
     my ($itmClicked) = @_;
@@ -1052,6 +1079,7 @@ sub ::lvwProp_ItemClick {
 Make the new value take effect
 
 =cut
+
 sub ::tfValue_LostFocus {
     my $self = TGL::WindowProp->new();
 
@@ -1071,6 +1099,7 @@ sub ::tfValue_LostFocus {
 Note that the value changed.
 
 =cut
+
 sub ::tfValue_Change {
     my $self = TGL::WindowProp->new();
     $self->propIsDirty(1);
@@ -1085,6 +1114,7 @@ sub ::tfValue_Change {
 Make the new value take effect
 
 =cut
+
 sub ::chbValue_LostFocus {
     my $self = TGL::WindowProp->new();
     ::btnOk_Click();
@@ -1099,6 +1129,7 @@ sub ::chbValue_LostFocus {
 Note that the value changed.
 
 =cut
+
 sub ::chbValue_Click {
     my $self = TGL::WindowProp->new();
     $self->propIsDirty(1);
@@ -1114,6 +1145,7 @@ sub ::chbValue_Click {
 Note that the value changed.
 
 =cut
+
 sub ::cbValue_Change {
     my $self = TGL::WindowProp->new();
     $self->propIsDirty(1);
@@ -1129,6 +1161,7 @@ sub ::cbValue_Change {
 Make the new value take effect
 
 =cut
+
 sub ::btnOk_Click {
     my $self = TGL::WindowProp->new();
 
@@ -1147,6 +1180,7 @@ Trap the event and "do nothing" to prevent the Esc key from
 closing the window.
 
 =cut
+
 sub ::btnFakeCancel_Click {
     my $self = TGL::WindowProp->new();
 
@@ -1163,6 +1197,7 @@ Keep track of values in the tfValue and popup the Open
 dialog when appropriate.
 
 =cut
+
 sub ::timOpen_Timer {
     my $self = TGL::WindowProp->new();
 

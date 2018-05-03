@@ -34,6 +34,7 @@ use Win32::GUI::Loft::ControlProperty;
 The name of the cluster. Not unique.
 
 =cut
+
 sub name {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -57,6 +58,7 @@ clustered controls using setDesignIsVisible().
 Default: 1
 
 =cut
+
 sub isVisible {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -81,6 +83,7 @@ Win32::GUI::Loft::Control object). These are the controls that are
 currently in this cluster.
 
 =cut
+
 sub rhControl {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -103,6 +106,7 @@ sub rhControl {
 Create new Cluster.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
@@ -129,6 +133,7 @@ Add the controls in $rhControl to the clustered controls.
 Return 1 on success, else 0.
 
 =cut
+
 sub controlAdd {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl) = @_;
@@ -152,6 +157,7 @@ controls.
 Return 1 on success, else 0.
 
 =cut
+
 sub controlDelete {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl) = @_;
@@ -173,6 +179,7 @@ sub controlDelete {
 Return 1 if $objControl is part of this cluster, else 0.
 
 =cut
+
 sub controlIsClustered {
     my $self = shift; my $pkg = ref($self);
     my ($objControl) = @_;
@@ -191,6 +198,7 @@ Toggle the isVisible state.
 Return the new visible state.
 
 =cut
+
 sub visibleToggle() {
     my $self = shift; my $pkg = ref($self);
     return( $self->isVisible( $self->isVisible() ? 0 : 1 ) );
@@ -208,6 +216,7 @@ current isVisible value.
 Return 1 on success, else 0.
 
 =cut
+
 sub setDesignIsVisible {
     my $self = shift; my $pkg = ref($self);
 

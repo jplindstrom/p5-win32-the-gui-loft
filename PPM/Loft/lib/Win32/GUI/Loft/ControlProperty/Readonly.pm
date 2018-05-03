@@ -40,6 +40,7 @@ The current value of this property.
 Readonly. Can only be set during new().
 
 =cut
+
 sub value {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -59,6 +60,7 @@ current value. Snap to a multiple of $snap (if != 0).
 Readonly. Can only be set during new().
 
 =cut
+
 sub valueIncSnap {
     my $self = shift; my $pkg = ref($self);
     my ($val, $snap) = @_;
@@ -79,6 +81,7 @@ Default: 0
 Readonly.
 
 =cut
+
 sub readonly {
     my $self = shift; my $pkg = ref($self);
     return($self->{readonly});
@@ -97,6 +100,7 @@ Create new ControlProperty object.
 Die if $name isn't passed.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
     my ($name, $value, $raValue, $nameOption, $nameProperty) = @_;  

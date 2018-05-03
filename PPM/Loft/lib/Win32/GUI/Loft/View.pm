@@ -31,6 +31,7 @@ use Carp qw( cluck );
 Create new View.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
@@ -55,6 +56,7 @@ $rhControl.
 Return 1 on success, else 0.
 
 =cut
+
 sub propPopulate {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl) = @_;
@@ -74,6 +76,7 @@ $rhControl.
 Return 1 on success, else 0.
 
 =cut
+
 sub propNotifyChange {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl, $raPropName) = @_;
@@ -92,6 +95,7 @@ The number of conrols that are selected has changed.
 Return 1 on success, else 0.
 
 =cut
+
 sub propNotifySelected {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl) = @_;
@@ -114,6 +118,7 @@ If $left is undef, the user is not anymore.
 Return 1 on success, else 0.
 
 =cut
+
 sub propNotifySelectionBox {
     my $self = shift; my $pkg = ref($self);
     my ($left, $top, $width, $height) = @_;
@@ -132,6 +137,7 @@ The number of controls has changed.
 Return 1 on success, else 0.
 
 =cut
+
 sub propNotifyFundamental {
     my $self = shift; my $pkg = ref($self);
 
@@ -150,6 +156,7 @@ clusters.
 Return 1 on success, else 0.
 
 =cut
+
 sub clusterNotifyFundamental {
     my $self = shift; my $pkg = ref($self);
 

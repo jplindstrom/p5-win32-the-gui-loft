@@ -35,6 +35,7 @@ Create a Win32::GUI::Window without borders. Other than
 this, it's a regular Window object.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
     my (%hOption) = @_;

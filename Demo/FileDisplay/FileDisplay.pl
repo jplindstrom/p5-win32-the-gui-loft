@@ -1,4 +1,5 @@
 #!/usr/local/bin/perl -w
+
 =head1 Name
 
 List files and display them.
@@ -136,6 +137,7 @@ sub ::winFileDisplay_Terminate { defined(my $win = $Win32::GUI::Loft::window{win
 Terminate app.
 
 =cut
+
 sub ::btnExit_Click { defined(my $win = $Win32::GUI::Loft::window{winFileDisplay}) or return(1);
 
 	#Just exit
@@ -152,6 +154,7 @@ sub ::btnExit_Click { defined(my $win = $Win32::GUI::Loft::window{winFileDisplay
 Display the selected file, or go to the selected dir.
 
 =cut
+
 sub ::btnOpen_Click { defined(my $win = $Win32::GUI::Loft::window{winFileDisplay}) or return(1);
 
 	my $file = $win->lbFile()->GetString( $win->lbFile()->SelectedItem() ) or return(1);
@@ -178,6 +181,7 @@ sub ::btnOpen_Click { defined(my $win = $Win32::GUI::Loft::window{winFileDisplay
 Display the selected file, or go to the selected dir.
 
 =cut
+
 sub ::lbFile_DblClick {
 	return( ::btnOpen_Click() );
 	}
@@ -191,6 +195,7 @@ sub ::lbFile_DblClick {
 Move the middle splitter.
 
 =cut
+
 sub ::splMiddle_Release {
 	my ($left) = @_;
 
@@ -215,6 +220,7 @@ sub ::splMiddle_Release {
 Terminate app.
 
 =cut
+
 sub ::mnuFileExit_Click { defined(my $win = $Win32::GUI::Loft::window{winFileDisplay}) or return(1);
 
 	#Just exit
@@ -240,6 +246,7 @@ the cwd. Set the Text() of $sbStatus to the cwd.
 Return 1 on success, else 0.
 
 =cut
+
 sub listboxPopulate {
 	my ($lbListbox, $sbStatus) = @_;
 
@@ -282,6 +289,7 @@ Display the contents of $file in $reEdit.
 Return 1 on success, else 0.
 
 =cut
+
 sub fileDisplay {
 	my ($reEdit, $file) = @_;
 

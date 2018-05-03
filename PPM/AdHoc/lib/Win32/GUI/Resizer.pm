@@ -165,6 +165,7 @@ use strict;
 The Win32::GUI window object to resize.
 
 =cut
+
 sub winResize {
     my $self = shift;
     my ($val) = @_;
@@ -190,6 +191,7 @@ The syntax and structure of the array ref is described
 below.
 
 =cut
+
 sub raRelations {
     my $self = shift;
     my ($val) = @_;
@@ -211,6 +213,7 @@ Whether the window is minimized or not. Set by the resize()
 method when the window size is (0,0).
 
 =cut
+
 sub isMinimized {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -232,6 +235,7 @@ Array ref with two items, the w/h of the window size prior
 to a minimize.
 
 =cut
+
 sub raPreMinimizedSize {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -254,6 +258,7 @@ sub raPreMinimizedSize {
 Create new Resizer object for $winResize.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
     my ($winResize) = @_;
@@ -290,6 +295,7 @@ way you want it.
 Return 1 on success, else 0.
 
 =cut
+
 sub memorize {
     my $self = shift;
     
@@ -330,6 +336,7 @@ of any control that you have under Resizer control.
 Return 1 on success, else 0.
 
 =cut
+
 sub rememorize {
     my $self = shift;
 
@@ -358,6 +365,7 @@ method).
 Return the value, or undef if $key has no value.
 
 =cut
+
 sub specialValue {
     my $self = shift;
     my ($key, $val, $resize) = @_;
@@ -389,6 +397,7 @@ Call this method from the window's Resize() event, like so:
         }
 
 =cut
+
 sub resize {
     my $self = shift;
 
@@ -481,6 +490,7 @@ e.g. a value should shrink as the window size grows.
 Not exported by default.
 
 =cut
+
 sub negResize {
     $_[0] * -1;
     }
@@ -499,6 +509,7 @@ e.g. a value should grow, but only half the resize change.
 Not exported by default.
 
 =cut
+
 sub div2Resize {
     $_[0] / 2;
     }
@@ -514,6 +525,7 @@ Return $a / 3.
 Not exported by default.
 
 =cut
+
 sub div3Resize {
     $_[0] / 3;
     }
@@ -529,6 +541,7 @@ Return $a / 4.
 Not exported by default.
 
 =cut
+
 sub div4Resize {
     $_[0] / 4;
     }
@@ -548,6 +561,7 @@ Get or set the $val for $key.
 Return the value, or undef if $key has no value.
 
 =cut
+
 sub specialValueOld {
     my $self = shift;
     my ($key, $val) = @_;
@@ -570,6 +584,7 @@ Set the specialValuesOld to specialValues.
 Return 1 on success, else 0.
 
 =cut
+
 sub resetSpecialValues {
     my $self = shift;
     my ($val) = @_;

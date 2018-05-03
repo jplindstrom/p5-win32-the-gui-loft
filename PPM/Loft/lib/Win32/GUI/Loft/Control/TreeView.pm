@@ -37,6 +37,7 @@ E.g. "btnButton".
 Readonly.
 
 =cut
+
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
     return("tvwTreeView");
@@ -55,6 +56,7 @@ Example: "left"
 Readonly.
 
 =cut
+
 sub alignDefault {
     my $self = shift; my $pkg = ref($self);
     return("left");
@@ -73,6 +75,7 @@ Example: "top"
 Readonly.
 
 =cut
+
 sub valignDefault {
     my $self = shift; my $pkg = ref($self);
     return("top");
@@ -88,6 +91,7 @@ The offset from the left side of the control that texts
 should be located for this type of control.
 
 =cut
+
 sub offsetTextLeft {
     my $self = shift; my $pkg = ref($self);
     return(4);
@@ -103,6 +107,7 @@ The offset from the top side of the control that texts
 should be located for this type of control.
 
 =cut
+
 sub offsetTextTop {
     my $self = shift; my $pkg = ref($self);
     return(4);
@@ -121,6 +126,7 @@ E.g. "TreeView".
 Readonly.
 
 =cut
+
 sub type {
     my $self = shift; my $pkg = ref($self);
     return("TreeView");
@@ -138,6 +144,7 @@ control to a container object.
 Readonly
 
 =cut
+
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
     return("AddTreeView");
@@ -154,6 +161,7 @@ sub addMethod {
 Create new Control object.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
@@ -214,6 +222,7 @@ options for the creation of the control.
 Return an empty array on errors.
 
 =cut
+
 sub buildOptionsSpecial {
     my $self = shift; my $pkg = ref($self);
     my ($objDesign) = @_;
@@ -239,6 +248,7 @@ option.
 Return 1 on success, else 0.
 
 =cut
+
 sub buildMethodsSpecial {
     my $self = shift; my $pkg = ref($self);
     my ($objNew, $objDesign) = @_;
@@ -275,6 +285,7 @@ using $ndeTop as parent node (if not undef).
 Return the new node, or undef on errors.
 
 =cut
+
 sub treeviewInsertItem {
     my $self = shift; my $pkg = ref($self);
     my ($tvwTree, $ndeTop, $itemText) = @_;
@@ -312,6 +323,7 @@ Paint the control in the $dcDev.
 Return 1 on success, else 0.
 
 =cut
+
 sub paint {
     my $self = shift; my $pkg = ref($self);
     my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;

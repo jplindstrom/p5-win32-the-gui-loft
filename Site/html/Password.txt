@@ -1,4 +1,5 @@
 #!/usr/local/bin/perl -w
+
 =head1 Name
 
 Password Demo.
@@ -98,6 +99,7 @@ sub ::winPassword_Terminate { defined(my $win = $Win32::GUI::Loft::window{winPas
 Save the password and confirm.
 
 =cut
+
 sub ::btnPasswordSave_Click { defined(my $win = $Win32::GUI::Loft::window{winPassword}) or return(1);
 	
 	my $pass = $win->tfPassword->Text();
@@ -119,6 +121,7 @@ sub ::btnPasswordSave_Click { defined(my $win = $Win32::GUI::Loft::window{winPas
 Close window and exit
 
 =cut
+
 sub ::btnPasswordOk_Click { defined(my $win = $Win32::GUI::Loft::window{winPassword}) or return(1);
 	
 	#Just exit
@@ -136,6 +139,7 @@ sub ::btnPasswordOk_Click { defined(my $win = $Win32::GUI::Loft::window{winPassw
 Close window and exit
 
 =cut
+
 sub ::btnPasswordCancel_Click { defined(my $win = $Win32::GUI::Loft::window{winPassword}) or return(1);
 	
 	#Just exit

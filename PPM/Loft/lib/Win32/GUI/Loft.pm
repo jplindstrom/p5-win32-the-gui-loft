@@ -73,6 +73,7 @@ corresponds to $nameWindow, or return () if $nameWindow
 isn't a built TGL window.
 
 =cut
+
 sub tglApp {
     my ($nameWindow) = @_;
     

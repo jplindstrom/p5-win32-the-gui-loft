@@ -36,6 +36,7 @@ Window.
 Default: 1
 
 =cut
+
 sub designIsVisible {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -59,6 +60,7 @@ Window.
 Default: 1
 
 =cut
+
 sub designIsSelected {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -88,6 +90,7 @@ Default: 1
 Readonly.
 
 =cut
+
 sub designIsTangible {
     my $self = shift; my $pkg = ref($self);
     return(1);
@@ -107,6 +110,7 @@ Default: 0
 Readonly.
 
 =cut
+
 sub buildPreControlPhase {
     my $self = shift; my $pkg = ref($self);
     return(0);
@@ -126,6 +130,7 @@ Default: 1
 Readonly.
 
 =cut
+
 sub buildControlPhase {
     my $self = shift; my $pkg = ref($self);
     return(1);
@@ -145,6 +150,7 @@ Default: 0
 Readonly.
 
 =cut
+
 sub buildPostControlPhase {
     my $self = shift; my $pkg = ref($self);
     return(0);
@@ -162,6 +168,7 @@ on it's properties.
 Readonly.
 
 =cut
+
 sub isResizable {
     my $self = shift; my $pkg = ref($self);
 
@@ -183,6 +190,7 @@ These are the properties this control supports. The objects
 are created with the control.
 
 =cut
+
 sub rhControlProperty {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -206,6 +214,7 @@ undef if it doesn't have one.
 Set to 0 to undef.
 
 =cut
+
 sub objContainer {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -232,6 +241,7 @@ E.g. "btnButton".
 Readonly.
 
 =cut
+
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
     return("-- Abstract --");
@@ -250,6 +260,7 @@ Example: "left"
 Readonly.
 
 =cut
+
 sub alignDefault {
     my $self = shift; my $pkg = ref($self);
     return("center");
@@ -268,6 +279,7 @@ Example: "top"
 Readonly.
 
 =cut
+
 sub valignDefault {
     my $self = shift; my $pkg = ref($self);
     return("middle");
@@ -285,6 +297,7 @@ should be transparent. 1|2.
 Readonly.
 
 =cut
+
 sub bkModeDefault {
     my $self = shift; my $pkg = ref($self);
     return(1);
@@ -303,6 +316,7 @@ E.g. "Button".
 Readonly.
 
 =cut
+
 sub type {
     my $self = shift; my $pkg = ref($self);
     return("-- Abstract --");
@@ -319,6 +333,7 @@ The size in pixels of selection dots.
 Readonly.
 
 =cut
+
 sub selDotSize {
     my $self = shift; my $pkg = ref($self);
     return(6);
@@ -334,6 +349,7 @@ The offset from the left side of the control that texts
 should be located for this type of control.
 
 =cut
+
 sub offsetTextLeft {
     my $self = shift; my $pkg = ref($self);
     return(4);
@@ -349,6 +365,7 @@ The offset from the right side of the control that texts
 should be located for this type of control.
 
 =cut
+
 sub offsetTextRight {
     my $self = shift; my $pkg = ref($self);
     return(5);
@@ -364,6 +381,7 @@ The offset from the top side of the control that texts
 should be located for this type of control.
 
 =cut
+
 sub offsetTextTop {
     my $self = shift; my $pkg = ref($self);
     return(3);
@@ -379,6 +397,7 @@ The offset from the bottom side of the control that texts
 should be located for this type of control.
 
 =cut
+
 sub offsetTextBottom {
     my $self = shift; my $pkg = ref($self);
     return(4);
@@ -399,6 +418,7 @@ container object as the first param.
 Readonly
 
 =cut
+
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
     return("-- Abstract --");
@@ -446,6 +466,7 @@ properties:
 Controls that doesn't support this can remove these properties.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
@@ -519,6 +540,7 @@ Note: This is a class method. Call it like so:
 Return 1 on success, else 0.
 
 =cut
+
 sub resetInstanceCount {
     my $pkg = shift;
     $hNoObject{$pkg} = 0;
@@ -541,6 +563,7 @@ Note: This is a class method. Call it like so:
 Return 1 on success, else 0.
 
 =cut
+
 sub incInstanceCount {
     my $pkg = shift;
     $hNoObject{$pkg}++;
@@ -556,6 +579,7 @@ sub incInstanceCount {
 Toggle the designIsSelected property. Return the new value.
 
 =cut
+
 sub isSelectedToggle {
     my $self = shift; my $pkg = ref($self);
 
@@ -574,6 +598,7 @@ sub isSelectedToggle {
 Return 1 if the coords are within the control, else 0.
 
 =cut
+
 sub isClicked {
     my $self = shift; my $pkg = ref($self);
     my ($left, $top) = @_;
@@ -607,6 +632,7 @@ Return 1 if the coords are within a selected box located at
 $leftSel, $topSel, else return 0.
 
 =cut
+
 sub isClickedSelected {
     my $self = shift; my $pkg = ref($self);
     my ($left, $top, $leftSel, $topSel) = @_;
@@ -639,6 +665,7 @@ selected boxes.
      3: Top right
 
 =cut
+
 sub clickedSelectCorner {
     my $self = shift; my $pkg = ref($self);
     my ($left, $top) = @_;
@@ -678,6 +705,7 @@ Return 1 if the control is within or touched by the
 rectangle, else 0.
 
 =cut
+
 sub isTouchedByRect {
     my $self = shift; my $pkg = ref($self);
     my ($left, $top, $right, $bottom) = @_;
@@ -709,6 +737,7 @@ sub isTouchedByRect {
 Return 1 if $propName is a property of this object, else 0.
 
 =cut
+
 sub hasProperty {
     my $self = shift; my $pkg = ref($self);
     my ($propName) = @_;
@@ -730,6 +759,7 @@ Default: 0
 Redifine in derived classes.
 
 =cut
+
 sub isUsingCluster {
     my $self = shift; my $pkg = ref($self);
     my ($objCluster) = @_;
@@ -751,6 +781,7 @@ Default: undef
 Redefine in derived classes.
 
 =cut
+
 sub tabIndexFindByName {
     my $self = shift; my $pkg = ref($self);
     my ($nameTab) = @_;
@@ -770,6 +801,7 @@ Get or set the value of $propertyName.
 Return undef if the property doesn't exist.
 
 =cut
+
 sub prop {
     my $self = shift; my $pkg = ref($self);
     my ($propertyName, $val) = @_;
@@ -799,6 +831,7 @@ of $snap (if $snap != 0).
 Return undef if the property doesn't exist.
 
 =cut
+
 sub propIncSnap {
     my $self = shift; my $pkg = ref($self);
     my ($propertyName, $val, $snap) = @_;
@@ -822,6 +855,7 @@ control $objGuiControl.
 Retur 1 on success, else 0.
 
 =cut
+
 sub propGuiSet {
     my $self = shift; my $pkg = ref($self);
     my ($propertyName, $objGuiControl, $objDesign) = @_;
@@ -845,6 +879,7 @@ array.
 Return 1 on success, else 0.
 
 =cut
+
 sub propertyAdd {
     my $self = shift; my $pkg = ref($self);
     my ($objProperty) = @_;
@@ -865,6 +900,7 @@ Delete the $propertyName from the rhControlProperty() array.
 Return 1 on success, else 0.
 
 =cut
+
 sub propertyDelete {
     my $self = shift; my $pkg = ref($self);
     my ($propertyName) = @_;
@@ -890,6 +926,7 @@ $objControlContainerDefault is used as container]
 Return the new control object, or undef on errors.
 
 =cut
+
 sub buildAdd {
     my $self = shift; my $pkg = ref($self);
     my ($objDesign, $objControlContainerDefault, $objInspector) = @_;
@@ -953,6 +990,7 @@ Return an empty array on errors.
 Warn if the "Name" property is missing.
 
 =cut
+
 sub buildOptions {
     my $self = shift; my $pkg = ref($self);
     my ($objDesign) = @_;
@@ -996,6 +1034,7 @@ options for the creation of the control.
 Return an empty array on errors.
 
 =cut
+
 sub buildOptionsSpecial {
     my $self = shift; my $pkg = ref($self);
     my ($objDesign) = @_;
@@ -1016,6 +1055,7 @@ option.
 Return 1 on success, else 0.
 
 =cut
+
 sub buildMethods {
     my $self = shift; my $pkg = ref($self);
     my ($objNew) = @_;
@@ -1046,6 +1086,7 @@ option.
 Return 1 on success, else 0.
 
 =cut
+
 sub buildMethodsSpecial {
     my $self = shift; my $pkg = ref($self);
     my ($objNew, $objDesign) = @_;
@@ -1068,6 +1109,7 @@ If the sub already exists, fail.
 Return 1 on success, else 0.
 
 =cut
+
 sub buildEventHandlers {
     my $self = shift; my $pkg = ref($self);
     my ($objNew, $objDesign) = @_;
@@ -1087,6 +1129,7 @@ Return the name the control has during runtime. This is
 probably equal to, or a variation on, the "Name" property.
 
 =cut
+
 sub runtimeName {
     my $self = shift; my $pkg = ref($self);
     my ($objDesign) = @_;
@@ -1106,6 +1149,7 @@ the important property values.
 Return 1 on success, else 0.
 
 =cut
+
 sub transformSlim {
     my $self = shift; my $pkg = ref($self);
 
@@ -1128,6 +1172,7 @@ property values.
 Return 1 on success, else 0.
 
 =cut
+
 sub transformFatten {
     my $self = shift; my $pkg = ref($self);
 
@@ -1163,6 +1208,7 @@ Return hash ref with a snapshot of the positional
 properties, used for cashing the expensive lookups.
 
 =cut
+
 sub rhPosCache {
     my $self = shift; my $pkg = ref($self);
     return({
@@ -1184,6 +1230,7 @@ Paint the control in the $dcDev.
 Return 1 on success, else 0.
 
 =cut
+
 sub paint {
     my $self = shift; my $pkg = ref($self);
     my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
@@ -1203,6 +1250,7 @@ Paint the Text property on the control if there is one.
 Return 1 on success, else 0.
 
 =cut
+
 sub paintText {
     my $self = shift; my $pkg = ref($self);
     my ($dcDev, $rhBrush, $rhPosCache) = @_;
@@ -1234,6 +1282,7 @@ Paint the Name property on the control if there is one.
 Return 1 on success, else 0.
 
 =cut
+
 sub paintName {
     my $self = shift; my $pkg = ref($self);
     my ($dcDev, $rhBrush, $rhPosCache) = @_;
@@ -1256,6 +1305,7 @@ Paint the $text property on the control.
 Return 1 on success, else 0.
 
 =cut
+
 sub paintTextGeneric {
     my $self = shift; my $pkg = ref($self);
     my ($dcDev, $rhBrush, $rhPosCache, $text) = @_;
@@ -1318,6 +1368,7 @@ Paint the $bmBitmap on the control.
 Return 1 on success, else 0.
 
 =cut
+
 sub paintBitmap {
     my $self = shift; my $pkg = ref($self);
     my ($dcDev, $rhBrush, $rhPosCache, $objDesign) = @_;
@@ -1408,6 +1459,7 @@ designIsSelected().
 Return 1 on success, else 0.
 
 =cut
+
 sub paintSelected {
     my $self = shift; my $pkg = ref($self);
     my ($dcDev, $rhBrush, $rhPosCache) = @_;
@@ -1448,6 +1500,7 @@ Paint a selection dot at $left, $top.
 Return 1 on success, else 0.
 
 =cut
+
 sub paintSelectedDot {
     my $self = shift; my $pkg = ref($self);
     my ($dcDev, $left, $top) = @_;

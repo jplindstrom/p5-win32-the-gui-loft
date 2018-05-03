@@ -37,6 +37,7 @@ E.g. "btnButton".
 Readonly.
 
 =cut
+
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
     return("winWindow");
@@ -55,6 +56,7 @@ E.g. "Button".
 Readonly.
 
 =cut
+
 sub type {
     my $self = shift; my $pkg = ref($self);
     return("Window");
@@ -71,6 +73,7 @@ sub type {
 Create new Window control object.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
@@ -152,6 +155,7 @@ Return an empty array on errors.
 Warn if the "Name" property is missing.
 
 =cut
+
 sub buildOptions {
     my $self = shift; my $pkg = ref($self);
     my ($objDesign) = @_;
@@ -189,6 +193,7 @@ option.
 Return 1 on success, else 0.
 
 =cut
+
 sub buildMethodsSpecial {
     my $self = shift; my $pkg = ref($self);
     my ($objNew, $objDesign) = @_;
@@ -216,6 +221,7 @@ Return the name the control has during runtime. This is
 probably equal to, or a variation on, the "Name" property.
 
 =cut
+
 sub runtimeName {
     my $self = shift; my $pkg = ref($self);
     my ($objDesign) = @_;
@@ -238,6 +244,7 @@ $winWindow if passed.
 Return undef if the property doesn't exist.
 
 =cut
+
 sub prop {
     my $self = shift; my $pkg = ref($self);
     my ($propertyName, $val, $winWindow) = @_;
@@ -264,6 +271,7 @@ control $objGuiControl.
 Retur 1 on success, else 0.
 
 =cut
+
 sub propGuiSet {
     my $self = shift; my $pkg = ref($self);
     my ($propertyName, $objGuiControl, $objDesign) = @_;

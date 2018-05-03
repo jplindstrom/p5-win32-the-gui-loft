@@ -56,6 +56,7 @@ my %ghPerm;
 The Toolbox window object
 
 =cut
+
 sub winTool {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -79,6 +80,7 @@ if no such thing exists.
 Set to 0 to undef
 
 =cut
+
 sub objDesign {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -102,6 +104,7 @@ The Win32::GUI::Loft::Canvas that is the current state of the objDesign()
 Set to 0 to undef
 
 =cut
+
 sub objCanvas {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -123,6 +126,7 @@ sub objCanvas {
 The main window object
 
 =cut
+
 sub objWindowApp {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -143,6 +147,7 @@ sub objWindowApp {
 The properties window object
 
 =cut
+
 sub objWindowProp {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -163,6 +168,7 @@ sub objWindowProp {
 The design window object
 
 =cut
+
 sub objWindowDesign {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -185,6 +191,7 @@ sub objWindowDesign {
 Create new UI for Windows.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
     defined($gObjSingleton) and return($gObjSingleton);
@@ -212,6 +219,7 @@ Init application, info, windows etc.
 Return 1 on succes, else 0.
 
 =cut
+
 sub init {
     my $self = shift; my $pkg = ref($self);
     my ($winMain) = @_;
@@ -335,6 +343,7 @@ sub init {
            -height  => $hb,
           );
     $x += $hb;
+
 =cut
 
     $self->winTool($winTool);
@@ -354,7 +363,8 @@ the application.
 Return 1.
 
 =cut
-sub setWindowState { my $self = shift; my $pkg = ref($self);
+
+    sub setWindowState { my $self = shift; my $pkg = ref($self);
 
 
     return(1);
@@ -371,7 +381,8 @@ Create new control of $type.
 Return 1 on success, else 0.
 
 =cut
-sub newControl { my $self = shift; my $pkg = ref($self);
+
+    sub newControl { my $self = shift; my $pkg = ref($self);
     my ($type, $prefix) = @_;
 
     my $objNew = $self->objCanvas()->controlNew($type) or return(0);
@@ -405,7 +416,8 @@ sub newControl { my $self = shift; my $pkg = ref($self);
 Hide window.
 
 =cut
-sub ::winTool_Terminate { my $self = TGL::WindowTool->new();
+
+    sub ::winTool_Terminate { my $self = TGL::WindowTool->new();
 
     $self->winTool()->Hide();
 
@@ -421,7 +433,8 @@ sub ::winTool_Terminate { my $self = TGL::WindowTool->new();
 Activate the window and perform Modalizer stuff.
 
 =cut
-sub ::winTool_Activate { my $self = TGL::WindowTool->new();
+
+    sub ::winTool_Activate { my $self = TGL::WindowTool->new();
     defined($self->objWindowApp()->objModalizer()) and $self->objWindowApp()->objModalizer()->activate($self->winTool());
     }
 
@@ -434,7 +447,8 @@ sub ::winTool_Activate { my $self = TGL::WindowTool->new();
 Resize the main window dynamically. Unimplemented.
 
 =cut
-sub ::winTool_Resize { my $self = TGL::WindowTool->new();
+
+    sub ::winTool_Resize { my $self = TGL::WindowTool->new();
 
     }
 
@@ -460,6 +474,7 @@ sub ::winTool_DropFiles {
 Create new control
 
 =cut
+
 sub ::btnButton_Click {
     my $self = TGL::WindowTool->new();
 
@@ -477,6 +492,7 @@ sub ::btnButton_Click {
 Create new control
 
 =cut
+
 sub ::btnRichEdit_Click {
     my $self = TGL::WindowTool->new();
 
@@ -494,6 +510,7 @@ sub ::btnRichEdit_Click {
 Create new control
 
 =cut
+
 sub ::btnTextfield_Click {
     my $self = TGL::WindowTool->new();
 
@@ -511,6 +528,7 @@ sub ::btnTextfield_Click {
 Create new control
 
 =cut
+
 sub ::btnLabel_Click {
     my $self = TGL::WindowTool->new();
 
@@ -528,6 +546,7 @@ sub ::btnLabel_Click {
 Create new control
 
 =cut
+
 sub ::btnCheckbox_Click {
     my $self = TGL::WindowTool->new();
 
@@ -545,6 +564,7 @@ sub ::btnCheckbox_Click {
 Create new control
 
 =cut
+
 sub ::btnRadiobutton_Click {
     my $self = TGL::WindowTool->new();
 
@@ -562,6 +582,7 @@ sub ::btnRadiobutton_Click {
 Create new control
 
 =cut
+
 sub ::btnListbox_Click {
     my $self = TGL::WindowTool->new();
 
@@ -579,6 +600,7 @@ sub ::btnListbox_Click {
 Create new control
 
 =cut
+
 sub ::btnTreeView_Click {
     my $self = TGL::WindowTool->new();
 
@@ -596,6 +618,7 @@ sub ::btnTreeView_Click {
 Create new control
 
 =cut
+
 sub ::btnListView_Click {
     my $self = TGL::WindowTool->new();
 
@@ -613,6 +636,7 @@ sub ::btnListView_Click {
 Create new control
 
 =cut
+
 sub ::btnCombobox_Click {
     my $self = TGL::WindowTool->new();
 
@@ -630,6 +654,7 @@ sub ::btnCombobox_Click {
 Create new control
 
 =cut
+
 sub ::btnGroupbox_Click {
     my $self = TGL::WindowTool->new();
 
@@ -647,6 +672,7 @@ sub ::btnGroupbox_Click {
 Create new control
 
 =cut
+
 sub ::btnGraphic_Click {
     my $self = TGL::WindowTool->new();
 
@@ -664,6 +690,7 @@ sub ::btnGraphic_Click {
 Create new control
 
 =cut
+
 sub ::btnToolbar_Click {
     my $self = TGL::WindowTool->new();
 
@@ -681,6 +708,7 @@ sub ::btnToolbar_Click {
 Create new control
 
 =cut
+
 sub ::btnStatusBar_Click {
     my $self = TGL::WindowTool->new();
 
@@ -698,6 +726,7 @@ sub ::btnStatusBar_Click {
 Create new control
 
 =cut
+
 sub ::btnProgressBar_Click {
     my $self = TGL::WindowTool->new();
 
@@ -715,6 +744,7 @@ sub ::btnProgressBar_Click {
 Create new control
 
 =cut
+
 sub ::btnTabStrip_Click {
     my $self = TGL::WindowTool->new();
 
@@ -732,6 +762,7 @@ sub ::btnTabStrip_Click {
 Create new control
 
 =cut
+
 sub ::btnSplitter_Click {
     my $self = TGL::WindowTool->new();
 
@@ -749,6 +780,7 @@ sub ::btnSplitter_Click {
 Create new control
 
 =cut
+
 sub ::btnTimer_Click {
     my $self = TGL::WindowTool->new();
 
@@ -766,6 +798,7 @@ sub ::btnTimer_Click {
 Create new control
 
 =cut
+
 sub ::btnImageList_Click {
     my $self = TGL::WindowTool->new();
 
@@ -783,6 +816,7 @@ sub ::btnImageList_Click {
 Create new control
 
 =cut
+
 sub ::btnCustom_Click {
     my $self = TGL::WindowTool->new();
 

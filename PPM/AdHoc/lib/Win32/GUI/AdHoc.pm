@@ -44,6 +44,7 @@ use Data::Dumper;
     WM_APP
 
 =cut
+
 use constant WM_APP             => 0x8000;          #From winuser.h (Visual Studio)
 use constant WM_EXITLOOP        => WM_APP + 1;      #From GUI.xs
 
@@ -54,6 +55,7 @@ use constant WM_EXITLOOP        => WM_APP + 1;      #From GUI.xs
     EM_SETPARAFORMAT
 
 =cut
+
 use constant EM_LINESCROLL      => 182;             #From podview.pl
 use constant EM_SETPARAFORMAT   => 0x447;           #From the Win32 SDK
 
@@ -62,7 +64,9 @@ use constant EM_SETPARAFORMAT   => 0x447;           #From the Win32 SDK
 
     CBS_DROPDOWNLIST
     CBS_DISABLENOSCROLL
+
 =cut
+
 use constant CBS_DROPDOWNLIST => 0x0003;            #From winuser.h
 use constant CBS_DISABLENOSCROLL => 0x0800;
 
@@ -91,6 +95,7 @@ use constant SS_BITMAP => 0x0000000E;
     WM_DROPFILES
 
 =cut
+
 use constant WM_DROPFILES => 0x0233;
 
 
@@ -99,6 +104,7 @@ use constant WM_DROPFILES => 0x0233;
 Key codes for use with e.g. GetAsyncKeyState()
 
 =cut
+
 use constant VK_SHIFT => 0x10;
 use constant VK_CONTROL => 0x11;
 use constant VK_MENU => 0x12;
@@ -121,6 +127,7 @@ warnings. And, it's plain annoying.
 Original idea: Eric Bennett on the Win32::GUI mailing list.
 
 =cut
+
 sub blockGUIWarnings {
     my $self = shift;
 
@@ -155,6 +162,7 @@ WM_EXITLOOP message to.
 Return 1 on success, else 0.
 
 =cut
+
 sub exitDialog {
     my ($winSomewindow) = @_;
 
@@ -178,6 +186,7 @@ or a hwind.
 Return 1 on success, else 0.
 
 =cut
+
 sub windowCenter {
     my ($winSelf, $winParent) = @_;
     defined($winParent) or $winParent = Win32::GUI::GetDesktopWindow();
@@ -205,6 +214,7 @@ The actual functionality is taken from the podview.pl sample
 file.
 
 =cut
+
 sub richEditScroll {
     my ($reControl, $noCol, $noLines) = @_;
 
@@ -220,6 +230,7 @@ sub richEditScroll {
 
 =head2 richEditTabstops($reControl, $tabSize)
 
+
 Set the tab size in $reControl to $tabSize pixels wide.
 
 Return 1 on success, else 0.
@@ -228,6 +239,7 @@ The actual functionality is taken from the wex.pl program by
 Harald Piske.
 
 =cut
+
 my $rsSendMessage = new Win32::API ('User32', $_ = 'SendMessage', "INIP", "I");
 sub richEditTabsizePixels {
     my ($reControl, $tabSize) = @_;
@@ -266,6 +278,7 @@ to the specified color index. See the color contants above.
 Example: COLOR_BTNFACE
 
 =cut
+
 my $rsGetSysColorBrush = new Win32::API("user32", "GetSysColorBrush", "N", "N");
 sub GetSysColorBrush {
     my ($color) = @_;
@@ -286,6 +299,7 @@ display that appear on the system display screen.
 Example: COLOR_BTNFACE
 
 =cut
+
 my $rsGetSysColor = new Win32::API("user32", "GetSysColor", "N", "N");
 sub GetSysColor {
     my ($color) = @_;
@@ -309,6 +323,7 @@ a virtual key code. Example: VK_SHIFT
 Return 1 if the key is depressed, 0 if it's not.
 
 =cut
+
 my $rsGetAsyncKeyState = new Win32::API("user32", "GetAsyncKeyState", "N", "I");
 sub GetAsyncKeyState {
     my ($keyCode) = @_;
@@ -331,6 +346,7 @@ is true, that key is depressed. Caps-Lock keys etc. indicate the
 current state.
 
 =cut
+
 my $rsGetKeyboardState = new Win32::API("user32", "GetKeyboardState", "P", "I");
 sub GetKeyboardState {
 
@@ -356,6 +372,7 @@ which to draw the control.
 Return 1 if the key is depressed, 0 if it's not.
 
 =cut
+
 my $rsDrawFrameControl = new Win32::API("user32", "DrawFrameControl", "NPII", "I");
 sub DrawFrameControl {
     my ($dcDev, $left, $top, $right, $bottom, $type, $state) = @_;
@@ -384,6 +401,7 @@ Note: This is untested, but could very well work :)
 Return 1 if the key is depressed, 0 if it's not.
 
 =cut
+
 my $rsDrawIcon = new Win32::API("user32", "DrawIcon", "NNNN", "I");
 sub DrawIcon {
     my ($dcDev, $left, $top, $icoIcon) = @_;
@@ -405,6 +423,7 @@ Return two element array with the old origin, or () on
 errors.
 
 =cut
+
 my $rsSetBrushOrgEx = new Win32::API("gdi32", "SetBrushOrgEx", "NNNP", "I") or die();
 sub SetBrushOrgEx {
     my ($dcDev, $left, $top) = @_;
@@ -432,6 +451,7 @@ is enabled.
 Return 1 on success, else 0.
 
 =cut
+
 my $rsLockWindowUpdate = new Win32::API("user32", "LockWindowUpdate", "N", "I");
 sub LockWindowUpdate {
     my ($winWindow) = @_;

@@ -43,6 +43,7 @@ use strict;
 Create new ControlInspector object.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
@@ -85,6 +86,7 @@ Return the array on success, else an empty array () in which
 case the control will not be created.
 
 =cut
+
 sub buildOptions {
     my $self = shift; my $pkg = ref($self);
     my ($objControl, $raOption) = @_;
@@ -121,6 +123,7 @@ errors (in which case the the rest of the dialog will be
 created as usual).
 
 =cut
+
 sub buildAdd {
     my $self = shift; my $pkg = ref($self);
     my ($objContainer, $objControl) = @_;

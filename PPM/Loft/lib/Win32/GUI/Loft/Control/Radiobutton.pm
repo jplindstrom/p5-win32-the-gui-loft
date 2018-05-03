@@ -37,6 +37,7 @@ E.g. "rbRadiobutton".
 Readonly.
 
 =cut
+
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
     return("rbRadiobutton");
@@ -55,6 +56,7 @@ E.g. "Radiobutton".
 Readonly.
 
 =cut
+
 sub type {
     my $self = shift; my $pkg = ref($self);
     return("Radiobutton");
@@ -72,6 +74,7 @@ control to a container object.
 Readonly
 
 =cut
+
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
     return("AddRadioButton");
@@ -87,6 +90,7 @@ The offset from the left side of the control that texts
 should be located for this type of control.
 
 =cut
+
 sub offsetTextLeft {
     my $self = shift; my $pkg = ref($self);
     return(18);
@@ -102,6 +106,7 @@ The offset from the right side of the control that texts
 should be located for this type of control.
 
 =cut
+
 sub offsetTextRight {
     my $self = shift; my $pkg = ref($self);
     return(2);
@@ -118,6 +123,7 @@ sub offsetTextRight {
 Create new Control object.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
@@ -158,6 +164,7 @@ options for the creation of the control.
 Return an empty array on errors.
 
 =cut
+
 sub buildOptionsSpecial {
     my $self = shift; my $pkg = ref($self);
     my ($objDesign) = @_;
@@ -181,6 +188,7 @@ Paint the control in the $dcDev.
 Return 1 on success, else 0.
 
 =cut
+
 sub paint {
     my $self = shift; my $pkg = ref($self);
     my ($dcDev, $rhBrush, $objDesign) = @_;

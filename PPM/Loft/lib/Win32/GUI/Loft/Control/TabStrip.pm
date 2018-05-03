@@ -41,6 +41,7 @@ E.g. "btnButton".
 Readonly.
 
 =cut
+
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
     return("tsTabStrip");
@@ -59,6 +60,7 @@ Example: "left"
 Readonly.
 
 =cut
+
 sub alignDefault {
     my $self = shift; my $pkg = ref($self);
     return("left");
@@ -77,6 +79,7 @@ Example: "top"
 Readonly.
 
 =cut
+
 sub valignDefault {
     my $self = shift; my $pkg = ref($self);
     return("top");
@@ -92,6 +95,7 @@ The offset from the left side of the control that texts
 should be located for this type of control.
 
 =cut
+
 sub offsetTextLeft {
     my $self = shift; my $pkg = ref($self);
     return(0);
@@ -107,6 +111,7 @@ The offset from the top side of the control that texts
 should be located for this type of control.
 
 =cut
+
 sub offsetTextTop {
     my $self = shift; my $pkg = ref($self);
     return(0);
@@ -125,6 +130,7 @@ E.g. "TabStrip".
 Readonly.
 
 =cut
+
 sub type {
     my $self = shift; my $pkg = ref($self);
     return("TabStrip");
@@ -142,6 +148,7 @@ control to a container object.
 Readonly
 
 =cut
+
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
     return("AddTabStrip");
@@ -158,6 +165,7 @@ sub addMethod {
 Create new Control object.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
@@ -215,6 +223,7 @@ Default: 0
 Redifine in derived classes.
 
 =cut
+
 sub isUsingCluster {
     my $self = shift; my $pkg = ref($self);
     my ($objCluster) = @_;
@@ -238,6 +247,7 @@ should match.
 Redefine in derived classes.
 
 =cut
+
 sub tabIndexFindByName {
     my $self = shift; my $pkg = ref($self);
     my ($nameTab) = @_;
@@ -265,6 +275,7 @@ options for the creation of the control.
 Return an empty array on errors.
 
 =cut
+
 sub buildOptionsSpecial {
     my $self = shift; my $pkg = ref($self);
     my ($objDesign) = @_;
@@ -290,6 +301,7 @@ option.
 Return 1 on success, else 0.
 
 =cut
+
 sub buildMethodsSpecial {
     my $self = shift; my $pkg = ref($self);
     my ($objNew, $objDesign) = @_;
@@ -338,6 +350,7 @@ If the sub already exists, fail.
 Return 1 on success, else 0.
 
 =cut
+
 sub buildEventHandlers {
     my $self = shift; my $pkg = ref($self);
     my ($objNew, $objDesign) = @_;
@@ -384,6 +397,7 @@ Paint the control in the $dcDev.
 Return 1 on success, else 0.
 
 =cut
+
 sub paint {
     my $self = shift; my $pkg = ref($self);
     my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;
@@ -518,6 +532,7 @@ return the width of a Strip with the $text. $first indicates that it is the
 first Tab.
 
 =cut
+
 sub widthTab {
     my $self = shift; my $pkg = ref($self);
     my ($text, $index, $rhBrush) = @_;

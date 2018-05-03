@@ -103,6 +103,7 @@ undef if no menu should be used.
 Set to 0 to undef.
 
 =cut
+
 sub mnuMenu {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -129,7 +130,8 @@ Default: undef
 Set to 0 to undef.
 
 =cut
-sub objApp {
+
+    sub objApp {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
@@ -153,7 +155,8 @@ since it was last saved or not.
 Default: 0
 
 =cut
-sub isDirty {
+
+        sub isDirty {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
@@ -179,6 +182,7 @@ to visualize the settings.
 Default: 0 (for all newly created/loaded designs)
 
 =cut
+
 sub isPreview {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -200,7 +204,8 @@ Absolute file name where the Design was loaded from, or ""
 if none.
 
 =cut
-sub fileName {
+
+    sub fileName {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
@@ -224,7 +229,8 @@ Use this if you want to change the name of the window at run
 time/build time.
 
 =cut
-sub buildWindowName {
+
+        sub buildWindowName {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
@@ -248,7 +254,8 @@ Use this if you want to modify the name of controls at run
 time/build time.
 
 =cut
-sub buildControlNameBase {
+
+    sub buildControlNameBase {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
@@ -269,7 +276,8 @@ Array ref with Win32::GUI::Loft::Control objects that are present in the
 current design
 
 =cut
-sub raControl {
+
+        sub raControl {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
@@ -289,7 +297,8 @@ sub raControl {
 Array ref with Win32::GUI::Loft::Cluster objects.
 
 =cut
-sub raCluster {
+
+            sub raCluster {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
@@ -312,7 +321,8 @@ Win32::GUI::TabStripGroup control).
 This property is populated as the window is built.
 
 =cut
-sub rhWingcTabStripGroup {
+
+                sub rhWingcTabStripGroup {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
@@ -337,7 +347,8 @@ contains the controls that belong to Clusters, so you have
 access to these at run-time.
 
 =cut
-sub rhClusterWingc {
+
+                    sub rhClusterWingc {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
@@ -359,7 +370,8 @@ The Win32::GUI::Loft::Control object that is the designed window.
 Set to 0 to undef.
 
 =cut
-sub objControlWindow {
+
+                        sub objControlWindow {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
@@ -387,6 +399,7 @@ the directory of the data file. You may reset the value
 after those operations.
 
 =cut
+
 sub pathBase {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -410,6 +423,7 @@ The x/left/width snap value.
 Default: 4
 
 =cut
+
 sub snapX {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -433,7 +447,8 @@ The y/top/height snap value.
 Default: 4
 
 =cut
-sub snapY {
+
+    sub snapY {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
@@ -456,7 +471,8 @@ Whether the grid should be displayed.
 Default: 0
 
 =cut
-sub gridShow {
+
+        sub gridShow {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
@@ -478,7 +494,8 @@ Whether the grid should be snapped to.
 Default: 1
 
 =cut
-sub gridSnap {
+
+            sub gridSnap {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
@@ -501,7 +518,8 @@ undef.
 Set to 0 to undef.
 
 =cut
-sub objResizer {
+
+                sub objResizer {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
@@ -526,7 +544,8 @@ This is where bitmaps are loaded and stored before they are
 used on buttons, labels etc.
 
 =cut
-sub rhBitmap {
+
+                    sub rhBitmap {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
@@ -550,7 +569,8 @@ This is where icons are loaded and stored before they are
 used on windows, buttons, labels etc.
 
 =cut
-sub rhIcon {
+
+                        sub rhIcon {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
@@ -574,7 +594,8 @@ This is where ImageLists are loaded and stored before they
 are used in TreeViews, ListViews etc.
 
 =cut
-sub rhImageList {
+
+                            sub rhImageList {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
 
@@ -596,7 +617,8 @@ sub rhImageList {
 Create new design.
 
 =cut
-sub new {
+
+                                sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
 
     my $self = $pkg->SUPER::new();
@@ -623,7 +645,8 @@ Init all vars for the newX methods.
 Return 1 on success, else 0.
 
 =cut
-sub newInit {
+
+                                    sub newInit {
     my $self = shift; my $pkg = ref($self);
 
     $self->mnuMenu(0);
@@ -650,7 +673,8 @@ Set default values for all undefined values.
 Return 1 on success, else 0.
 
 =cut
-sub newDefaults {
+
+                                        sub newDefaults {
     my $self = shift; my $pkg = ref($self);
 
     $self->raCluster( [] ) if(!defined( $self->raCluster() ));
@@ -680,7 +704,8 @@ after a save+load.
 Return 1 on success, else 0.
 
 =cut
-sub newRehash {
+
+                                            sub newRehash {
     my $self = shift; my $pkg = ref($self);
 
     for my $objCluster (@{$self->raCluster()}) {
@@ -708,7 +733,8 @@ Note: This is a class method. Call it like so:
 Return 1 on success, else 0.
 
 =cut
-sub resetInstanceCount {
+
+                                                sub resetInstanceCount {
     my $pkg = shift;
 
     for my $class (@gaControlClass) {
@@ -730,7 +756,8 @@ $rhControl.
 Return 1 on success, else 0.
 
 =cut
-sub propNotifyChange {
+
+                                                    sub propNotifyChange {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl, $raPropName) = @_;
 
@@ -769,7 +796,8 @@ $pathBase -- optional pathBase (will set pathBase()).
 Return the new object, or undef on errors.
 
 =cut
-sub newLoad {
+
+                                                        sub newLoad {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
     my ($fileName) = @_;
 
@@ -810,7 +838,8 @@ property.
 Return the new object, or undef on errors.
 
 =cut
-sub newScalar {
+
+                                                            sub newScalar {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
     my ($code, $fileName) = @_;
 
@@ -873,7 +902,8 @@ $fileName is not validated for funny characters.
 Return 1 on success, else 0.
 
 =cut
-sub fileSave {
+
+                                                                sub fileSave {
     my $self = shift; my $pkg = ref($self);
     my ($fileName) = @_;
     defined($fileName) or $fileName = $self->fileName();
@@ -929,7 +959,8 @@ the important property values.
 Return 1 on success, else 0.
 
 =cut
-sub transformSlim {
+
+                                                                    sub transformSlim {
     my $self = shift; my $pkg = ref($self);
 
     for my $objControl (@{$self->raControl()}) {
@@ -953,7 +984,8 @@ property values.
 Return 1 on success, else 0.
 
 =cut
-sub transformFatten {
+
+                                                                        sub transformFatten {
     my $self = shift; my $pkg = ref($self);
 
     for my $objControl (@{$self->raControl()}) {
@@ -977,7 +1009,8 @@ store it in raBitmap().
 Return 1 on success, else 0.
 
 =cut
-sub bitmapLoad {
+
+                                                                            sub bitmapLoad {
     my $self = shift; my $pkg = ref($self);
     my ($fileBitmap) = @_;
     return(0) if($fileBitmap eq "");
@@ -1004,7 +1037,8 @@ load those bitmaps.
 Return 1 on success, else 0.
 
 =cut
-sub bitmapParseControls {
+
+                                                                                sub bitmapParseControls {
     my $self = shift; my $pkg = ref($self);
 
     for my $objControl ( (@{$self->raControl()}, $self->objControlWindow() ) ) {
@@ -1028,7 +1062,8 @@ store it in raIcon().
 Return 1 on success, else 0.
 
 =cut
-sub iconLoad {
+
+                                                                                    sub iconLoad {
     my $self = shift; my $pkg = ref($self);
     my ($fileIcon) = @_;
     return(0) if($fileIcon eq "");
@@ -1055,7 +1090,8 @@ load those icons.
 Return 1 on success, else 0.
 
 =cut
-sub iconParseControls {
+
+                                                                                        sub iconParseControls {
     my $self = shift; my $pkg = ref($self);
 
 ##todo: other properties containing Icon objects?
@@ -1080,7 +1116,8 @@ Return hash ref with the newly created controls, or {} on
 errors.
 
 =cut
-sub clipboardParseControl {
+
+                                                                                            sub clipboardParseControl {
     my $self = shift; my $pkg = ref($self);
     my ($clipboard) = @_;
 
@@ -1103,7 +1140,8 @@ Add the $objControl to the design.
 Return 1 on success, else 0.
 
 =cut
-sub controlAdd {
+
+                                                                                                sub controlAdd {
     my $self = shift; my $pkg = ref($self);
     my ($objControl, $objControlContainer) = @_;
     defined($objControlContainer) or $objControlContainer = $self->objControlWindow();
@@ -1126,7 +1164,8 @@ Delete the controls in $rhControl.
 Return 1 on success, else 0.
 
 =cut
-sub controlDelete {
+
+                                                                                                    sub controlDelete {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl) = @_;
 
@@ -1152,7 +1191,8 @@ Return the resulting string (to be put in the clipboard) on
 success, else return "".
 
 =cut
-sub controlCopy {
+
+                                                                                                        sub controlCopy {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl) = @_;
 
@@ -1189,6 +1229,7 @@ success, else return "".
 If there is only one control, don't finish with a \n.
 
 =cut
+
 sub controlCopyName {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl) = @_;
@@ -1211,7 +1252,8 @@ Copy the controls to the Windows clipboard.
 Return 1 on success, else 0.
 
 =cut
-sub controlPaste {
+
+    sub controlPaste {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl) = @_;
 
@@ -1235,7 +1277,8 @@ flag.
 Return 1 on success, else 0.
 
 =cut
-sub controlMove {
+
+        sub controlMove {
     my $self = shift; my $pkg = ref($self);
     my ($objControl, $leftDelta, $topDelta, $snapX, $snapY) = @_;
 
@@ -1311,7 +1354,8 @@ If Shift, resize. If Ctrl, multiply the distance.
 Return 1 on success, else 0.
 
 =cut
-sub controlMultipleMoveResize {
+
+    sub controlMultipleMoveResize {
     my $self = shift; my $pkg = ref($self);
     my ($rhControl, $x, $y, $downShift, $downCtrl) = @_;
 
@@ -1347,7 +1391,8 @@ should move.
 Return 1 on success, else 0.
 
 =cut
-sub controlRearrange {
+
+        sub controlRearrange {
     my $self = shift; my $pkg = ref($self);
     my ($dir, $raSelected) = @_;
 
@@ -1415,7 +1460,8 @@ Set the dirty flag.
 Return 1 on success, else 0.
 
 =cut
-sub controlAlign {
+
+            sub controlAlign {
     my $self = shift; my $pkg = ref($self);
     my ($objControl, $raTowhere) = @_;
 
@@ -1458,7 +1504,8 @@ Set the dirty flag.
 Return 1 on success, else 0.
 
 =cut
-sub controlAlignMultiple {
+
+                sub controlAlignMultiple {
     my $self = shift; my $pkg = ref($self);
     my ($raControl, $how) = @_;
     my ($offset, $len);
@@ -1523,7 +1570,8 @@ $len -- Example: "Width", "Height"
 Return ($offsetMin, $offsetMax, $offsetMid, $lenMin, $lenMax, $lenMid, $offsetlenMax)
 
 =cut
-sub controlDetermineLocation {
+
+                    sub controlDetermineLocation {
     my $self = shift; my $pkg = ref($self);
     my ($raControl, $offset, $len) = @_;
     my ($offsetMin, $offsetMax, $offsetMid, $lenMin, $lenMax, $lenMid, $offsetlenMax);
@@ -1563,7 +1611,8 @@ the dirty flag if it is to a new position.
 Return 1 on success, else 0.
 
 =cut
-sub controlWindowMove {
+
+                        sub controlWindowMove {
     my $self = shift; my $pkg = ref($self);
     my ($left, $top) = @_;
 
@@ -1591,7 +1640,8 @@ set dirty flag if to a new size.
 Return 1 on success, else 0.
 
 =cut
-sub controlWindowResize {
+
+                            sub controlWindowResize {
     my $self = shift; my $pkg = ref($self);
     my ($width, $height) = @_;
 
@@ -1619,7 +1669,8 @@ a Clusters property that contain $objCluster.
 Return () on failure.
 
 =cut
-sub controlFindByCluster {
+
+                                sub controlFindByCluster {
     my $self = shift; my $pkg = ref($self);
     my ($objCluster) = @_;
 
@@ -1643,7 +1694,8 @@ $tsTabStrip and store it in rhWingcTabStripGroup.
 Return the new object on success, else undef.
 
 =cut
-sub wingcTabStripGroupAdd {
+
+                                    sub wingcTabStripGroupAdd {
     my $self = shift; my $pkg = ref($self);
     my ($tsTabStrip) = @_;
 
@@ -1673,7 +1725,8 @@ If any of this doesn't work, fail.
 Return 1 on success, else 0.
 
 =cut
-sub wingcTabStripRegister {
+
+                                        sub wingcTabStripRegister {
     my $self = shift; my $pkg = ref($self);
     my ($objControl, $objControlWin32) = @_;
 
@@ -1704,7 +1757,8 @@ corresponds to $objTabStrip (a Loft::Control::TabStrip), or
 undef if not found.
 
 =cut
-sub wingcTSGFindByTabStrip {
+
+                                            sub wingcTSGFindByTabStrip {
     my $self = shift; my $pkg = ref($self);
     my ($objTabStrip) = @_;
 
@@ -1727,7 +1781,8 @@ state for all controls.
 Return 1 on success, else 0.
 
 =cut
-sub clusterNew {
+
+                                                sub clusterNew {
     my $self = shift; my $pkg = ref($self);
     my ($rhControlSelected, $name) = @_;
 
@@ -1753,7 +1808,8 @@ clustered controls.
 Return 1 on success, else 0.
 
 =cut
-sub clusterDelete {
+
+                                                    sub clusterDelete {
     my $self = shift; my $pkg = ref($self);
     my ($objCluster) = @_;
 
@@ -1785,7 +1841,8 @@ $objCluster. Remove these controls from all other clusters.
 Return 1 on success, else 0.
 
 =cut
-sub clusterMemorize {
+
+                                                        sub clusterMemorize {
     my $self = shift; my $pkg = ref($self);
     my ($objCluster, $rhControl) = @_;
 
@@ -1818,6 +1875,7 @@ Retrurn the Cluster that contains $objControl, or undef if
 $objControls isn't clustered.
 
 =cut
+
 sub clusterFindByControl {
     my $self = shift; my $pkg = ref($self);
     my ($objControl) = @_;
@@ -1841,7 +1899,8 @@ absolute file name.
 Return the relative file name on success, else "".
 
 =cut
-sub fileMakeRelative {
+
+    sub fileMakeRelative {
     my $self = shift; my $pkg = ref($self);
     my ($file) = @_;
 
@@ -1869,7 +1928,8 @@ Return the newly created Win32::GUI::Loft::Control::$type, or undef on
 failure.
 
 =cut
-sub controlNew {
+
+        sub controlNew {
     my $self = shift; my $pkg = ref($self);
     my ($type) = @_;
 
@@ -1901,6 +1961,7 @@ class' POD.
 Return undef on errors, warn on questionable conditions.
 
 =cut
+
 sub perlBuildWindow {
     my $self = shift; my $pkg = ref($self);
     my ($winParent, $objInspector) = @_;
@@ -2036,6 +2097,7 @@ class' POD.
 Return undef on errors, warn on questionable conditions.
 
 =cut
+
 sub buildWindow {
     my $self = shift; my $pkg = ref($self);
     my ($winParent, $objInspector) = @_;
@@ -2170,7 +2232,8 @@ Win32::GUI::Resizer object with the appropriate controls.
 Return 1 on success, else 0.
 
 =cut
-sub buildResizer {
+
+    sub buildResizer {
     my $self = shift; my $pkg = ref($self);
     my ($winWin, $objInspector) = @_;
 
@@ -2229,7 +2292,8 @@ appropriate controls.
 Return "" on failure.
 
 =cut
-sub perlResizer {
+
+        sub perlResizer {
     my $self = shift; my $pkg = ref($self);
 
     my %hValue;
@@ -2305,7 +2369,8 @@ Return Perl code to reference an event handler sub.
 Return "" on failure.
 
 =cut
-sub perlEventName {
+
+            sub perlEventName {
     my $self = shift; my $pkg = ref($self);
     my ($objControl, $nameEvent) = @_;
 
@@ -2323,7 +2388,8 @@ sub perlEventName {
 Return Perl code to create two vars: $win, and $design.
 
 =cut
-sub perlVarLoft {
+
+                sub perlVarLoft {
     my $self = shift; my $pkg = ref($self);
 
     my $name = $self->objControlWindow()->runtimeName($self);
@@ -2344,7 +2410,8 @@ Return Perl code to reference the Win32::GUI control that
 corresponds with the Win32::GUI::Loft::Control $objControl.
 
 =cut
-sub perlVarControl {
+
+                    sub perlVarControl {
     my $self = shift; my $pkg = ref($self);
     my ($objControl) = @_;
 
@@ -2363,6 +2430,7 @@ Return Perl code to reference the Win32::GUI::TabStripGroup
 object that's indicated by $objTabStrip.
 
 =cut
+
 sub perlVarTabStripGroup {
     my $self = shift; my $pkg = ref($self);
     my ($objTabStrip) = @_;
@@ -2386,7 +2454,8 @@ class POD.
 Return undef on errors, warn on questionable conditions.
 
 =cut
-sub perlWindow {
+
+    sub perlWindow {
     my $self = shift; my $pkg = ref($self);
     my ($objInspector) = @_;
     defined($objInspector) or $objInspector = Win32::GUI::Loft::ControlInspector->new();
@@ -2409,7 +2478,8 @@ return("print 'Hello world!\\n'\n");
 keys. Return new hash ref with valid keys/value pairs.
 
 =cut
-sub rehash {
+
+        sub rehash {
     my $self = shift; my $pkg = ref($self);
     my ($rhOld) = @_;
 

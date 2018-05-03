@@ -35,6 +35,7 @@ use Win32::GUI;
 The TabStrip to manage.
 
 =cut
+
 sub tsStrip {
     my $self = shift;
     my ($val) = @_;
@@ -81,6 +82,7 @@ You will not need to manupulate this structure manually
 under normal circumstances.
 
 =cut
+
 sub rhTab {
     my $self = shift;
     my ($val) = @_;
@@ -103,6 +105,7 @@ sub rhTab {
 Create new manager object for $tsStrip.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
     my ($tsStrip) = @_;
@@ -141,6 +144,7 @@ NOTE: The visibility feature isn't implemented yet.
 Return 1 on success, else 0.
 
 =cut
+
 sub registerControl {
     my $self = shift;
     my ($tab, $objControl) = @_;
@@ -174,6 +178,7 @@ TabStripGroup object:
 Return 1 on success, else 0.
 
 =cut
+
 sub showTab {
     my $self = shift; my $pkg = ref($self);
     my ($showTab, $changeTab) = @_;

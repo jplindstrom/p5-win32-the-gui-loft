@@ -35,6 +35,7 @@ E.g. "pbProgressBar".
 Readonly.
 
 =cut
+
 sub nameDefault {
     my $self = shift; my $pkg = ref($self);
     return("pbProgressBar");
@@ -53,6 +54,7 @@ Example: "top"
 Readonly.
 
 =cut
+
 sub valignDefault {
     my $self = shift; my $pkg = ref($self);
     return("top");
@@ -71,6 +73,7 @@ E.g. "ProgressBar".
 Readonly.
 
 =cut
+
 sub type {
     my $self = shift; my $pkg = ref($self);
     return("ProgressBar");
@@ -88,6 +91,7 @@ control to a container object.
 Readonly
 
 =cut
+
 sub addMethod {
     my $self = shift; my $pkg = ref($self);
     return("AddProgressBar");
@@ -104,6 +108,7 @@ sub addMethod {
 Create new Control object.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
     
@@ -150,6 +155,7 @@ option.
 Return 1 on success, else 0.
 
 =cut
+
 sub buildMethodsSpecial {
     my $self = shift; my $pkg = ref($self);
     my ($objNew, $objDesign) = @_;
@@ -173,6 +179,7 @@ Paint the control in the $dcDev.
 Return 1 on success, else 0.
 
 =cut
+
 sub paint {
     my $self = shift; my $pkg = ref($self);
     my ($dcDev, $rhBrush, $objDesign, $rhPosCache) = @_;

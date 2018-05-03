@@ -35,6 +35,7 @@ use Data::Dumper;
 The property name.
 
 =cut
+
 sub name {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -60,6 +61,7 @@ This may be "" if no such sub exists.
 Example: "Left"
 
 =cut
+
 sub nameProperty {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -85,6 +87,7 @@ This may be "" if no such option exists.
 Example: "-left"
 
 =cut
+
 sub nameOption {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -105,6 +108,7 @@ sub nameOption {
 The current value of this property.
 
 =cut
+
 sub value {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -128,6 +132,7 @@ should be fed to the method indicated by nameProperty().
 Readonly.
 
 =cut
+
 sub valueParameter {
     my $self = shift; my $pkg = ref($self);
     
@@ -161,6 +166,7 @@ The current value of this property. When set, increase the
 current value. Snap to a multiple of $snap (if != 0).
 
 =cut
+
 sub valueIncSnap {
     my $self = shift; my $pkg = ref($self);
     my ($val, $snap) = @_;
@@ -196,6 +202,7 @@ nameProperty or nameOption).
 Example: [ { "current" => 0 }, { "left edge" => 1, } ]
 
 =cut
+
 sub raValue {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -219,6 +226,7 @@ values are allowed.
 Readonly.
 
 =cut
+
 sub raValuesString {
     my $self = shift; my $pkg = ref($self);
 
@@ -243,6 +251,7 @@ sub raValuesString {
 Return 1 if this property is a boolean value, else 0.
 
 =cut
+
 sub isBoolean {
     my $self = shift; my $pkg = ref($self);
 
@@ -266,6 +275,7 @@ sub isBoolean {
 Return 1 if this property is a multi-value, else 0.
 
 =cut
+
 sub isMultiValue {
     my $self = shift; my $pkg = ref($self);
      
@@ -285,6 +295,7 @@ sub isMultiValue {
 Return 1 if this property is a scalar value, else 0.
 
 =cut
+
 sub isScalar {
     my $self = shift; my $pkg = ref($self);
      
@@ -305,6 +316,7 @@ Whether the property is currently readonly or not.
 Default: 0
 
 =cut
+
 sub readonly {
     my $self = shift; my $pkg = ref($self);
     my ($val) = @_;
@@ -329,6 +341,7 @@ Create new ControlProperty object.
 Die if $name isn't passed.
 
 =cut
+
 sub new {
     my $pkg = shift; $pkg = ref($pkg) || $pkg;
     my ($name, $value, $raValue, $nameOption, $nameProperty) = @_;  
@@ -365,6 +378,7 @@ the corresponding Win32::GUI method.
 Return 1 on success, else 0.
 
 =cut
+
 sub guiSet {
     my $self = shift; my $pkg = ref($self);
     my ($objGuiControl) = @_;
@@ -400,6 +414,7 @@ the important values.
 Return 1 on success, else 0.
 
 =cut
+
 sub transformSlim {
     my $self = shift; my $pkg = ref($self);
 
@@ -424,6 +439,7 @@ important values of this object. Set the name() to $name.
 Return the altered $objFresh.
 
 =cut
+
 sub imprint {
     my $self = shift; my $pkg = ref($self);
     my ($objFresh, $name) = @_;

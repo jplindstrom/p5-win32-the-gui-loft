@@ -162,6 +162,7 @@ memory allocated to the drag-drop operation.
 Return array with files, or an empty array on errors.
 
 =cut
+
 sub GetDroppedFiles {
     my ($handleDrop) = @_;
 
